@@ -3,23 +3,96 @@ layout: default
 title: Home
 ---
 
+I am a Masters student and <a href="https://www.nsfgrfp.org/"> NSF Graduate Research Fellow</a> in the <a href="http://www.cs.usc.edu">Computer Science Department</a> at the <a href="http://www.usc.edu">University of Southern California</a>. I work with Professor <a href="http://www-bcf.usc.edu/~liu32/">Yan Liu</a>, building deep neural network models. Currently, I am working on a variational adversarial domain adaptation model.
+<br><br>
+
+My primary research interest is the development of neuroscience- and cognitive science-informed artificial intelligence and machine learning models with brain-rivaling information-processing capabilities.
+<br><br>
+
+Here, you can find a small <a href="about">bio</a>, my <a href="blog">blog</a>, and my <a href="files/wilka_carvalho_CV.pdf">CV</a>.
+<br><br>
+
+<h3>Some fun stuff:</h3>
+Here is a poem I (ironically) wrote the first Valentine's day after I decided to pursue physics in order to understand the brain:<br>
+<a href="2014/02/14/brain_poem/">A Physicist Enamored by the Brain.</a><br>
+Note: I'm no longer pursuing physics in order to understand the brain.
+
+
+<br><br>
 <div class="posts">
-  {% for post in paginator.posts %}
+  <h2>My 3 latest posts</h2>
+  <ul class="related-posts">
+    {% for post in paginator.posts limit:3 %}
+      <li>
+        <h3>
+          <a href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<footer class="page-footer">
+  <div class="container footer ">
+    <!-- <div class="row"> -->
+    <table><tr>
+    <td>
+      <div class="col l4 s12">
+        <div class="center">
+          <a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/wilkacarvalho">
+            <img class="responsive-img" src="{{ site.baseurl }}/img/linkedin.svg">
+          </a>
+        </div>
+        <div class="center">
+          <a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/wilkacarvalho">LinkedIn</a>
+        </div>
+      </div>
+      </td>
+      <td>
+      <div class="col l4 s12">
+        <div class="center">
+          <a class="grey-text text-lighten-3" href="https://github.com/wcarvalho">
+            <img class="responsive-img" src="{{ site.baseurl }}/img/github.svg">
+          </a>
+        </div>
+        <div class="center">
+          <a class="grey-text text-lighten-3" href="https://github.com/wcarvalho">GitHub</a>
+        </div>
+      </div>
+      </td>
+      <td>
+      <div class="col l4 s12">
+        <div class="center">
+          <a class="grey-text text-lighten-3" href="https://www.quora.com/Wilka-Carvalho">
+            <img class="responsive-img" src="{{ site.baseurl }}/img/quora.svg">
+          </a>
+        </div>
+        <div class="center">
+          <a class="grey-text text-lighten-3" href="https://www.quora.com/Wilka-Carvalho">Quora</a>
+        </div>
+      </div>
+      </td>
+    </tr></table>
+    <!-- </div> -->
+  </div>
+</footer>
+<!-- <div class="posts">
+  {% for post in paginator.posts limit:3 %}
   <div class="post">
-    <h1 class="post-title">
       <a href="{{ site.baseurl }}/{{ post.url }}">
         {{ post.title }}
       </a>
-    </h1>
-
+    <h3 class="post-title">
+    </h3>
     <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
   </div>
   {% endfor %}
 </div>
-
-<div class="pagination">
+ -->
+<!-- <div class="pagination">
   {% if paginator.next_page %}
     <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
   {% else %}
@@ -35,4 +108,4 @@ title: Home
     <span class="pagination-item newer">Newer</span>
   {% endif %}
 </div>
-
+ -->
