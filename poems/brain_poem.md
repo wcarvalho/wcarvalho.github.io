@@ -1,6 +1,6 @@
 ---
 title: A Physicist Enamored by the Brain
-layout: post
+layout: poem
 ---
 
 Every shock<br>

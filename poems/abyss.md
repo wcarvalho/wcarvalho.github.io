@@ -1,0 +1,45 @@
+---
+title: Abyss
+layout: poem
+---
+
+The perfect world for me is not the same as for those around me<br>
+I do not associate light with a source of warmth<br>
+It provides me no comfort<br>
+Light just allows for exposure<br>
+Maximize light. Maximize exposure.<br>
+Everything becomes clear. Vivid. Alive.<br>
+<br>
+Too much. It blinds me and allows for nothing to be seen.<br>
+Not clearly at least.<br>
+I can make out shapes. Fuzzy lines.<br>
+Obstructed figures.<br>
+But I see nothing clearly.<br>
+. <br>
+I can only focus one pair at a time<br>
+This much light, means this much focus given to one.<br>
+So the other is left with nothing.<br>
+Blind. <br>
+<br>
+And I hate this blind state.<br>
+No, to me warmth comes from the absence of light.<br>
+That is my source of comfort.<br>
+Minimize light. Minimize exposure. Comfortable.<br>
+Everything becomes clear. <br>
+<br>
+Not too much. Actually a perfect amount of too little.<br>
+It takes only a few moments for my eyes to adjust.<br>
+I put no effort in and I can see.<br>
+So the other is left with everything.<br>
+And how clearly I can see.<br>
+Now this is comfort. This is warmth. This is wonderful.<br>
+A world without light, means a world with good vision.<br>
+Well for me at least.<br>
+<br>
+So now I journey to find this world.<br>
+Where I can see clearly and find warmth.<br>
+<br>
+I hope only that when I arrive<br>
+I can find a way to stop time.<br>
+
+And just sit there.

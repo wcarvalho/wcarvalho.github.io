@@ -10,31 +10,32 @@ My primary research interest is the development of neuroscience- and cognitive s
 <br><br>
 
 Here, you can find a small <a href="about">bio</a>, my <a href="blog">blog</a>, and my <a href="files/wilka_carvalho_CV.pdf">CV</a>.
-<br><br>
+<br><br><br>
 
-<h3>Some fun stuff:</h3>
-Here is a poem I (ironically) wrote the first Valentine's day after I decided to pursue physics in order to understand the brain:<br>
-<a href="2014/02/14/brain_poem/">A Physicist Enamored by the Brain.</a><br>
-Note: I'm no longer pursuing physics in order to understand the brain.
-
-
-<br><br>
 <div class="posts">
   <h2>My 3 latest posts</h2>
   <ul class="related-posts">
     {% for post in paginator.posts limit:3 %}
       <li>
-        <h3>
+        <h4>
           <a href="{{ site.baseurl }}{{ post.url }}">
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>
-        </h3>
+        </h4>
       </li>
     {% endfor %}
   </ul>
 </div>
 
+<br>
+<h2>Some other fun stuff:</h2>
+Here is a poem I (ironically) wrote the first Valentine's day after I decided to pursue physics in order to understand the brain:<br>
+<a href="2014/02/14/brain_poem/">A Physicist Enamored by the Brain.</a> (Note: I'm no longer pursuing physics for the brain.)<br>
+<a href="poetry">Here</a> is some more poetry I wrote when I was younger.
+
+<br><br><br>
+<h2>Lastly, feel free to connect with me online</h2>
 <footer class="page-footer">
   <div class="container footer ">
     <!-- <div class="row"> -->
