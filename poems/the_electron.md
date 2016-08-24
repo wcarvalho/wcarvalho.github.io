@@ -3,7 +3,7 @@ layout: poem
 title: What describes friendship better than Heisenberg’s Uncertainty Principle?
 ---
 
-Shot in the dark: I was trying to explore how difficult it is to understand the perspectives and circumstances revolving one's friends.
+I think I was trying to explore how difficult it is to understand the perspectives and circumstances revolving one's friends.
 
 "Going through a lot"<br>
 is the term people around me use. <br>
