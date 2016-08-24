@@ -3,11 +3,11 @@ layout: poem
 title: Our Loci
 ---
 
-This is a mini exploration into the vantage point of our perspectives, both showcasing how limiting they can be and how strongly they impact the world we percieve. 
+A mini exploration into how vantage points effect our perspectives. Here, I admit how limiting my perspective is but, despite, how strongly it impacts my perception of the world I experience and my place in it.
 
-### Dialogue
+<br><br>
 
-Man 1: A wandering man once came up to me and asked
+A wandering man once came up to me and asked
 "What is the locus of your person?"
 
-Man 2: I responded, "Why, my eyes, of course."
+I responded, "Why, my eyes, of course."
