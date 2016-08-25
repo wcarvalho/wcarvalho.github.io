@@ -1,9 +1,9 @@
 ---
-layout: poem
+layout: post
 title: What describes friendship better than Heisenberg’s Uncertainty Principle?
+category: poem
+tags: [physics, friendship, perception]
 ---
-
-I think I was trying to explore how difficult it is to understand the perspectives and circumstances revolving one's friends.
 
 "Going through a lot"<br>
 is the term people around me use. <br>
@@ -48,3 +48,6 @@ My one true best friend<br>
 My melodious, harmonic best friend <br>
 I thank you for being my darkness<br>
 And giving so much, when I gave you nothing<br>
+
+---
+I think I was trying to explore how difficult it is to understand the perspectives and circumstances revolving one's friends.

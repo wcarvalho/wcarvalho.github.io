@@ -13,10 +13,23 @@ For my posts, I upload and reference material I think is useful (articles, code 
 
 ## Posts
 
+<ol>
 {% for post in site.posts %}
-  1. [{{ post.title }}]({{ post.url }}) {{ post.date | date: '%B %d, %Y' }}
-{% endfor %}
+<li>
+  <a href="{{ post.url }}">
+    {{ post.title }}
+  </a>
+  {% if post.categories.size > 0 %}
+   | <cite> {{ post.categories | join: ' ' }} </cite>
+  {% endif %}
+  {{ post.date | date: '%B %d, %Y' }}
+  {% if post.tags.size > 0 %}
+  <br>
+  <em>
+    tags: {{ post.tags | join: ' ' }}
+  </em>
+  {% endif %}
   
-<!-- <p class="message">
-{{post.excerpt}}
-</p> -->
+</li>
+{% endfor %}
+</ol>
