@@ -10,7 +10,7 @@ layout: default
 
 ##### NSF Fellowship Application
 1. <a href="/files/nsf/personal_statement.pdf">Personal Statement</a>
-<!-- 1. <a href="/files/nsf/research_statement.pdf">Research Statement</a> -->
+1. <a href="/files/nsf/research_statement.pdf">Research Statement</a>
 
 ##### Caltech REU Application
 1. <a href="/files/caltech/Research%20Interest.pdf"> Research Interests</a>
