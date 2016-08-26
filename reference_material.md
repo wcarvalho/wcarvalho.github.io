@@ -4,7 +4,7 @@ layout: default
 --- 
 
 ##### Time Management System
-1. [Calendar Script]({{ site.baseurl }}/files/time_management/time_tracker.js)
+1. [Calendar Script](https://github.com/wcarvalho/Google-Calendar-Time-Tracker)
 1. [Default Spreadsheet](https://docs.google.com/spreadsheets/d/1ELRQ8M8bjhPlvydnJxGaMsTuwaKN6YKjQJLUZ3zmKFs/pub?output=xlsx)
 
 
