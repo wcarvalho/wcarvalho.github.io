@@ -8,7 +8,7 @@ tags: [time-management, tutorial]
 
 {{ page.excerpt }}
 
-#####Table of Contents
+##### Table of Contents
 
 | [Setting Up Calendar Template]({{ site.baseurl }}{{ page.url }}#setting-up-calendar-template) | 
 | [Filling In Calendar Template]({{ site.baseurl }}{{ page.url }}#filling-in-calendar-template) |
@@ -30,7 +30,7 @@ Additionally, planning with all tasks/duties in mind ensures that I have enough 
 At first, the calendar may seem daunting. While set up can be a bit time-consuming, maintenance takes approximately 1 hr per week and adjustments are quick and painless.
  -->
 
-<!-- #####What do you need? -->
+<!-- ##### What do you need? -->
 <!-- 
 This system has two essential pieces: a calendar and a spreadsheet.
 
@@ -73,9 +73,9 @@ By planning my tasks/responsibilities ahead of time, ensure that I have enough t
 
 Overall, this system takes about 1 hour of maintanence per week and adjustments are as easy as moving events around.
 
-####Setting Up Calendar Template
+#### Setting Up Calendar Template
 
-#####Calendars
+##### Calendars
 
 Here is a full list of my current calendars. Please do not restrict yourself to these. Reflect and create calendars which you feel describe how you delineate your tasks. 
 
@@ -95,7 +95,7 @@ Here is a full list of my current calendars. Please do not restrict yourself to 
 ---
 <br>
 
-#####Categories
+##### Categories
 
 Your category labels will correspond to your current tasks/duties, but the level of categorization to which they correspond can vary. For example, if you are completing graduate school and fellowship applications, you can have <br>
 (1) **broad**: "applications" <br>
@@ -116,7 +116,7 @@ Below are categories I am currently using.
 ---
 <!-- <br> -->
 
-<!-- #####Setting Up Your Spreadsheet
+<!-- ##### Setting Up Your Spreadsheet
 
 This is fairly straightforward. You can download this [excel file](https://docs.google.com/spreadsheets/d/1ELRQ8M8bjhPlvydnJxGaMsTuwaKN6YKjQJLUZ3zmKFs/pub?output=xlsx) which contains the spreadsheet setup.
 
@@ -147,7 +147,7 @@ Now that you've filled in the spreadsheet, I will quickly cover how to use the s
  -->
 <!-- --- -->
 
-#####Calendar Template
+##### Calendar Template
 
 
 In theory, each week has 168 hours to delegate. In practice, you won't fill every single hour, but the idea is to fill most.
@@ -285,14 +285,14 @@ Remember to make your events repeat weekly. I recommend that each event repeats 
 
 <br> 
 
-####Filling In Calendar Template
+#### Filling In Calendar Template
 
 This is fairly personal and dependent on your own responsibilities. To provide some guidance and reference, I will share one week of my experience filling in my template.
 
 I have chosen this week that I return to school from winter break. I have not followed this system during; as such, I will likely face some of the same issues you will face your first time adopting this system.
 
 
-#####Preparing a list of tasks to delegate
+##### Preparing a list of tasks to delegate
 
 I list my tasks on a sheet of loose-leaf. 
 
@@ -335,7 +335,7 @@ Here is my starting setup.
 </ul>
 <br>
 
-#####Delegate your tasks
+##### Delegate your tasks
 
 **First assignment**<br>
 The first thing that I fill are the appointments/errands that I feel that I must complete that week. Since school has not started yet, I've decided to try to complete numerous errands this week.
@@ -412,7 +412,7 @@ I like to divide tasks that give me difficulty across multiple days. I find that
 
 I left the end of my day on Friday to work on general 570 tasks.
 
-#####Adjusting your calendar throughout the week
+##### Adjusting your calendar throughout the week
 
 You will likely adjust your calendar throughout the week. Once you've acclimated to this system, adjustments will likely only be from impromptu meetings and events (meeting with professor, dental appointment, spontaneity with friends, etc.). However, until you acclimate, you may re-adjust more frequently due to your own inability to follow your schedule.
 
@@ -554,4 +554,4 @@ I hope this has given you a general sense of how to set up, fill, and adjust you
 
 **Please leave any comments, suggestions, or questions below. I welcome all feedback.**<br>
 
-#####Good luck managing your time!
+##### Good luck managing your time!
