@@ -3,28 +3,26 @@ layout: page
 title: About Me
 ---
 
-### Birth of Interests
-I spent the first 6 years of my life in Bolivia, living with local indigenous groups as my mother conducted ethnography research. Afterwards, we moved to New York City (NYC). Because of the physical and cultural differences between my peers and me, I experienced social exlcusion. Combined with my parent's constant emphasis on understanding people's thoughts and behaviors as a result of their environment(s) and experiences, I became interested in the basis for people's behavior and how an "individual" is created. Ultimately, this became an interest in how the mind is able to efficiently and effectively parse massive amounts of information and produce our intelligent behavior.
+| [Birth of interests]({{ site.baseurl }}{{ page.url }}#birth-of-interests) | 
+| [Pursuing theoretical neuroscience through physics]({{ site.baseurl }}{{ page.url }}#pursuing-theoretical-neuroscience-through-physics) |
+| [Pursuing cognitive science through machine learning]({{ site.baseurl }}{{ page.url }}#pursuing-cognitive-science-through-machine-learning) |
+| [Outreach]({{ site.baseurl }}{{ page.url }}#outreach) |
 
-### Development
-While in NYC, I was fortunate to attend [Brooklyn Technical High School](https://en.wikipedia.org/wiki/Brooklyn_Technical_High_School), where, through the applied physics major, I discovered my disposition towards analytic and axiomatic reasoning. 
+### Birth of interests
+My interest in the mind was somewhat inherited from my parents. Both well-read, socially aware, and quite vocal, throughout my childhood, they constantly emphasized how people's actions were manifestations of their cumulative histories. My mother, a cultural anthropologist, made it a theme in my childhood to deconstructively analyze people as products of their environments and experiences.
 
-Afterwards, I attended <a href="http://www.stonybrook.edu/">Stony Brook University</a> for my undergrad, where I decided to pursue a physics major in order to pursue theoretical neuroscience. Inspired by [Christof Koch's](http://www.klab.caltech.edu/koch/) reductionist approach, I hoped to do research reducing the biophysical mechanisms within the brain into manifestations of information processing. 
+At the same time, I experienced the life of a foreign child in a homogenous, upper-middle class, conservative white community. Because of the physical and cultural differences between my peers and me, I constantly grappled with social exclusion. The social and psychological analysis I learned from my parents became the tools I used to cope with this. 
 
-After exploring research projects in neural engineering, cognitive neuroscience, and computational neuroscience, I realized that my interest was in what algorithms the brain uses to parse information. I won the [NSF Graduate Research Fellowship](http://sb.cc.stonybrook.edu/happenings/student-spotlight/2015-nsf-graduate-research-fellow-wilka-carvalho/) in Neuroscience, which I used to pursue a masters in computer science at the [University of Southern California](http://www.usc.edu), with the intention of combining artificial intelligence, machine learning, neuroscience, and cognitive science (among others) to uncover the brain's algorithms.
+Eventually, I realized that we, as people, are largely unaware of the behavioral patterns we exhibit. Pursuit of the origins of these patterns led me to the brain, which constantly receives and parses massive amounts of information to create a representation of the world we live in and to provide the basis for our behavior in it.
 
-### Current
-At this point in life, the following questions are  recurrent themes in my thoughts, 
+### Pursuing theoretical neuroscience through physics
+While in NYC, I was fortunate to attend Brooklyn Technical High School, where, through the applied physics major, I discovered my disposition towards analytic and axiomatic reasoning.  Later, in college, I decided to pursue physics in order to understand the brain; Its reductionist analytical approach fit my analytical preferences as it seemed like the natural science's conjugate of the deconstructive analytical approach I learned from my mother. After coming across theoretical neuroscientist and physicist Christof Koch's research attempting to reduce behavior and cognition into biophysical mechanisms, I decided my long-term pursuit would be theoretical neuroscience. 
 
-1. "how does the brain use populations of neurons to both parse and represent information?"
-3. If control is decentralized, is it at the neuronal network level or or the neuron level? 
-3. What algorithms allow decentralized information-processing to culminate into a capable - and seemingly singular - autonomous agent?
+### Pursuing cognitive science through machine learning
+In my senior year, I realized that I didn't believe in much of the theoretical neuroscience research I saw which attempted to correlate statistical properties of the brain's physical dynamics to the behavior and cognition it produced. At the same time, through discussions with a professor I worked with, I learned about machine learning, a field in which models are built that utilize learning algorithms in order to identify the structure of data and learn from it. Learning algorithms seemed like the missing piece of the puzzle necessary to understand behavior and cognition.
 
-I intend to explore these questions by following work in fields like neuroscience and cognitive science, and using this knowledge to find or discover general learning and information-processing algorithms plausible for the brain. 
-Ideally I will test hypothesis by building and studying models that incorporate reinforcement learning, neural networks, and graphs to store and a parse information.
+When my focus shifted away from biophysical mechanisms towards learning algorithms, I realized that I was more interested in cognitive science than neuroscience. My current goal is to add machine learning to my analytical repertoire. With it, I hope to study other fields like psychology, linguistics, and economics to uncover the learning algorithms employed by the brain and to be able to emulate them. Emulation would be my way of validating my speculation of what algorithms are employed by the brain (with a proxy measurement for success being the performance of the algorithm).
 
-This interest manifests in many fields. Besides those mentioned, others include:
-* Knowledge representation
-* Unsupervised learning
-* Natural language processing
-* Computer vision
+### Outreach
+I also believe that understanding what they brain's learning algorithms are and how they function will help us to combat some of the social issues our society faces. For example, the same class of algorithms may be responsible for both the generalizations humans do when creating ensembles of objects and the generalization humans do when they extrapolate small amounts of data about members of social groups to create social stereotypes. Understanding these algorithms may help us combat issues like social stereotyping, which harm many communities to whom I feel membership: Latino, black, and indigenous communities. The effects range from overt such as disproportional killing of my black community by police officers because their brains stereotype them, to covert such as inferior treatment of blacks and Hispanics based on assumed intelligence or capability.
+
