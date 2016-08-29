@@ -6,7 +6,7 @@ title: About Me
 | [Birth of interests]({{ site.baseurl }}{{ page.url }}#birth-of-interests) | 
 | [Pursuing theoretical neuroscience through physics]({{ site.baseurl }}{{ page.url }}#pursuing-theoretical-neuroscience-through-physics) |
 | [Pursuing cognitive science through machine learning]({{ site.baseurl }}{{ page.url }}#pursuing-cognitive-science-through-machine-learning) |
-| [Outreach]({{ site.baseurl }}{{ page.url }}#outreach) |
+| [Using my research for outreach]({{ site.baseurl }}{{ page.url }}#using-my-research-for-outreach) |
 
 ### Birth of interests
 My interest in the mind was somewhat inherited from my parents. Both well-read, socially aware, and quite vocal, throughout my childhood, they constantly emphasized how people's actions were manifestations of their cumulative histories. My mother, a cultural anthropologist, made it a theme in my childhood to deconstructively analyze people as products of their environments and experiences.
@@ -23,6 +23,6 @@ In my senior year, I realized that I didn't believe in much of the theoretical n
 
 When my focus shifted away from biophysical mechanisms towards learning algorithms, I realized that I was more interested in cognitive science than neuroscience. My current goal is to add machine learning to my analytical repertoire. With it, I hope to study other fields like psychology, linguistics, and economics to uncover the learning algorithms employed by the brain and to be able to emulate them. Emulation would be my way of validating my speculation of what algorithms are employed by the brain (with a proxy measurement for success being the performance of the algorithm).
 
-### Outreach
+### Using my research for outreach
 I also believe that understanding what they brain's learning algorithms are and how they function will help us to combat some of the social issues our society faces. For example, the same class of algorithms may be responsible for both the generalizations humans do when creating ensembles of objects and the generalization humans do when they extrapolate small amounts of data about members of social groups to create social stereotypes. Understanding these algorithms may help us combat issues like social stereotyping, which harm many communities to whom I feel membership: Latino, black, and indigenous. The effects range from those that are overt such as the disproportionate killing of my black community by police officers because of stereotypes surrounding black people, to those that are covert such as the inferior treatment of blacks and Hispanics because of their assumed lack of intelligence or capability.
 
