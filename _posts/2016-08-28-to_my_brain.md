@@ -12,7 +12,7 @@ but I feel frustrated<br>
 because I don't know how to understand you<br>
 <br>
 but you are within me<br>
-so all I need to do is feed you<br>
+so all I need to do is feed you your data<br>
 and you'll understand yourself<br>
 <br>
 and if I listen closely, I will as well<br>
