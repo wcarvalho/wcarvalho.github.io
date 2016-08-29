@@ -11,8 +11,9 @@ I want to understand you<br>
 but I feel frustrated<br>
 because I don't know how to<br>
 <br>
-but you are a brain<br>
-so I just need to feed you your data<br>
+but it's okay<br>
+because since you're a brain<br>
+I just need to feed you your data<br>
 and you'll understand yourself<br>
 <br>
 and since you're within me<br>
