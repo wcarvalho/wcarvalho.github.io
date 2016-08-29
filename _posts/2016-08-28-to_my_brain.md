@@ -1,7 +1,8 @@
 ---
 title: To my brain: you don't have to tell me your secrets
 comments: true
-layout: poem
+layout: post
+category: poem
 tags: [brain]
 ---
 
