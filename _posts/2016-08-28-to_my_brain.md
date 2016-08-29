@@ -9,10 +9,11 @@ tags: [brain]
 I want to understand you<br>
 <br>
 but I feel frustrated<br>
-because I don't know how to understand you<br>
+because I don't know how to<br>
 <br>
-but you are within me<br>
-so all I need to do is feed you your data<br>
+but you are a brain<br>
+so I just need to feed you your data<br>
 and you'll understand yourself<br>
 <br>
-and if I listen closely, I will as well<br>
+and since you're within me<br>
+if I listen closely, I will as well<br>
