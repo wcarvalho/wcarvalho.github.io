@@ -54,7 +54,7 @@ I'll try to keep it to the "facts". To *highlight* the utility of [Highlights](h
 
    <img class="regular materialboxed responsive-img" src="{{ site.baseurl }}/files/highlights/papers.png">
 
-5. It's extremely easy to change the color/type of any annotation or add text to any placed not
+5. It's easy to change the color/type of any annotation
 
    <img class="regular materialboxed responsive-img" src="{{ site.baseurl }}/files/highlights/ease.png">
 
