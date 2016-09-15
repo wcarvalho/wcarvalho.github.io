@@ -3,7 +3,7 @@ title: "Highlights: A markdown pdf annotator"
 comments: true
 layout: post
 category: misc
-tags: [tutorial software]
+tags: [software]
 ---
 
 
