@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What describes friendship better than Heisenberg’s Uncertainty Principle?
+comments: true
 category: poem
 tags: [physics, friendship, perception]
 ---
