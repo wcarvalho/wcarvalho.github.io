@@ -2,7 +2,7 @@
 title: "Highlights: A markdown pdf annotator"
 comments: true
 layout: post
-category: misc.
+category: misc
 tags: [tutorial software]
 ---
 
