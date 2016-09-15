@@ -20,6 +20,9 @@ author:
 # Custom vars
 version:             1.0.0
 
+#Disqus
+disqus_shortname: wilkacarvalho
+
 # Gems
 gems: 
   - jekyll-paginate
