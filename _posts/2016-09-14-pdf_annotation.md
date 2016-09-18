@@ -27,7 +27,7 @@ I'll try to keep it to the "facts". To *highlight* the utility of [Highlights](h
 ### Pros
 
 1. The annotations are saved in markdown. The impact is two-fold. (1) They are easy to edit, (2) It is easy to export to many clients **including Evernote**.
-2. Evernote has a cool feature that when you search things on google, you can concurrently perform a search on evernote. Below you can see an example where I searched for hidden variables and 2 notes with related text came up (one of which was my markdown notes from this example)
+2. Evernote has a cool feature that when you search things on google, you can concurrently perform a search on evernote (you'll need the [Evernote Web Clipper](https://evernote.com/webclipper/) installed).  Below you can see an example where I searched for hidden variables and 2 notes with related text came up (one of which was my markdown notes from this example)
 
    <img class="regular materialboxed responsive-img" src="{{ site.baseurl }}/files/highlights/evernote_google.png">
 
