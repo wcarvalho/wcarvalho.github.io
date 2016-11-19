@@ -14,22 +14,15 @@ title: Publications
   International Conference for Learning Representations (ICLR), 2016
   </p>   
 </li>
-<li>
-  <p>
-  Variational Adversarial Deep Domain Adaptation for Health Care Time Series Analysis<br>
-  Wilka Carvalho*, Sanjay Purushotham*, and Yan Liu<br>
-  Neural Information Processing Systems Workshop on Machine Learning in Healthcare (NIPS MLHC), 2016
-  </p>
-</li>
 </ol>
 
 ## Published
 <ol>
 <li>
   <p>
-    Variational Adversarial Deep Domain Adaptation for Healthcare Time Series <br>
-    Wilka Carvalho*, Sanjay Purushotham*, and Yan Liu <br>
-    Southern California Machine Learning Symposium (SCMLS), 2016
+  Variational Adversarial Deep Domain Adaptation for Health Care Time Series Analysis<br>
+  Wilka Carvalho*, Sanjay Purushotham*, and Yan Liu<br>
+  Neural Information Processing Systems Workshop on Machine Learning in Healthcare (NIPS MLHC), 2016
   </p>
 </li>
 </ol>
