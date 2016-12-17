@@ -70,5 +70,5 @@ I'll try to keep it to the "facts". To *highlight* the utility of [Highlights](h
 
 Here are some examples of markup and pdf it generated from my annotations
 
-* [markup]({{ site.baseurl }}/files/highlights/markup.md)
+* [markup]({{ site.baseurl }}/files/highlights/markup)
 * [pdf]({{ site.baseurl }}/files/highlights/pdf.pdf)
