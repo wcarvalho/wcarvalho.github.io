@@ -11,7 +11,7 @@ title: Publications
   <p>
   <a href="http://openreview.net/forum?id=rk9eAFcxg">Variational Recurrent Adversarial Deep Domain Adaptation</a><br>
   Wilka Carvalho*, Sanjay Purushotham*, and Yan Liu<br>
-  International Conference for Learning Representations (ICLR), 2016
+  International Conference for Learning Representations (ICLR), 2017
   </p>   
 </li>
 </ol>
