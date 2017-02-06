@@ -3,7 +3,7 @@ title: Knowledge of the Brain Informing Machine Learning and Vice-Versa
 excerpt: I share interesting material (papers, articles, etc.) I came across related to how brain research is complimenting machine learning research and vice-versa.
 comments: true
 layout: post
-tags: [brain, machine-learning, research]
+tags: [machine-learning, brain, research]
 ---
 
 I have just joined [Yan Liu's research group](http://www-bcf.usc.edu/~liu32/) and gave a small presentation this monday surveying current work using knoweldge about the brain to inform machine learning and vice-versa.

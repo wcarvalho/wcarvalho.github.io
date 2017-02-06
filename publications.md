@@ -5,7 +5,11 @@ title: Publications
 
 <p>*: Co-first author</p>
 
-## Under Review
+<!-- ## Under Review
+<ol>
+</ol> -->
+
+## Published
 <ol>
 <li>
   <p>
@@ -14,10 +18,6 @@ title: Publications
   International Conference for Learning Representations (ICLR), 2017
   </p>   
 </li>
-</ol>
-
-## Published
-<ol>
 <li>
   <p>
   Variational Adversarial Deep Domain Adaptation for Health Care Time Series Analysis<br>

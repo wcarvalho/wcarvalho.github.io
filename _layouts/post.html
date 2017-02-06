@@ -4,17 +4,33 @@ layout: default
 
 <div class="post">
   <h2 class="post-title">{{ page.title }}</h2>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
+  <span class="post-date">
+    {{ page.date | date_to_string }}
+    {% if page.categories.size > 0 %}
+     | <cite> {{ page.categories | join: ' ' }} </cite>
+    {% endif %}
+    {% if page.tags.size > 0 %}
+    <br>
+    <em>
+      tags: {{ page.tags | join: ' ' }}
+    </em>
+    {% endif %}
+  </span>
   {{ content }}
 </div>
 
-{% assign j = 0 %}
 <div class="related">
 <h2>Other Posts</h2>
 <ul class="related-posts">
 
+<!-- {{ page.tags }} <br><br> -->
+
+{% assign j = 0 %}
+{% for page_tag in page.tags %}
 {% for post in site.related_posts %}
-  {% if post.category == page.category %}
+  <!-- post.title {{ post.title }} | post.tags  {{ post.tags }} <br> -->
+  {% for post_tag in post.tags%}
+  {% if page_tag == post_tag %}
   <li>
     <h3>
       <a href="{{ site.baseurl }}{{ post.url }}">
@@ -24,11 +40,16 @@ layout: default
     </h3>
   </li>
   {% assign j = j | plus: 1 %}
+  {% break %}
   {% endif %}
   {% if j >= 3 %}
     {% break %}
   {% endif %}
+  {% endfor %}
+
 {% endfor %}
+{% endfor %}
+
 {% if j < 3 %}
   {% for post in site.related_posts %}
     {% if post.category != page.category %}

@@ -6,7 +6,6 @@ category: misc
 tags: [software]
 ---
 
-
 It's getting close to the end of the day and I don't feel like doing work-work, so I've decided to do some pseudo-work and write this little blog post recommending a phenomenal pdf annotator I recently discovered: [Highlights](http://highlightsapp.net/). 
 
 <img class="regular materialboxed responsive-img" src="http://highlightsapp.net/img/highlightsapp_yosemite2.jpg">

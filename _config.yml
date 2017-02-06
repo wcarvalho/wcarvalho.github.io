@@ -10,6 +10,12 @@ description:         'A small website to introduce you to myself'
 url:                 https://wcarvalho.github.io/
 baseurl:             ''
 paginate:            5
+makrdown:            kramdown
+highlighter:         rouge
+
+
+
+# markdown:            redcarpet
 
 # About/contact
 author:
@@ -23,7 +29,8 @@ version:             1.0.0
 #Disqus
 disqus_shortname: wilkacarvalho
 
-# Gems
+# # Gems
 gems: 
   - jekyll-paginate
-  - jemoji
+#   # - jemoji
+#   - redcarpet
