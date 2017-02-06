@@ -25,6 +25,13 @@ title: Publications
   Neural Information Processing Systems Workshop on Machine Learning in Healthcare (NIPS MLHC), 2016
   </p>
 </li>
+<li>
+  <p>
+  Variational Adversarial Deep Domain Adaptation for Health Care Time Series Analysis<br>
+  Wilka Carvalho*, Sanjay Purushotham*, and Yan Liu<br>
+  Neural Information Processing Systems Workshop on Machine Learning in Healthcare (NIPS MLHC), 2016
+  </p>
+</li>
 </ol>
 
 
