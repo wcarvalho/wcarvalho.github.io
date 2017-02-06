@@ -5,3 +5,10 @@ hr {
     color: #333; /* old IE */
     background-color: #333; /* Modern Browsers */
 }
+
+table.intro{
+	border: none;
+	border-bottom: 0px;
+	border-collapse: collapse;
+	outline:none;
+}
