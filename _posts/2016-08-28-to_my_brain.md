@@ -3,7 +3,7 @@ title: "To my brain: you don't have to tell me your secrets"
 comments: true
 layout: post
 category: poem
-tags: [brain introspection]
+tags: [brain, introspection]
 ---
 
 I want to understand you<br>
