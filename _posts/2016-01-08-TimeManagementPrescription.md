@@ -1,13 +1,12 @@
 ---
 title: A Prescription for Time Management
-excerpt: This system involves creating a calendar template and filling it weekly. Time assignment and adjustment is tracked using the time management tool from my last post. Here, I detail set up, and demonstrate my use of this system for one week.
 comments: true
 layout: post
 category: tutorial
 tags: [time-management]
 ---
 
-{{ page.excerpt }}
+This system involves creating a calendar template and filling it weekly. Time assignment and adjustment is tracked using the time management tool from my [last post]({{ site.baseurl }}/code/2016/01/02/TimeManagement). Here, I detail set up, and demonstrate my use of this system for one week.
 
 ##### Table of Contents
 
