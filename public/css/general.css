@@ -12,3 +12,35 @@ table.intro{
 	border-collapse: collapse;
 	outline:none;
 }
+
+
+/*body {
+  margin: 0;
+}*/
+
+/*header
+{
+  display: block;
+}*/
+
+
+.collapsible-header {
+  color: blue;
+  font-weight: bold;
+  display: block;
+  cursor: pointer;
+  min-height: 3rem;
+  line-height: 3rem;
+  padding: 0 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  /*text-decoration: line-through;*/
+}
+
+.collapsible-body {
+  display: none;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+

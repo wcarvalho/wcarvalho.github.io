@@ -168,7 +168,7 @@ Now, there are certain activities that you must do every day such as going to sl
   <li>
     <div class="header collapsible-header center"> 
     A note on sleep 
-    <i class="material-icons">play_for_work</i>
+    <!-- <i class="material-icons">play_for_work</i> -->
     </div>
     <div class="body collapsible-body">
       <p> I personally only need 7+ hours of sleep to be productive and diligent throughout the day, yet I still assign 8 hours of sleep. I have been using a Fit Bit for some time now and have found that for however long I am in bed, I typically get apx. an hour less of sleep. <br> <br>
@@ -187,7 +187,7 @@ As you create the template for your schedule, it is important that you are hones
   <li>
     <div class="header collapsible-header center"> 
     A note on being honest with yourself
-    <i class="material-icons">play_for_work</i>
+    <!-- <i class="material-icons">play_for_work</i> -->
     </div>
     <div class="body collapsible-body">
       <p> 
@@ -256,7 +256,7 @@ I assume that you do not want to dedicate all your time to one calendar. Maybe y
   <li>
     <div class="header collapsible-header center"> 
     Logic to my distribution
-    <i class="material-icons">play_for_work</i>
+    <!-- <i class="material-icons">play_for_work</i> -->
     </div>
     <div class="body collapsible-body">
       <p> 
@@ -322,7 +322,7 @@ Here is my starting setup.
   <li>
     <div class="header collapsible-header center"> 
     Why I plann my week from Saturday
-    <i class="material-icons">play_for_work</i>
+    <!-- <i class="material-icons">play_for_work</i> -->
     </div>
     <div class="body collapsible-body">
       <p>
@@ -441,7 +441,7 @@ Below, I recount my failures to uphold my schedule my first week. I hope this bo
 <li>
   <div class="header collapsible-header active center"> 
 Sunday
-<i class="material-icons">play_for_work</i>
+<!-- <i class="material-icons">play_for_work</i> -->
   </div>
   <div class="body collapsible-body">
     <p>
@@ -463,7 +463,7 @@ I woke up fairly late so I shifted my task summarizing ANNs to a later time and 
 <li>
   <div class="header collapsible-header center"> 
 Monday
-<i class="material-icons">play_for_work</i>
+<!-- <i class="material-icons">play_for_work</i> -->
   </div>
   <div class="body collapsible-body">
     <p>
@@ -477,7 +477,7 @@ That night, I stopped working around 9 and proceeded to lounge around for about 
 <li>
   <div class="header collapsible-header center"> 
 Tuesday
-<i class="material-icons">play_for_work</i>
+<!-- <i class="material-icons">play_for_work</i> -->
   </div>
   <div class="body collapsible-body">
     <p>
@@ -490,7 +490,7 @@ That night, I ended up working longer than expected and proceeding to do "Nada" 
 <li>
   <div class="header collapsible-header center"> 
   Wednesday
-  <i class="material-icons">play_for_work</i>
+  <!-- <i class="material-icons">play_for_work</i> -->
   </div>
   <div class="body collapsible-body">
     <p>
@@ -505,7 +505,7 @@ When I got home, I took a long dinner break and got back to work around 7. I end
 <li>
   <div class="header collapsible-header center"> 
   Thursday
-  <i class="material-icons">play_for_work</i>
+  <!-- <i class="material-icons">play_for_work</i> -->
   </div>
   <div class="body collapsible-body">
     <p>
@@ -520,7 +520,7 @@ Afterwards, I realized that I hadn't gone over my budget for a long time so I wa
 <li>
   <div class="header collapsible-header center"> 
   Friday
-  <i class="material-icons">play_for_work</i>
+  <!-- <i class="material-icons">play_for_work</i> -->
   </div>
   <div class="body collapsible-body">
     <p>
