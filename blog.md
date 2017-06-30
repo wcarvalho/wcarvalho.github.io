@@ -33,12 +33,12 @@ For my posts, I upload and reference material I think is useful (articles, code 
   {% endif %}
   
   {% if post.tags.size > 0 %}
-  <br>
-  <em>
+  | <em>
     <font color="red"> {{ post.tags | join: ', ' }} </font>
   </em>
   {% endif %}
   
 </li>
+<br>
 {% endfor %}
 </ol>
