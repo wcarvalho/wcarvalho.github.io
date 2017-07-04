@@ -22,7 +22,7 @@ title: Publications
   <p>
   <a href="{{ site.baseurl }}/files/nips_2016/VADA_main.pdf">Variational Adversarial Deep Domain Adaptation for Health Care Time Series Analysis</a><br>
   Wilka Carvalho*, Sanjay Purushotham*, and Yan Liu<br>
-  Neural Information Processing Systems Workshop on Machine Learning in Healthcare (NIPS MLHC), 2016
+  Neural Information Processing Systems Workshop on Machine Learning for Healthcare (NIPS ML4HC), 2016
   </p>
 </li>
 <li>
