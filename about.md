@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Me
+title: Personal Statement
 ---
 
 | [Birth of interests]({{ site.baseurl }}{{ page.url }}#birth-of-interests) | 
