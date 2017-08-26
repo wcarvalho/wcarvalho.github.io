@@ -29,7 +29,7 @@ version:             1.0.0
 #Disqus
 disqus_shortname: wilkacarvalho
 
-# # Gems
+# Gems
 gems: 
   - jekyll-paginate
 #   # - jemoji
