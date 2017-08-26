@@ -10,7 +10,7 @@ description:         'A small website to introduce you to myself'
 url:                 https://wcarvalho.github.io/
 baseurl:             ''
 paginate:            5
-makrdown:            kramdown
+markdown:            kramdown
 highlighter:         rouge
 
 
