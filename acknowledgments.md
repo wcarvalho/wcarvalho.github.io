@@ -3,7 +3,7 @@ layout: page
 title: Acknowledgements
 ---
 ## My mother, Cassandra Torrico
-I would like to thank my mother for forcing me to analyze behavior and to be socially aware at an early age. Concurrently, she emphasized that I perform well in STEM and brought me into numerous spaces where I was able to develop an interest and passion for scientific thinking. If not for this combination, I would not be at a position to pursue my current passion of studying behavior and cognition from theoretical and computational perspectives to improve social conditions of marginalized groups.
+I would like to thank my mother for forcing me to analyze behavior and to be socially and politically aware at an early age. Concurrently, she emphasized that I perform well in STEM and brought me into numerous spaces where I was able to develop an interest and passion for scientific thinking. If not for this combination, I would not be at a position to pursue my current passion of studying behavior and cognition from theoretical and computational perspectives to improve the social conditions of marginalized groups.
 
 ## [Axel Drees](http://www.stonybrook.edu/commcms/nuclear-experiment/personal/axeldrees.html) and [Alan Dion](https://www.phenix.bnl.gov/WWW/pub/awards/html/dion_alan.html)
 #### [Relativistic Heavy Ion Group](http://www.stonybrook.edu/commcms/nuclear-experiment/groups/heavy-ion-research.html), Stony Brook University
