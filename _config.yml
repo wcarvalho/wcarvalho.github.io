@@ -30,7 +30,9 @@ version:             1.0.0
 disqus_shortname: wilkacarvalho
 
 # Gems
-gems: 
+plugins: 
   - jekyll-paginate
-#   # - jemoji
+  - jekyll-sitemap
+#   - jemoji
 #   - redcarpet
+#   - jekyll-watch
