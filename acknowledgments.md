@@ -15,4 +15,4 @@ I would like to thank Ralph Adolphs for accepting me into his lab under the Mino
 
 ## [Yan Liu](http://www-bcf.usc.edu/~liu32/)
 #### [Machine Learning Lab](http://www-bcf.usc.edu/~liu32/melady.html), USC
-I would like to thank Yan Liu for accepting me into her machine learning lab despite my lack of background in machine learning and some of its fundamental fields. She saw something in me that I didn't see in myself. This opportunity led me to discover Bayesian nonparametric methods and reinforcement learning--fields that I have fallen in love with.
+I would like to thank Yan Liu for accepting me into her machine learning lab despite my lack of background in machine learning and some of its fundamental fields. She saw something in me that I didn't see in myself. I was able to gain my first publication working with her and [Sanjay Purushotham](http://www-scf.usc.edu/~spurusho/) on developing deep learning models for healthcare. This opportunity led me to discover Bayesian nonparametric methods and reinforcement learning--fields that I have fallen in love with and plan to use to model behavior and cognition.
