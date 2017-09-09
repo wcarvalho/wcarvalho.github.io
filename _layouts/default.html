@@ -34,10 +34,18 @@
  -->            </div>
           </div>
         </div>
-
       </div>
-
       <div class="container content">
+        <center>
+        {% include links.html %}
+        </center>
+        {% if page.title == "Home" %}
+          
+        {% else %}
+        <div class="title-rule">
+          <hr >
+        </div>
+        {% endif %}
         {{ content }}
       </div>
     </div>
