@@ -75,9 +75,14 @@ title: Publications
     <div class="row pub-links">
       <p>
         <a href="https://github.com/wcarvalho/dirc-detector">
-        <button type = "button" class = "btn btn-primary">
-        Code
-        </button>
+          <button type = "button" class = "btn btn-primary">
+          Code
+          </button>
+        </a>
+        <a href="{{ site.baseurl }}/files/dirc/final_thesis.pdf">
+          <button type = "button" class = "btn btn-primary">
+          Senior Thesis
+          </button>
         </a>
       </p>
     </div>
