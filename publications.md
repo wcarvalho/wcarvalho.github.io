@@ -50,6 +50,8 @@ title: Publications
     <em>
       Neural Information Processing Systems Workshop on Machine Learning for Healthcare (NIPS ML4HC),
     </em> 2016
+    <br>
+    <span style="color: red">Spotlight</span>
     </p>
   </div>
 </div>
