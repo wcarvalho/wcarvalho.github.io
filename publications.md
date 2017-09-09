@@ -64,7 +64,7 @@ title: Publications
       Modeling a Detection of internally reflected Cherenkov light (DIRC) Particle Detector for High-Multiplicity Collisions
     </strong>
     <br>
-    <span style="color: #9f30a5">Wilka Carvalho</span>\
+    <span style="color: #9f30a5">Wilka Carvalho</span>
     <br>
     <em>
       State University of New York Undergraduate Research Conference,
