@@ -3,6 +3,8 @@ layout: page
 title: Personal Statement
 ---
 
+Under Construction
+<!-- 
 | [Birth of interests]({{ site.baseurl }}{{ page.url }}#birth-of-interests) | 
 | [Pursuing theoretical neuroscience through physics]({{ site.baseurl }}{{ page.url }}#pursuing-theoretical-neuroscience-through-physics) |
 | [Pursuing cognitive science through machine learning]({{ site.baseurl }}{{ page.url }}#pursuing-cognitive-science-through-machine-learning) |
@@ -26,3 +28,4 @@ When my focus shifted away from biophysical mechanisms towards learning algorith
 ### Using my research for outreach
 I also believe that understanding what they brain's learning algorithms are and how they function will help us to combat some of the social issues our society faces. For example, the same class of algorithms may be responsible for both the generalizations humans do when creating ensembles of objects and the generalization humans do when they extrapolate small amounts of data about members of social groups to create social stereotypes. Understanding these algorithms may help us combat issues like social stereotyping, which harm many communities to whom I feel membership: Latino, black, and indigenous. The effects range from those that are overt such as the disproportionate killing of my black community by police officers because of stereotypes surrounding black people, to those that are covert such as the inferior treatment of blacks and Hispanics because of their assumed lack of intelligence or capability.
 
+ -->
