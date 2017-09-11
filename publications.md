@@ -3,7 +3,9 @@ layout: page
 title: Publications
 ---
 
-<p>*: Co-first author</p>
+### [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en)
+
+<p>* denotes co-first author</p>
 
 <div class="publications">
 <div class="row publication">
@@ -16,7 +18,7 @@ title: Publications
       <a href="{{ site.baseurl }}/files/iclr_2017/iclr2017_VADA.pdf">Variational Recurrent Adversarial Deep Domain Adaptation</a>
     </strong> 
     <br> 
-    <span style="color: #9f30a5">Wilka Carvalho*</span>, Sanjay Purushotham*, and Yan Liu
+    Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu
     <br>
     <em>
       International Conference on Learning Representations (ICLR),
@@ -46,7 +48,7 @@ title: Publications
     </strong>
     <br>
 
-    <span style="color: #9f30a5">Wilka Carvalho*</span>, Sanjay Purushotham*, and Yan Liu<br>
+    Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu<br>
     <em>
       Neural Information Processing Systems Workshop on Machine Learning for Healthcare (NIPS ML4HC),
     </em> 2016
