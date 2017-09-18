@@ -9,7 +9,6 @@ tagline:             'Aspiring Brain and Machine Learning Scientist'
 description:         'A small website to introduce you to myself'
 url:                 https://wcarvalho.github.io/
 baseurl:             ''
-paginate:            5
 markdown:            kramdown
 highlighter:         rouge
 
