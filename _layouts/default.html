@@ -10,7 +10,6 @@
 
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
-    <!-- <div class="wrap"> -->
       <div class="masthead">
         <div class="bottom-right">
           <div class="container">
@@ -36,15 +35,9 @@
         <center>
         {% include links.html %}
         </center>
-        {% if page.title == "Home" %}
         <div class="title-rule">
           <hr >
         </div>
-        {% else %}
-        <div class="title-rule">
-          <hr >
-        </div>
-        {% endif %}
         {{ content }}
       </div>
     <!-- </div> -->
