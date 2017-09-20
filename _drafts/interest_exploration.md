@@ -5,6 +5,7 @@ layout: post
 category: research
 ---
 
+
 Some useful things I forgot to mention (or didn't see written down haha)
 
 When reading cool papers, be sure to list down papers they reference which also seem interesting. Every so often, read one of these instead of papers from a professor/school of inerest. This might turn out to be something you love. It's all about smart random exploration.
