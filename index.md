@@ -11,7 +11,7 @@ My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensi
 3. [artificial neural networks](http://www.nature.com/neuro/journal/v19/n3/abs/nn.4244.html?foxtrotcallback=true) for their potential to give insight into how neural networks can incorporate mechanisms for learning hidden variables into their topology.
  <!-- (e.g., convolutional neural networks have been shown to inadvertently learn visual primitives like edges and contours). -->
 
-My long term goal is to develop and advance unified theoretical models for cognition, behavior, and learning that I may corroborate through experimental work with humans. T 
+My long term goal is to develop and advance unified theoretical models for cognition, behavior, and learning that I may corroborate through experimental work with humans  and through AI-based computer simulations. 
 
 As a member of groups underrepresented in research and academia, outreach is important to me. I encourage all young scholars (especially those from marginalized backgrounds) to reach out to me with any questions. Relevant topics include pursuing computational methods of studying the mind and brain, applying for fellowships, and graduate school. 
 <!-- To learn more about my motivations, please read my <a href=" {{ site.baseurl }}/2017/09/09/outreach-statement/">statement on outreach</a>. -->
