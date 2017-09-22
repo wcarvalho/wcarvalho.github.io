@@ -113,6 +113,20 @@ h1, h2, h3, h4, h5, h6 {
   /*margin-bottom: -px;*/
 }
 
+.top-left{
+  position: absolute;
+  top: 0;
+  right: 10rem;
+  color: white;
+  font-size: 75%;
+  font-weight: 400;
+  color: #1d80d6;
+  top: 40%;
+  transform: translate(0%,-50%);
+  text-align: justify; text-align-last: center;
+  display: none;
+}
+
 .bottom-right{
   position: absolute;
   bottom: 0;
