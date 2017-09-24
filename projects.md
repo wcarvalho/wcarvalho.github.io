@@ -65,7 +65,7 @@ title: Projects
 <a class="portfolio-link" data-toggle="modal" href="https://github.com/wcarvalho/544-smt-project">
 <div class="portfolio-hover">
 <div class="portfolio-hover-content">
-  <i class="fa fa-plus fa-3x">Final project in NLP class translating languages with a neural network</i>
+  <i class="fa fa-plus fa-3x">Final project in NLP class. Translated languages using a neural network</i>
 </div>
 </div>
 <img class="img-fluid" src="/files/projects/nmt.png" alt="">
@@ -96,7 +96,7 @@ title: Projects
 <a class="portfolio-link" data-toggle="modal" href="{{ site.baseurl }}/files/projects/theory_of_mind.pdf">
 <div class="portfolio-hover">
 <div class="portfolio-hover-content">
-  <i class="fa fa-plus fa-3x">Summer research project studying the effect of context of theory on mind</i>
+  <i class="fa fa-plus fa-3x">Summer research project studying the effect of context on theory of mind</i>
 </div>
 </div>
 <img class="img-fluid" src="/files/projects/theory_of_mind.jpg" alt="">
