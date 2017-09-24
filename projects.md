@@ -14,7 +14,7 @@ title: Projects
 <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
 <div class="portfolio-hover">
 <div class="portfolio-hover-content">
-  <i class="fa fa-plus fa-3x">Currently in collaboration with IBM Research</i>
+  <i class="fa fa-plus fa-3x">A collaboration with IBM Research (in progress)</i>
 </div>
 </div>
 <img class="img-fluid" src="/files/projects/deep_dream.jpg" alt="">
@@ -31,7 +31,7 @@ title: Projects
 <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
 <div class="portfolio-hover">
 <div class="portfolio-hover-content">
-  <i class="fa fa-plus fa-3x">Currently in collaboration with Visa Research</i>
+  <i class="fa fa-plus fa-3x">A collaboration with Visa Research (in progress)</i>
 </div>
 </div>
 <img class="img-fluid" src="/files/projects/relational_reasoning.jpg" alt="">
