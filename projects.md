@@ -1,12 +1,15 @@
 ---
-layout: page
+layout: default_pure
 title: Projects
 ---
-<br>
+
 <section class="bg-white" id="portfolio">
 <div class="container">
 <div class="row">
-
+  <div class="col-lg-12 text-center">
+    <h2 class="section-heading">Projects</h2>
+    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+  </div>
 <div class="col-md-4 col-sm-6 portfolio-item">
 <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
 <div class="portfolio-hover">
@@ -131,13 +134,14 @@ title: Projects
 
 
 <!-- --------------------------------------------------------------------- -->
-<br>
-# Fun Essays
-<br>
-<section class="bg-white" id="portfolio">
+
+<section class="bg-info" id="portfolio">
 <div class="container">
 <div class="row">
-
+  <div class="col-lg-12 text-center">
+    <h2 class="section-heading">Fun Essays</h2>
+    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+  </div>
 <div class="col-md-4 col-sm-6 portfolio-item">
 <a class="portfolio-link" data-toggle="modal" href="{{ site.baseurl }}/files/writing/justice_system.pdf">
 <div class="portfolio-hover">
@@ -176,15 +180,14 @@ title: Projects
 </section>
 
 
-<br>
-# Poetry
-<br>
 
-
-<section class="bg-white" id="portfolio">
+<section class="bg-light" id="portfolio">
 <div class="container">
 <div class="row">
-
+<div class="col-lg-12 text-center">
+  <h2 class="section-heading">Poetry</h2>
+  <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+</div>
 {% for node in site.posts %}
 {% if node.title != null %}
 {% if node.category == "poem" %}
