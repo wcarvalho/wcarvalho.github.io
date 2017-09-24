@@ -1,5 +1,8 @@
 ---
 title: "To my brain: you don't have to tell me your secrets"
+img: /files/unused/machine_mind.png
+width: 50
+caption: I just have to listen.
 comments: true
 layout: post
 category: poem

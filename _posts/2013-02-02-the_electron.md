@@ -1,6 +1,9 @@
 ---
 layout: post
 title: What describes friendship better than Heisenberg’s Uncertainty Principle?
+img: /files/writing/electron.jpg
+caption: True friendship is coexistence.
+width: 50
 comments: true
 category: poem
 tags: [physics, friendship, perception]

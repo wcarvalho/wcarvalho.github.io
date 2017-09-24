@@ -16,7 +16,12 @@ layout: default
     </em>
     {% endif %}
   </span>
-  {{ content }}
+  {% if page.category == "poem" %}
+    <center><img class="responsive-img" style="max-width: {{ page.width }}%" src="{{ page.img }}"></center>
+    <center> {{ content }} </center>
+  {% else %}
+    {{ content }}
+  {% endif %}
 </div>
 
 <div class="related">
