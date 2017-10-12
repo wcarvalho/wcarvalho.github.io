@@ -8,7 +8,7 @@ My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensi
 <!-- http://gershmanlab.webfactional.com/pubs/GershmanNiv12.pdf -->
 1. [Bayesian nonparametric methods](http://gershmanlab.webfactional.com/pubs/GershmanBlei12.pdf) for its ability to specify methods by which humans might define (potentially) infinite hidden variables in response to observed data;
 2. [reinforcement learning](https://www.princeton.edu/~nivlab/papers/NivLangdon2016.pdf) for its ability to elucidate how humans may place value on what they encounter in attempts to optimize their experience; and
-3. [artificial neural networks](http://www.nature.com/neuro/journal/v19/n3/abs/nn.4244.html?foxtrotcallback=true) for their potential to give insight into how neural networks can incorporate mechanisms for learning hidden variables into their topology.
+3. [artificial neural networks](https://www.ncbi.nlm.nih.gov/pubmed/26906502) for their potential to give insight into how neural networks can incorporate mechanisms for learning hidden variables into their topology.
  <!-- (e.g., convolutional neural networks have been shown to inadvertently learn visual primitives like edges and contours). -->
 
 My long term goal is to develop and advance unified theoretical models for cognition, behavior, and learning that I may corroborate through experimental work with humans  and through AI-based computer simulations. 
@@ -23,5 +23,5 @@ Feel free to contact me at wcarvalho92[at]gmail.com
 
 ---
 
-[^1]: I am named after [Pablo Willka Zarate](https://en.wikipedia.org/wiki/Willka), an indigenous Bolivian revolutionary that lead one of the largest indigenous rebellions in Bolivia's history.
+[^1]: I am named after [Pablo Willka Zarate](https://en.wikipedia.org/wiki/Willka), an indigenous Bolivian revolutionary that led one of the largest indigenous rebellions in Bolivia's history.
 <!-- [2^]: see [here](page-to-be-made) for a longer list. (free-energy principle, artificial neural networks) -->
