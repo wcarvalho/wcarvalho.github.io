@@ -2,7 +2,6 @@
 layout: default
 title: Publications
 ---
-
 ### [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en)
 
 <p>* denotes co-first author</p>

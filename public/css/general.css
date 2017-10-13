@@ -64,3 +64,22 @@ table.intro{
   box-sizing: border-box;
   padding: 2rem;
 }
+
+
+.dropdown:hover .dropdown-menu {
+   display: block;
+}
+
+.navbar{
+  margin-bottom: 2rem;
+}
+
+
+.navbar-nav .items{
+
+  /*text-align:center;*/
+  left: 50%;
+  /*transform: translate(100%,0%);*/
+
+}
+
