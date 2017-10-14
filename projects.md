@@ -7,7 +7,7 @@ title: Projects
 <div class="container">
 <div class="row">
   <div class="col-lg-12 text-center">
-    <h2 class="section-heading">Projects</h2>
+    <div id="projects"><h2 class="section-heading">Projects</h2></div>
     <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
   </div>
 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -139,7 +139,7 @@ title: Projects
 <div class="container">
 <div class="row">
   <div class="col-lg-12 text-center">
-    <h2 class="section-heading">Fun Essays</h2>
+    <div id="essays"><h2 class="section-heading">Fun Essays</h2></div>
     <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
   </div>
 <div class="col-md-4 col-sm-6 portfolio-item">
@@ -185,7 +185,7 @@ title: Projects
 <div class="container">
 <div class="row">
 <div class="col-lg-12 text-center">
-  <h2 class="section-heading">Poetry</h2>
+  <div id="poetry"><h2 class="section-heading">Poetry</h2></div>
   <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
 </div>
 {% for node in site.posts %}
