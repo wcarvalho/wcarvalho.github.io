@@ -1,5 +1,5 @@
 <!-- what motivates us? -->
-<h2 id="choices-motivated-value">The woman that wants to be a doctor?</h2>
+<h2 id="choices-motivated-value">The woman that wants to be a doctor</h2>
 Consider a young woman that **pursues** a career as a doctor because she **looks forward** to *"being the source of somebody's good news"* every day. This involves her placing value on states in which she believes another person has received information from her and labeled it "positive". In order to pursue this career, she needs to **reason** over a *wide range of temporal resolutions* (e.g. short-term and long-term) about **goal-directed** options that will lead her into a **consistent pattern of states** that provide her her desired reward  (telling people good news every day). 
 
 <h3 id="choices-motivated"> How are our choices and actions motivated?</h3>
