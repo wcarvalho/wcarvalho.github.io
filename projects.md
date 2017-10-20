@@ -11,7 +11,7 @@ title: Projects
     <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
   </div>
 <div class="col-md-4 col-sm-6 portfolio-item">
-<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+<a class="portfolio-link" data-toggle="modal" href="#ibm">
 <div class="portfolio-hover">
 <div class="portfolio-hover-content">
   <i class="fa fa-plus fa-3x">A collaboration with IBM Research (in progress)</i>
@@ -28,7 +28,7 @@ title: Projects
 
 
 <div class="col-md-4 col-sm-6 portfolio-item">
-<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+<a class="portfolio-link" data-toggle="modal" href="#visa">
 <div class="portfolio-hover">
 <div class="portfolio-hover-content">
   <i class="fa fa-plus fa-3x">A collaboration with Visa Research (in progress)</i>
