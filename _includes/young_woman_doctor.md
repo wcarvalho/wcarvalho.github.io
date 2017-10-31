@@ -16,9 +16,9 @@ When predicting future states to use for evaluation of current prospects, the co
 <h3 id="value-hidden-variables">How do we represent states and estimate their values?</h3>
 
 1. Does the woman represent states as a composition of hidden variables?
-2. If so, when predicting future states, how does she lead to decide **which** variables to useful for value-estimation?
+2. If so, when predicting future states, how does she learn to decide **which** variables to useful for value-estimation?
 2. Does she impose some sort of structure over the hidden variable composition?
-3. How does she learn to place value on a state's hidden variable constituents? This is closely related to the problem of reinforcement learning of **credit assignment**.
+3. How does she learn to place value on a state's hidden variable constituents? This is closely related to the problem in reinforcement learning of **credit assignment**.
 4. If learning occurs by updating state-value, how is value updated for a state’s constituents? This seems closely related to the problem in reinforcement learning of credit assignment.
 <!-- 4. If the value she has for states is a function of what she has previously valued, how is this value transferred both to a state and its constituents? -->
 <!-- 5. Is it a question of state-value estimation or hidden-variable-value estimation? If the latter, how do we decompose states into their constituents? -->
