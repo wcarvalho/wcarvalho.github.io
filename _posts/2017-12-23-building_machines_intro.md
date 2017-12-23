@@ -37,7 +37,7 @@ I've wanted to read this paper for sometime. One of my central goals as an aspir
 
 ## Introduction
 
-The purpose of this series is to highlight the challenges with building machines that learn and think like people. As such, I will skip aspects of the paper that generally review deep learning. Please feel free to read the paper for that material. The key idea: thanks to tremendous skill in pattern recognition, deep neural networks have achieved state-of-the-art performance in numerous domains including computer vision {% citbuilding_machines_intro %}, speech modeling, and complex control problems.
+The purpose of this series is to highlight the challenges with building machines that learn and think like people. As such, I will skip aspects of the paper that generally review deep learning. Please feel free to read the paper for that material. The key idea: thanks to tremendous skill in pattern recognition, deep neural networks have achieved state-of-the-art performance in numerous domains including computer vision, speech modeling, and complex control problems.
 
 While neural networks perform very well on many tasks, they have limitations such as their requirement of large training sets and their inability to generalize knowledge well across tasks. This is, in part, because they (at least, in their current form) rely on stasticial pattern recognition. An alternative, which suggests is a key ingredient of human learning, is a model-building approach. They argue that intelligent cognition relies on building and using causal models to understand, explain, simulate, and predict the world. Despite this contrast, these two methods are certainly not orthogonal and machines can benefit from both, synergistically.
 
@@ -66,4 +66,3 @@ Somewhat complementary to both, another school of thought - and what would becom
 Researchers of PDP and neural networks showed that this method of representation learning could, with minimal constraints and inductive biases, learn structured knowledge representations given enough data. They have shown that models could be trained to emulate the rule-like and structured behaviors that characterize cognition. In recent history - perhaps more strikingly - researchers have found that the high-level representations from modern convolutional neural networks can predict the neural response patterns in human and macaque IT cortex. That is, representations learned by generic neural networks seem to align with human representations.
 
 While neural networks have been shown to learn features reminiscent of those learned by humans, how far towards truly human-like learning and thinking can we go by simply feeding large amounts of data to generic neural networks?
-
