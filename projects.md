@@ -139,9 +139,29 @@ title: Projects
 <div class="container">
 <div class="row">
   <div class="col-lg-12 text-center">
-    <div id="essays"><h2 class="section-heading">Fun Essays</h2></div>
+    <div id="essays"><h2 class="section-heading">Essays</h2></div>
     <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
   </div>
+
+
+<div class="col-md-4 col-sm-6 portfolio-item">
+<a class="portfolio-link" data-toggle="modal" href="https://medium.com/@wcarvalho92/a-statement-on-the-importance-of-representation-of-minority-groups-be400d98686">
+<div class="portfolio-hover">
+<div class="portfolio-hover-content">
+  <i class="fa fa-plus fa-3x">What growing up Afro-Latino in predominantly Caucasian and Asian communities taught me</i>
+</div>
+</div>
+<img class="img-fluid" src="/files/writing/outreach.jpeg" alt="">
+</a>
+<div class="portfolio-caption">
+  <h4>Why Minority Representation is Important to Me</h4>
+  <p class="text-muted">Outreach</p>
+</div>
+</div>
+
+
+
+
 <div class="col-md-4 col-sm-6 portfolio-item">
 <a class="portfolio-link" data-toggle="modal" href="{{ site.baseurl }}/files/writing/justice_system.pdf">
 <div class="portfolio-hover">

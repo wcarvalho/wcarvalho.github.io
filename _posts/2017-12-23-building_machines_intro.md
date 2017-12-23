@@ -22,7 +22,7 @@ Note: ideas and opinions that are my own and not of the article will be in an <f
 
 | [Motivation for series](#personal-motivation-for-post) |
 | [Introduction](#introduction) |
-| [Historical Brain-Inspiration in AI](#historical-brain-inspiration-in-ai) |
+| [History of Brain-Inspiration in AI](#history-of-brain-inspiration-in-ai) |
 
 ## Motivation for series
 ### (Feel free to skip)
