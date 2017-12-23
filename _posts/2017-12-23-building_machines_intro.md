@@ -3,21 +3,11 @@ title: Building Machines that Learn and Think Like People (pt 1. Introduction an
 <!-- img: /files/writing/abyss.jpg -->
 <!-- width: 75 -->
 <!-- caption: My perfect world. -->
-layout: post
+layout: building_machines
 comments: true
 category: review
 tags: [cognitive-science, deep-learning]
 ---
-Note: ideas and opinions that are my own and not of the article will be in an <font color="grey"><em>italicized grey</em></font>.<br>
-<strong>Also, please ask questions if anything is unclear! I am happy to clarify or point you to clarifying material!</strong>
-
-# Series Table of Contents
-[Part 1: Introduction and History]({{ site.baseurl }}/review/2017/12/23/building_machines_intro)<br>
-[Part 2: Challenges for Building Human-Like Machines]({{ site.baseurl }}/review/2017/12/22/building_machines_challenges)<br>
-[Part 3: Developmental Software]({{ site.baseurl }}/review/2017/12/22/building_machines_developmental)<br>
-[Part 4: Learning as Rapid Model-Building]({{ site.baseurl }}/review/2017/12/22/building_machines_learning)<br>
-[Part 5: Thinking Fast]({{ site.baseurl }}/review/2017/12/22/building_machines_thinking)<br>
-
 
 ### Article Table of Contents
 

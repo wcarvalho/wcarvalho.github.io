@@ -12,7 +12,7 @@ layout: default
     {% if page.tags.size > 0 %}
     <br>
     <em>
-      tags: {{ page.tags | join: ' ' }}
+      tags: {{ page.tags | join: ',' }}
     </em>
     {% endif %}
   </span>
@@ -23,6 +23,12 @@ layout: default
     {{ content }}
   {% endif %}
 </div>
+
+<h3>Thank you for reading. Please leave any comments or thoughts below or, alternatively, feel free to email me at <a href="mailto:wcarvalho92@gmail.com">wcarvalho92@gmail.com</a>.</h3>
+
+{% if page.comments %}
+  {% include disqus_comments.html %}
+{% endif %}
 
 <div class="related">
 <h2>Other Posts</h2>
@@ -75,7 +81,3 @@ layout: default
 {% endif %}
 </ul>
 </div>
-
-{% if page.comments %}
-  {% include disqus_comments.html %}
-{% endif %}
