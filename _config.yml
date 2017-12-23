@@ -41,7 +41,3 @@ exclude:
   - LICENSE
   - README.md
   - Rakefile
-  
-#   - jemoji
-#   - redcarpet
-#   - jekyll-watch

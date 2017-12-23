@@ -8,7 +8,8 @@ comments: true
 category: review
 tags: [cognitive-science, deep-learning]
 ---
-Note: ideas and opinions that are my own and not of the article will be in an <font color="grey"><em>italicized grey</em></font>.
+Note: ideas and opinions that are my own and not of the article will be in an <font color="grey"><em>italicized grey</em></font>.<br>
+<strong>Also, please ask questions if anything is unclear! I am happy to clarify or point you to clarifying material!</strong>
 
 # Series Table of Contents
 [Part 1: Introduction and History]({{ site.baseurl }}/review/2017/12/23/building_machines_intro)<br>
@@ -67,6 +68,6 @@ Researchers of PDP and neural networks showed that this method of representation
 
 While neural networks have been shown to learn features reminiscent of those learned by humans, how far towards truly human-like learning and thinking can we go by simply feeding large amounts of data to generic neural networks?
 
-<br>
+# References
 {% bibliography --file building_machines_intro %}
 
