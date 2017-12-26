@@ -6,7 +6,9 @@ title: Building Machines that Learn and Think Like People (Resources)
 layout: building_machines
 comments: true
 category: review
-tags: [cognitive-science, deep-learning]
+tags: [cognitive-science, machine-learning, brain, deep-learning]
+hide: true
+
 ---
 
 ## Sam Gershman: Building Machines that Learn and Think Like People

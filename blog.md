@@ -18,6 +18,7 @@ For my posts, I upload and reference material I think is useful (articles, code 
 
 <ol>
 {% for post in site.posts %}
+{% if post.hide != true %}
 <li>
   <a href="{{ post.url }}">
     {{ post.title }}
@@ -40,5 +41,6 @@ For my posts, I upload and reference material I think is useful (articles, code 
   
 </li>
 <br>
+{% endif %}
 {% endfor %}
 </ol>

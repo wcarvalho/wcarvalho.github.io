@@ -1,5 +1,6 @@
 ---
 layout: default
+
 ---
 
 <div class="post">
@@ -30,54 +31,5 @@ layout: default
   {% include disqus_comments.html %}
 {% endif %}
 
-<div class="related">
-<h2>Other Posts</h2>
-<ul class="related-posts">
-
-<!-- {{ page.tags }} <br><br> -->
-
-{% assign j = 0 %}
-{% for page_tag in page.tags %}
-{% for post in site.related_posts %}
-  <!-- post.title {{ post.title }} | post.tags  {{ post.tags }} <br> -->
-  {% for post_tag in post.tags%}
-  {% if page_tag == post_tag %}
-  <li>
-    <h3>
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-        <small>{{ post.date | date_to_string }}</small>
-      </a>
-    </h3>
-  </li>
-  {% assign j = j | plus: 1 %}
-  {% break %}
-  {% endif %}
-  {% if j >= 3 %}
-    {% break %}
-  {% endif %}
-  {% endfor %}
-
-{% endfor %}
-{% endfor %}
-
-{% if j < 3 %}
-  {% for post in site.related_posts %}
-    {% if post.category != page.category %}
-    <li>
-      <h3>
-        <a href="{{ site.baseurl }}{{ post.url }}">
-          {{ post.title }}
-          <small>{{ post.date | date_to_string }}</small>
-        </a>
-      </h3>
-    </li>
-    {% assign j = j | plus: 1 %}
-    {% endif %}
-    {% if j >= 3 %}
-      {% break %}
-    {% endif %}
-  {% endfor %}
-{% endif %}
-</ul>
-</div>
+<h2>Related Posts</h2>
+{% include related_posts.html %}
