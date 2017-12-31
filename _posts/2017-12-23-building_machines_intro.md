@@ -60,7 +60,7 @@ Somewhat complementary to both, another school of thought - and what would becom
 
 Researchers of PDP and neural networks showed that this method of distributed representation learning could, with minimal constraints and inductive biases[^8], learn structured knowledge representations given enough data. They have shown that models could be trained to emulate the rule-like and structured behaviors that characterize cognition {% cite dqn --file building_machines_intro %}. In recent history - perhaps more strikingly - researchers have found that the representations learned by artificial neural networks can predict the neural response patterns in the human and macaque cortex {% cite deep_it --file building_machines_intro %}. That is, representations learned by generic neural networks seem to align with human representations.
 
-Modern neural networks fed large amounts of data for pattern recognition tasks have been shown to learn representations reminiscent of those learned or used by humans. But how far towards truly human-like learning and thinking can we go by simply feeding large amounts of data to generic neural networks?
+Modern neural networks fed large amounts of data for pattern recognition tasks have been shown to learn representations reminiscent of those learned or used by humans. <strong>But how far towards truly human-like learning and thinking can we go by simply feeding large amounts of data to generic neural networks?</strong>
 
 <br>
 # References
