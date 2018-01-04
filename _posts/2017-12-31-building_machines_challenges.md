@@ -11,7 +11,6 @@ tags: [cognitive-science, machine-learning, brain, deep-learning]
 | [Hand-Written Character Recognition](#hand-written-character-recognition) |
 | [Atari Game Frostbite](#atari-game-frostbite) |
 | [References](#references) |
-| [Glossary](#glossary) |
 
 In the first post of this series, I left you with the question of whether generic neural networks with minimal constraints and inductive biases could learn and think in a human-like manner given sufficient data. <font color="grey"><em>This is actually a point of contention between people in the field, with some citing the pervasive cortical micro-column as evidence for <a href="https://www.youtube.com/watch?v=yVT7dO_Tf4E&t=1378s">highly regular structure across the brain</a>, and others arguing that this is an extreme view.</em></font>
 
@@ -22,7 +21,7 @@ A popular training dataset for neural networks is the MNIST dataset, where the t
 
 ![minst](https://www.tensorflow.org/images/mnist_digits.png)
 
-There are 10 digits in the training set (0-9), and each digit has 6,0000 examples. Many machine learning algorithms (not just neural networks) can achieve remarkable performance on this task. However, to achieve this remarkable performance, they learn the difference between character through thousands of examples. {% cite lake --file building_machines_challenges %} argue that humans on the other hand can learn digits with far fewer examples. Further, we not only learn to recognize a digit, we learn a concept for a digit, which we can then generalize to new tasks beyond recognition. For example, we can generate (draw) new instances of the class or identify its core attributes.
+There are 10 digits in the training set (0-9), and each digit has 6,0000 examples. Many machine learning algorithms (not just neural networks) can achieve remarkable performance on this task. However, to achieve this remarkable performance, they learn the difference between character through thousands of examples. {% cite lake --file building_machines_challenges %} argue that humans on the other hand can learn digits with far fewer examples. Further, we not only learn to recognize a digit, we learn a **concept** for a digit, which we can then generalize to new tasks beyond recognition. For example, we can generate (draw) new instances of the class or identify its core attributes.
 
 {% cite lake --file building_machines_challenges %} argue that character recognition is a good domain to compare human and machine performance because, in general, characters lie on a simple-2D space (and are thus easy to analyze) and are often presented un-occluded. Of all object recognition tasks, this has the most promise for the development of a human-like algorithm in the near future. However, human-like algorithms will need to depart from standard machine learning algorithms for this task.
 
@@ -60,7 +59,7 @@ Finally, another striking difference is found when comparing how the DQN and how
     2. Pass each level at the last possible second
     3. Touch each ice float once and only once
 
-In order to build machines that learn like humans, we need to address the appropriate problems. The comparison above is unfair because humans extensively utilize rich representations of prior knowledge whereas the DQN learns completely from scratch. However, humans rarely learn tasks from scratch, at least not since infancy.
+In order to build machines that learn like humans, we need to address the appropriate problems. Human learns fundamentally take on different tasks than today's neural networks, and if we want to build machines that learn and think like people, they must address tasks that humans do. The comparison above is unfair because humans extensively utilize rich representations of prior knowledge whereas the DQN learns completely from scratch. However, humans rarely learn tasks from scratch, at least not since infancy.
 <!-- , and especially not many of the tasks that modern AI systems as tasked with. -->
 To work towards human-like learning, one key question is, <strong>"how do we learn rich representations of knowledge that may be re-purposed for new tasks so that they can be solved quickly?"</strong>
 
