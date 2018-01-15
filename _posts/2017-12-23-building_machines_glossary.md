@@ -32,12 +32,12 @@ A model vaguely resembling a biological neural network that learns how to map in
 Also, I use "Neural Networks", "Artificial Neural Networks", and "Deep Learning" interchangeably. They all refer to artificial neural networks. When referring to the brain's networks, I say "biological neural networks".
 
 ## Causal Models
-Causal models attempt to abstractly describe the real world process that produces an observation. For example, the model below represents drawing characters as combining stroked of a pen in a particular sequence.
+Causal models attempt to abstractly describe the real world process that produces an observation. For example, the model below represents drawing characters as combining strokes of a pen in a particular sequence.
 
 ![bpl]({{ site.baseurl }}/files/posts/building_machines_like_people/bpl.png)
 
 ## Generative models
-Generative models attempt to describe a process for generating data. However, unlike [causal models](#causal-models), they do not attempt to model the real world process that generated the data. In the example above of characters above, it would be sufficient if a generative model simply learned to predict the pixels associated with a character and not the strokes that might have produced it.
+Generative models attempt to describe a process for generating data. However, unlike [causal models](#causal-models), they do not attempt to model the real world process that generated the data. In the example of characters above, it would be sufficient if a generative model simply learned to predict the pixels associated with a character and not the strokes that might have produced it.
 
 ## Inference
 When A typically causes B, you can predict that B will come from A, and you can do *inference* that A was the **cause** of B. For example if A="its raining" and B="Bob wears boots". You might see that it's raining and **predict** Bob will be wearing boots or you might see that Bob is wearing boots and **infer** its probably raining.
@@ -49,20 +49,20 @@ Model-free algorithms use experience to directly learn quantities while model-ba
 
 
 ## Symbolic representations
-Symbols can be thought of as having variables which represent different quantities. For example, every letter of the alphabet can be seen as a symbol. Likewise for words in our vocabulary.
+Symbols can be thought of as variables that represent different quantities. For example, every letter of the alphabet can be seen as a symbol. Likewise, words in our vocabulary.
 
 
 ## Sub-symbolic representations
-A representation is sub-symbolic if its constituents are not symbolic. For example, you could represent words as points in space like in the example above. Here, each component of the word is a real number. A symbolic representation would represent the words as their own symbols.
+A representation is sub-symbolic if its constituents are not symbolic. For example, you could represent words as points in space like in the example below. Here, each constituent of the word is a real number (an x or y coordinate). This differs from a symbolic representation which would represent the words as symbols in and of themselves.
 
 ![word2vec](http://suriyadeepan.github.io/img/seq2seq/we1.png)
 
 
 ## Distributed Representations
-A distributed representation is one where different computational units hold different parts of a representation. In the example of neurons in a neural network, every neuron in a layer by itself one aspect of a representation you care about. For example, in the plot above words are represented by 2 coordinates. Here, each neuron could hold the value for one coordinated, so the representation for the word is distributed **across** the neurons.
+A distributed representation is one where different computational units hold different parts of a representation. In the example of neurons in a neural network, every neuron in a layer might by itself hold one aspect of a representation you care about. For example, in the plot above words are represented by 2 coordinates (x and y). Here, each neuron could hold the value for one coordinate (one neuron for x, the other for y), so the representation for the word is distributed **across** the neurons.
 
 ## Inductive Biases
-Inductive Biases are the assumptions your model makes about the relationship between its inputs and outputs for **new, unseen** inputs. For example, a model that learns to represent visual concepts might have the inductive bias that objects are composed of learnable parts and relations, as with the segway below which can be decomposed into two wheels connected by a platform, which provides the base for a post, which holds the handlebars, etc.
+Inductive Biases are the assumptions your model makes about the relationship between its inputs and outputs for **new, unseen** inputs. For example, a model that learns to represent visual concepts might have the inductive bias that objects are composed of learnable parts and relations. With the example of the segway below, it could be decomposed into two wheels connected by a platform, which provides the base for a post, which holds the handlebars, etc.
 
 <img height="200px" src="{{ site.baseurl }}/files/posts/building_machines_like_people/segway.png">
 
