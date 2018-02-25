@@ -14,7 +14,7 @@ My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensi
 My long term goal is to develop and advance unified theoretical models for cognition, behavior, and learning that I may corroborate through experimental work with humans  and through AI-based computer simulations. 
 
 As a member of groups underrepresented in research and academia, outreach is important to me. I encourage all young scholars (especially those from marginalized backgrounds) to reach out to me with any questions. Relevant topics include (but are not limited to) pursuing computational methods of studying the mind and brain, pursuing undergraduate research, applying for fellowships, and graduate school. 
-I am especially interested in increasing minority representation in STEM, so please feel free to reach out from me if you’re a young minority scholar pursuing STEM. To learn more about my interests here, please read [this post](https://medium.com/@wcarvalho92/a-statement-on-the-importance-of-representation-of-minority-groups-be400d98686). 
+I am especially interested in increasing minority representation in STEM, so please feel free to reach out if this applies to you or if you are organizing any relevant programs. To learn more about my interests here, please read [this post](https://medium.com/@wcarvalho92/a-statement-on-the-importance-of-representation-of-minority-groups-be400d98686). 
 <!-- To learn more about my motivations, please read my <a href=" {{ site.baseurl }}/2017/09/09/outreach-statement/">statement on outreach</a>. -->
 
 I am eternally curious. Here are some [questions that keep me up at night]({{ site.baseurl }}/questions) in case you’re interested.
