@@ -18,7 +18,7 @@ $$Definitions$$:
 3. $\mathbf{y}$: activations at next layer
 2. $A$: matrix defining dendritic connections from $\mathbf{x}$ to $\mathbf{y}$
 
-In a simple, feed-forward neural network, we get activations at a layer $\mathbf{y}$ by multiplying activations at the previous layer $\mathbf{x}$ with a matrix $A$ that defines their dendritic connections. If we think about this in the language of linear algebra, the dendritic connections between layers $A$ define a *column space* and the output activations $\mathbf{y}$ are a vector *within* that column space. The activations at the previous layer $\mathbf{x}$ then **define** how columns within the column space of $A$ are combined to produce $\mathbf{y}$. 
+In a simple, feed-forward neural network, we get activations at a layer $\mathbf{y}$ by multiplying activations at the previous layer $\mathbf{x}$ with a matrix $A$ that defines their dendritic connections. If we think about this in the language of linear algebra, the dendritic connections between layers $A$ define a *column space* and the output activations $\mathbf{y}$ are a vector *within* that column space. The activations at the previous layer $\mathbf{x}$ then **define** how vectors within the column space of $A$ are combined to produce $\mathbf{y}$. 
 
 A popular activation function is relu:
 
