@@ -2,8 +2,8 @@
 title: "Dendrites in Artificial Neural Networks define a Column Space?"
 comments: true
 layout: post
-category: deep-learning, machine-learning, linear-algebra
-tags: [commentary]
+category: commentary
+tags: [deep-learning, machine-learning, linear-algebra]
 ---
 
 
