@@ -7,13 +7,13 @@ tags: [deep-learning, machine-learning, linear-algebra]
 ---
 
 
-I'm currently taking a linear algebra course. The ideas of bases, spans, column spaces, etc. are giving me interesting new ways to think about how neural networks function. I thought I'd share them here. As an example, let's look at a single neural network layer with the relu non-linear activation $f(x)=max(0, x)$.
+I'm currently taking a linear algebra course. The ideas of bases, spans, column spaces, etc. are giving me interesting new ways to think about how neural networks function. I thought I'd share one here.
 
-Let's recall the definition for a column space from linear algebra. A column space is the set of all linear combinations of vectors in a matrix, i.e. their *span*. I chose to forgo discussion on the rank of the matrix or independence of these vectors. Let's just think about the space defined by all linear combinations of these vectors.
+Let's recall the definition for a column space. A column space is the set of all linear combinations of vectors in a matrix, i.e. their *span*. I chose to forgo discussion on the rank of the matrix or independence of these vectors. Let's just think about the space defined by all linear combinations.
 
 <img class="regular materialboxed responsive-img" src="{{ site.baseurl }}/files/posts/misc/simple_nn.png">
 
-$$Definitions$$:
+**Definitions**:
 1. $\mathbf{x}$: activations at starting layer
 3. $\mathbf{y}$: activations at next layer
 2. $A$: matrix defining dendritic connections from $\mathbf{x}$ to $\mathbf{y}$
