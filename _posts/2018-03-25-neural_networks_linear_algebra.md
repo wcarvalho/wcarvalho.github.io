@@ -1,5 +1,5 @@
 ---
-title: "Dendrites in Artificial Neural Networks define a Column Space?"
+title: "Synapses in Artificial Neural Networks define a Column Space?"
 comments: true
 layout: post
 category: commentary
@@ -16,9 +16,9 @@ Let's recall the definition for a column space. A column space is the set of all
 **Definitions**:
 1. $\mathbf{x}$: activations at starting layer
 3. $\mathbf{y}$: activations at next layer
-2. $A$: matrix defining dendritic connections from $\mathbf{x}$ to $\mathbf{y}$
+2. $A$: matrix defining synaptic connections from $\mathbf{x}$ to $\mathbf{y}$
 
-In a simple, feed-forward neural network, we get activations at a layer $\mathbf{y}$ by multiplying activations at the previous layer $\mathbf{x}$ with a matrix $A$ that defines their dendritic connections. If we think about this in the language of linear algebra, the dendritic connections between layers $A$ define a *column space* and the output activations $\mathbf{y}$ are a vector *within* that column space. The activations at the previous layer $\mathbf{x}$ then **define** how vectors within the column space of $A$ are combined to produce $\mathbf{y}$. 
+In a simple, feed-forward neural network, we get activations at a layer $\mathbf{y}$ by multiplying activations at the previous layer $\mathbf{x}$ with a matrix $A$ that defines their synaptic connections. If we think about this in the language of linear algebra, the synaptic connections between layers $A$ define a *column space* and the output activations $\mathbf{y}$ are a vector *within* that column space. The activations at the previous layer $\mathbf{x}$ then **define** how vectors within the column space of $A$ are combined to produce $\mathbf{y}$. 
 
 A popular activation function is relu:
 
@@ -32,6 +32,6 @@ Thinking about this was pretty mind blowing for me.
 
 First, I always thought neurons held all information and that it was routed through layers of a neural network. But this seems to imply that dendrites themselves hold a **massive** amount of information: **they define the column space that activations can belong to!!**
 
-Second, backpropagation is an iterative method of changing dendritic connections. In this perspective, this means backpropagation is an iterative method of changing (perhaps perfecting?) the **column space** defined by dendrites?
+Second, backpropagation is an iterative method of changing synaptic connections. In this perspective, this means backpropagation is an iterative method of changing (perhaps perfecting?) the **column space** defined by dendrites?
 
 If you are knowledgeable about neural networks, linear algebra, or research at their intersection, I'd love if you could contribute to this discussion.
