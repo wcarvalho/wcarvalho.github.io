@@ -32,6 +32,6 @@ Thinking about this was pretty mind blowing for me.
 
 First, I always thought neurons held all information and that it was routed through layers of a neural network. But this seems to imply that dendrites themselves hold a **massive** amount of information: **they define the column space that activations can belong to!!**
 
-Second, backpropagation is an iterative method of changing synaptic connections. In this perspective, this means backpropagation is an iterative method of changing (perhaps perfecting?) the **column space** defined by dendrites?
+Second, backpropagation is an iterative method of changing synaptic connections. In this perspective, this means backpropagation is an iterative method of changing (perhaps perfecting?) the **column space** defined by synapses?
 
 If you are knowledgeable about neural networks, linear algebra, or research at their intersection, I'd love if you could contribute to this discussion.
