@@ -12,8 +12,6 @@ tags: [time-management]
 (A "category" is simply a recurrent word in event titles.)
 <br>
 
-<!-- | [Installation Instructions]({{ site.baseurl }}{{ page.url }}#installation-instructions)| -->
-
 <table>
   <tr>
     <td>
@@ -63,5 +61,8 @@ tags: [time-management]
 
 **Good luck managing your time! Please leave any comments, suggestions, or questions below.**
 
-##### For details on how I use this tool, check out [this post]({{ site.baseurl }}/tutorial/2016/01/08/TimeManagementPrescription/).
 
+
+##### For details on how I use this tool, check out [this post]({{ site.baseurl }}/tutorial/2016/01/08/TimeManagementPrescription/). You can find my current Google Sheet below
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcHjQoPzIuDTQbt2knu8y2FJvwKLgQFqS9oerIDCFsqDL_yhErmO4MgJOI_6oBjMYB5eM85PMyoRb5/pubhtml?widget=true&amp;headers=false" width="100%" height="500px"></iframe>
