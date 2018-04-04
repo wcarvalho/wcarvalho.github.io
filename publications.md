@@ -24,15 +24,6 @@ title: Publications
       Submitted to International Conference on Machine Learning (ICML),
     </em> 2018
     </p>
-    <div class="row pub-links">
-      <p>
-        <a href="{{ site.baseurl }}/research/2017/04/23/vrada/">
-        <button type = "button" class = "btn btn-primary">
-        Blog Post
-        </button>
-        </a>
-      </p>
-    </div>
 
   </div>
 </div>
