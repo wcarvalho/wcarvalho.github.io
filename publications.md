@@ -6,6 +6,39 @@ title: Publications
 
 <p>* denotes co-first author</p>
 
+<h1>Preprints</h1>
+<div class="publications">
+<div class="row publication">
+  <div class="col-sm-3 center">
+    <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/icml_2018_thumbnail.png">
+  </div>
+  <div class="col-sm-7 center">
+    <p>
+    <strong>
+      Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering
+    </strong> 
+    <br> 
+    <span style="color: #9f30a5">Wilka Carvalho*</span>, Bryant Chen*, Benjamin Edwards, Taesung Lee, Ian Molloy, Heiko Ludwig, Jaehoon Safavi
+    <br>
+    <em>
+      Submitted to International Conference on Machine Learning (ICML),
+    </em> 2018
+    </p>
+    <div class="row pub-links">
+      <p>
+        <a href="{{ site.baseurl }}/research/2017/04/23/vrada/">
+        <button type = "button" class = "btn btn-primary">
+        Blog Post
+        </button>
+        </a>
+      </p>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<h1>Publications</h1>
 <div class="publications">
 <div class="row publication">
   <div class="col-sm-3 center">
@@ -90,3 +123,4 @@ title: Publications
   </div>
 </div>
 </div>
+

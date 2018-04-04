@@ -4,7 +4,7 @@ excerpt: Time Tracker is a menu addition to Google spreadsheet that allows you t
 comments: true
 layout: post
 category: code
-tags: [time-management]
+tags: [time-management, efficient-working]
 ---
 
 <!-- I present a time managegement tool along with a system I've made for using it. The tool uses a spreadsheet to track time assignment from different categories across different calendars. My system involves setting up a calendar template that I fill weekly, and using this tool to track time assignment and adjustment.  -->
