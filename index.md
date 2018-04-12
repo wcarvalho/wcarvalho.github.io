@@ -18,6 +18,8 @@ As a member of groups underrepresented in research and academia, outreach is imp
 
 Feel free to contact me at wcarvalho92[at]gmail.com
 
+Here are a collection of [resources for pursuing machine learning, computational cognitive science, and computational neuroscience](https://wcarvalho.github.io/ML-Brain-Resources/) that I maintain.
+
 ## News
 {% include news.html %}
 
