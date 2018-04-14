@@ -3,7 +3,7 @@ title: The Pitfalls of Learning Quickly
 layout: post
 comments: true
 category: commentary
-tags: [stereotyping, cognitive-science]
+tags: [stereotyping, cognitive-science, social]
 ---
 
 ## [The Pitfalls of Learning Quickly: when Generalizing turns into Stereotyping](https://medium.com/@wcarvalho92/success-vs-failure-generalization-vs-stereotyping-40de0713ab5d) 
