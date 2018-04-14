@@ -1,5 +1,5 @@
 ---
-title: Personal Truths
+title: Why We Shouldn't Treat Conclusions as Truth
 comments: true
 layout: post
 comments: true
@@ -43,7 +43,7 @@ My point is that this situation is complex and there are a multitude of factors 
 
 Caption: Here, solid lines indicate given knowledge, a dashed lines indicate unknowns. I.e., we know A, B, and that A "leads" to B. But we potentially don't know about the existence of C or about how or that C leads to B.
 
-There are a few things that we don't think about when we draw conclusions. First, there are other latent, confounding factors (such as C or D) that may exist. Even if we know about the existence of C or D, we may not know about the causal relation they have to our observed effect, B. Put another way, we really don't know if C or D exist or about their impact on B. Additionally, it's hard to measure which components of A and B are shared (e.g. "fame" of Kim), if they differ, and by how much. We don't use precise quantities but **rough** approximations. Finally, the casual relationship we construct (e.g. that between A and B) involves inductive leaps that sway over/ignore many details. This is all to say, THERE ARE MANY REASONS WHY WE SHOULD BE SUSPECT OF OUR CONCLUSIONS.
+There are a few things that we don't think about when we draw conclusions. First, there are other latent, confounding factors (such as C or D) that may exist. Even if we know about the existence of C or D, we may not know about the causal relation they have to our observed effect, B. Put another way, we really don't know if C or D exist or about their impact on B. Additionally, it's hard to measure which components of A and B are shared (e.g. "fame" of Kim), if they differ, and by how much. We don't use precise quantities but **rough** approximations. Finally, the casual relationship we construct (e.g. that between A and B) involves inductive leaps that sway over/ignore many details. This is all to say, THERE ARE MANY REASONS WHY WE SHOULD BE SUSPECT OF OUR CONCLUSIONS AND NOT TREAT THEM AS TRUTH.
 
 
 <!-- 
