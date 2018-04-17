@@ -41,7 +41,7 @@ While this is **hilarious**, it relies on some conclusions which *clearly* may n
 * Kim's mother, Kris Jenner, married Bruce (now Caitlyn) Jenner after divorcing Robert Kardashian. Bruce also held a fair amount of fame which could have potentially given Kim sufficient preliminary fame.
 * The sex-tape released was between Kim and R&B star Ray J. Ray J's fame alone might have been enough to propel Kim to fame anyway (potentially under the right marketing).
 
-My point is that this situation is complex and there are a multitude of factors that play a role in the final outcome. When we are making inferences about the income, we should be weary of the potential sources of uncertainty. To model this a **little** more precisely, let's use the diagram below where solid lines indicate given knowledge, a dashed lines indicate unknowns. I.e., we know A, B, and that A "leads" to B. But we potentially don't know about the existence of C or about how C leads to B. We'll define
+My point is that this situation is complex and there are a multitude of factors that play a role in the final outcome. When we are making inferences about the outcome, we should be weary of the potential sources of uncertainty. To model this a **little** more precisely, let's use the diagram below where solid lines indicate given knowledge, a dashed lines indicate unknowns. I.e., we know A, B, and that A "leads" to B. But we potentially don't know about the existence of C or about how C leads to B. We'll define
 * A as Robert Kardashian becoming somewhat famous, and 
 * B as Kim Kardashian leveraging that fame to become more famous via a sex tape.
 
