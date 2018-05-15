@@ -11,6 +11,19 @@ Below are a list of books that I have found to be very impactful on my thinking.
 <ul class="collapsible" data-collapsible="expandable">
   <li>
     <div class="header collapsible-header center"> 
+    The Brain That Changes Itself: Stories of Personal Triumph from the Frontiers of Brain Science by Norman Doidge
+    </div>
+    <div class="body collapsible-body">
+      <p> Sometimes I'm anxious or afraid that I'm not smart enough to learn something. I think about how I'm not a child prodigy or how I missed the magical young age of plasticity where children learn like sponges. This book has helped to dispel some misconceptions I held about how the brain learns and, more importantly, how this learning changes as we get older. Our brains are amazing and remain keen on learning new information as we get older. While I don't always believe in myself, no matter what I'm doing or how difficult it seems, this book has helped me always believe in my brain. Because my brain, your brain, all of our brains, are super clever and capable.
+      </p>
+    </div>
+  </li>
+</ul>
+
+
+<ul class="collapsible" data-collapsible="expandable">
+  <li>
+    <div class="header collapsible-header center"> 
     The Power of Habit by Charles Duhigg
     </div>
     <div class="body collapsible-body">
