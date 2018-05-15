@@ -24,12 +24,26 @@ Below are a list of books that I have found to be very impactful on my thinking.
   </li>
 </ul>
 
+<ul class="collapsible" data-collapsible="expandable">
+  <li>
+    <div class="header collapsible-header center"> 
+    Deep Work by Cal Newport
+    </div>
+    <div class="body collapsible-body">
+      <p> To be Filled
+      </p>
+    </div>
+  </li>
+</ul>
 
-### Deep Work by Cal Newport
-To be filled
-
-### How to be a Straight-A Student by Cal Newport
-To be filled
-
-
-##
+<ul class="collapsible" data-collapsible="expandable">
+  <li>
+    <div class="header collapsible-header center"> 
+    How to be a Straight-A Student by Cal Newport
+    </div>
+    <div class="body collapsible-body">
+      <p> To be Filled
+      </p>
+    </div>
+  </li>
+</ul>
