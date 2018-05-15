@@ -8,7 +8,7 @@ Below are a list of books that I have found to be very impactful on my thinking.
 
 ## Productivity & Self-Development
 
-### The Power of Habit by
+### The Power of Habit by Charles Duhigg
 This book isn't just for people who don't think they're doing well in life. It's for everyone that want's to do better and believes that they can benefit from increased self-discipline. I personal believe that self-discipline is one of the key ingredients to doing better and maintaining happiness.
 
 The book isn't about working longer hours or being more efficient in your work (more efficiency is Deep Work by Cal Newport book). It's about understanding how your brain works so you instinctively do things that are good for you, whatever they are. Like reading everyday, going to the gym, eating well etc. And having these good habits (and others) spill over into other parts of your life and generally improve your quality of life.
@@ -18,5 +18,8 @@ The book also describes how habits drive behaviors in larger social groups and o
 ### Deep Work by Cal Newport
 To be filled
 
-### How to be a Straight-A Student
+### How to be a Straight-A Student by Cal Newport
 To be filled
+
+
+##
