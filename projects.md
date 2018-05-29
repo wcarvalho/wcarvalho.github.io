@@ -3,6 +3,8 @@ layout: default_pure
 title: Projects
 ---
 
+
+
 <section class="bg-white" id="portfolio">
 <div class="container">
 <div class="row">
@@ -10,6 +12,26 @@ title: Projects
     <div id="projects"><h2 class="section-heading">Projects</h2></div>
     <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
   </div>
+
+
+
+<div class="col-md-4 col-sm-6 portfolio-item">
+<a class="portfolio-link" data-toggle="modal" href="https://github.com/wcarvalho/google_calendar_creation_automation
+">
+<div class="portfolio-hover">
+<div class="portfolio-hover-content">
+  <i class="fa fa-plus fa-3x">An app to template events in Google Calendar and measure time-availability for tasks</i>
+</div>
+</div>
+<img class="img-fluid" src="https://cdn.vox-cdn.com/thumbor/07-SFfFRYG5lrk1A0KCOFvGhPbg=/0x0:2880x1920/1220x813/filters:focal(1210x730:1670x1190):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/57181855/EventDetails.0.jpg" alt="">
+</a>
+<div class="portfolio-caption">
+  <h4>Calendar Templating & Time-Availability on Google Calendar</h4>
+  <p class="text-muted">Time and Task Mangement App</p>
+</div>
+</div>
+
+
 <div class="col-md-4 col-sm-6 portfolio-item">
 <a class="portfolio-link" data-toggle="modal" href="{{ site.baseurl }}/dummy/">
 <div class="portfolio-hover">
