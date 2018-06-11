@@ -19,7 +19,7 @@ As a member of groups underrepresented in research and academia, outreach is imp
 Feel free to contact me at wcarvalho92[at]gmail.com
 
 I also maintain a collection of resources for 
-* [pursuing a PhD/Graduate School]((https://wcarvalho.github.io/Phd-Resources/)) (writing resources, career advice, and funding resources)
+* [pursuing a PhD/Graduate School](https://wcarvalho.github.io/Phd-Resources/) (writing resources, career advice, and funding resources)
 * [learning about/doing research in machine learning, computational cognitive science, and computational neuroscience](https://wcarvalho.github.io/ML-Brain-Resources/) (including online courses in mathematics, AI, neuroscience, and cognitive science)
 
 ## News
