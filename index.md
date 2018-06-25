@@ -22,6 +22,8 @@ I also maintain a collection of resources for
 * [pursuing a PhD/Graduate School](https://wcarvalho.github.io/Phd-Resources/) (writing resources, career advice, and funding resources)
 * [learning about/doing research in machine learning, computational cognitive science, and computational neuroscience](https://wcarvalho.github.io/ML-Brain-Resources/) (including online courses in mathematics, AI, neuroscience, and cognitive science)
 
+Last, [here](https://1drv.ms/u/s!AiwW8O29uDV9gfpaAh0MNGEQTKykGw) are some papers I want to read, am reading, or have read, along with some notes. For whoever might find this useful!
+
 ## News
 {% include news.html %}
 
