@@ -13,6 +13,7 @@ For my posts, I upload and reference material I think is useful (articles, code 
 
 ## Posts -->
 
+I also write on [Medium](https://medium.com/@wcarvalho92/latest).
 
 <p><font color="purple"> category </font> | <font color="red"> tags </font></p>
 
