@@ -3,6 +3,7 @@ layout: default
 title: Home
 ---
 
+## Introduction
 
 My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring brain and machine learning scientist. I am currently a PhD Student in Computer Science at the University of Michigan--Ann Arbor and an <a href="https://www.nsfgrfp.org/">NSF graduate research fellow in neuroscience</a> exploring principled methods of analyzing the mind and brain. Among those which excite me most are 
 <!-- http://gershmanlab.webfactional.com/pubs/GershmanNiv12.pdf -->
@@ -12,6 +13,9 @@ My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensi
  <!-- (e.g., convolutional neural networks have been shown to inadvertently learn visual primitives like edges and contours). -->
 
 My long term goal is to develop and advance unified theoretical models for cognition, behavior, and learning that I may corroborate through experimental work with humans  and through AI-based computer simulations. Here are some [behavioral questions]({{ site.baseurl }}/questions) that I plan to tackle with my research.
+
+
+## Outreach
 
 As a member of groups underrepresented in research and academia, outreach is important to me. I encourage all young scholars (especially those from marginalized backgrounds) to reach out to me with any questions. Relevant topics include (but are not limited to) pursuing computational methods of studying the mind and brain, pursuing undergraduate research, applying for fellowships, and graduate school. Lastly, [increasing minority representation in STEM is important to me](https://medium.com/@wcarvalho92/a-statement-on-the-importance-of-representation-of-minority-groups-be400d98686). Please feel free to reach out if this applies to you or if you are organizing any relevant programs.
 
