@@ -21,7 +21,7 @@ title: Publications
       <span style="color: #9f30a5">Wilka Carvalho*</span>, Bryant Chen*, Benjamin Edwards, Taesung Lee, Ian Molloy, Heiko Ludwig, Jaehoon Safavi
       <br>
       <em>
-        Submitted to International Conference on Machine Learning (ICML),
+        Submitted to Association for the Advancement of Artificial Intelligence (AAAI),
       </em> 2018
       </p>
 
