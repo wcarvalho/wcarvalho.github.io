@@ -14,6 +14,8 @@ My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensi
 
 My long term goal is to develop and advance unified theoretical models for cognition, behavior, and learning that I may corroborate through experimental work with humans  and through AI-based computer simulations. Here are some [behavioral questions]({{ site.baseurl }}/questions) that I plan to tackle with my research.
 
+If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/intellectual_autobio)** in spoken word form.
+
 ---
 
 ## Outreach

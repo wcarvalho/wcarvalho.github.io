@@ -3,6 +3,12 @@ layout: default
 ---
 
 <div class="page">
-  <h1 class="page-title">{{ page.title }}</h1>
+  {% if page.category == "poem" %}
+  <center>
+    <h1 class="page-title">{{ page.title }}</h1>
+  </center>
+  {% else %}
+    <h1 class="page-title">{{ page.title }}</h1>
+  {% endif %}
   {{ content }}
 </div>
