@@ -83,11 +83,11 @@ Accidently but intentionally, she ignited a love for math that would guide my ex
 <br><br>
 <font color='green'>
 Brains. Minds. They work off data. They work off information.
-<br>
+<br><br>
 After exploring physics, I found that it didn’t hold the math to solve the questions I cared about.
-<br>
+<br><br>
 When a brown boy entered that white classroom in 1999, why was he immediately placed into the category of other? And why did that category membership lead others to treat him differently?
-<br>
+<br><br>
 These were questions about how brains parse, integrate, and use information. Questions for computer science.
 </font>
 <br>
