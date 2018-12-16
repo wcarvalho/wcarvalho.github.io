@@ -6,7 +6,7 @@ title: Publications
 
 <p>* denotes co-first author</p>
 
-<h1>Preprints</h1>
+<!-- <h1>Preprints</h1>
 <div class="publications">
   <div class="row publication">
     <div class="col-sm-3 center">
@@ -27,10 +27,34 @@ title: Publications
 
     </div>
   </div>
-</div>
+</div> -->
 
 <h1>Publications</h1>
 <div class="publications">
+
+<!-- AAAI Safety -->
+<div class="row publication">
+  <div class="col-sm-3 center">
+    <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/icml_2018_thumbnail.png">
+  </div>
+  <div class="col-sm-7 center">
+    <p>
+    <strong>
+      Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering
+    </strong> 
+    <br> 
+    <span style="color: #9f30a5"> Bryant Chen*, Wilka Carvalho*</span>, Nathalie Baracaldo, Heiko Ludwig, Benjamin Edwards, Taesung Lee, Ian Molloy and Biplav Srivastava
+    <br>
+    <em>
+    Artificial Intelligence Safety Workshop @ AAAI,
+    </em> 2019
+    </p>
+
+  </div>
+</div>
+
+
+<!-- ICLR -->
 <div class="row publication">
   <div class="col-sm-3 center">
     <img class="pub-image responsive" src="{{ site.baseurl }}/files/iclr_2017/figures/vrada_tsne.png">
@@ -56,10 +80,10 @@ title: Publications
         </a>
       </p>
     </div>
-
   </div>
 </div>
 
+<!-- NIPS ML4HC -->
 <div class="row publication">
   <div class="col-sm-3 center">
     <img class="pub-image responsive" src="{{ site.baseurl }}/files/iclr_2017/figures/vrada.png">
@@ -70,7 +94,6 @@ title: Publications
       <a href="{{ site.baseurl }}/files/nips_2016/VADA_main.pdf">Variational Adversarial Deep Domain Adaptation for Health Care Time Series Analysis</a>
     </strong>
     <br>
-
     Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu<br>
     <em>
       Neural Information Processing Systems Workshop on Machine Learning for Healthcare (NIPS ML4HC),
@@ -81,6 +104,8 @@ title: Publications
   </div>
 </div>
 
+
+<!-- Stony Brook -->
 <div class="row publication">
   <div class="col-sm-3 center">
     <img class="pub-image responsive" src="{{ site.baseurl }}/files/dirc/beams.jpg">
@@ -113,5 +138,7 @@ title: Publications
     </div>
   </div>
 </div>
+
+
 </div>
 
