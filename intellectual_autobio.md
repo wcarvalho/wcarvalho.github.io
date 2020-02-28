@@ -6,7 +6,7 @@ comments: true
 center_title: true
 ---
 
-<font color="red"> 
+<font color="#7C66B4"> 
 <center>
 <br>
 Every shock <br>
@@ -81,7 +81,7 @@ Growing up, my mother encouraged me to pursue math. She hoped I’d never strugg
 <br><br>
 Accidently but intentionally, she ignited a love for math that would guide my exploration of the mind… of my mind.
 <br><br>
-<font color='green'>
+<font color='#489764'>
 Brains. Minds. They work off data. They work off information.
 <br><br>
 After exploring physics, I found that it didn’t hold the math to solve the questions I cared about.
@@ -101,7 +101,7 @@ The key may not be to stop the formation of stereotypes but instead to understan
 <br><br>
 This is what I hope to work towards during my PhD. A unified mathematical framework that both describes how we integrate new information into our model for the world and describes how we use this model to make our choices. My hope is that this can help us devise solutions to the many problems we face as a result of stereotyping and implicit biases.
 <br><br>
-<font color='blue'>
+<font color='#B3D0F1'>
 Recently, I’ve been reading the book, “Andrew’s Brain”. In it, two characters constantly discuss the causes, intentions, and products of what is going on. I suspect that the characters are Andrew… and his brain
 <br><br>
 This is a story of Wilka and his brain. A story of how we are becoming increasingly aware of each other. And how we are learning to listen to each other.
@@ -123,6 +123,6 @@ and you’ll understand yourself <br>
 and since you’re within me <br>
 if I listen closely, I will as well <br>
 </center><br>
-<font color="blue">
+<font color="#B3D0F1">
 This is a story that is still being written. A story of our journey to help each other understand ourselves.
 </font>
