@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+  <!-- Math Support -->
+
+  <body class="layout">
+
+      {% include top.html %}
+      {% include navbar.html %}
+      <div class="container content ">
+        {{ content }}
+      </div>
+
+    {% include scripts.html %}
+    {% include mathjax_support.html %}
+    {% include analytics.html %}
+  </body>
+</html>

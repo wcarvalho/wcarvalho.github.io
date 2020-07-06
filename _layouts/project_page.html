@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="post">
+  <h2 class="post-title">{{ page.title }}</h2>
+  <span class="post-date">
+    {{ page.date | date_to_string }}
+    {% if page.categories.size > 0 %}
+     | <cite> {{ page.categories | join: ', ' }} </cite>
+    {% endif %}
+    {% if page.tags.size > 0 %}
+    <br>
+    <em>
+      tags: {{ page.tags | join: ', ' }}
+    </em>
+    {% endif %}
+  </span>
+  {{ content }}
+</div>
+
+<h2>Related Content</h2>
+{% include related_posts.html %}
+
+{% if page.comments %}
+  {% include disqus_comments.html %}
+{% endif %}
