@@ -1,8 +1,8 @@
 ---
-layout: publications
+layout: default
 title: Publications
 ---
-### [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en)
+## [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en)
 
 <p>* denotes co-first author</p>
 
@@ -65,7 +65,7 @@ title: Publications
 </div>
 
 
-<!-- ICLR -->
+<br><br>
 <div class="row publication">
   <div class="col-sm-3 center">
     <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/iclr_2017/figures/vrada_tsne.png">
@@ -79,8 +79,11 @@ title: Publications
     Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu
     <br>
     <em>
-      International Conference on Learning Representations (ICLR),
-    </em> 2017
+      ICLR,
+    </em> 2017 <br>
+    <em>
+      NeurIPS Machine Learning for Healthcaee,
+    </em> 2016
     </p>
     <div class="row pub-links">
       <p>
@@ -95,7 +98,7 @@ title: Publications
 </div>
 
 <!-- NIPS ML4HC -->
-<div class="row publication">
+<!-- <div class="row publication">
   <div class="col-sm-3 center">
     <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/iclr_2017/figures/vrada.png">
   </div>
@@ -107,7 +110,7 @@ title: Publications
     <br>
     Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu<br>
     <em>
-      Neural Information Processing Systems Workshop on Machine Learning for Healthcare (NIPS ML4HC),
+      Neural Information Processing Systems Workshop on Machine Learning for Healthcare (NerurIPS ML4HC),
     </em> 2016
     <br>
     <span style="color: red">Spotlight</span>
@@ -115,8 +118,9 @@ title: Publications
   </div>
 </div>
 
-
+ -->
 <!-- Stony Brook -->
+<br><br>
 <div class="row publication">
   <div class="col-sm-3 center">
     <img class="pub-image responsive" src="{{ site.baseurl }}/files/dirc/beams.jpg">
