@@ -31,7 +31,7 @@ title: Projects
 </div>
 </div>
 
-
+<!-- 
 <div class="col-md-4 col-sm-6 portfolio-item">
 <a class="portfolio-link" data-toggle="modal" href="{{ site.baseurl }}/dummy/">
 <div class="portfolio-hover">
@@ -62,7 +62,7 @@ title: Projects
   <h4>Answering Questions by Reasoning in Latent Space</h4>
   <p class="text-muted">Natural Language Processing Research</p>
 </div>
-</div>
+</div> -->
 
 
 
