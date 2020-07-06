@@ -17,9 +17,5 @@ title: Questions that keep me up at night
 {% include young_woman_doctor.md %}
 
 
-<!-- {% include young_man_cs.md %} -->
-
-<!-- --- -->
-<!-- {% include useful_tools.md %} -->
 
 {% include disqus_comments.html %}

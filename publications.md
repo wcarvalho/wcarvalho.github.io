@@ -1,35 +1,47 @@
 ---
-layout: default
+layout: publications
 title: Publications
 ---
 ### [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en)
 
 <p>* denotes co-first author</p>
 
-<!-- <h1>Preprints</h1>
+<h1>Preprints</h1>
 <div class="publications">
   <div class="row publication">
     <div class="col-sm-3 center">
-      <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/icml_2018_thumbnail.png">
+      <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/roma/toast-bread.png">
     </div>
     <div class="col-sm-7 center">
       <p>
       <strong>
-        Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering
+        ROMA: A Relational, Object-Model Learning Agent for Sample-Efficient Reinforcement Learning
       </strong> 
       <br> 
-      <span style="color: #9f30a5">Wilka Carvalho*</span>, Bryant Chen*, Benjamin Edwards, Taesung Lee, Ian Molloy, Heiko Ludwig, Jaehoon Safavi
+      <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+      <a href="https://aliang8.github.io/">Anthony Liang</a>,
+      <a href="https://sites.google.com/view/kiminlee">Kimin Lee</a>,
+      <a href="https://sites.google.com/view/sungryull">Sungryull Sohn</a>,
+      <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>,
+      <a href="http://www-personal.umich.edu/~rickl/">Richard L. Lewis</a>,
+      <a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a>
       <br>
-      <em>
-        Submitted to Association for the Advancement of Artificial Intelligence (AAAI),
-      </em> 2018
       </p>
-
+      <div class="row pub-links">
+      <p>
+        <a href="{{ site.baseurl }}/publications/roma">
+        <button type = "button" class = "btn btn-primary">
+        Project Page
+        </button>
+        </a>
+      </p>
+    </div>
     </div>
   </div>
-</div> -->
+</div>
 
-<h1>Publications</h1>
+
+<h1> Publications</h1>
 <div class="publications">
 
 <!-- AAAI Safety -->
@@ -49,7 +61,6 @@ title: Publications
     Artificial Intelligence Safety Workshop @ AAAI,
     </em> 2019
     </p>
-
   </div>
 </div>
 
@@ -57,12 +68,12 @@ title: Publications
 <!-- ICLR -->
 <div class="row publication">
   <div class="col-sm-3 center">
-    <img class="pub-image responsive" src="{{ site.baseurl }}/files/iclr_2017/figures/vrada_tsne.png">
+    <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/iclr_2017/figures/vrada_tsne.png">
   </div>
   <div class="col-sm-7 center">
     <p>
     <strong>
-      <a href="{{ site.baseurl }}/files/iclr_2017/iclr2017_VADA.pdf">Variational Recurrent Adversarial Deep Domain Adaptation</a>
+      <a href="{{ site.baseurl }}/files/publications/iclr_2017/iclr2017_VADA.pdf">Variational Recurrent Adversarial Deep Domain Adaptation</a>
     </strong> 
     <br> 
     Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu
@@ -86,7 +97,7 @@ title: Publications
 <!-- NIPS ML4HC -->
 <div class="row publication">
   <div class="col-sm-3 center">
-    <img class="pub-image responsive" src="{{ site.baseurl }}/files/iclr_2017/figures/vrada.png">
+    <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/iclr_2017/figures/vrada.png">
   </div>
   <div class="col-sm-7 center">
     <p>
