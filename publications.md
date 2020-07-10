@@ -15,7 +15,7 @@ title: Publications
     <div class="col-sm-7 center">
       <p>
       <strong>
-        ROMA: A Relational, Object-Model Learning Agent for Sample-Efficient Reinforcement Learning
+        <a href="{{ site.baseurl }}/publications/roma">ROMA: A Relational, Object-Model Learning Agent for Sample-Efficient Reinforcement Learning</a>
       </strong> 
       <br> 
       <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
