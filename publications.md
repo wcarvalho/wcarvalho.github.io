@@ -26,6 +26,9 @@ title: Publications
       <a href="http://www-personal.umich.edu/~rickl/">Richard L. Lewis</a>,
       <a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a>
       <br>
+      <em>
+      ICML Object-Oriented Learning (OOL): Perception, Representation, and Reasoning Workshop,
+      </em> 2020
       </p>
       <div class="row pub-links">
       <p>
