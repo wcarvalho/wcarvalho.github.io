@@ -77,7 +77,7 @@ Sequential decision-making tasks that require relating and using multiple novel 
 <center>
   <h1>Relational, Object-Model Learning Agent</h1>
 </center>
-Our agent applies self-attention on the objects in order to facilitate recognizing object relationships when deciding interactions on a particular object. After it decides an object-interaction to take, it reuses its object-attention computations in predicting the consequences of its object-interactions.
+When deciding to interact with an object, our agent attends to other object so it can incorporate relationships among objects into its decision making. Afterward, it predicts the consequnces of its object-interaction, factoring in the object relationships it computed. This provides a dense learning signal for learning about objects and their relationships prior to experiencing task reward.
 <center>
   <img class="responsive-img" style="max-width: 300" src="{{ site.baseurl }}/files/publications/roma/overview.png">
 </center>
