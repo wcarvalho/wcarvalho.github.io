@@ -55,7 +55,7 @@ title: Publications
       Detecting Backdoor Attacks on Deep Neural Networks by Activation Clustering
     </strong> 
     <br> 
-    <span style="color: #9f30a5"> Bryant Chen*, Wilka Carvalho*</span>, Nathalie Baracaldo, Heiko Ludwig, Benjamin Edwards, Taesung Lee, Ian Molloy and Biplav Srivastava
+    Bryant Chen, <span style="color: #9f30a5">Wilka Carvalho</span>, Nathalie Baracaldo, Heiko Ludwig, Benjamin Edwards, Taesung Lee, Ian Molloy and Biplav Srivastava
     <br>
     <em>
     Artificial Intelligence Safety Workshop @ AAAI,
@@ -82,7 +82,7 @@ title: Publications
       ICLR,
     </em> 2017 <br>
     <em>
-      NeurIPS Machine Learning for Healthcaee,
+      NeurIPS Machine Learning for Healthcare,
     </em> 2016
     </p>
     <div class="row pub-links">

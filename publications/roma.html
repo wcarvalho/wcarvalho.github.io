@@ -1,18 +1,56 @@
 ---
 title: "ROMA: A Relational, Object-Model Learning Agent for Sample-Efficient Reinforcement Learning"
 layout: project_page
-comments: false
 tags: [object-oriented-learning, reinforcement-learning, representation-learning]
 ---
 
-By:
-<a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
-<a href="https://aliang8.github.io/">Anthony Liang</a>,
-<a href="https://sites.google.com/view/kiminlee">Kimin Lee</a>,
-<a href="https://sites.google.com/view/sungryull">Sungryull Sohn</a>,
-<a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>,
-<a href="http://www-personal.umich.edu/~rickl/">Richard L. Lewis</a>,
-<a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a>
+<center>
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a><sup>1</sup>&emsp;
+      <a href="https://aliang8.github.io/">Anthony Liang</a><sup>1</sup>&emsp;
+      <a href="https://sites.google.com/view/kiminlee">Kimin Lee</a><sup>3</sup>&emsp;
+      <a href="https://sites.google.com/view/sungryull">Sungryull Sohn</a><sup>1</sup>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col">
+      <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a><sup>1,4</sup>&emsp;
+      <a href="http://www-personal.umich.edu/~rickl/">Richard L. Lewis</a><sup>2</sup>&emsp;
+      <a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a><sup>1,5</sup>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <sup>1</sup>University of Michigan, Dept. of Computer Science
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <sup>2</sup>University of Michigan, Dept. of Psychology
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <sup>3</sup>UC Berkeley&emsp;<sup>4</sup>Google Brain&emsp;<sup>5</sup>DeepMind
+    </div>
+  </div>
+
+</div>
+</center>
+
+
+
+
+
+
 
 <br>
 <center>
@@ -21,13 +59,36 @@ By:
 <!-- <center><img class="responsive-img" style="max-width: 750" src="/files/publications/roma/architecture.png"></center>
  -->
 <br>
-<h1>Abstract</h1>
+<!-- <h1>Abstract</h1> -->
 Sequential decision-making tasks that require relating and using multiple novel objects pose significant sample-efficiency challenges for agents learning from sparse task rewards. In this work, we begin to address these challenges by leveraging an agent's object-interactions to define an auxilliary task that enables sample-efficient reinforcement learning (RL) of such tasks. To accomplish this, we formulate ROMA: a relational reinforcement learning agent that learns an object-centric forward model during task learning. We find that this enables it to learn object-interaction tasks much faster than other relational RL agents with alternative auxiliary tasks for driving good object-representation learning.  In order to evaluate the performance of our agent, we introduce a set of object-interaction tasks in the AI2Thor virtual home environment that require relating and interacting with multiple objects.  By comparing against an agent equipped with ground-truth object-information, we find that learning an object-centric forward model best closes the performance gap, achieving $\geq 80\%$ of its sample-efficiency on $7$ out of $8$ tasks, with the next best method doing so on $2$ out of $8$ tasks. Additionally, we find that our object-model best captures interesting object information such as category, specific object state, and relationships among objects.
 
-<br>
+<br><br>
+<div class="row">
 <div class="row pub-links">
   <p>
-    <a href="{{ site.baseurl }}/publications/roma"> <button type = "button" class = "btn btn-primary"> Blog </button></a>
+    <!-- <a href="{{ site.baseurl }}/publications/roma"> <button type = "button" class = "btn btn-primary"> Blog </button></a> -->
     <a href="{{ site.baseurl }}/files/publications/roma/roma.pdf"> <button type = "button" class = "btn btn-primary"> Paper </button></a>
   </p>
 </div>
+</div>
+
+<br><br>
+<hr>
+<center>
+  <h1>Relational, Object-Model Learning Agent</h1>
+</center>
+Our agent applies self-attention on the objects in order to facilitate recognizing object relationships when deciding interactions on a particular object. After it decides an object-interaction to take, it reuses its object-attention computations in predicting the consequences of its object-interactions.
+<center>
+  <img class="responsive-img" style="max-width: 300" src="{{ site.baseurl }}/files/publications/roma/overview.png">
+</center>
+
+
+<br><br>
+<hr>
+<center>
+  <h1>Object-Centric Decision Making</h1>
+</center>
+<center>
+  <img class="responsive-img" style="max-width: 300" src="{{ site.baseurl }}/files/publications/roma/architecture.png">
+</center>
+A scene is broken down into object-image-patches $\{o_j\}$ (e.g. of a pot, potato, and stove knob). The scene image is combined with the agent's location to define the <i>context</i> of the objects, $s^\kappa$. The objects  $\{o_j\}$ and their context $s^\kappa$ are processed by different encoding branches and then recombined by a relational module $\mathcal{R}$ that uses self-attention to produce inputs for computing Q-value estimates. Actions are selected as (object-image-patch, base action) pairs $a=(o_c, b)$. The agent then predicts the consequences of its interactions with an object-model $f_{\tt model}$.
