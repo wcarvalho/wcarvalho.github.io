@@ -11,3 +11,5 @@ gem 'rouge'
 gem 'jekyll-sitemap'
 gem 'jekyll-scholar'
 gem 'unicode_utils'
+
+gem "kramdown-parser-gfm"
