@@ -91,7 +91,7 @@
 <tr>
   <td class='col-md-2'>2014</td>
   <td>
-    Stony Brook University Researcher of the Month
+    Researcher of the Month (1 monthly at Stony Brook University)
     <!--  -->
   </td>
 </tr>
@@ -178,7 +178,7 @@
     <strong> <a href="">Efficiently Learning to Perform Household Task with Object-oriented Exploration</a> </strong> <br> 
     Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu
     <br>
-    <em> Neural Information Processing Systems Black In AI Workshop (Neurips BAI) , </em> 2019
+    <em> NeurIPS Black In AI Workshop (Neurips BAI) , </em> 2019
     </p>
   </div>
 </div>
@@ -204,7 +204,7 @@
     <strong> <a href="">Variational Adversarial Deep Domain Adaptation for Health Care Time Series Analysis</a> </strong> <br> 
     Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu
     <br>
-    <em> Neural Information Processing Systems Workshop on Machine Learning for Healthcare (Neurips ML4HC) , </em> 2016
+    <em> NeurIPS Workshop on Machine Learning for Healthcare (Neurips ML4HC) , </em> 2016
     </p>
   </div>
 </div>
@@ -217,6 +217,19 @@
 <!-- ### [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en)
  -->
 <div class="publications">
+<div class="row publication">
+  <div class="col-sm-3 center">
+    <!-- <img class="pub-image responsive" src="/files/iclr_2017/figures/vrada_tsne.png"> -->
+  </div>
+  <div class="col-sm-7 center">
+    <p>
+    <strong> <a href="">Detecting poisoning attacks on neural networks by activation clustering</a> </strong> <br> 
+    Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu
+    <br>
+    <em>  , </em> 2020
+    </p>
+  </div>
+</div>
 <div class="row publication">
   <div class="col-sm-3 center">
     <!-- <img class="pub-image responsive" src="/files/iclr_2017/figures/vrada_tsne.png"> -->
