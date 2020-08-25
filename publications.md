@@ -37,6 +37,11 @@ title: Publications
         Project Page
         </button>
         </a>
+        <a href="https://twimlai.com/relational-object-centric-agents-for-completing-simulated-household-tasks-with-wilka-carvalho/">
+        <button type = "button" class = "btn btn-primary">
+        Podcast
+        </button>
+        </a>
       </p>
     </div>
     </div>
