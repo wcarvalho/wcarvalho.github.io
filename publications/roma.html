@@ -102,4 +102,37 @@ When deciding to interact with an object, our agent uses self-attention to atten
 <center>
   <img class="responsive-img" style="max-width: 300" src="{{ site.baseurl }}/files/publications/roma/architecture.png">
 </center>
-A scene is broken down into object-image-patches $\{o_j\}$ (e.g. of a pot, potato, and stove knob). The scene image is combined with the agent's location to define the <i>context</i> of the objects, $s^\kappa$. The objects  $\{o_j\}$ and their context $s^\kappa$ are processed by different encoding branches and then recombined by a relational module $\mathcal{R}$ that uses self-attention to produce inputs for computing Q-value estimates. Actions are selected as (object-image-patch, base action) pairs $a=(o_c, b)$. The agent then predicts the consequences of its interactions with an object-model $f_{\tt model}$.
+A scene is broken down into object-image-patches $\{o_j\}$ (e.g. of a pot, potato, and stove knob). The scene image is combined with the agent's location to define the <i>context</i> of the objects, $s^\kappa$. The objects  $\{o_j\}$ and their context $s^\kappa$ are processed by different encoding branches and then recombined by a relational module $\mathcal{R}$ that uses self-attention to produce inputs for computing Q-value estimates. Here, $\mathcal{R}$ might select the pot image-patch when computing Q-values for interacting with the stove-knob image-patch. Actions are selected as (object-image-patch, base action) pairs $a=(o_c, b)$. The agent then predicts the consequences of its interactions with our relational object-model $f_{\tt model}$.
+
+
+
+
+<br><br><br>
+<hr>
+<br>
+<center>
+  <h1>Results</h1>
+</center>
+<h3>A basic object level understanding isn't sufficient for our challenging tasks</h3>
+It is well-known that providing an object-level understanding improves performance and sample-efficiency. Despite, below we see that supplying DQN with a basic object-level understanding via object-image-patches or object-ids is insufficient to learn challenging tasks that require reasoning over multiple objects and the object-state they occupy. We hypothesize that this is due to the large-branching factor induced by object-interactions and the sparse-reward learning signal (random policies complete tasks $\approx 10\times$ in 500K samples).
+<center>
+  <img class="responsive-img" style="max-width: 300" src="{{ site.baseurl }}/files/publications/roma/ablation.png">
+</center>
+<h3>The key is combining a relational object-centric policy (Relational Object-DQN) with a Relational Object-Model</h3>
+Interestingly, despite facing a sparse-reward problem, we find that with a basic $\epsilon$-greedy exploration strategy, simply adding object-attention to an object-centric DQN (Relational Object-DQN, grey curve in Figure below) enables progress towards efficient learning. Somewhat surprisingly, we find that adding rich hand-designed object-representations (Relational Object-DQN + Ground-Truth Object-Information, black curve in Figure below) enables learning of all the tasks we study. <b>This indicates that we can efficiently learn from only a few rewarding instances with a good object-centric inductive bias</b>. 
+<br>
+<br>
+<center>
+  <img class="responsive-img" style="max-width: 300" src="{{ site.baseurl }}/files/publications/roma/lower-upper.png">
+</center>
+<br>
+We find that adding a strong unsupervised object-representation learning method to our Relational Object-DQN such as OCN or COBRA's non-relational object-model helps but is insufficient. However, adding our <i>Relational</i> Object-Model enables $\geq 75\%$ ground-truth sample-efficiency on $7/8$ tasks. Thus, the key to sample-efficient learning is bootstraping learning of both object-representations <b>and</b> their relations.
+<br><br>
+<center>
+  <img class="responsive-img" style="max-width: 300" src="{{ site.baseurl }}/files/publications/roma/auc.png">
+</center>
+<!-- <br>
+Additionally, we find that our relational object-model best captures interesting object information such as category, specific object state, and relationships among objects.
+<center>
+  <img class="responsive-img" style="max-width: 300" src="{{ site.baseurl }}/files/publications/roma/table.png">
+</center> -->
