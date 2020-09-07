@@ -4,7 +4,7 @@ title: Home
 ---
 ## Introduction
 
-My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring brain and machine learning scientist. I am interested in developing cognitive theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in realistic visual scenes to enable sophisticated behavioral policies. Some behaviors that I hope explain from a computational and mechanistic perspective include: 
+My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring brain and machine learning scientist. I am interested in developing cognitive theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in realistic visual scenes to enable sophisticated behavioral policies. Some behaviors that I hope to explain from a computational and mechanistic perspective include: 
 
 * [how humans set their life goals and work towards them]({{ site.baseurl }}/questions), and 
 * [why our representation learning scheme induces stereotypes and how this relates to our behavioral responses](https://medium.com/@wcarvalho92/success-vs-failure-generalization-vs-stereotyping-40de0713ab5d) (i.e. our [policies](https://stackoverflow.com/questions/46260775/what-is-a-policy-in-reinforcement-learning#:~:text=A%20policy%20defines%20the%20learning,still%20didn't%20fully%20understand.)).
