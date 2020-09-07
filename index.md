@@ -4,7 +4,14 @@ title: Home
 ---
 ## Introduction
 
-My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring brain and machine learning scientist. I am interested in developing cognitive theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in realistic visual scenes to enable sophisticated behavioral policies. Towards this end, I am pursuing a PhD in Machine Learning at the University of Michigan where I study how **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/) (representation learning), [Satinder Singh](https://web.eecs.umich.edu/~baveja/) (reinforcement learning), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html) (psychology). Here are my [publications]({{ site.baseurl }}/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio).
+My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring brain and machine learning scientist. I am interested in developing cognitive theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in realistic visual scenes to enable sophisticated behavioral policies. Some behaviors that I hope explain from a computational and mechanistic perspective include: 
+
+* [how humans set their life goals and work towards them]({{ site.baseurl }}/questions), and 
+* [why our representation scheme induces stereotypes and how this relates to our behavioral responses](https://medium.com/@wcarvalho92/success-vs-failure-generalization-vs-stereotyping-40de0713ab5d) (i.e. our [policies](https://stackoverflow.com/questions/46260775/what-is-a-policy-in-reinforcement-learning#:~:text=A%20policy%20defines%20the%20learning,still%20didn't%20fully%20understand.)).
+
+Towards this end, I am pursuing a PhD in Machine Learning at the University of Michigan where I study how **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/) (representation learning), [Satinder Singh](https://web.eecs.umich.edu/~baveja/) (reinforcement learning), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html) (psychology). 
+
+Here are my [publications]({{ site.baseurl }}/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio).
 
 
 
@@ -41,6 +48,8 @@ I work on **unsupervised representation learning** and **reinforcement learning*
 * your interests
 * your relevant goals
 * what you seek to gain from working with me
+
+I especially encourage underrepresented students to contact me. It's challenging to grow intellectually without a good source of guidance.
 
 <!-- I recommend having experience implementing some basic models or algorithms. You can use [these resources]((https://wcarvalho.github.io/ML-Brain-Resources/)) to self-study material. -->
 
