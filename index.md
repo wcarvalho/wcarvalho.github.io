@@ -9,9 +9,12 @@ My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensi
 * [how humans set their life goals and work towards them]({{ site.baseurl }}/questions), and 
 * [why our representation learning scheme induces stereotypes and how this relates to our behavioral responses](https://medium.com/@wcarvalho92/success-vs-failure-generalization-vs-stereotyping-40de0713ab5d) (i.e. our [policies](https://stackoverflow.com/questions/46260775/what-is-a-policy-in-reinforcement-learning#:~:text=A%20policy%20defines%20the%20learning,still%20didn't%20fully%20understand.)).
 
-Towards this end, I am pursuing a PhD in Machine Learning at the University of Michigan where I study how **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/) (representation learning), [Satinder Singh](https://web.eecs.umich.edu/~baveja/) (reinforcement learning), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html) (psychology). 
+Towards this end, I am pursuing a PhD in Machine Learning at the University of Michigan where I study how **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. I hope these AI models can inform my future cognitive theories :)
 
-Here are my [publications]({{ site.baseurl }}/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio).
+My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/) (representation learning), [Satinder Singh](https://web.eecs.umich.edu/~baveja/) (reinforcement learning), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html) (psychology). 
+
+Here are my [publications]({{ site.baseurl }}/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio). If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/intellectual_autobio)** in spoken word form.
+
 
 
 
@@ -27,8 +30,8 @@ Here are my [publications]({{ site.baseurl }}/publications) and this is my [Goog
 <!-- My long term goal is to develop and advance unified theoretical models for cognition, behavior, and learning that I may corroborate through experimental work with humans  and through AI-based computer simulations.  -->
 <!-- Here are some [behavioral questions]({{ site.baseurl }}/questions) that I plan to tackle with my research. -->
 
-If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/intellectual_autobio)** in spoken word form.
-
+<!-- If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/intellectual_autobio)** in spoken word form.
+ -->
 <br>
 
 ---
