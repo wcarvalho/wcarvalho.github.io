@@ -30,7 +30,7 @@ comments: true
     <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/15691472/height/90/theme/custom/thumbnail/no/direction/backward/render-playlist/no/custom-color/3e85b1/" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
   </div>
   <div class="portfolio-caption">
-    <h4>Research Feature by TWIML (This Week in Machine Learning)</h4>
+    <h4>Research Feature by <a href="https://twimlai.com/">TWIML</a> (This Week in Machine Learning)</h4>
     <p class="text-muted">August 20, 2020</p>
   </div>
 </div>
@@ -90,7 +90,7 @@ comments: true
     <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/15691472/height/90/theme/custom/thumbnail/no/direction/backward/render-playlist/no/custom-color/3e85b1/" height="90" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe><iframe src="https://player.vimeo.com/video/237158594?color=6485b5&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
   </div>
   <div class="portfolio-caption">
-    <h4>USC: Research Feature based on ICLR paper</h4>
+    <h4>USC: Research Feature based on <a href="{{ site.baseurl }}/research/2017/04/23/vrada/">ICLR</a> paper</h4>
     <p class="text-muted">October 6, 2017</p>
   </div>
 </div>
