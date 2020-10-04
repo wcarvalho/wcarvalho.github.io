@@ -133,14 +133,14 @@ comments: true
 <a class="portfolio-link" data-toggle="modal" href="https://news.stonybrook.edu/student-spotlight/2015-nsf-graduate-research-fellow-wilka-carvalho-2/">
 <div class="portfolio-hover">
 <div class="portfolio-hover-content">
-  <i class="fa fa-plus fa-3x">Spotlight after winning NSF felloship</i>
+  <i class="fa fa-plus fa-3x">Spotlight after winning NSF fellowship</i>
 </div>
 </div>
   <img class="img-fluid" src="{{ site.baseurl }}/main-pages/press-photos/stony-nsf.png" alt="">
 </a>
 <div class="portfolio-caption">
   <h4>Stony Brook University: NSF Spotlight</h4>
-  <p class="text-muted">July 2nd, 2018</p>
+  <p class="text-muted">April 13th, 2015</p>
 </div>
 </div>
 
@@ -163,8 +163,8 @@ comments: true
 </div>
 
 
-<!-- Biomath Learning Center -->
-<div class="col-md-6 portfolio-item">
+<!-- URECA Feature -->
+<div class="col-lg-12 portfolio-item">
 <a class="portfolio-link" data-toggle="modal" href="https://news.stonybrook.edu/homespotlight/ureca-researcher-of-the-month-wilka-carvalho-2/">
 <div class="portfolio-hover">
 <div class="portfolio-hover-content">
@@ -174,7 +174,7 @@ comments: true
   <img class="img-fluid" src="{{ site.baseurl }}/main-pages/press-photos/stony-ureca.png" alt="">
 </a>
 <div class="portfolio-caption">
-  <h4>Undergraduate Researcher of the Month</h4>
+  <h4>Stony Brook University: Undergraduate Researcher of the Month</h4>
   <p class="text-muted">December 9th, 2014</p>
 </div>
 </div>
