@@ -10,7 +10,6 @@ title: Projects
 <div class="row">
   <div class="col-lg-12 text-center">
     <div id="projects"><h2 class="section-heading">Projects</h2></div>
-    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
   </div>
 
 

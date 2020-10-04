@@ -4,34 +4,19 @@ title: Home
 ---
 ## Introduction
 
-My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring brain and machine learning scientist. I am interested in developing cognitive theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in realistic visual scenes to enable sophisticated behavioral policies. Some behaviors that I hope to explain from a computational and mechanistic perspective include: 
+My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring brain and machine learning scientist. I am interested in developing computational and mechanistic cognitive theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in realistic visual scenes to enable sophisticated behavioral policies. Some behaviors that I hope to help explain include: 
 
-* [how humans set their life goals and work towards them]({{ site.baseurl }}/questions), and 
+* [how humans set their life goals and work towards them]({{ site.baseurl }}/misc/questions), and 
 * [why our representation learning scheme induces stereotypes and how this relates to our behavioral responses](https://medium.com/@wcarvalho92/success-vs-failure-generalization-vs-stereotyping-40de0713ab5d) (i.e. our [policies](https://stackoverflow.com/questions/46260775/what-is-a-policy-in-reinforcement-learning#:~:text=A%20policy%20defines%20the%20learning,still%20didn't%20fully%20understand.)).
 
 Towards this end, I am pursuing a PhD in Machine Learning at the University of Michigan where I study how **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. I hope these AI models can inform my future cognitive theories :)
 
 My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/) (representation learning), [Satinder Singh](https://web.eecs.umich.edu/~baveja/) (reinforcement learning), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html) (psychology). 
 
-Here are my [publications]({{ site.baseurl }}/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio). If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/intellectual_autobio)** in spoken word form.
+Here are my [publications]({{ site.baseurl }}/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio). If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/misc/intellectual_autobio)** in spoken word form.
 
 
 
-
-<!-- I am fascinated by the human ability to effortlessly exploit the rich structure contained in realistic visual scenes to reason effectively and intelligently. I believe that a   -->
-
-<!-- I am currently a PhD Student in Computer Science at the University of Michigan--Ann Arbor and an <a href="https://www.nsfgrfp.org/">NSF graduate research fellow in neuroscience</a> exploring principled methods of analyzing the mind and brain. Among those which excite me most are  -->
-<!-- http://gershmanlab.webfactional.com/pubs/GershmanNiv12.pdf -->
-<!-- 1. [Bayesian nonparametric methods](http://gershmanlab.webfactional.com/pubs/GershmanBlei12.pdf) for its ability to specify methods by which humans might define (potentially) infinite hidden variables in response to observed data; -->
-<!-- 2. [reinforcement learning](https://www.princeton.edu/~nivlab/papers/NivLangdon2016.pdf) for its ability to elucidate how humans may place value on what they encounter in attempts to optimize their experience; and -->
-<!-- 3. [artificial neural networks](https://www.ncbi.nlm.nih.gov/pubmed/26906502) for their potential to give insight into how neural networks can incorporate mechanisms for learning hidden variables into their topology. -->
- <!-- (e.g., convolutional neural networks have been shown to inadvertently learn visual primitives like edges and contours). -->
-
-<!-- My long term goal is to develop and advance unified theoretical models for cognition, behavior, and learning that I may corroborate through experimental work with humans  and through AI-based computer simulations.  -->
-<!-- Here are some [behavioral questions]({{ site.baseurl }}/questions) that I plan to tackle with my research. -->
-
-<!-- If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/intellectual_autobio)** in spoken word form.
- -->
 <br>
 
 ---
