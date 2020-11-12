@@ -129,9 +129,6 @@
 </table>
 
 
-
-
-
 ## <i class="fa fa-chevron-right"></i> Conference Publications
 
 <!-- ### [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en)
@@ -172,6 +169,32 @@
 <!-- ### [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en)
  -->
 <div class="publications">
+<div class="row publication">
+  <div class="col-sm-3 center">
+    <!-- <img class="pub-image responsive" src="/files/iclr_2017/figures/vrada_tsne.png"> -->
+  </div>
+  <div class="col-sm-7 center">
+    <p>
+    <strong> <a href="">Reinforcement Learning for Sparse-Reward Object-Interaction Tasks in First-person Simulated 3D Environments</a> </strong> <br> 
+    Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu
+    <br>
+    <em> ICML Object-Oriented Learning Workshop, NeurIPS DeepRL Workshop , </em> 2020
+    </p>
+  </div>
+</div>
+<div class="row publication">
+  <div class="col-sm-3 center">
+    <!-- <img class="pub-image responsive" src="/files/iclr_2017/figures/vrada_tsne.png"> -->
+  </div>
+  <div class="col-sm-7 center">
+    <p>
+    <strong> <a href="">Successor Landmarks for Efficient Exploration and Long-Horizon Navigation</a> </strong> <br> 
+    Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu
+    <br>
+    <em> NeurIPS DeepRL Workshop , </em> 2020
+    </p>
+  </div>
+</div>
 <div class="row publication">
   <div class="col-sm-3 center">
     <!-- <img class="pub-image responsive" src="/files/iclr_2017/figures/vrada_tsne.png"> -->

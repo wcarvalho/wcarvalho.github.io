@@ -6,51 +6,52 @@ title: Publications
 
 <p>* denotes co-first author</p>
 
-<h1>Preprints</h1>
+<!-- <h1>Preprints</h1>
 <div class="publications">
-  <div class="row publication">
-    <div class="col-sm-3 center">
-      <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/roma/toast-bread.png">
-    </div>
-    <div class="col-sm-7 center">
-      <p>
-      <strong>
-        <a href="{{ site.baseurl }}/publications/roma">ROMA: A Relational, Object-Model Learning Agent for Sample-Efficient Reinforcement Learning</a>
-      </strong> 
-      <br> 
-      <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
-      <a href="https://aliang8.github.io/">Anthony Liang</a>,
-      <a href="https://sites.google.com/view/kiminlee">Kimin Lee</a>,
-      <a href="https://sites.google.com/view/sungryull">Sungryull Sohn</a>,
-      <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>,
-      <a href="http://www-personal.umich.edu/~rickl/">Richard L. Lewis</a>,
-      <a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a>
-      <br>
-      <em>
-      ICML Object-Oriented Learning (OOL): Perception, Representation, and Reasoning Workshop,
-      </em> 2020
-      </p>
-      <div class="row pub-links">
-      <p>
-        <a href="{{ site.baseurl }}/publications/roma">
-        <button type = "button" class = "btn btn-primary">
-        Project Page
-        </button>
-        </a>
-        <a href="https://twimlai.com/relational-object-centric-agents-for-completing-simulated-household-tasks-with-wilka-carvalho/">
-        <button type = "button" class = "btn btn-primary">
-        Podcast
-        </button>
-        </a>
-      </p>
-    </div>
-    </div>
-  </div>
 </div>
-
+ -->
 
 <h1> Publications</h1>
 <div class="publications">
+
+
+<div class="row publication">
+<div class="col-sm-3 center">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/roma/toast-bread.png">
+</div>
+<div class="col-sm-7 center">
+  <p>
+  <strong>
+    <a href="{{ site.baseurl }}/publications/roma">Reinforcement Learning for Sparse-Reward Object-Interaction Tasks in First-person Simulated 3D Environments</a>
+  </strong> 
+  <br> 
+  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+  <a href="https://aliang8.github.io/">Anthony Liang</a>,
+  <a href="https://sites.google.com/view/kiminlee">Kimin Lee</a>,
+  <a href="https://sites.google.com/view/sungryull">Sungryull Sohn</a>,
+  <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>,
+  <a href="http://www-personal.umich.edu/~rickl/">Richard L. Lewis</a>,
+  <a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a>
+  <br>
+  <em> ICML Object-Oriented Learning (OOL): Perception, Representation, and Reasoning Workshop, </em> 2020
+  <br>
+  <em> NeurIPS Deep RL Workshop, </em> 2020
+  </p>
+  <div class="row pub-links">
+  <p>
+    <!-- <a href="{{ site.baseurl }}/publications/roma">
+    <button type = "button" class = "btn btn-primary">
+    Project Page
+    </button></a> -->
+    <a href="https://twimlai.com/relational-object-centric-agents-for-completing-simulated-household-tasks-with-wilka-carvalho/">
+    <button type = "button" class = "btn btn-primary">
+    Podcast
+    </button>
+    </a>
+  </p>
+  </div>
+</div>
+</div>
 
 <!-- AAAI Safety -->
 <div class="row publication">
