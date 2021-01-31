@@ -22,7 +22,8 @@ title: Publications
 <div class="col-sm-7 center">
   <p>
   <strong>
-    <a href="{{ site.baseurl }}/publications/roma">Reinforcement Learning for Sparse-Reward Object-Interaction Tasks in First-person Simulated 3D Environments</a>
+    <!-- <a href="{{ site.baseurl }}/publications/roma">Reinforcement Learning for Sparse-Reward Object-Interaction Tasks in First-person Simulated 3D Environments</a> -->
+    Reinforcement Learning for Sparse-Reward Object-Interaction Tasks in First-person Simulated 3D Environments
   </strong> 
   <br> 
   <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
