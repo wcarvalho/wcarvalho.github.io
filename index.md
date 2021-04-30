@@ -4,12 +4,14 @@ title: Home
 ---
 ## Introduction
 
-My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring cognitive scientist. I am interested in developing computational and mechanistic cognitive theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in realistic visual scenes to enable sophisticated behavioral policies. Some behaviors that I hope to help explain include: 
+My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring cognitive scientist. I am interested in developing computational and mechanistic cognitive theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in their sensory stream to enable rapid adaptation in a broad range of ecological situations. Some long-horizon goal-posts I've set to guide intermediary research and skill acquisition include: 
 
 * [how humans set their life goals and work towards them]({{ site.baseurl }}/misc/questions), and 
 * [why our representation learning scheme induces stereotypes and how this relates to our behavioral responses](https://medium.com/@wcarvalho92/success-vs-failure-generalization-vs-stereotyping-40de0713ab5d) (i.e. our [policies](https://stackoverflow.com/questions/46260775/what-is-a-policy-in-reinforcement-learning#:~:text=A%20policy%20defines%20the%20learning,still%20didn't%20fully%20understand.)).
 
-Towards this end, I am pursuing a PhD in Machine Learning at the University of Michigan where I study how **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. I hope these AI models can inform my future cognitive theories :)
+<!-- Currently, I'm pursuing a PhD in Machine Learning at the University of Michigan where I study how an agent can learn a state-representation composed of flexible partitions of its sensory stream that facilitate generalizing its behavioral policy to novel situations. More broadly, I intersects **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. I hope these AI models can inform my future cognitive theories :)
+ -->
+ Towards this end, I am pursuing a PhD in Machine Learning at the University of Michigan where I study how **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. I hope these AI models can inform my future cognitive theories :)
 
 My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/) (representation learning), [Satinder Singh](https://web.eecs.umich.edu/~baveja/) (reinforcement learning), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html) (psychology). 
 
