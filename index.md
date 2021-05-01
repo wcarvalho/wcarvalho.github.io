@@ -4,7 +4,7 @@ title: Home
 ---
 ## Introduction
 
-My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring cognitive scientist. I am interested in developing computational and mechanistic cognitive theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in their sensory experience to enable rapid adaptation to a broad range of ecological situations. Some long-horizon goal-posts I've set to guide intermediary research and skill acquisition include: 
+My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring cognitive scientist. I am interested in developing computational theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in their sensory experience to enable rapid adaptation to a broad range of ecological situations. Some long-horizon goal-posts I've set to guide intermediary research and skill acquisition include: 
 
 * [how humans set their life goals and work towards them]({{ site.baseurl }}/misc/questions), and 
 * [why our representation learning scheme induces stereotypes and how this relates to our behavioral responses](https://medium.com/@wcarvalho92/success-vs-failure-generalization-vs-stereotyping-40de0713ab5d) (i.e. our [policies](https://stackoverflow.com/questions/46260775/what-is-a-policy-in-reinforcement-learning#:~:text=A%20policy%20defines%20the%20learning,still%20didn't%20fully%20understand.)).
