@@ -34,6 +34,7 @@ title: Publications
   <a href="http://www-personal.umich.edu/~rickl/">Richard L. Lewis</a>,
   <a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a>
   <br>
+  <em> IJCAI, </em> 2021
   <em> ICML Object-Oriented Learning (OOL): Perception, Representation, and Reasoning Workshop, </em> 2020
   <br>
   <em> NeurIPS Deep RL Workshop, </em> 2020
