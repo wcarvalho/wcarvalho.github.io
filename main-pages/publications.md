@@ -22,8 +22,8 @@ title: Publications
 <div class="col-sm-7 center">
   <p>
   <strong>
-    <!-- <a href="{{ site.baseurl }}/publications/roma">Reinforcement Learning for Sparse-Reward Object-Interaction Tasks in First-person Simulated 3D Environments</a> -->
-    Reinforcement Learning for Sparse-Reward Object-Interaction Tasks in First-person Simulated 3D Environments
+    <a href="https://arxiv.org/abs/2010.15195">Reinforcement Learning for Sparse-Reward Object-Interaction Tasks in First-person Simulated 3D Environments</a>
+    <!-- Reinforcement Learning for Sparse-Reward Object-Interaction Tasks in First-person Simulated 3D Environments -->
   </strong> 
   <br> 
   <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
@@ -34,17 +34,23 @@ title: Publications
   <a href="http://www-personal.umich.edu/~rickl/">Richard L. Lewis</a>,
   <a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a>
   <br>
-  <em> IJCAI, </em> 2021
+  <em> IJCAI, </em> 2021 <br>
   <em> ICML Object-Oriented Learning (OOL): Perception, Representation, and Reasoning Workshop, </em> 2020
   <br>
   <em> NeurIPS Deep RL Workshop, </em> 2020
   </p>
   <div class="row pub-links">
   <p>
-    <!-- <a href="{{ site.baseurl }}/publications/roma">
+    <a href="https://arxiv.org/abs/2010.15195">
     <button type = "button" class = "btn btn-primary">
-    Project Page
-    </button></a> -->
+    arXiv
+    </button>
+    </a>
+    <a href="https://slideslive.com/38938237/learning-objectinteraction-tasks-with-less-supervision-by-learning-an-attentive-objectmodel">
+    <button type = "button" class = "btn btn-primary">
+    NeurIPS Talk
+    </button>
+    </a>
     <a href="https://twimlai.com/relational-object-centric-agents-for-completing-simulated-household-tasks-with-wilka-carvalho/">
     <button type = "button" class = "btn btn-primary">
     Podcast

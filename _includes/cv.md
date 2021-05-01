@@ -140,6 +140,19 @@
   </div>
   <div class="col-sm-7 center">
     <p>
+    <strong> <a href="">Reinforcement Learning for Sparse-Reward Object-Interaction Tasks in First-person Simulated 3D Environments</a> </strong> <br> 
+    Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu
+    <br>
+    <em> IJCAI , </em> 2021
+    </p>
+  </div>
+</div>
+<div class="row publication">
+  <div class="col-sm-3 center">
+    <!-- <img class="pub-image responsive" src="/files/iclr_2017/figures/vrada_tsne.png"> -->
+  </div>
+  <div class="col-sm-7 center">
+    <p>
     <strong> <a href="">Variational Recurrent Adversarial Domain Adaptation</a> </strong> <br> 
     Sanjay Purushotham*, <span style="color: #9f30a5">Wilka Carvalho*</span>, and Yan Liu
     <br>
@@ -298,6 +311,13 @@
   <td class='col-md-3'>August 2018 - Present</td>
   <td>
     <strong>University of Michigan-Ann Arbor</strong>,  <br>
+    
+  </td>
+</tr>
+<tr>
+  <td class='col-md-3'>March 2021 - July 2021</td>
+  <td>
+    <strong>DeepMind</strong>, Murray Shanahan <br>
     
   </td>
 </tr>

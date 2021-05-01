@@ -15,7 +15,7 @@ My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensi
 
 My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/) (representation learning), [Satinder Singh](https://web.eecs.umich.edu/~baveja/) (reinforcement learning), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html) (psychology). 
 
-Here are my [publications]({{ site.baseurl }}/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio). If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/misc/intellectual_autobio)** in spoken word form.
+Here are my [publications]({{ site.baseurl }}/main-pages/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio). If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/misc/intellectual_autobio)** in spoken word form.
 
 
 
