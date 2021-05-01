@@ -5,8 +5,8 @@ permalink:           pretty
 
 # Setup
 title:               Wilka Carvalho
-tagline:             'Aspiring Brain and Machine Learning Scientist'
-description:         'A small website to introduce you to myself'
+tagline:             'Aspiring Cognitive Scientist'
+description:         ''
 url:                 https://wcarvalho.github.io/
 baseurl:             ''
 markdown:            kramdown
