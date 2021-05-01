@@ -27,6 +27,18 @@ comments: true
 
 <div class="col-md-6 col-sm-6 portfolio-item">
   <div class="embed-responsive embed-responsive-16by9">
+    <iframe src="https://open.spotify.com/embed-podcast/episode/5PgoQXdfLGAUyxBzibnY5b" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </div>
+  <div class="portfolio-caption">
+    <h4>Chelsea Onyeador & Wilka Carvalho - Finding Gaps in Your Grad School Apps</h4>
+    <p class="text-muted">December, 2020</p>
+  </div>
+</div>
+
+
+
+<div class="col-md-6 col-sm-6 portfolio-item">
+  <div class="embed-responsive embed-responsive-16by9">
     <iframe style="border: none" src="//html5-player.libsyn.com/embed/episode/id/15691472/height/90/theme/custom/thumbnail/no/direction/backward/render-playlist/no/custom-color/3e85b1/" width="100%" scrolling="no"  allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
   </div>
   <div class="portfolio-caption">
@@ -46,11 +58,12 @@ comments: true
   </div>
 </div>
 
-<div class="col-lg-12 portfolio-item">
+
+<div class="col-md-6 col-sm-6 portfolio-item">
   <a class="portfolio-link" data-toggle="modal" href="https://news.engin.umich.edu/2018/07/exploring-the-source-of-social-stereotypes/">
   <div class="portfolio-hover">
   <div class="portfolio-hover-content">
-    <i class="fa fa-plus fa-3x">Spotlight after winning GEM felloship</i>
+    <i class="fa fa-plus fa-3x">Spotlight after winning GEM fellowship</i>
   </div>
   </div>
     <img class="img-fluid" src="{{ site.baseurl }}/main-pages/press-photos/mich-spotlight.png" alt="">
@@ -60,6 +73,7 @@ comments: true
     <p class="text-muted">July 2nd, 2018</p>
   </div>
 </div>
+
 
 </div>
 </div>
