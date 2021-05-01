@@ -30,7 +30,7 @@ comments: true
     <iframe src="https://open.spotify.com/embed-podcast/episode/5PgoQXdfLGAUyxBzibnY5b" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   </div>
   <div class="portfolio-caption">
-    <h4>Chelsea Onyeador & Wilka Carvalho - Finding Gaps in Your Grad School Apps</h4>
+    <h4>Advice on Graduate School Applications</h4>
     <p class="text-muted">December, 2020</p>
   </div>
 </div>
