@@ -24,10 +24,13 @@ title: Publications
     <p>
     <strong>
       Learning to Represent State with Perceptual Schemata
-    </strong> <br> 
-    <span style="color: #9f30a5">Wilka Carvalho</span>, Murray Shanahan <br>
-    <em> ICML Unsupervised RL Workshop, </em> 2021 <br>
-    <em> ICML Real Life RL Workshop, </em> 2021 <br>
+    </strong>
+    <br> 
+        <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+        <a href="https://www.doc.ic.ac.uk/~mpsha/">Murray Shanahan</a>
+    <br>
+        <em> ICML Unsupervised RL Workshop, </em> 2021 <br>
+        <em> ICML Real Life RL Workshop, </em> 2021 <br>
     </p>
 </div>
 </div>
