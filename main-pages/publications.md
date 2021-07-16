@@ -15,8 +15,25 @@ title: Publications
 <div class="publications">
 
 
+<!-- Perceptual Schemata -->
 <div class="row publication">
-<div class="col-sm-3 center">
+<div class="col-sm-2 center">
+<img class="pub-image responsive" src="{{ site.baseurl }}/publications/perceptual_schemata/architecture.png">
+</div>
+<div class="col-sm-7 center">
+    <p>
+    <strong>
+      Learning to Represent State with Perceptual Schemata
+    </strong> <br> 
+    <span style="color: #9f30a5">Wilka Carvalho</span>, Murray Shanahan <br>
+    <em> ICML {Unsupervised, Real Life} RL Workshop, </em> 2021 <br>
+    </p>
+</div>
+</div>
+
+
+<div class="row publication">
+<div class="col-sm-2 center">
   <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/roma/toast-bread.png">
 </div>
 <div class="col-sm-7 center">
@@ -35,8 +52,7 @@ title: Publications
   <a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a>
   <br>
   <em> IJCAI, </em> 2021 <br>
-  <em> ICML Object-Oriented Learning (OOL): Perception, Representation, and Reasoning Workshop, </em> 2020
-  <br>
+  <em> ICML Object-Oriented Learning Workshop, </em> 2020 <br>
   <em> NeurIPS Deep RL Workshop, </em> 2020
   </p>
   <div class="row pub-links">
@@ -63,7 +79,7 @@ title: Publications
 
 <!-- AAAI Safety -->
 <div class="row publication">
-  <div class="col-sm-3 center">
+  <div class="col-sm-2 center">
     <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/icml_2018_thumbnail.png">
   </div>
   <div class="col-sm-7 center">
@@ -84,7 +100,7 @@ title: Publications
 
 <br><br>
 <div class="row publication">
-  <div class="col-sm-3 center">
+  <div class="col-sm-2 center">
     <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/iclr_2017/figures/vrada_tsne.png">
   </div>
   <div class="col-sm-7 center">
@@ -116,7 +132,7 @@ title: Publications
 
 <!-- NIPS ML4HC -->
 <!-- <div class="row publication">
-  <div class="col-sm-3 center">
+  <div class="col-sm-2 center">
     <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/iclr_2017/figures/vrada.png">
   </div>
   <div class="col-sm-7 center">
@@ -139,7 +155,7 @@ title: Publications
 <!-- Stony Brook -->
 <br><br>
 <div class="row publication">
-  <div class="col-sm-3 center">
+  <div class="col-sm-2 center">
     <img class="pub-image responsive" src="{{ site.baseurl }}/files/dirc/beams.jpg">
   </div>
   <div class="col-sm-7 center">
