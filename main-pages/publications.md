@@ -9,7 +9,7 @@ title: Publications
 <!-- <h1>Preprints</h1>
 <div class="publications">
 </div>
- -->
+ -->tr
 
 <h1> Publications</h1>
 <div class="publications">
@@ -26,7 +26,8 @@ title: Publications
       Learning to Represent State with Perceptual Schemata
     </strong> <br> 
     <span style="color: #9f30a5">Wilka Carvalho</span>, Murray Shanahan <br>
-    <em> ICML {Unsupervised, Real Life} RL Workshop, </em> 2021 <br>
+    <em> ICML Unsupervised RL Workshop, </em> 2021 <br>
+    <em> ICML Real Life RL Workshop, </em> 2021 <br>
     </p>
 </div>
 </div>
