@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta property="og:image" content="/img/abstract_head.png">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Building Machines that Learn and Think Like People (pt 4. Learning as Rapid Model-Building) &middot; Wilka Carvalho
+    
+  </title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/public/css/projects.css">
+  <link rel="stylesheet" href="/public/css/icons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/public/css/general.css">
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/brain-icon.png">
+  <link rel="shortcut icon" href="/img/brain-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <!-- Math Support -->
+
+  <body class="layout">
+
+      <div class="masthead">
+    
+  <div class="top-left">
+  </div>
+  <div class="bottom-right">
+    <div class="container">
+      <div align="center">
+        <h3 class="masthead-title">
+            <img class="nsf responsive-img" src="/img/headshot.jpg"> <br>
+            <a href="/" title="Home">Wilka Carvalho</a><br>
+            <small>Aspiring Cognitive Scientist</small>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-left">
+    <div class="container">
+      <a href="https://twitter.com/CogSciKid/"><i class="svg-icon twitter"></i></a>
+      <a href="https://github.com/wcarvalho/"><i class="svg-icon github"></i></a>
+      <a href="https://www.linkedin.com/in/wilkacarvalho/"><i class="svg-icon linkedin"></i></a>
+      <a href="mailto:wcarvalho92@gmail.com"><i class="svg-icon email"></i></a>
+    </div>
+  </div>
+</div>
+      <div class="navbar-outter">
+<nav class="navbar sticky-top justify-content-between navbar-expand-sm navbar-nav navbar-dark bg-dark">
+<!-- <div class="navbar-inner"> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a href="/">Home</a> -->
+        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/publications">Publications</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/press">Press</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Side Projects
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Projects
+          </a>
+          <a class="dropdown-item" href="/main-pages/projects/#essays">Essays</a>
+          <a class="dropdown-item" href="/main-pages/projects/#poetry">Poetry</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/files/wilka_carvalho_CV.pdf">CV</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/misc/acknowledgments">Acknowledgements</a>
+      </li>
+    </ul>
+
+
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown navbar-right">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink">
+          Learning Resources
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://wcarvalho.github.io/Phd-Resources/" id="navbarDropdownMenuLink">
+          PhD Resources
+          </a>
+          <a class="dropdown-item" href="https://wcarvalho.github.io/ML-Brain-Resources/">ML/Brain Resources</a>
+          <a class="dropdown-item" href="/misc/books">Useful Books</a>
+        </div>
+      </li>
+
+      <li class="nav-item navbar-nav navbar-right">
+        <a class="nav-link"  href="/main-pages/blog">Blog</a>
+      </li>
+    </ul>
+
+</div>
+<!-- </div> -->
+</nav>
+</div>
+      <div class="container content ">
+        <div class="post">
+  <h2 class="post-title">Building Machines that Learn and Think Like People (pt 4. Learning as Rapid Model-Building)</h2>
+  <span class="post-date">
+    06 Jan 2018
+    
+     | <cite> review </cite>
+    
+    
+    <br>
+    <em>
+      tags: cognitive-science, machine-learning, brain, deep-learning
+    </em>
+    
+  </span>
+  
+    Note: Ideas and opinions that are my own and not of the article will be in an <font color="grey"><em>italicized grey</em></font>.<br><br>
+
+<h1>Series Table of Contents</h1>
+
+<a href="/review/2017/12/23/building_machines_intro">Part 1: Introduction and History</a> <br>
+<a href="/review/2017/12/31/building_machines_challenges">Part 2: Challenges for Building Human-Like Machines</a> <br>
+<a href="/review/2018/01/01/building_machines_developmental">Part 3: Developmental Software</a> <br>
+<a href="/review/2018/01/06/building_machines_learning">Part 4: Learning as Rapid Model-Building</a> <br>
+<a href="/review/2018/01/06/building_machines_thinking">Part 5: Thinking Fast</a> <br>
+<a href="/review/2017/12/23/building_machines_resources">Resources</a> <br>
+<a href="/review/2017/12/23/building_machines_glossary">Glossary</a> <br>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Article Table of Contents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#compositionality">Compositionality</a></td>
+    </tr>
+    <tr>
+      <td><a href="#causality">Causality</a></td>
+    </tr>
+    <tr>
+      <td><a href="#learning-to-learn">Learning-to-learn</a></td>
+    </tr>
+    <tr>
+      <td><a href="#references">References</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Previously, we discussed some skills manifest early in childhood that might play a key role in human-level learning &amp; thinking. Whereas there, the focus was on what type of information the brain may use to bootstrap learning, here we focus on how the brain learns so efficiently. We will try to discuss methods of learning that are potentially useful for the brain, with a particular focus on endowing neural networks with the ability to “rapidly build models”. By this, we mean the ability to quickly learn and construct models for things in the world.</p>
+
+<p>Throughout the history of neural networks, learning has traditionally been characterized by gradual adjustment of network weights (abstractions for their synapses) <a class="citation" href="#contrastive_divergence">(Hinton, 2002; Rumelhart et al., 1986)</a>. Through gradual weight changing, neural networks have learned to gradually (read slowly) match the statistics of a dataset they’re trained on. However, we know from studies with children that humans have the ability to learn and generalize rapidly from small amounts of data <a class="citation" href="#new_word">(Carey &amp; Bartlett, 1978)</a>. If you imagine that there is some abstract, infinite space which contains representations of all possible objects, humans seem to be able to demarcate the subset of that space which corresponds to a particular category after only a few examples. For example, in the image below, from just seeing a few examples of “dogs”, humans learn that “dogs” belong to a particular region in that space. <font color="grey"><em>This reminds me of the stratification found between concept representations with <a href="http://suriyadeepan.github.io/img/seq2seq/we1.png">word embeddings</a>. This makes me wonder if humans are learning the demarcation in a naturally occuring space that they'e learning or in a space they fabricate and populate as they learn. Put differently, it makes me wonder if the space below is real and learned by humans or created by humans as they learn to represent and differentiate objects.</em></font></p>
+
+<p><img src="/files/posts/building_machines_like_people/space_demarcation.png" alt="space_demarcation" /></p>
+
+<p>It is clear that neural networks don’t use data as efficiently as humans do. The authors argue that what differentiates humans from neural networks, currently, is that neural networks simply learn to recognize patterns whereas humans learn structured representations or “<strong>concepts</strong>”. For example, in the diagram below, a character can be represented as a structured combination of strokes. Learning concepts is more flexible because you can, for example, parse a concept into important components or create more sophisticated meta-concepts. To learn concepts, the authors suggest we work to endow neural networks with <a href="/review/2017/12/23/building_machines_glossary/#compositionality">compositionality</a>, <a href="/review/2017/12/23/building_machines_glossary/#causal-models">causality</a>, and <a href="/review/2017/12/23/building_machines_glossary/#learning-to-learn">learning-to-learn</a>.</p>
+
+<p>To showcase the utility of these components, the authors compare learning with a neural network to learning with a probabilistic programming framework they developed known as “Bayesian Program Learning” (BPL) <a class="citation" href="#bpl">(Lake et al., 2015)</a>. Here, concepts are learned as simple, learnable, stochastic programs which are controlled by a meta-program. I will describe the framework in the context of representing the characters in the omniglot dataset as concepts:</p>
+
+<p><img src="/files/posts/building_machines_like_people/bpl.png" alt="bpl" /></p>
+
+<ol>
+  <li>One program is responsible for representing concepts/object templates.
+    <ol>
+      <li>There are primitives, which for omniglot represent “fundamental” strokes that can be made for characters.</li>
+      <li>Primitives are related and combined to create parts. Parts are then re-related and combined to create templates for a “concept”.</li>
+    </ol>
+  </li>
+  <li>A meta-program is then responsible for generating a “concept” using the template. This whole process is stochastic because how each component of a concept manifests (or is drawn) is stochastic. For example, in the figure above, you can see possible variations the program might generate for each object template. Clearly there is variation in the angles, lengths, etc. of the strokes for concepts but the general structure is maintained.</li>
+</ol>
+
+<p>Concept learning is then learning these stochastic programs for generating object templates. A key facet of concepts is that their “components” are represented <strong>hierarchically</strong>. For example, primitives are combined into sub-parts which are combined and related into parts in a hierarchical process. By representing concept learning in this form, BPL is able to re-use prior knowledge (e.g. learned primitives) and learn character concepts using only a few examples similarly to humans.</p>
+
+<h2 id="compositionality">Compositionality</h2>
+
+<p>Compositionality is the classic idea that new representations can be constructed through combinations of primitive elements. Real world examples include sentences which are combinations of words, the “primitives” of language <a class="citation" href="#lang_of_thought">(Fodor, 1975)</a>, or programs which are compositions of functions, which are themselves compositions of more primitive data types.</p>
+
+<p>Compositionality has been influential in both artificial intelligence and cognitive science. This paper focuses on it in the context of object representation. Here, “structural description models” have historically assumed that visual concepts could be represented as <em>compositions</em> of parts and relations <a class="citation" href="#vis_composition">(Biederman, 1987)</a>. For example, a segway can be <em>composed</em> of wheels, connected to a stand and handle.</p>
+
+<p>As a reminder, learning-to-learn is the idea of using learned concepts as “primitives” for other concepts when learning. In the diagram above, once one learns the “primitives”, using them to learn new concepts is “learning-to-learn”. <font color="grey"><em>("Learning-to-learn" actually sounds like a misnomer in this context. You're not learning to learn. You're bootstrapping knowledge. But I digress.)</em></font> Compositionality and learning-to-learn, as seen by the example above, can naturally go together for learning concepts, especially with a hierarchical structure. This in turn can facilitate generalization to new tasks as previous knowledge is easily built upon and reused.</p>
+
+<p>Neural networks have been shown to have compositionality like functionality as progressively deep layers represent objects as compositions of more primitive features at lower layers. However, neural networks seem to lack the “relation” feature, disallowing them from utilizing compositionality for complex tasks. <font color="grey"><em> This seems to no longer be true as <a href="https://www.youtube.com/watch?v=pPN8d0E3900">capsule</a> <a href="https://medium.com/ai%C2%B3-theory-practice-business/understanding-hintons-capsule-networks-part-i-intuition-b4b559d1159b">networks</a> seem to be able to capture relations between objects. Previously, neural networks would recognize the object in the image below as a face because they learned that faces were compositions of more primitive parts (nose, eyes, lips, etc.). However, capsule networks also learn relations between parts, requiring the components of a face to have roughly correct spatial relations in order for the composition to be classified as a face. </em></font></p>
+
+<p><img src="/files/posts/building_machines_like_people/capsule.png" alt="capsule" /></p>
+
+<p>Compositionality in neural networks has a number of utilities. Besides allowing for more sophisticated object recognition, non-visual objects can also be seen from a compositional perspective. For example, completing the level of a video game can be thought of (and possibly learned) as completing a composition of sub-goals (e.g. get to ledge, jump down, jump over enemy, etc.).</p>
+
+<h2 id="causality">Causality</h2>
+
+<p>Causal models attempt to abstractly describe the real world process that produces an observation. They are a sub-class of generative models that attempt to describe a process for generating data. They differ in that the process for generating data described by a generative model does not need to resemble the real-world process that generated the data, whereas in causal models, the generative process does need to resemble the real-world process. For example, a model that learns to predict the pixels associated with different character concepts is simply a generative model (e.g. <a class="citation" href="#vae">(Kingma, Diederik P &amp; Welling, Max, 2013)</a>); whereas a model that attempts to generate hand-written characters by imitating strokes is a causal model (e.g. <a class="citation" href="#bpl">(Lake et al., 2015)</a>).</p>
+
+<p>Causal models have been influential in research on perception, particularly in the idea of “analysis by synthesis” <a class="citation" href="#analysis_by_synthesis">(Bever &amp; Poeppel, 2010)</a>. It states that sensory data can be more richly represented by modeling the process that generated it. Studies in cognitive science have shown that causal models are important and likely modeled by humans. For example, experiments have shown that changing the causal process for how data is generated can change how humans both learn and generalize what they learn <a class="citation" href="#causality_effects_humans">(Rehder, 2003)</a>.</p>
+
+<p>Much research indicates that we model the causal process that generated the data we see. For example, when we see images, we often interpret or caption them in the form of an answer to “why is this happening?” <a class="citation" href="#causality_effects_humans">(Rehder, 2003)</a>. This is something that neural networks currently lack, as evident by the examples of captions generated by neural networks below. While the components in the images are present, their causal relation is missing and leads to wildly inaccurate captions.</p>
+
+<p><img src="/files/posts/building_machines_like_people/nn_captions.png" alt="nn_captions" /></p>
+
+<p>While neural networks have had difficulty learning the causal structure in images, one has done a good job with learning causal models for hand-written characters: the DRAW architecture <a class="citation" href="#draw">(Rezende et al., 2016)</a>. This model was able to learn a causal model for characters and learned to draw characters from only a few examples similarly to the BPL. However, the authors claim that DRAW doesn’t generalize similarly to humans. This is, however, a point of contention <a class="citation" href="#think_for_themselves">(Botvinick et al., 2017)</a>, as prominent cognitive scientists and neuroscientists have argued otherwise.</p>
+
+<p>Regardless, neural networks can likely benefit from causality and compositionality. They may facilitate learning-to-learn as it may allow for more primitive concepts to effectively be utilized for explaining new data. They may also facilitate neural networks learning realistic models for how data is produced, and more strongly, they may facilitate learning models for the world and how it changes.</p>
+
+<h2 id="learning-to-learn">Learning-to-learn</h2>
+
+<p>As mentioned before, learning-to-learn is the utilization of prior knowledge in learning a new task. In BPL, this was reusing primitives and learned parts when learning new concepts. In machine learning, this is closely related to “transfer learning”, where you apply knowledge learned from one task to another, “multi-task learning”, where you learn multiple tasks concurrently with the hope that task-constituents are shared and help each other, and “representation learning”, where you seek to learn generalizable representations of data.</p>
+
+<p>In learning-to-learn, hierarchical structure seems to be particularly useful. For example, with BPL, once the parts were learned, hierarchical structure facilitated their reuse for learning new concepts. Further, hierarchical structure allowed for compositionality, causality, and learning-to-learn to naturally work together, acting somewhat like a catalyst for producing a model that could quickly learn new concepts.</p>
+
+<p>While there is much research being done on learning-to-learn, the authors believe this could particularly benefit from compositional, hierarchical, and causal representations. <font color="grey"><em>I actually think neural networks already have compositional and hierarchical representations. However, they're missing causality, which I do believe will play a key role. I think this is evident by the captions generated above. </em></font> Learning-to-learn is particularly important for efficient learning because it allows for the re-use of learned representations for new tasks. <strong>The interaction between representations and previous experience may be the key to building machines that learn as fast as people do</strong>.</p>
+
+<h2 id="references">References</h2>
+
+<ol class="bibliography"><li><span id="lake">Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp; Gershman, S. J. (2016). Building Machines That Learn and Think Like People. <i>The Behavioral and Brain Sciences</i>, <i>40</i>, 1–101.</span></li>
+<li><span id="backprop">Rumelhart, D. E., Hinton, G. E., &amp; Williams, R. J. (1986). Learning representations by back-propagating errors. <i>Nature</i>, <i>323</i>(6), 533–536.</span></li>
+<li><span id="contrastive_divergence">Hinton, G. E. (2002). Training Products of Experts by Minimizing Contrastive Divergence. <i>Neural Computation</i>, <i>14</i>(8), 1771–1800.</span></li>
+<li><span id="new_word">Carey, S., &amp; Bartlett, E. (1978). <i>Acquiring a single new word.</i></span></li>
+<li><span id="bpl">Lake, B. M., Salakhutdinov, R., &amp; Tenenbaum, J. B. (2015). Human-level concept learning through probabilistic program induction. <i>Science</i>, <i>350</i>(6266), 1332–1338.</span></li>
+<li><span id="lang_of_thought">Fodor, J. A. (1975). <i>The Language of Thought</i>. Harvard University Press.</span></li>
+<li><span id="vis_composition">Biederman, I. (1987). Recognition-by-components: a theory of human image understanding. <i>Psychological Review</i>, <i>94</i>(2), 115–147.</span></li>
+<li><span id="vae">Kingma, Diederik P, &amp; Welling, Max. (2013). Auto-Encoding Variational Bayes. <i>ArXiv.org</i>.</span></li>
+<li><span id="analysis_by_synthesis">Bever, T. G., &amp; Poeppel, D. (2010). Analysis by synthesis: a (re-) emerging program of research for language and vision. <i>Biolinguistics</i>, <i>4</i>(2-3), 174–200.</span></li>
+<li><span id="causality_effects_humans">Rehder, B. (2003). A causal-model theory of conceptual representation and categorization. <i>Journal of Experimental Psychology. Learning, Memory, and Cognition</i>, <i>29</i>(6), 1141–1159.</span></li>
+<li><span id="draw">Rezende, D. J., Mohamed, S., Danihelka, I., Gregor, K., &amp; Wierstra, D. (2016). One-Shot Generalization in Deep Generative Models. <i>ArXiv.org</i>, arXiv:1603.05106.</span></li>
+<li><span id="think_for_themselves">Botvinick, M., Barrett, D. G. T., Battaglia, P., de Freitas, N., Kumaran, D., Leibo, J. Z., Lillicrap, T., Modayil, J., Mohamed, S., Rabinowitz, N. C., &amp; others. (2017). Building machines that learn and think for themselves. <i>Behavioral and Brain Sciences</i>, <i>40</i>.</span></li></ol>
+
+
+<h3>Thank you for reading. Please leave any comments or thoughts below or, alternatively, feel free to email me at <a href="mailto:wcarvalho92@gmail.com">wcarvalho92@gmail.com</a>.</h3>
+
+  
+</div>
+
+<h2>Related Posts</h2>
+
+
+
+
+
+<ol>
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/commentary/2018/01/29/learning_quickly/">The Pitfalls of Learning Quickly</a> - January 29, 2018 |  <span class="label label-default">cognitive-science</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/06/building_machines_thinking/">Building Machines that Learn and Think Like People (pt 5. Thinking Fast)</a> - January 06, 2018 |  <span class="label label-default">cognitive-science</span>  <span class="label label-default">machine-learning</span>  <span class="label label-default">brain</span>  <span class="label label-default">deep-learning</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/01/building_machines_developmental/">Building Machines that Learn and Think Like People (pt 3. Developmental Software)</a> - January 01, 2018 |  <span class="label label-default">cognitive-science</span>  <span class="label label-default">machine-learning</span>  <span class="label label-default">brain</span>  <span class="label label-default">deep-learning</span> </h5>
+        </div>
+        
+        
+            
+</ol>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname  = 'wilkacarvalho';
+  var disqus_identifier = '/review/2018/01/06/building_machines_learning/';
+
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+      </div>
+
+    <!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!-- popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="/public/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<!--  -->
+
+<!-- Bootstrap core JavaScript -->
+<!-- <script src="/public/vendor/jquery/jquery.min.js"></script> -->
+<!-- <script src="/public/vendor/popper/popper.min.js"></script> -->
+<!-- <script src="/public/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+
+<!-- Plugin JavaScript -->
+<!-- <script src="/public/vendor/jquery-easing/jquery.easing.min.js"></script> -->
+
+<!-- Contact form JavaScript -->
+<!-- <script src="/public/js/jqBootstrapValidation.js"></script> -->
+<!-- <script src="/public/js/contact_me.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<!-- <script src="/public/js/agency.min.js"></script> -->
+
+<!-- Materialize -->
+<!-- <script src="/public/js/materialize.min.js"></script> -->
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72232702-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72232702-1');
+</script>
+
+  </body>
+</html>

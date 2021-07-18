@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta property="og:image" content="/img/abstract_head.png">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Variational Recurrent Adversarial Domain Adaptation &middot; Wilka Carvalho
+    
+  </title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/public/css/projects.css">
+  <link rel="stylesheet" href="/public/css/icons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/public/css/general.css">
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/brain-icon.png">
+  <link rel="shortcut icon" href="/img/brain-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <!-- Math Support -->
+
+  <body class="layout">
+
+      <div class="masthead">
+    
+  <div class="top-left">
+  </div>
+  <div class="bottom-right">
+    <div class="container">
+      <div align="center">
+        <h3 class="masthead-title">
+            <img class="nsf responsive-img" src="/img/headshot.jpg"> <br>
+            <a href="/" title="Home">Wilka Carvalho</a><br>
+            <small>Aspiring Cognitive Scientist</small>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-left">
+    <div class="container">
+      <a href="https://twitter.com/CogSciKid/"><i class="svg-icon twitter"></i></a>
+      <a href="https://github.com/wcarvalho/"><i class="svg-icon github"></i></a>
+      <a href="https://www.linkedin.com/in/wilkacarvalho/"><i class="svg-icon linkedin"></i></a>
+      <a href="mailto:wcarvalho92@gmail.com"><i class="svg-icon email"></i></a>
+    </div>
+  </div>
+</div>
+      <div class="navbar-outter">
+<nav class="navbar sticky-top justify-content-between navbar-expand-sm navbar-nav navbar-dark bg-dark">
+<!-- <div class="navbar-inner"> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a href="/">Home</a> -->
+        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/publications">Publications</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/press">Press</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Side Projects
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Projects
+          </a>
+          <a class="dropdown-item" href="/main-pages/projects/#essays">Essays</a>
+          <a class="dropdown-item" href="/main-pages/projects/#poetry">Poetry</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/files/wilka_carvalho_CV.pdf">CV</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/misc/acknowledgments">Acknowledgements</a>
+      </li>
+    </ul>
+
+
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown navbar-right">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink">
+          Learning Resources
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://wcarvalho.github.io/Phd-Resources/" id="navbarDropdownMenuLink">
+          PhD Resources
+          </a>
+          <a class="dropdown-item" href="https://wcarvalho.github.io/ML-Brain-Resources/">ML/Brain Resources</a>
+          <a class="dropdown-item" href="/misc/books">Useful Books</a>
+        </div>
+      </li>
+
+      <li class="nav-item navbar-nav navbar-right">
+        <a class="nav-link"  href="/main-pages/blog">Blog</a>
+      </li>
+    </ul>
+
+</div>
+<!-- </div> -->
+</nav>
+</div>
+      <div class="container content ">
+        <div class="post">
+  <h2 class="post-title">Variational Recurrent Adversarial Domain Adaptation</h2>
+  <span class="post-date">
+    23 Apr 2017
+    
+     | <cite> research </cite>
+    
+    
+    <br>
+    <em>
+      tags: machine-learning, transfer-learning
+    </em>
+    
+  </span>
+  
+    <p>This blog post accompanies my first co-first-author publication, Variational Recurrent Adversarial Domain Adaptation, at ICLR (YAY!). I think its important to be able to convey information with varying levels of technicality. This is an opportunity to practice a relatively high-level explanation of the paper. For anybody interested in technical details, please see our <a href="/files/publications/iclr_2017/iclr2017_VADA.pdf">ICLR paper</a>.</p>
+
+<!-- summary: Transferring Dependencies Across Domains -->
+<ul id="markdown-toc">
+  <li><a href="#problem" id="markdown-toc-problem">Problem</a></li>
+  <li><a href="#solution" id="markdown-toc-solution">Solution</a>    <ul>
+      <li><a href="#variational-recurrent-neural-network" id="markdown-toc-variational-recurrent-neural-network">Variational Recurrent Neural Network</a></li>
+      <li><a href="#adversarial-training" id="markdown-toc-adversarial-training">Adversarial Training</a></li>
+    </ul>
+  </li>
+  <li><a href="#experiments" id="markdown-toc-experiments">Experiments</a>    <ul>
+      <li><a href="#learned-latent-representations" id="markdown-toc-learned-latent-representations">Learned Latent Representations</a></li>
+      <li><a href="#transferring-temporal-dependencies" id="markdown-toc-transferring-temporal-dependencies">Transferring Temporal Dependencies</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="problem">Problem</h2>
+
+<p>We wanted to develop a model that could perform unsupervised domain adaptation of time-series data. <a href="https://en.wikipedia.org/wiki/Domain_adaptation">Domain adaptation</a> is a subclass of Transfer learning. <a href="https://en.wikipedia.org/wiki/Inductive_transfer">Transfer learning</a> is a learning framework that attempts to transfer knowledge from a source domain \(x_{src}\) to a target domain \(x_{tgt}\). When the distributions share the same feature space but have different marginal distributions, i.e. \(P(x_{src}) \ne P(x_{tgt})\), this is known as domain adaptation. For example, if you have patient data for two age groups that has been collected using the same attributes (blood pressure, blood ph value, etc.) but these age groups experience different probabilites for each attribute, then they share a feature space but have differetn marginal distributions over their feature space. If this data is collected over some time period (daily, hourly, etc.), it is time-series data. Trying to apply knowledge learned from one age group to another age group is a domain adaptation problem (and a case study for our model).</p>
+
+<p>Our problem can framed as follows. We have N multi-variate time series data examples.</p>
+
+\[X = \{ \mathbf{x^i} \}_{i=1}^N, \text{  where  } \mathbf{x^i} = (x_1^i, x_2^i, \ldots, x_{T_i}^i )\]
+
+<p>Some subset belongs to the source domain and another subset to the target domain. We can divide our examples such that source are \((\mathbf{x_{\mathcal{S}}^i})_{i=1}^n\) and target are \((\mathbf{x_{\mathcal{T}}^i})_{i=n+1}^N.\) For each \(x_{\mathcal{S}}^i\), we have a label \(y_{\mathcal{S}}^i\), while we do not have \(y_{\mathcal{T}}^i\) for \(x_{\mathcal{T}}^i\). A label could for example correspond to whether a patient passed away while in the ICU. As we have no labels for target data, this makes our problem an <em>unsupervised domain adaptation</em> problem.</p>
+
+<p><strong> Our goal is then to learn a classifier for \(\mathbf{x_{\mathcal{S}}^i}\) which can successfully be applied to \(\mathbf{x_{\mathcal{T}}^i}\). </strong></p>
+
+<hr />
+
+<h2 id="solution">Solution</h2>
+
+<p>To accomplish this we employed a variational recurrent neural network (VRNN) to model our data and adversarial training to transfer knowledge across domains.</p>
+
+<h3 id="variational-recurrent-neural-network">Variational Recurrent Neural Network</h3>
+<p>We employed a VRNN to model our data because of its ability to account for the hidden factors of variation that are manifest in complex real-world data. This enabled us to capture complex temporal dependencies within our data.</p>
+
+<!-- E.g., there are hidden factors that contribute to the values collected for a patient during their hospital stay which can presumably be captured (to a degree) with a VRNN.  -->
+
+<p>The VRNN is essentially a variational autoencoder (VAE) conditioned on itself at every time step via the hidden state of a recurrent neural network. The main thing to know about the VAE is that it tries to learn latent values \(z\) that can generate the data \(x\). Adjusting these latent values is the source for variations in the data. In order to learn these latent values, it also approximates the posterior for producing \(z\) given \(x\). With the power of deep neural networks and some clever math, you have an auto-encoder like structure that learns good latent values that can generate your data.</p>
+
+<p><img src="/files/publications/iclr_2017/figures/vrnn.png" alt="VRNN" />
+This shows the encoding, decoding, and recurrence of the VRNN at a single time-step.</p>
+
+<p>At each time step \(t\), you sample your latent variable \(z_t^i\) using an encoder that is conditioned off of your data at that time-step \(x_t^i\) and the last hidden state of an RNN</p>
+<font color="blue">
+$$ z^i_t = f_{enc}(x^i_t, h_{t-1}) $$
+</font>
+<p>You then sample your reconstruction using a decoder that is conditioned off the latent variable and the last hidden state</p>
+<font color="DarkGoldenRod"> 
+$$ \hat{x}^i_t = f_{dec}(z^i_t, h_{t-1}) $$
+</font>
+<p>The latest hidden state is then conditioned of the data and the latent variable</p>
+<font color="red"> 
+$$ h_t = f_{RNN}(z^i_t, x_t^i, h_{t-1}) $$
+</font>
+
+<p><strong>Note:</strong> For details on the VRNN, see <a href="https://arxiv.org/pdf/1506.02216.pdf">this paper</a>. For more details on the VAE, see <a href="https://arxiv.org/pdf/1312.6114">its original paper</a> or <a href="https://arxiv.org/abs/1606.05908">this phenomenal, more in-depth tutorial</a>. 
+<!-- If you want a brief primer on VAEs but don't want to go into too much detail, check out my blog post, [A Bare Bones Explanation of the Variational Autoencoder](/research/2017/04/21/vae/). --></p>
+
+<p>As \(z_t^i\) values model our data well, we thought this would be a good representation to use for learning a classifier \(G_y\) for our source domain labels \(y_i\). We found that using \(z_T^i\) worked best, where \(T\) corresponds to a data point’s last time-step. In order to make it so this representation could be applied to our target domain, we needed to add a regularizer \(\mathcal{R}(\theta_e)\) to the VRNN (more specifically, the VRNN’s encoder as it generates \(z\)) so that the \(z\) generated would also be applicable to our target domain. We try to minimize:</p>
+
+\[\frac{1}{n} \sum_{i=1}^n \frac{1}{T^i}\mathcal{L}_r(\mathbf{x^i}; \theta_e, \theta_g) +
+\frac{1}{n} \sum_{i=1}^n \mathcal{L}_y(\mathbf{x^i}; \theta_y,\theta_e) +
+  \lambda \mathcal{R}(\theta_e)\]
+
+<p>Here, \(\lambda\) is a tradeoff for regularlizer, \(\theta_e, \theta_g\) are parameters for the VRNN’s encoder and decoder, respectively, and \(\theta_y\) is the parameters for \(G_y\). \(\mathcal{L}_r\) is the vartional lower bound for the VRNN (not discussed here but found in our paper) and \(\mathcal{L}_y\) is a categorical cross-entropy loss function.</p>
+
+<h3 id="adversarial-training">Adversarial Training</h3>
+
+<p>For our regularizer, we used a domain classification network \(G_d\) that classifies pseudo-labels \(d_i\) for each data point corresponding to which domain they belong to. It has a corresponding categorical cross-entropy loss function \(\mathcal{L}_d\). This is inspired by previous work in domain adaptation that attempts to reduce the domain discrepenacy between the source and target domains. Ben-David has argued (<a href="https://papers.nips.cc/paper/2983-analysis-of-representations-for-domain-adaptation.pdf">see this paper</a>) that good representations for domain adaptation are those that do not aid in discrimination between domains. In order to make our \(z_T^i\) such that it does not aid in discrimination between domains, we also train a domain classifier using \(z_T^i\). However, instead of trying to minimize the classification error \(\mathcal{L}_d\) we try to maximize it by feeding negative gradients from domain classification to the VRNN’s encoder:</p>
+
+\[\theta_e \leftarrow \theta_e +\eta\lambda\frac{\partial \mathcal{L}_d}{ \partial \theta_d}\]
+
+<p>where \(\eta\) is a learning rate for gradient descent. This acts to update its parameters such that they produce a representation that make domain classification more difficult. This network and the encoder then work adversarially: the VRNN producing \(z_T^i\) increasingly more difficult to distinguish domains and the \(G_d\) becoming more competent at classifying \(d_i\). From this process, \(z_T^i\) emerges capturing domain-invariant temporal dependencies.</p>
+
+<p><img src="/files/publications/iclr_2017/figures/vrada.png" alt="VRADA" />
+This is a schematic of our model rolled out over time.</p>
+
+<p>Now, we classify all \(z_T^i\) with \(G_d\), and \(z_T^i\) corresponding to \(x_{\mathcal{S}}^i\) strictly with \(G_y\). This leads to the following objectve function which we minimize:
+\(\underbrace{
+  \frac{1}{N} \sum_{i=1}^N \frac{1}{T^i}\mathcal{L}_r(\mathbf{x^i}; \theta_e,\theta_g)
+  }_{\text{variational loss}}
+  +
+  \underbrace{
+  \frac{1}{n} \sum_{i=1}^n \mathcal{L}_y(\mathbf{x^i}; \theta_e,\theta_y)
+  }_{\text{Classification loss}}
+  -
+  \overbrace{
+  \lambda (
+  \underbrace{\frac{1}{n} \sum_{i=1}^n \mathcal{L}_d(\mathbf{x^i}; \theta_e,\theta_d)
+  }_{\text{Domain loss for source}}
+  +
+  \underbrace{
+  \frac{1}{n'} \sum_{i=n+1}^{N} \mathcal{L}_d(\mathbf{x^i}; \theta_e,\theta_d))
+  }_{\text{Domain loss for target}}
+  }^{\text{Maximizing loss}}\)</p>
+
+<p>where \(\mathcal{L}_d\) is a categorical cross-entropy loss function for domain classifier.</p>
+
+<hr />
+<h2 id="experiments">Experiments</h2>
+<p>As a case study, we performed domain adaptation across age groups. We trained our model to learn to predict mortality from Acute Hypoxemic Respiratory Failure (AHRF) for patients admitted into an ICU using 20 time-series features. We divided patients into 5 age groups</p>
+
+<ul>
+  <li>Group 1: children (0 to 19 yrs, 398 patients)</li>
+  <li>Group 2: working-age adult (20 to 45 yrs, 508 patients)</li>
+  <li>Group 3: old working-age adult (46 to 65 yrs, 1888 patients)</li>
+  <li>Group 4: elderly (66 to 85 yrs, 2394 patients)</li>
+  <li>Group 5: old elderly (85 yrs and up, 437 patients)</li>
+</ul>
+
+<p>and performed domain adaptation across different groups (e.g. learning to predict mortality for Group 5 and applying it to Group 1). Below are our results</p>
+
+<p><img src="/files/publications/iclr_2017/figures/results.png" alt="results" /></p>
+
+<p>I won’t go into details but just point out a few things. On the left hand side are models that didn’t perform domain adaptation which performed significantly worse. Of models that did, ours performed best by a margin of 4%-6%. You can read more in the paper ;). The analyze the source of our efficacy we studied the latent representations learned by our model and the cell firing patterns of our RNN.</p>
+
+<h3 id="learned-latent-representations">Learned Latent Representations</h3>
+
+<p><img src="/files/publications/iclr_2017/figures/t-sne.png" alt="T-SNE" />
+This is a t-sne project of the latent representation of a deep neural network (DNN), a recurrent domain adversarial neural network (R-DANN, a competing domain adaptation model), and VRADA. Red corresponds to source data points and blue to target.</p>
+
+<p>We studied the latent representations learned by our model and competing models to see source and target data were distributed by each model. As stated before, a good representation for domain adaptation is one in which the domain cannot be discerned easily. While blue and red are clustered together for all 3 models, VRADA mixes best. For DNN and R-DANN, there are clusters that are strictly red (source). For VRADA source and target are evenly spread and it is hard to find cluster with strictly one domain. This mixing implies the representations come from the same distribution, i.e. are domain-invariant. We see that better temporal model, e.g. accounting for factors of variation, helps with creating a domain-invariant representation.</p>
+
+<h3 id="transferring-temporal-dependencies">Transferring Temporal Dependencies</h3>
+
+<p><img src="/files/publications/iclr_2017/figures/w_adaptation_icd9_new.png" alt="VRADA-DA" />
+These are the cell firing patterns of the RNN used by our model. The vertical axis corresponds to neurons and the horizontal to a time-step. So the cell corresponding to 4th row and the 3rd column is the firing rate of the 4th neuron at the 3rd time-step.</p>
+
+<p>With both R-DANN and VRADA (both models that create domain-invariant representations), we see high regularity in the firing patterns across domains. However, we can see that accounting for hidden factors of variation when creating domain-invariant representations leads to high consistency in the firing rates across domains. This implies that the temporal dependencies learned for the source domain were transferred to the target domain.</p>
+
+<p>All results showed that creating domain-invariant latent representations and accounting for hidden factors of variation act synergestically. We hope this model serves as a bedrock for future work capturing and transferring temporal tependencies via domain-invariant latent representations.</p>
+
+  
+</div>
+
+<h2>Related Posts</h2>
+
+
+
+
+
+<ol>
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/06/building_machines_thinking/">Building Machines that Learn and Think Like People (pt 5. Thinking Fast)</a> - January 06, 2018 |  <span class="label label-default">machine-learning</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/06/building_machines_learning/">Building Machines that Learn and Think Like People (pt 4. Learning as Rapid Model-Building)</a> - January 06, 2018 |  <span class="label label-default">machine-learning</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/01/building_machines_developmental/">Building Machines that Learn and Think Like People (pt 3. Developmental Software)</a> - January 01, 2018 |  <span class="label label-default">machine-learning</span> </h5>
+        </div>
+        
+        
+            
+</ol>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname  = 'wilkacarvalho';
+  var disqus_identifier = '/research/2017/04/23/vrada/';
+
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+      </div>
+
+    <!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!-- popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="/public/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<!--  -->
+
+<!-- Bootstrap core JavaScript -->
+<!-- <script src="/public/vendor/jquery/jquery.min.js"></script> -->
+<!-- <script src="/public/vendor/popper/popper.min.js"></script> -->
+<!-- <script src="/public/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+
+<!-- Plugin JavaScript -->
+<!-- <script src="/public/vendor/jquery-easing/jquery.easing.min.js"></script> -->
+
+<!-- Contact form JavaScript -->
+<!-- <script src="/public/js/jqBootstrapValidation.js"></script> -->
+<!-- <script src="/public/js/contact_me.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<!-- <script src="/public/js/agency.min.js"></script> -->
+
+<!-- Materialize -->
+<!-- <script src="/public/js/materialize.min.js"></script> -->
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72232702-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72232702-1');
+</script>
+
+  </body>
+</html>

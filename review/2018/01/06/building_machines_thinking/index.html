@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta property="og:image" content="/img/abstract_head.png">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Building Machines that Learn and Think Like People (pt 5. Thinking Fast) &middot; Wilka Carvalho
+    
+  </title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/public/css/projects.css">
+  <link rel="stylesheet" href="/public/css/icons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/public/css/general.css">
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/brain-icon.png">
+  <link rel="shortcut icon" href="/img/brain-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <!-- Math Support -->
+
+  <body class="layout">
+
+      <div class="masthead">
+    
+  <div class="top-left">
+  </div>
+  <div class="bottom-right">
+    <div class="container">
+      <div align="center">
+        <h3 class="masthead-title">
+            <img class="nsf responsive-img" src="/img/headshot.jpg"> <br>
+            <a href="/" title="Home">Wilka Carvalho</a><br>
+            <small>Aspiring Cognitive Scientist</small>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-left">
+    <div class="container">
+      <a href="https://twitter.com/CogSciKid/"><i class="svg-icon twitter"></i></a>
+      <a href="https://github.com/wcarvalho/"><i class="svg-icon github"></i></a>
+      <a href="https://www.linkedin.com/in/wilkacarvalho/"><i class="svg-icon linkedin"></i></a>
+      <a href="mailto:wcarvalho92@gmail.com"><i class="svg-icon email"></i></a>
+    </div>
+  </div>
+</div>
+      <div class="navbar-outter">
+<nav class="navbar sticky-top justify-content-between navbar-expand-sm navbar-nav navbar-dark bg-dark">
+<!-- <div class="navbar-inner"> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a href="/">Home</a> -->
+        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/publications">Publications</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/press">Press</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Side Projects
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Projects
+          </a>
+          <a class="dropdown-item" href="/main-pages/projects/#essays">Essays</a>
+          <a class="dropdown-item" href="/main-pages/projects/#poetry">Poetry</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/files/wilka_carvalho_CV.pdf">CV</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/misc/acknowledgments">Acknowledgements</a>
+      </li>
+    </ul>
+
+
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown navbar-right">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink">
+          Learning Resources
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://wcarvalho.github.io/Phd-Resources/" id="navbarDropdownMenuLink">
+          PhD Resources
+          </a>
+          <a class="dropdown-item" href="https://wcarvalho.github.io/ML-Brain-Resources/">ML/Brain Resources</a>
+          <a class="dropdown-item" href="/misc/books">Useful Books</a>
+        </div>
+      </li>
+
+      <li class="nav-item navbar-nav navbar-right">
+        <a class="nav-link"  href="/main-pages/blog">Blog</a>
+      </li>
+    </ul>
+
+</div>
+<!-- </div> -->
+</nav>
+</div>
+      <div class="container content ">
+        <div class="post">
+  <h2 class="post-title">Building Machines that Learn and Think Like People (pt 5. Thinking Fast)</h2>
+  <span class="post-date">
+    06 Jan 2018
+    
+     | <cite> review </cite>
+    
+    
+    <br>
+    <em>
+      tags: cognitive-science, machine-learning, brain, deep-learning
+    </em>
+    
+  </span>
+  
+    Note: Ideas and opinions that are my own and not of the article will be in an <font color="grey"><em>italicized grey</em></font>.<br><br>
+
+<h1>Series Table of Contents</h1>
+
+<a href="/review/2017/12/23/building_machines_intro">Part 1: Introduction and History</a> <br>
+<a href="/review/2017/12/31/building_machines_challenges">Part 2: Challenges for Building Human-Like Machines</a> <br>
+<a href="/review/2018/01/01/building_machines_developmental">Part 3: Developmental Software</a> <br>
+<a href="/review/2018/01/06/building_machines_learning">Part 4: Learning as Rapid Model-Building</a> <br>
+<a href="/review/2018/01/06/building_machines_thinking">Part 5: Thinking Fast</a> <br>
+<a href="/review/2017/12/23/building_machines_resources">Resources</a> <br>
+<a href="/review/2017/12/23/building_machines_glossary">Glossary</a> <br>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Article Table of Contents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#approximate-inference-in-structured-models">Approximate inference in structured models</a></td>
+    </tr>
+    <tr>
+      <td><a href="#model-based-and-model-free-reinforcement-learning">Model-based and model-free reinforcement learning</a></td>
+    </tr>
+    <tr>
+      <td><a href="#series-conclusion">Series Conclusion</a></td>
+    </tr>
+    <tr>
+      <td><a href="#references">References</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>So far in this series we’ve covered:</p>
+
+<ul>
+  <li>the history of building machines that learn and think like people,</li>
+  <li>current challenges for having neural networks learn like people, including learning efficiently and learning robust, generalizable representations,</li>
+  <li>skills manifest in infancy which seem to be key to learning complex concepts as adults, and</li>
+  <li>what might allow for neural networks to learn rapidly instead of slowly as they currently do</li>
+</ul>
+
+<p>In this post, the focus is shifted from learning like humans to thinking like humans. Particularly, the focus is on how neural networks can be endowed with the ability to do quick, complex inference, and with the ability to combine model-free and model-based methods for flexible representations in reinforcement learning.</p>
+
+<h2 id="approximate-inference-in-structured-models">Approximate inference in structured models</h2>
+
+<p>Many tasks that humans do are computationally expensive. For example, the complex inference we’re capable of doing, (for example, inferring all the reasons behind social dynamics we experience) is, from a statistical perspective, very computationally expensive. If we were to indeed look at all possibilities when doing inference, it would be an impossible task. However, to have inference with high accuracy, rich and structured inference models are typically necessary which required complex and slow inference algorithms. This makes the speed with which humans perceive, think, and perform inference remarkable. The brain’s neural networks, and current neural networks, may provide the efficient approximations necessary to alleviate this cost.</p>
+
+<p>Cognitive scientists have proposed that the brain does approximate inference using monte-carlo methods <a class="citation" href="#monte_carlo_inference">(Bonawitz et al., 2014)</a>. This works by picking a possible hypothesis and evaluating it against data and prior knowledge. This, however, doesn’t seem to fall in line with how humans do inference because our exploration is guided and not random. For example, in the game of frost-bite, we learn that jumping on an ice-float constructs part of the igloo, that birds make you lose points, that you can change the direction of an ice-float at the cost of an igloo piece, and so on as we learn a causal model for the game.</p>
+
+<p>Recently, deep learning research has begun to work on the problem of learning to do inference. This is potentially useful because solutions to related problems become correlated, a phenomenon shown in humans <a class="citation" href="#amortized_inference_humans">(Gershman &amp; Goodman, 2014)</a>. Still, the inference supported by neural networks is far less flexible than more computationally expensive, but seemingly unrealistic methods like monte-carlo methods. A key line of research for human-like thinking is studying how neural networks can perform rich, flexible, and fast inference.</p>
+
+<h2 id="model-based-and-model-free-reinforcement-learning">Model-based and model-free reinforcement learning</h2>
+
+<p>When looking at reinforcement learning in deep learning, we focused on the DQN. It is a model which uses a model-free algorithm for learning to play video games. This was useful because model-free algorithms are known for their speed. However, significant evidence indicates that the brain also has a model-based learning system, responsible for building a “cognitive map” of the environment and using it to plan action sequences for complex tasks <a class="citation" href="#model_free_based">(Daw et al., 2005)</a>.</p>
+
+<p>To reuse knowledge of what has been learned for new tasks, model-based methods seem like an appropriate choice. However, model building is slow. Evidence in humans shows that actions begin model-based and slow and become model-free and fast over the course of learning <a class="citation" href="#speed_accuracy">(Keramati et al., 2011)</a>. As shown in the sections on <a href="/review/2017/12/31/building_machines_challenges">Challenges for Building Human-Like Machines</a>, employing a model-based system seems to be key to more sophisticated tasks. Learning how the brain does this might allow for more robust AI.</p>
+
+<h2 id="series-conclusion">Series Conclusion</h2>
+
+<p>While deep learning is gaining a lot of <a href="https://www.wired.com/tag/deep-learning/">media</a> and <a href="https://www.bloomberg.com/news/articles/2017-12-06/demand-for-ai-talent-turns-once-staid-conference-into-draft-day">industry</a> attention for its efficacy as an AI system, it is clear that deep learning still has a way to go before achieving human-level general intelligence. While “Building Machines that Learn and Think Like People” was written more than a year ago, most (if not all) of the challenges it discusses are still present. Humans quickly learn rich representations for the world and this is something currently lacking from AI and neural networks. However, neural networks are making tremendous progress, for example, <a href="">reaching super-human abilities in the game of go</a>, a feat that was considered decades away just a few years ago.</p>
+
+<p>I, personally, am excited by the speed of deep learning research. I am happy that neuroscientists, cognitive scientists, and those with little interest in the brain are working to advance the field. While neural networks are still very crude approximations for the brain’s networks and obviously wrong, I think they are one of the best areas of research for understanding how the brain learns and processes information. At the least, while the learning method may not resemble the brain’s, the learned representations seem to resemble the brains. As we continue to do research, I have hope that we will one day be able to create neural networks that do in fact learn and think like people, though I believe we are decades (or centuries) away from this, and I’m okay with that.</p>
+
+<h2 id="references">References</h2>
+<ol class="bibliography"><li><span id="monte_carlo_inference">Bonawitz, E., Denison, S., Griffiths, T. L., &amp; Gopnik, A. (2014). Probabilistic models, learning algorithms, and response variability: sampling in cognitive development. <i>Trends in Cognitive Sciences</i>, <i>18</i>(10), 497–500.</span></li>
+<li><span id="amortized_inference_humans">Gershman, S., &amp; Goodman, N. D. (2014). Amortized Inference in Probabilistic Reasoning. <i>CogSci</i>.</span></li>
+<li><span id="model_free_based">Daw, N. D., Niv, Y., &amp; Dayan, P. (2005). Uncertainty-based competition between prefrontal and dorsolateral striatal systems for behavioral control. <i>Nature Neuroscience</i>, <i>8</i>(12), 1704–1711.</span></li>
+<li><span id="speed_accuracy">Keramati, M., Dezfouli, A., &amp; Piray, P. (2011). Speed/Accuracy Trade-Off between the Habitual and the Goal-Directed Processes. <i>PLoS Computational Biology</i>, <i>7</i>(5), e1002055.</span></li></ol>
+
+
+<h3>Thank you for reading. Please leave any comments or thoughts below or, alternatively, feel free to email me at <a href="mailto:wcarvalho92@gmail.com">wcarvalho92@gmail.com</a>.</h3>
+
+  
+</div>
+
+<h2>Related Posts</h2>
+
+
+
+
+
+<ol>
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/commentary/2018/01/29/learning_quickly/">The Pitfalls of Learning Quickly</a> - January 29, 2018 |  <span class="label label-default">cognitive-science</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/06/building_machines_learning/">Building Machines that Learn and Think Like People (pt 4. Learning as Rapid Model-Building)</a> - January 06, 2018 |  <span class="label label-default">cognitive-science</span>  <span class="label label-default">machine-learning</span>  <span class="label label-default">brain</span>  <span class="label label-default">deep-learning</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/01/building_machines_developmental/">Building Machines that Learn and Think Like People (pt 3. Developmental Software)</a> - January 01, 2018 |  <span class="label label-default">cognitive-science</span>  <span class="label label-default">machine-learning</span>  <span class="label label-default">brain</span>  <span class="label label-default">deep-learning</span> </h5>
+        </div>
+        
+        
+            
+</ol>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname  = 'wilkacarvalho';
+  var disqus_identifier = '/review/2018/01/06/building_machines_thinking/';
+
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+      </div>
+
+    <!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!-- popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="/public/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<!--  -->
+
+<!-- Bootstrap core JavaScript -->
+<!-- <script src="/public/vendor/jquery/jquery.min.js"></script> -->
+<!-- <script src="/public/vendor/popper/popper.min.js"></script> -->
+<!-- <script src="/public/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+
+<!-- Plugin JavaScript -->
+<!-- <script src="/public/vendor/jquery-easing/jquery.easing.min.js"></script> -->
+
+<!-- Contact form JavaScript -->
+<!-- <script src="/public/js/jqBootstrapValidation.js"></script> -->
+<!-- <script src="/public/js/contact_me.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<!-- <script src="/public/js/agency.min.js"></script> -->
+
+<!-- Materialize -->
+<!-- <script src="/public/js/materialize.min.js"></script> -->
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72232702-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72232702-1');
+</script>
+
+  </body>
+</html>

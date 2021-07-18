@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta property="og:image" content="/img/abstract_head.png">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Building Machines that Learn and Think Like People (pt 2. Challenges for Building Human-Like Machines) &middot; Wilka Carvalho
+    
+  </title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/public/css/projects.css">
+  <link rel="stylesheet" href="/public/css/icons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/public/css/general.css">
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/brain-icon.png">
+  <link rel="shortcut icon" href="/img/brain-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <!-- Math Support -->
+
+  <body class="layout">
+
+      <div class="masthead">
+    
+  <div class="top-left">
+  </div>
+  <div class="bottom-right">
+    <div class="container">
+      <div align="center">
+        <h3 class="masthead-title">
+            <img class="nsf responsive-img" src="/img/headshot.jpg"> <br>
+            <a href="/" title="Home">Wilka Carvalho</a><br>
+            <small>Aspiring Cognitive Scientist</small>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-left">
+    <div class="container">
+      <a href="https://twitter.com/CogSciKid/"><i class="svg-icon twitter"></i></a>
+      <a href="https://github.com/wcarvalho/"><i class="svg-icon github"></i></a>
+      <a href="https://www.linkedin.com/in/wilkacarvalho/"><i class="svg-icon linkedin"></i></a>
+      <a href="mailto:wcarvalho92@gmail.com"><i class="svg-icon email"></i></a>
+    </div>
+  </div>
+</div>
+      <div class="navbar-outter">
+<nav class="navbar sticky-top justify-content-between navbar-expand-sm navbar-nav navbar-dark bg-dark">
+<!-- <div class="navbar-inner"> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a href="/">Home</a> -->
+        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/publications">Publications</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/press">Press</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Side Projects
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Projects
+          </a>
+          <a class="dropdown-item" href="/main-pages/projects/#essays">Essays</a>
+          <a class="dropdown-item" href="/main-pages/projects/#poetry">Poetry</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/files/wilka_carvalho_CV.pdf">CV</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/misc/acknowledgments">Acknowledgements</a>
+      </li>
+    </ul>
+
+
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown navbar-right">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink">
+          Learning Resources
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://wcarvalho.github.io/Phd-Resources/" id="navbarDropdownMenuLink">
+          PhD Resources
+          </a>
+          <a class="dropdown-item" href="https://wcarvalho.github.io/ML-Brain-Resources/">ML/Brain Resources</a>
+          <a class="dropdown-item" href="/misc/books">Useful Books</a>
+        </div>
+      </li>
+
+      <li class="nav-item navbar-nav navbar-right">
+        <a class="nav-link"  href="/main-pages/blog">Blog</a>
+      </li>
+    </ul>
+
+</div>
+<!-- </div> -->
+</nav>
+</div>
+      <div class="container content ">
+        <div class="post">
+  <h2 class="post-title">Building Machines that Learn and Think Like People (pt 2. Challenges for Building Human-Like Machines)</h2>
+  <span class="post-date">
+    31 Dec 2017
+    
+     | <cite> review </cite>
+    
+    
+    <br>
+    <em>
+      tags: cognitive-science, machine-learning, brain, deep-learning
+    </em>
+    
+  </span>
+  
+    Note: Ideas and opinions that are my own and not of the article will be in an <font color="grey"><em>italicized grey</em></font>.<br><br>
+
+<h1>Series Table of Contents</h1>
+
+<a href="/review/2017/12/23/building_machines_intro">Part 1: Introduction and History</a> <br>
+<a href="/review/2017/12/31/building_machines_challenges">Part 2: Challenges for Building Human-Like Machines</a> <br>
+<a href="/review/2018/01/01/building_machines_developmental">Part 3: Developmental Software</a> <br>
+<a href="/review/2018/01/06/building_machines_learning">Part 4: Learning as Rapid Model-Building</a> <br>
+<a href="/review/2018/01/06/building_machines_thinking">Part 5: Thinking Fast</a> <br>
+<a href="/review/2017/12/23/building_machines_resources">Resources</a> <br>
+<a href="/review/2017/12/23/building_machines_glossary">Glossary</a> <br>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Article Table of Contents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#hand-written-character-recognition">Hand-Written Character Recognition</a></td>
+    </tr>
+    <tr>
+      <td><a href="#atari-game-frostbite">Atari Game Frostbite</a></td>
+    </tr>
+    <tr>
+      <td><a href="#references">References</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In the first post of this series, I left you with the question of whether generic neural networks with minimal constraints and inductive biases could learn and think in a human-like manner given sufficient data. <font color="grey"><em>This is actually a point of contention between people in the field, with some citing the pervasive cortical micro-column as evidence for <a href="https://www.youtube.com/watch?v=yVT7dO_Tf4E&amp;t=1378s">highly regular structure across the brain</a>, and others arguing that this is an extreme view.</em></font></p>
+
+<p>The authors of this paper come from the perspective that the idea that the brain is a collection of general purpose neural networks with few constraints is extreme. Instead they believe that the brain relies on <em>inductive biases</em>. To showcase this and present the bedrock for their “key ingredients” for intelligence, the authors describe two examples where modern neural networks fail to learn like humans.</p>
+
+<h2 id="hand-written-character-recognition">Hand-Written Character Recognition</h2>
+<p>A popular training dataset for neural networks is the MNIST dataset, where the task is to learn to predict the digit that is on an image.</p>
+
+<p><img src="https://www.tensorflow.org/images/mnist_digits.png" alt="minst" /></p>
+
+<p>There are 10 digits in the training set (0-9), and each digit has 6,0000 examples. Many machine learning algorithms (not just neural networks) can achieve remarkable performance on this task. However, to achieve this remarkable performance, they learn to differentiate characters using thousands of examples. <a class="citation" href="#lake">(Lake et al., 2016)</a> argue that humans on the other hand can learn digits with far fewer examples. Further, we not only learn to recognize a digit, we learn a rich, structured representation or “<strong>concept</strong>”” for a digit, which we can then generalize to new tasks beyond recognition. 
+<!-- For example, we can generate (draw) new instances of the class or identify its core attributes. --></p>
+
+<p><a class="citation" href="#lake">(Lake et al., 2016)</a> argue that character recognition is a good domain to compare human and machine performance because, in general, characters lie on a simple-2D space (and are thus easy to analyze) and are often presented un-occluded. Of all object recognition tasks, this has the most promise for the development of a human-like algorithm in the near future. However, to learn as richly as humans do, machine learning algorithms will need to learn differently from how they currently do.</p>
+
+<!-- However, the authors maintain that MNIST is **not** is a good benchmark towards this goal because it doesn't require human-like abilities. For example, you have 6,0000 examples per digit. Many machine learning algorithms utilize all of these examples to learn each digit representation; however, a human needs only a few examples to learn a digit.  -->
+
+<p>To address this challenge, the authors proposed that human-like algorithms be developed for the omniglot dataset presented below <a class="citation" href="#bpl">(Lake et al., 2015)</a>.</p>
+
+<p><img src="/files/posts/building_machines_like_people/omniglot.png" alt="omniglot" /></p>
+
+<p>This dataset has dozens of classes with about 20 examples each (as opposed to only 10 classes with thousands of examples each). This is a better benchmark because it requires an algorithm to have the human ability of learning to recognize a character from only a few examples. Because humans create concepts for digits, they can generate new examples of characters they have little experience with (ii); they can show the essential abstractions of a character they’ve learned (iii); or they can generate new characters similar to a character they’ve just seen (iv). Essentially, this dataset tests an algorithm’s ability to learn <strong>a lot</strong> from <strong>very little</strong> - a quintessential human ability, and something lacking from deep learning based models.</p>
+
+<h2 id="temporal-planning-and-building-on-prior-knowledge-in-atari-games">Temporal Planning and Building on Prior Knowledge in Atari Games</h2>
+
+<p>Another recently popular domain for neural networks is playing video games. Google Deepmind recently released a breakthrough paper, <a href="https://deepmind.com/research/publications/human-level-control-through-deep-reinforcement-learning/">Human-level control through deep reinforcement learning</a> <a class="citation" href="#dqn">(Mnih et al., 2015)</a>, where they showed that a neural network trained via a reinforcement learning algorithm, known as the “Deep Q-Network” or “DQN”, was able to play numerous video games at “human-level”. Two things are worth noting. First, the algorithm they used, known as “Q-Learning”, is a variant of an algorithm which has been shown to be used by the brain <a class="citation" href="#rlbrain">(Niv, 2009)</a>. Second, despite its brain-inspiration, this algorithm was not capable of transferring skills across games and rather learned to play each game separately from scratch.</p>
+
+<p>While the DQN did well on some games, others were particularly difficult for it. Particularly notable were games that required temporally extended planning strategies, i.e. planning at multiple temporal resolutions. (<a href="/questions">See here</a> for examples of the importance of planning at multiple temporal resolutions for humans). Additionally, even when the DQN performed well, despite its brain-inspired architectural and algorithmic choices, it didn’t seem to learn like a human. For example, the DQN required approximately 924 hours of game play per game to do well, whereas humans could do well after approximately 2 hours.</p>
+
+<p>As a case-study to understand how this model’s learning differs from a human’s, the authors study learning for the Atari game, “Frostbite”.</p>
+
+<p><img src="/files/posts/building_machines_like_people/frostbite.png" alt="frostbite" /></p>
+
+<p>In Frostbite, the user must hop around floating ice floats while avoiding obstacles (such as crabs seen in D). Ice floats can either be blue and inactive, or white and active. Hopping on an active ice flow deactivates it and constructs a piece of an igloo (seen in C). Once it’s constructed, the user must jump to it to complete the level.</p>
+
+<p><strong>Challenges.</strong> This game is challenging for a number of reasons. First, the environment is dynamic as ice floats and obstacles are constantly moving. This requires that the user re-plans their trajectory at every time-step. Second, the user must coordinate and relate sub-goals of hopping on active ice floats with the super-goal of constructing and entering an igloo. This requires planning at multiple temporal resolutions. Last, new rewards and obstacles present themselves as the levels advance. The ability to do object recognition &amp; inference on objects then becomes very useful. Currently, the DQN needs to experience that something is good or bad in order to pursue or avoid it. If a new variant of an enemy appears, it must experience punishment to learn to avoid it. Humans, however, can infer that this new variant is likely negative for them from prior related experience.</p>
+
+<p>Since this paper was released, numerous improvements over the DQN have been released. While learning has been dramatically improved, it is still not at the speed of human-learning. Some insights for why come when you look at the first few minutes of game-play. Here, the AI model is essentially random. A human, on the other hand, quickly learns the basics of the game: goals, sub-goals, object classifications, etc. For example, in Frostbite, a human quickly learns that you build an igloo by jumping on active ice floats while avoiding obstacles and enemies. The authors theorize that in order to accomplish this, humans are adopting intuitive theories to build models for model-based planning (intuitive theories are discussed more in the <a href="/review/2018/01/01/building_machines_developmental">next section</a>).</p>
+
+<p>More insight into how machines still lack human-like learning comes from comparing how the DQN learns to compete levels against how humans learn to do so. In frostbite, the DQN learns sub-goals through incremental feedback in the form of points awarded for jumping on activated ice floats. Afterwards, once it randomly decides to enter the completed igloo, it learns that the objective is to enter the igloo. In other games, such as Montezuma’s revenge, where sub-goals do not have associated feedback, the DQN barely learns to leave the first level of the game and performs far below human performance. Humans on the other hand seem to have the ability to figure out super-goals without incremental feedback. This somewhat demonstrates the necessity, or at least the utility, of model-based planning that seems to underlie human learning. (<font color="grey"><em>One should note that a non-model based algorithm which simply attempts to explore as much of the level as possible was able to perform very well on Montezuma's revenge <a class="citation" href="#intrinsic_rl">(Bellemare et al., 2016)</a>.</em></font>)</p>
+
+<p>Finally, another striking difference is found when comparing how the DQN and how humans re-purpose what they learn. After training, a human has learned a sufficiently rich representation of the game that</p>
+
+<ol>
+  <li>Slight physical changes to game objects (such as color changes) have minimal impact on performance whereas DQN performance drops dramatically. (<font color="grey"><em>This is partially addressed with the <a href="https://www.vicarious.com/2017/08/07/general-game-playing-with-schema-networks/">biologically more plausible "schema" network</a> released by Vicarious.<a class="citation" href="#schema">(Kansky et al., 2017)</a></em></font>)</li>
+  <li>A human can use their model of the game to perform well on arbitrary new tasks whereas the DQN is severely limited in this regard. Some fun(ny) examples by the authors include:
+    <ol>
+      <li>Beat your friend, who’s playing next to you, but barely, not by too much, so as to not embarrass them</li>
+      <li>Pass each level at the last possible second</li>
+      <li>Touch each ice float once and only once</li>
+    </ol>
+  </li>
+</ol>
+
+<p>In order to build machines that learn like humans, we need to address the appropriate problems. Human learners fundamentally take on different tasks than today’s neural networks, and if we want to build machines that learn and think like people, they must address tasks that humans do. The comparison above is unfair because humans extensively utilize rich representations of prior knowledge whereas the DQN learns completely from scratch. However, humans rarely learn tasks from scratch, at least not since infancy.
+<!-- , and especially not many of the tasks that modern AI systems as tasked with. -->
+To work towards human-like learning, one key question is, <strong>“how do we learn rich representations of knowledge that may be re-purposed for new tasks so that they can be solved quickly?”</strong></p>
+
+<!-- (<font color="grey"><em>This is actually where I disagree with the authors. While our current neural networks are likely too simple and lack diversity, I do believe the brain employs some basis set of neural networks. These networks then adapt from </em></font>) -->
+
+<!-- Whether or not that's the case (<font color="grey"><em>and I don't think that's the case</em></font>), it is unlikely that the brain's neural networks are simple and stereotyped, learning simply from massive amounts of data. -->
+
+<!-- <font color="grey"><em>One might argue the brain is known for highly stereotyped structure; for example, the cortical micro-column which is known to be pervasive in the cortex <strong>[CITE]</strong>. However, if one studies biological neural networks across the brain, one will find rich diversity in neuron structure and in inter-neuron connectivity.</em></font><br> -->
+
+<p><br /></p>
+<h1 id="references">References</h1>
+<ol class="bibliography"><li><span id="lake">Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp; Gershman, S. J. (2016). Building Machines That Learn and Think Like People. <i>The Behavioral and Brain Sciences</i>, <i>40</i>, 1–101.</span></li>
+<li><span id="bpl">Lake, B. M., Salakhutdinov, R., &amp; Tenenbaum, J. B. (2015). Human-level concept learning through probabilistic program induction. <i>Science</i>, <i>350</i>(6266), 1332–1338.</span></li>
+<li><span id="dqn">Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., Graves, A., Riedmiller, M., Fidjeland, A. K., Ostrovski, G., Petersen, S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra, D., Legg, S., &amp; Hassabis, D. (2015). Human-level control through deep reinforcement learning. <i>Nature</i>, <i>518</i>(7540), 529–533.</span></li>
+<li><span id="rlbrain">Niv, Y. (2009). Reinforcement learning in the brain. <i>Journal of Mathematical Psychology</i>, <i>53</i>(3), 139–154.</span></li>
+<li><span id="intrinsic_rl">Bellemare, M., Srinivasan, S., Ostrovski, G., Schaul, T., Saxton, D., &amp; Munos, R. (2016). Unifying count-based exploration and intrinsic motivation. <i>Advances in Neural Information Processing Systems</i>, 1471–1479.</span></li>
+<li><span id="schema">Kansky, K., Silver, T., Mély, D. A., Eldawy, M., Lázaro-Gredilla, M., Lou, X., Dorfman, N., Sidor, S., Phoenix, S., &amp; George, D. (2017). Schema Networks: Zero-shot Transfer with a Generative Causal Model of Intuitive Physics. <i>ArXiv Preprint ArXiv:1706.04317</i>.</span></li></ol>
+
+
+<h3>Thank you for reading. Please leave any comments or thoughts below or, alternatively, feel free to email me at <a href="mailto:wcarvalho92@gmail.com">wcarvalho92@gmail.com</a>.</h3>
+
+  
+</div>
+
+<h2>Related Posts</h2>
+
+
+
+
+
+<ol>
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/commentary/2018/01/29/learning_quickly/">The Pitfalls of Learning Quickly</a> - January 29, 2018 |  <span class="label label-default">cognitive-science</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/06/building_machines_thinking/">Building Machines that Learn and Think Like People (pt 5. Thinking Fast)</a> - January 06, 2018 |  <span class="label label-default">cognitive-science</span>  <span class="label label-default">machine-learning</span>  <span class="label label-default">brain</span>  <span class="label label-default">deep-learning</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/06/building_machines_learning/">Building Machines that Learn and Think Like People (pt 4. Learning as Rapid Model-Building)</a> - January 06, 2018 |  <span class="label label-default">cognitive-science</span>  <span class="label label-default">machine-learning</span>  <span class="label label-default">brain</span>  <span class="label label-default">deep-learning</span> </h5>
+        </div>
+        
+        
+            
+</ol>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname  = 'wilkacarvalho';
+  var disqus_identifier = '/review/2017/12/31/building_machines_challenges/';
+
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+      </div>
+
+    <!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!-- popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="/public/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<!--  -->
+
+<!-- Bootstrap core JavaScript -->
+<!-- <script src="/public/vendor/jquery/jquery.min.js"></script> -->
+<!-- <script src="/public/vendor/popper/popper.min.js"></script> -->
+<!-- <script src="/public/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+
+<!-- Plugin JavaScript -->
+<!-- <script src="/public/vendor/jquery-easing/jquery.easing.min.js"></script> -->
+
+<!-- Contact form JavaScript -->
+<!-- <script src="/public/js/jqBootstrapValidation.js"></script> -->
+<!-- <script src="/public/js/contact_me.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<!-- <script src="/public/js/agency.min.js"></script> -->
+
+<!-- Materialize -->
+<!-- <script src="/public/js/materialize.min.js"></script> -->
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72232702-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72232702-1');
+</script>
+
+  </body>
+</html>

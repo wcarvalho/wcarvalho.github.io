@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta property="og:image" content="/img/abstract_head.png">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Time Tracker - Time Management Tool for Google Calendar &middot; Wilka Carvalho
+    
+  </title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/public/css/projects.css">
+  <link rel="stylesheet" href="/public/css/icons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/public/css/general.css">
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/brain-icon.png">
+  <link rel="shortcut icon" href="/img/brain-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <!-- Math Support -->
+
+  <body class="layout">
+
+      <div class="masthead">
+    
+  <div class="top-left">
+  </div>
+  <div class="bottom-right">
+    <div class="container">
+      <div align="center">
+        <h3 class="masthead-title">
+            <img class="nsf responsive-img" src="/img/headshot.jpg"> <br>
+            <a href="/" title="Home">Wilka Carvalho</a><br>
+            <small>Aspiring Cognitive Scientist</small>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-left">
+    <div class="container">
+      <a href="https://twitter.com/CogSciKid/"><i class="svg-icon twitter"></i></a>
+      <a href="https://github.com/wcarvalho/"><i class="svg-icon github"></i></a>
+      <a href="https://www.linkedin.com/in/wilkacarvalho/"><i class="svg-icon linkedin"></i></a>
+      <a href="mailto:wcarvalho92@gmail.com"><i class="svg-icon email"></i></a>
+    </div>
+  </div>
+</div>
+      <div class="navbar-outter">
+<nav class="navbar sticky-top justify-content-between navbar-expand-sm navbar-nav navbar-dark bg-dark">
+<!-- <div class="navbar-inner"> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a href="/">Home</a> -->
+        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/publications">Publications</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/press">Press</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Side Projects
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Projects
+          </a>
+          <a class="dropdown-item" href="/main-pages/projects/#essays">Essays</a>
+          <a class="dropdown-item" href="/main-pages/projects/#poetry">Poetry</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/files/wilka_carvalho_CV.pdf">CV</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/misc/acknowledgments">Acknowledgements</a>
+      </li>
+    </ul>
+
+
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown navbar-right">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink">
+          Learning Resources
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://wcarvalho.github.io/Phd-Resources/" id="navbarDropdownMenuLink">
+          PhD Resources
+          </a>
+          <a class="dropdown-item" href="https://wcarvalho.github.io/ML-Brain-Resources/">ML/Brain Resources</a>
+          <a class="dropdown-item" href="/misc/books">Useful Books</a>
+        </div>
+      </li>
+
+      <li class="nav-item navbar-nav navbar-right">
+        <a class="nav-link"  href="/main-pages/blog">Blog</a>
+      </li>
+    </ul>
+
+</div>
+<!-- </div> -->
+</nav>
+</div>
+      <div class="container content ">
+        <div class="post">
+  <h2 class="post-title">Time Tracker - Time Management Tool for Google Calendar</h2>
+  <span class="post-date">
+    02 Jan 2016
+    
+     | <cite> code </cite>
+    
+    
+    <br>
+    <em>
+      tags: time-management, efficient-working
+    </em>
+    
+  </span>
+  
+    <!-- I present a time managegement tool along with a system I've made for using it. The tool uses a spreadsheet to track time assignment from different categories across different calendars. My system involves setting up a calendar template that I fill weekly, and using this tool to track time assignment and adjustment.  -->
+<p>Time Tracker is a menu addition to Google spreadsheet that allows you to track time assignment to different categories across your calendars.
+(A “category” is simply a recurrent word in event titles.)
+<br /></p>
+
+<table>
+  <tr>
+    <td>
+      <img class="regular materialboxed responsive-img" src="/files/time_management/ex_calendar_final_postweek.png" />
+    </td>
+    <td>
+      <img class="regular materialboxed responsive-img" src="/files/time_management/ex_spreadsheet_final_postweek.png" />
+    </td>
+  </tr>
+  <tr>
+    <td>The calendar names are on the left, while the category names are used in the event titles.</td>
+    <td>Time delegation for categories "570," "561," "research," and "other" was only tracked using calendars "Work," "Extra," and "Personal."</td>
+  </tr>
+</table>
+
+<p><b>Menu:</b></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fill Category Times</td>
+      <td>Fill in B3 onwards with the times for events in the categories above</td>
+    </tr>
+    <tr>
+      <td>Fill Calendar Times</td>
+      <td>Fill in C8 onwards with the time assigned to their corresponding calendars</td>
+    </tr>
+    <tr>
+      <td>Fill Calendar Row Colors</td>
+      <td>Color in the calendar rows according to the colors written in A8 onwards</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br />
+<b>Installation Instructions:</b>
+<!-- ####Installation Instructions -->
+<!-- A brief overview of how to use the script in my post, "A Prescription for Managing and Tracking Your Time," to track time delegation in Google Calendar using a Google spreadsheet --></p>
+
+<ol>
+  <li>
+    <p>Download <a href="https://docs.google.com/spreadsheets/d/1ELRQ8M8bjhPlvydnJxGaMsTuwaKN6YKjQJLUZ3zmKFs/pub?output=xlsx">this excel file</a>, <a href="https://docs.google.com/spreadsheets/u/0/">upload it</a> into Google Sheets, and add <a href="/files/time_management/time_tracker.js">this script</a> to it.</p>
+
+    <p><i>Right-click script link, select “Save Link As…”, and save as .txt file</i><br />
+ <i>Once you upload the excel file, open “Tools -&gt; Script Editor…”</i><br />
+ <i>Paste the contents of the script inside and save.</i><br />
+ <i>Close and re-open the tab and the menu should appear.</i></p>
+  </li>
+  <li>Place the name of calendars you want to track vertically beginning at B8.</li>
+  <li>If you want a calendar to contribute to tracking a category’s time assignment, place text in the field to the left of the calendar name. (If the text is a color (plain text or hexidecimal), you can use “Fill Calendar Row Colors” to color in the corresponding row.)</li>
+  <li>Place the name of categories you want to track horizontally beginning at B2.</li>
+  <li>An event will contribute to a category’s time if the category is somewhere in the event’s title.</li>
+  <li>
+    <p>Put the start date and end date across cells E7-H7 and E8-H8, respectively, in the format (date, month, year).</p>
+
+    <p><i>Script defaults to current time when start date is empty or invalid.</i><br />
+ <i>Script defaults to Saturday 12:00am when end date is empty or invalid.</i></p>
+  </li>
+  <li>Track your time using the Time Tracker menu which should appear as soon as you save the script.</li>
+</ol>
+
+<p><strong>Good luck managing your time! Please leave any comments, suggestions, or questions below.</strong></p>
+
+<h5 id="for-details-on-how-i-use-this-tool-check-out-this-post-you-can-find-my-current-google-sheet-below">For details on how I use this tool, check out <a href="/tutorial/2016/01/08/TimeManagementPrescription/">this post</a>. You can find my current Google Sheet below</h5>
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcHjQoPzIuDTQbt2knu8y2FJvwKLgQFqS9oerIDCFsqDL_yhErmO4MgJOI_6oBjMYB5eM85PMyoRb5/pubhtml?widget=true&amp;headers=false" width="100%" height="500px"></iframe>
+
+  
+</div>
+
+<h2>Related Posts</h2>
+
+
+
+
+
+<ol>
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/tutorial/2016/01/08/TimeManagementPrescription/">A Prescription for Time Management</a> - January 08, 2016 |  <span class="label label-default">time-management</span>  <span class="label label-default">efficient-working</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+
+
+</ol>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname  = 'wilkacarvalho';
+  var disqus_identifier = '/code/2016/01/02/TimeManagement/';
+
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+      </div>
+
+    <!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!-- popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="/public/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<!--  -->
+
+<!-- Bootstrap core JavaScript -->
+<!-- <script src="/public/vendor/jquery/jquery.min.js"></script> -->
+<!-- <script src="/public/vendor/popper/popper.min.js"></script> -->
+<!-- <script src="/public/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+
+<!-- Plugin JavaScript -->
+<!-- <script src="/public/vendor/jquery-easing/jquery.easing.min.js"></script> -->
+
+<!-- Contact form JavaScript -->
+<!-- <script src="/public/js/jqBootstrapValidation.js"></script> -->
+<!-- <script src="/public/js/contact_me.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<!-- <script src="/public/js/agency.min.js"></script> -->
+
+<!-- Materialize -->
+<!-- <script src="/public/js/materialize.min.js"></script> -->
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72232702-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72232702-1');
+</script>
+
+  </body>
+</html>

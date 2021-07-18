@@ -1,0 +1,1948 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Wilka Carvalho</title>
+ <link href="https://wcarvalho.github.io//atom.xml" rel="self"/>
+ <link href="https://wcarvalho.github.io//"/>
+ <updated>2021-07-18T02:29:05+00:00</updated>
+ <id>https://wcarvalho.github.io/</id>
+ <author>
+   <name>Wilka Carvalho</name>
+   <email>wcarvalho92@gmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>The Pitfalls of Learning Quickly</title>
+   <link href="https://wcarvalho.github.io//commentary/2018/01/29/learning_quickly/"/>
+   <updated>2018-01-29T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//commentary/2018/01/29/learning_quickly</id>
+   <content type="html">&lt;h2 id=&quot;the-pitfalls-of-learning-quickly-when-generalizing-turns-into-stereotyping&quot;&gt;&lt;a href=&quot;https://medium.com/@wcarvalho92/success-vs-failure-generalization-vs-stereotyping-40de0713ab5d&quot;&gt;The Pitfalls of Learning Quickly: when Generalizing turns into Stereotyping&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;an-analysis-of-social-stereotyping-based-on-literature-in-cognitive-science&quot;&gt;An analysis of social stereotyping based on literature in cognitive science&lt;/h3&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building Machines that Learn and Think Like People (pt 5. Thinking Fast)</title>
+   <link href="https://wcarvalho.github.io//review/2018/01/06/building_machines_thinking/"/>
+   <updated>2018-01-06T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//review/2018/01/06/building_machines_thinking</id>
+   <content type="html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Article Table of Contents&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#approximate-inference-in-structured-models&quot;&gt;Approximate inference in structured models&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#model-based-and-model-free-reinforcement-learning&quot;&gt;Model-based and model-free reinforcement learning&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#series-conclusion&quot;&gt;Series Conclusion&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#references&quot;&gt;References&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So far in this series we’ve covered:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;the history of building machines that learn and think like people,&lt;/li&gt;
+  &lt;li&gt;current challenges for having neural networks learn like people, including learning efficiently and learning robust, generalizable representations,&lt;/li&gt;
+  &lt;li&gt;skills manifest in infancy which seem to be key to learning complex concepts as adults, and&lt;/li&gt;
+  &lt;li&gt;what might allow for neural networks to learn rapidly instead of slowly as they currently do&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this post, the focus is shifted from learning like humans to thinking like humans. Particularly, the focus is on how neural networks can be endowed with the ability to do quick, complex inference, and with the ability to combine model-free and model-based methods for flexible representations in reinforcement learning.&lt;/p&gt;
+
+&lt;h2 id=&quot;approximate-inference-in-structured-models&quot;&gt;Approximate inference in structured models&lt;/h2&gt;
+
+&lt;p&gt;Many tasks that humans do are computationally expensive. For example, the complex inference we’re capable of doing, (for example, inferring all the reasons behind social dynamics we experience) is, from a statistical perspective, very computationally expensive. If we were to indeed look at all possibilities when doing inference, it would be an impossible task. However, to have inference with high accuracy, rich and structured inference models are typically necessary which required complex and slow inference algorithms. This makes the speed with which humans perceive, think, and perform inference remarkable. The brain’s neural networks, and current neural networks, may provide the efficient approximations necessary to alleviate this cost.&lt;/p&gt;
+
+&lt;p&gt;Cognitive scientists have proposed that the brain does approximate inference using monte-carlo methods &lt;a class=&quot;citation&quot; href=&quot;#monte_carlo_inference&quot;&gt;(Bonawitz et al., 2014)&lt;/a&gt;. This works by picking a possible hypothesis and evaluating it against data and prior knowledge. This, however, doesn’t seem to fall in line with how humans do inference because our exploration is guided and not random. For example, in the game of frost-bite, we learn that jumping on an ice-float constructs part of the igloo, that birds make you lose points, that you can change the direction of an ice-float at the cost of an igloo piece, and so on as we learn a causal model for the game.&lt;/p&gt;
+
+&lt;p&gt;Recently, deep learning research has begun to work on the problem of learning to do inference. This is potentially useful because solutions to related problems become correlated, a phenomenon shown in humans &lt;a class=&quot;citation&quot; href=&quot;#amortized_inference_humans&quot;&gt;(Gershman &amp;amp; Goodman, 2014)&lt;/a&gt;. Still, the inference supported by neural networks is far less flexible than more computationally expensive, but seemingly unrealistic methods like monte-carlo methods. A key line of research for human-like thinking is studying how neural networks can perform rich, flexible, and fast inference.&lt;/p&gt;
+
+&lt;h2 id=&quot;model-based-and-model-free-reinforcement-learning&quot;&gt;Model-based and model-free reinforcement learning&lt;/h2&gt;
+
+&lt;p&gt;When looking at reinforcement learning in deep learning, we focused on the DQN. It is a model which uses a model-free algorithm for learning to play video games. This was useful because model-free algorithms are known for their speed. However, significant evidence indicates that the brain also has a model-based learning system, responsible for building a “cognitive map” of the environment and using it to plan action sequences for complex tasks &lt;a class=&quot;citation&quot; href=&quot;#model_free_based&quot;&gt;(Daw et al., 2005)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To reuse knowledge of what has been learned for new tasks, model-based methods seem like an appropriate choice. However, model building is slow. Evidence in humans shows that actions begin model-based and slow and become model-free and fast over the course of learning &lt;a class=&quot;citation&quot; href=&quot;#speed_accuracy&quot;&gt;(Keramati et al., 2011)&lt;/a&gt;. As shown in the sections on &lt;a href=&quot;/review/2017/12/31/building_machines_challenges&quot;&gt;Challenges for Building Human-Like Machines&lt;/a&gt;, employing a model-based system seems to be key to more sophisticated tasks. Learning how the brain does this might allow for more robust AI.&lt;/p&gt;
+
+&lt;h2 id=&quot;series-conclusion&quot;&gt;Series Conclusion&lt;/h2&gt;
+
+&lt;p&gt;While deep learning is gaining a lot of &lt;a href=&quot;https://www.wired.com/tag/deep-learning/&quot;&gt;media&lt;/a&gt; and &lt;a href=&quot;https://www.bloomberg.com/news/articles/2017-12-06/demand-for-ai-talent-turns-once-staid-conference-into-draft-day&quot;&gt;industry&lt;/a&gt; attention for its efficacy as an AI system, it is clear that deep learning still has a way to go before achieving human-level general intelligence. While “Building Machines that Learn and Think Like People” was written more than a year ago, most (if not all) of the challenges it discusses are still present. Humans quickly learn rich representations for the world and this is something currently lacking from AI and neural networks. However, neural networks are making tremendous progress, for example, &lt;a href=&quot;&quot;&gt;reaching super-human abilities in the game of go&lt;/a&gt;, a feat that was considered decades away just a few years ago.&lt;/p&gt;
+
+&lt;p&gt;I, personally, am excited by the speed of deep learning research. I am happy that neuroscientists, cognitive scientists, and those with little interest in the brain are working to advance the field. While neural networks are still very crude approximations for the brain’s networks and obviously wrong, I think they are one of the best areas of research for understanding how the brain learns and processes information. At the least, while the learning method may not resemble the brain’s, the learned representations seem to resemble the brains. As we continue to do research, I have hope that we will one day be able to create neural networks that do in fact learn and think like people, though I believe we are decades (or centuries) away from this, and I’m okay with that.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;monte_carlo_inference&quot;&gt;Bonawitz, E., Denison, S., Griffiths, T. L., &amp;amp; Gopnik, A. (2014). Probabilistic models, learning algorithms, and response variability: sampling in cognitive development. &lt;i&gt;Trends in Cognitive Sciences&lt;/i&gt;, &lt;i&gt;18&lt;/i&gt;(10), 497–500.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;amortized_inference_humans&quot;&gt;Gershman, S., &amp;amp; Goodman, N. D. (2014). Amortized Inference in Probabilistic Reasoning. &lt;i&gt;CogSci&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;model_free_based&quot;&gt;Daw, N. D., Niv, Y., &amp;amp; Dayan, P. (2005). Uncertainty-based competition between prefrontal and dorsolateral striatal systems for behavioral control. &lt;i&gt;Nature Neuroscience&lt;/i&gt;, &lt;i&gt;8&lt;/i&gt;(12), 1704–1711.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;speed_accuracy&quot;&gt;Keramati, M., Dezfouli, A., &amp;amp; Piray, P. (2011). Speed/Accuracy Trade-Off between the Habitual and the Goal-Directed Processes. &lt;i&gt;PLoS Computational Biology&lt;/i&gt;, &lt;i&gt;7&lt;/i&gt;(5), e1002055.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building Machines that Learn and Think Like People (pt 4. Learning as Rapid Model-Building)</title>
+   <link href="https://wcarvalho.github.io//review/2018/01/06/building_machines_learning/"/>
+   <updated>2018-01-06T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//review/2018/01/06/building_machines_learning</id>
+   <content type="html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Article Table of Contents&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#compositionality&quot;&gt;Compositionality&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#causality&quot;&gt;Causality&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#learning-to-learn&quot;&gt;Learning-to-learn&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#references&quot;&gt;References&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Previously, we discussed some skills manifest early in childhood that might play a key role in human-level learning &amp;amp; thinking. Whereas there, the focus was on what type of information the brain may use to bootstrap learning, here we focus on how the brain learns so efficiently. We will try to discuss methods of learning that are potentially useful for the brain, with a particular focus on endowing neural networks with the ability to “rapidly build models”. By this, we mean the ability to quickly learn and construct models for things in the world.&lt;/p&gt;
+
+&lt;p&gt;Throughout the history of neural networks, learning has traditionally been characterized by gradual adjustment of network weights (abstractions for their synapses) &lt;a class=&quot;citation&quot; href=&quot;#contrastive_divergence&quot;&gt;(Hinton, 2002; Rumelhart et al., 1986)&lt;/a&gt;. Through gradual weight changing, neural networks have learned to gradually (read slowly) match the statistics of a dataset they’re trained on. However, we know from studies with children that humans have the ability to learn and generalize rapidly from small amounts of data &lt;a class=&quot;citation&quot; href=&quot;#new_word&quot;&gt;(Carey &amp;amp; Bartlett, 1978)&lt;/a&gt;. If you imagine that there is some abstract, infinite space which contains representations of all possible objects, humans seem to be able to demarcate the subset of that space which corresponds to a particular category after only a few examples. For example, in the image below, from just seeing a few examples of “dogs”, humans learn that “dogs” belong to a particular region in that space. &lt;font color=&quot;grey&quot;&gt;&lt;em&gt;This reminds me of the stratification found between concept representations with &lt;a href=&quot;http://suriyadeepan.github.io/img/seq2seq/we1.png&quot;&gt;word embeddings&lt;/a&gt;. This makes me wonder if humans are learning the demarcation in a naturally occuring space that they'e learning or in a space they fabricate and populate as they learn. Put differently, it makes me wonder if the space below is real and learned by humans or created by humans as they learn to represent and differentiate objects.&lt;/em&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/posts/building_machines_like_people/space_demarcation.png&quot; alt=&quot;space_demarcation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It is clear that neural networks don’t use data as efficiently as humans do. The authors argue that what differentiates humans from neural networks, currently, is that neural networks simply learn to recognize patterns whereas humans learn structured representations or “&lt;strong&gt;concepts&lt;/strong&gt;”. For example, in the diagram below, a character can be represented as a structured combination of strokes. Learning concepts is more flexible because you can, for example, parse a concept into important components or create more sophisticated meta-concepts. To learn concepts, the authors suggest we work to endow neural networks with &lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#compositionality&quot;&gt;compositionality&lt;/a&gt;, &lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#causal-models&quot;&gt;causality&lt;/a&gt;, and &lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#learning-to-learn&quot;&gt;learning-to-learn&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To showcase the utility of these components, the authors compare learning with a neural network to learning with a probabilistic programming framework they developed known as “Bayesian Program Learning” (BPL) &lt;a class=&quot;citation&quot; href=&quot;#bpl&quot;&gt;(Lake et al., 2015)&lt;/a&gt;. Here, concepts are learned as simple, learnable, stochastic programs which are controlled by a meta-program. I will describe the framework in the context of representing the characters in the omniglot dataset as concepts:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/posts/building_machines_like_people/bpl.png&quot; alt=&quot;bpl&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;One program is responsible for representing concepts/object templates.
+    &lt;ol&gt;
+      &lt;li&gt;There are primitives, which for omniglot represent “fundamental” strokes that can be made for characters.&lt;/li&gt;
+      &lt;li&gt;Primitives are related and combined to create parts. Parts are then re-related and combined to create templates for a “concept”.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;A meta-program is then responsible for generating a “concept” using the template. This whole process is stochastic because how each component of a concept manifests (or is drawn) is stochastic. For example, in the figure above, you can see possible variations the program might generate for each object template. Clearly there is variation in the angles, lengths, etc. of the strokes for concepts but the general structure is maintained.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Concept learning is then learning these stochastic programs for generating object templates. A key facet of concepts is that their “components” are represented &lt;strong&gt;hierarchically&lt;/strong&gt;. For example, primitives are combined into sub-parts which are combined and related into parts in a hierarchical process. By representing concept learning in this form, BPL is able to re-use prior knowledge (e.g. learned primitives) and learn character concepts using only a few examples similarly to humans.&lt;/p&gt;
+
+&lt;h2 id=&quot;compositionality&quot;&gt;Compositionality&lt;/h2&gt;
+
+&lt;p&gt;Compositionality is the classic idea that new representations can be constructed through combinations of primitive elements. Real world examples include sentences which are combinations of words, the “primitives” of language &lt;a class=&quot;citation&quot; href=&quot;#lang_of_thought&quot;&gt;(Fodor, 1975)&lt;/a&gt;, or programs which are compositions of functions, which are themselves compositions of more primitive data types.&lt;/p&gt;
+
+&lt;p&gt;Compositionality has been influential in both artificial intelligence and cognitive science. This paper focuses on it in the context of object representation. Here, “structural description models” have historically assumed that visual concepts could be represented as &lt;em&gt;compositions&lt;/em&gt; of parts and relations &lt;a class=&quot;citation&quot; href=&quot;#vis_composition&quot;&gt;(Biederman, 1987)&lt;/a&gt;. For example, a segway can be &lt;em&gt;composed&lt;/em&gt; of wheels, connected to a stand and handle.&lt;/p&gt;
+
+&lt;p&gt;As a reminder, learning-to-learn is the idea of using learned concepts as “primitives” for other concepts when learning. In the diagram above, once one learns the “primitives”, using them to learn new concepts is “learning-to-learn”. &lt;font color=&quot;grey&quot;&gt;&lt;em&gt;(&quot;Learning-to-learn&quot; actually sounds like a misnomer in this context. You're not learning to learn. You're bootstrapping knowledge. But I digress.)&lt;/em&gt;&lt;/font&gt; Compositionality and learning-to-learn, as seen by the example above, can naturally go together for learning concepts, especially with a hierarchical structure. This in turn can facilitate generalization to new tasks as previous knowledge is easily built upon and reused.&lt;/p&gt;
+
+&lt;p&gt;Neural networks have been shown to have compositionality like functionality as progressively deep layers represent objects as compositions of more primitive features at lower layers. However, neural networks seem to lack the “relation” feature, disallowing them from utilizing compositionality for complex tasks. &lt;font color=&quot;grey&quot;&gt;&lt;em&gt; This seems to no longer be true as &lt;a href=&quot;https://www.youtube.com/watch?v=pPN8d0E3900&quot;&gt;capsule&lt;/a&gt; &lt;a href=&quot;https://medium.com/ai%C2%B3-theory-practice-business/understanding-hintons-capsule-networks-part-i-intuition-b4b559d1159b&quot;&gt;networks&lt;/a&gt; seem to be able to capture relations between objects. Previously, neural networks would recognize the object in the image below as a face because they learned that faces were compositions of more primitive parts (nose, eyes, lips, etc.). However, capsule networks also learn relations between parts, requiring the components of a face to have roughly correct spatial relations in order for the composition to be classified as a face. &lt;/em&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/posts/building_machines_like_people/capsule.png&quot; alt=&quot;capsule&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Compositionality in neural networks has a number of utilities. Besides allowing for more sophisticated object recognition, non-visual objects can also be seen from a compositional perspective. For example, completing the level of a video game can be thought of (and possibly learned) as completing a composition of sub-goals (e.g. get to ledge, jump down, jump over enemy, etc.).&lt;/p&gt;
+
+&lt;h2 id=&quot;causality&quot;&gt;Causality&lt;/h2&gt;
+
+&lt;p&gt;Causal models attempt to abstractly describe the real world process that produces an observation. They are a sub-class of generative models that attempt to describe a process for generating data. They differ in that the process for generating data described by a generative model does not need to resemble the real-world process that generated the data, whereas in causal models, the generative process does need to resemble the real-world process. For example, a model that learns to predict the pixels associated with different character concepts is simply a generative model (e.g. &lt;a class=&quot;citation&quot; href=&quot;#vae&quot;&gt;(Kingma, Diederik P &amp;amp; Welling, Max, 2013)&lt;/a&gt;); whereas a model that attempts to generate hand-written characters by imitating strokes is a causal model (e.g. &lt;a class=&quot;citation&quot; href=&quot;#bpl&quot;&gt;(Lake et al., 2015)&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Causal models have been influential in research on perception, particularly in the idea of “analysis by synthesis” &lt;a class=&quot;citation&quot; href=&quot;#analysis_by_synthesis&quot;&gt;(Bever &amp;amp; Poeppel, 2010)&lt;/a&gt;. It states that sensory data can be more richly represented by modeling the process that generated it. Studies in cognitive science have shown that causal models are important and likely modeled by humans. For example, experiments have shown that changing the causal process for how data is generated can change how humans both learn and generalize what they learn &lt;a class=&quot;citation&quot; href=&quot;#causality_effects_humans&quot;&gt;(Rehder, 2003)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Much research indicates that we model the causal process that generated the data we see. For example, when we see images, we often interpret or caption them in the form of an answer to “why is this happening?” &lt;a class=&quot;citation&quot; href=&quot;#causality_effects_humans&quot;&gt;(Rehder, 2003)&lt;/a&gt;. This is something that neural networks currently lack, as evident by the examples of captions generated by neural networks below. While the components in the images are present, their causal relation is missing and leads to wildly inaccurate captions.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/posts/building_machines_like_people/nn_captions.png&quot; alt=&quot;nn_captions&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While neural networks have had difficulty learning the causal structure in images, one has done a good job with learning causal models for hand-written characters: the DRAW architecture &lt;a class=&quot;citation&quot; href=&quot;#draw&quot;&gt;(Rezende et al., 2016)&lt;/a&gt;. This model was able to learn a causal model for characters and learned to draw characters from only a few examples similarly to the BPL. However, the authors claim that DRAW doesn’t generalize similarly to humans. This is, however, a point of contention &lt;a class=&quot;citation&quot; href=&quot;#think_for_themselves&quot;&gt;(Botvinick et al., 2017)&lt;/a&gt;, as prominent cognitive scientists and neuroscientists have argued otherwise.&lt;/p&gt;
+
+&lt;p&gt;Regardless, neural networks can likely benefit from causality and compositionality. They may facilitate learning-to-learn as it may allow for more primitive concepts to effectively be utilized for explaining new data. They may also facilitate neural networks learning realistic models for how data is produced, and more strongly, they may facilitate learning models for the world and how it changes.&lt;/p&gt;
+
+&lt;h2 id=&quot;learning-to-learn&quot;&gt;Learning-to-learn&lt;/h2&gt;
+
+&lt;p&gt;As mentioned before, learning-to-learn is the utilization of prior knowledge in learning a new task. In BPL, this was reusing primitives and learned parts when learning new concepts. In machine learning, this is closely related to “transfer learning”, where you apply knowledge learned from one task to another, “multi-task learning”, where you learn multiple tasks concurrently with the hope that task-constituents are shared and help each other, and “representation learning”, where you seek to learn generalizable representations of data.&lt;/p&gt;
+
+&lt;p&gt;In learning-to-learn, hierarchical structure seems to be particularly useful. For example, with BPL, once the parts were learned, hierarchical structure facilitated their reuse for learning new concepts. Further, hierarchical structure allowed for compositionality, causality, and learning-to-learn to naturally work together, acting somewhat like a catalyst for producing a model that could quickly learn new concepts.&lt;/p&gt;
+
+&lt;p&gt;While there is much research being done on learning-to-learn, the authors believe this could particularly benefit from compositional, hierarchical, and causal representations. &lt;font color=&quot;grey&quot;&gt;&lt;em&gt;I actually think neural networks already have compositional and hierarchical representations. However, they're missing causality, which I do believe will play a key role. I think this is evident by the captions generated above. &lt;/em&gt;&lt;/font&gt; Learning-to-learn is particularly important for efficient learning because it allows for the re-use of learned representations for new tasks. &lt;strong&gt;The interaction between representations and previous experience may be the key to building machines that learn as fast as people do&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;lake&quot;&gt;Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp;amp; Gershman, S. J. (2016). Building Machines That Learn and Think Like People. &lt;i&gt;The Behavioral and Brain Sciences&lt;/i&gt;, &lt;i&gt;40&lt;/i&gt;, 1–101.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;backprop&quot;&gt;Rumelhart, D. E., Hinton, G. E., &amp;amp; Williams, R. J. (1986). Learning representations by back-propagating errors. &lt;i&gt;Nature&lt;/i&gt;, &lt;i&gt;323&lt;/i&gt;(6), 533–536.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;contrastive_divergence&quot;&gt;Hinton, G. E. (2002). Training Products of Experts by Minimizing Contrastive Divergence. &lt;i&gt;Neural Computation&lt;/i&gt;, &lt;i&gt;14&lt;/i&gt;(8), 1771–1800.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;new_word&quot;&gt;Carey, S., &amp;amp; Bartlett, E. (1978). &lt;i&gt;Acquiring a single new word.&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;bpl&quot;&gt;Lake, B. M., Salakhutdinov, R., &amp;amp; Tenenbaum, J. B. (2015). Human-level concept learning through probabilistic program induction. &lt;i&gt;Science&lt;/i&gt;, &lt;i&gt;350&lt;/i&gt;(6266), 1332–1338.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;lang_of_thought&quot;&gt;Fodor, J. A. (1975). &lt;i&gt;The Language of Thought&lt;/i&gt;. Harvard University Press.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;vis_composition&quot;&gt;Biederman, I. (1987). Recognition-by-components: a theory of human image understanding. &lt;i&gt;Psychological Review&lt;/i&gt;, &lt;i&gt;94&lt;/i&gt;(2), 115–147.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;vae&quot;&gt;Kingma, Diederik P, &amp;amp; Welling, Max. (2013). Auto-Encoding Variational Bayes. &lt;i&gt;ArXiv.org&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;analysis_by_synthesis&quot;&gt;Bever, T. G., &amp;amp; Poeppel, D. (2010). Analysis by synthesis: a (re-) emerging program of research for language and vision. &lt;i&gt;Biolinguistics&lt;/i&gt;, &lt;i&gt;4&lt;/i&gt;(2-3), 174–200.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;causality_effects_humans&quot;&gt;Rehder, B. (2003). A causal-model theory of conceptual representation and categorization. &lt;i&gt;Journal of Experimental Psychology. Learning, Memory, and Cognition&lt;/i&gt;, &lt;i&gt;29&lt;/i&gt;(6), 1141–1159.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;draw&quot;&gt;Rezende, D. J., Mohamed, S., Danihelka, I., Gregor, K., &amp;amp; Wierstra, D. (2016). One-Shot Generalization in Deep Generative Models. &lt;i&gt;ArXiv.org&lt;/i&gt;, arXiv:1603.05106.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;think_for_themselves&quot;&gt;Botvinick, M., Barrett, D. G. T., Battaglia, P., de Freitas, N., Kumaran, D., Leibo, J. Z., Lillicrap, T., Modayil, J., Mohamed, S., Rabinowitz, N. C., &amp;amp; others. (2017). Building machines that learn and think for themselves. &lt;i&gt;Behavioral and Brain Sciences&lt;/i&gt;, &lt;i&gt;40&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building Machines that Learn and Think Like People (pt 3. Developmental Software)</title>
+   <link href="https://wcarvalho.github.io//review/2018/01/01/building_machines_developmental/"/>
+   <updated>2018-01-01T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//review/2018/01/01/building_machines_developmental</id>
+   <content type="html">&lt;h3 id=&quot;article-table-of-contents&quot;&gt;Article Table of Contents&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#intuitive-physics&quot;&gt;Intuitive Physics&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#intuitive-psychology&quot;&gt;Intuitive Psychology&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#summary&quot;&gt;Summary&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#references&quot;&gt;References&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Neural Networks have the ability to learn rich, structured representations given abundant amounts of data, but their learning seems to be constrained (at least without infinite data) to what can be learned through pattern recognition. Increasingly, inductive biases endowed either by &lt;a href=&quot;https://tryolabs.com/blog/2017/08/30/object-detection-an-overview-in-the-age-of-deep-learning/&quot;&gt;architectural choices&lt;/a&gt; or by &lt;a href=&quot;https://deepmind.com/research/publications/human-level-control-through-deep-reinforcement-learning/&quot;&gt;algorithmic choices&lt;/a&gt; seem to be the key to effective learning with neural networks. However, to get human-level learning and thinking, there are still many core ingredients missing from neural networks. In order to gain insight into which inductive biases might be necessary for the brain, we can look at some core abilities manifest in humans by early childhood.&lt;/p&gt;
+
+&lt;p&gt;Cognitive scientists have found that early in development, humans have a strong understanding of several domains including numbers, physics, and psychology &lt;a class=&quot;citation&quot; href=&quot;#core_knowledge&quot;&gt;(Spelke &amp;amp; Kinzler, 2007)&lt;/a&gt;. The authors refer to this as “developmental start-up software,” and claim that this &lt;em&gt;likely&lt;/em&gt; plays an active and important role in producing human-like learning and thought in ways contemporary machine learning has yet to capture.&lt;/p&gt;
+
+&lt;p&gt;The process of developing cognitive representations for the domains mentioned can be seen as the development of relevant “intuitive theories” &lt;a class=&quot;citation&quot; href=&quot;#intuitive_theories&quot;&gt;(Schulz, 2012)&lt;/a&gt;. 
+Experimental work with children shows the “child as a scientist” that learns about a topic (at least partially) akin to the scientific process: they seek out data that distinguishes hypotheses, isolate variables, and tests causal hypotheses &lt;a class=&quot;citation&quot; href=&quot;#where_science_starts&quot;&gt;(Cook et al., 2011)&lt;/a&gt;. Childhood learning seems to resemble an active process of defining and testing intuitive theories about various aspects of the world.&lt;/p&gt;
+
+&lt;p&gt;Studies indicate that these domains (or at least methods of analysis and learning about the world) are shared cross-culturally and partly with non-human animals. Here, we focus on intuitive theories of physics and psychology.&lt;/p&gt;
+
+&lt;h2 id=&quot;intuitive-physics&quot;&gt;Intuitive Physics&lt;/h2&gt;
+
+&lt;p&gt;Researchers have found that at young ages, infants learn to incorporate physical characteristics into their representations of objects. For example, by 2 months, they expect inanimate objects to follow principles of persistence, continuity, cohesion, and solidity &lt;a class=&quot;citation&quot; href=&quot;#object_perception&quot;&gt;(Spelke, 1990)&lt;/a&gt;; by 6 months, they have developed expectations for the movement and properties of rigid, soft, and liquid bodies &lt;a class=&quot;citation&quot; href=&quot;#objects_v_substances&quot;&gt;(Rips &amp;amp; Hespos, 2015)&lt;/a&gt;. Unfortunately, there is no agreement on the underlying computational principles that guide this phenomena &lt;a class=&quot;citation&quot; href=&quot;#infant_reasoning_tree&quot;&gt;(Baillargeon et al., 2009; Siegler &amp;amp; Chen, 1998)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/posts/building_machines_like_people/intuitive_physics.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Recently, people have started to frame intuitive physics as inference over a physics “software engine”&lt;a class=&quot;citation&quot; href=&quot;#human_sim_prediction&quot;&gt;(Bates et al., 2015)&lt;/a&gt;. &lt;font color=&quot;grey&quot;&gt;&lt;em&gt;For example, in experiments, researchers will literally simulate all or a subset of physical outcomes for a scenario using a physics engine and do inference on which is &lt;a href=&quot;https://youtu.be/YORzoOYvonY?t=23m34s&quot;&gt;most likely&lt;/a&gt;&lt;/em&gt;&lt;/font&gt;. Physics engines have the desiderata that they’re oversimplified and incomplete, requiring probabilistic approximations of states–something humans likely do. Further, they seem to capture how humans make predictions and simulate hypothetical world events &lt;a class=&quot;citation&quot; href=&quot;#sim_scene_understanding&quot;&gt;(Battaglia et al., 2013; Téglás et al., 2011)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It remains unclear whether physical properties can be embedded (implicitly or explicitly) into deep learning models. One successful attempt has been the PhysNet &lt;a class=&quot;citation&quot; href=&quot;#physnet&quot;&gt;(Lerer et al., 2016)&lt;/a&gt;, which learned to predict the stability of 2, 3, or 4 towers of blocks. Its performance matched human performance on real images, and exceeded it on synthetic images. However; it requires extensive training (hundreds of thousands of examples) and has limited generalization abilities.&lt;/p&gt;
+
+&lt;p&gt;A clear challenge is whether deep learning models can be made to generalize well without explicitly simulating causal interactions (i.e. containing causal models of the world). One possible method is to have the model emulate a physics simulator, where successive layers of abstraction hopefully learn successive high-level physics dynamics (e.g. distance, velocity, and acceleration). This would be akin to the way current models learn successive abstractions over images (where lower layers learn edges, successive layers learn textures, and even deeper layers learn objects). In deep reinforcement learning, this might enable models that are more robust to slight alterations in the testing data – something that now requires re-training.&lt;/p&gt;
+
+&lt;h2 id=&quot;intuitive-psychology&quot;&gt;Intuitive Psychology&lt;/h2&gt;
+
+&lt;p&gt;Researchers have found that intuitions about other agents also emerge in infancy. For example, pre-verbal infants learn to distinguish inanimate objects from animate objects using low-level cues such as the presence of eyes or whether an object initiates movement from rest &lt;a class=&quot;citation&quot; href=&quot;#infant_gaze&quot;&gt;(Johnson et al., 1998)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Infants also expect agents to act contingently, to have goals, and to take efficient goals subject to constraints &lt;a class=&quot;citation&quot; href=&quot;#goal_attribution_infants&quot;&gt;(Csibra, 2008)&lt;/a&gt;. At just 3 months, infants are able to discriminate anti-social agents that hurt or hinder others from neutral agents. Soon thereafter, they learn to distinguish anti-social, neutral, and pro-social agents &lt;a class=&quot;citation&quot; href=&quot;#infant_moral_judgement&quot;&gt;(Hamlin, 2013)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;font color=&quot;grey&quot;&gt;&lt;em&gt;
+These &quot;intuitive psychology&quot; abilities are likely useful for AI agents learning to play games, and learning to model the behavior of other agents within the game. For example, an AI agent with these abilities can learn to distinguish animate objects from inanimate objects, categorize animate objects, treat them as other acting agents, and learn relevant corresponding attributes for animate-object categories (e.g. harmful/helpful, anti-social/pro-social).&lt;/em&gt;&lt;/font&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Cognitive scientists have tried to model social behavior in a rule-based manner &lt;a class=&quot;citation&quot; href=&quot;#cue_system&quot;&gt;(Schlottmann et al., 2013)&lt;/a&gt; but this is not robust to the many possibilities for how an agent can interpret highly variable scene settings. An alternate approach that is becoming increasingly popular is to model agents as having generative models (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#generative-models&quot;&gt;glossary&lt;/a&gt;) for the actions of others &lt;a class=&quot;citation&quot; href=&quot;#bayesian_tom&quot;&gt;(Baker et al., 2009)&lt;/a&gt;. &lt;font color=&quot;grey&quot;&gt;&lt;em&gt;Such a representation fits well with the example above where an agent learns to model animate objects in the world as other acting agents with attributes. Stereotyping the behavior of other agents based on their perceived category membership (i.e. assuming all agents that belong to a category perform the same actions) may then allow for quick reasoning about their actions.&lt;/em&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;Just as it is unclear whether deep learning systems can implicitly learn physical properties, it is unclear if they can learn high-level psychological representations for concepts such as “agents” and “goals” in their modern capacity. The endowment of such principles from intuitive psychology could, for example, allow for learning about a game by watching another agent playing it. If another agent consistently avoids a particular object, an AI can then infer that object is dangerous or “anti-social” without experiencing the consequences of that interaction.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;Research indicates that there are a number of key skills manifest in infancy. It makes sense that these skills aid us in learning and utilizing new information quickly as we progress through life. Intuitive physics gives us a basis for reasoning about the physical world and intuitive psychology about the social world. However, it is unclear how to incorporate these skills into modern neural networks and endow them with the ability to learn and build on knowledge similarly to humans.&lt;/p&gt;
+
+&lt;p&gt;At a more fundamental level, from an early age, humans show the ability to seek out knowledge as they build internal models for the world. How these questions are devised, their answers found, and the subsequent knowledge stored and incorporated is unclear. Just as there is a concept of the “child as a scientist” actively learning about the world, can we have a “neural network as a scientist”?&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;lake&quot;&gt;Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp;amp; Gershman, S. J. (2016). Building Machines That Learn and Think Like People. &lt;i&gt;The Behavioral and Brain Sciences&lt;/i&gt;, &lt;i&gt;40&lt;/i&gt;, 1–101.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;intuitive_theories&quot;&gt;Schulz, L. (2012). The origins of inquiry: Inductive inference and exploration in early childhood. &lt;i&gt;Trends in Cognitive Sciences&lt;/i&gt;, &lt;i&gt;16&lt;/i&gt;(7), 382–389.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;core_knowledge&quot;&gt;Spelke, E. S., &amp;amp; Kinzler, K. D. (2007). Core knowledge. &lt;i&gt;Developmental Science&lt;/i&gt;, &lt;i&gt;10&lt;/i&gt;(1), 89–96.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;where_science_starts&quot;&gt;Cook, C., Goodman, N. D., &amp;amp; Schulz, L. E. (2011). Where science starts: Spontaneous experiments in preschoolers’ exploratory play. &lt;i&gt;Cognition&lt;/i&gt;, &lt;i&gt;120&lt;/i&gt;(3), 341–349.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;object_perception&quot;&gt;Spelke, E. S. (1990). Principles of object perception. &lt;i&gt;Cognitive Science&lt;/i&gt;, &lt;i&gt;14&lt;/i&gt;(1), 29–56.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;objects_v_substances&quot;&gt;Rips, L. J., &amp;amp; Hespos, S. J. (2015). Divisions of the physical world: Concepts of objects and substances. &lt;i&gt;Psychological Bulletin&lt;/i&gt;, &lt;i&gt;141&lt;/i&gt;(4), 786.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;infant_reasoning_tree&quot;&gt;Baillargeon, R., Li, J., Ng, W., &amp;amp; Yuan, S. (2009). An account of infants’ physical reasoning. &lt;i&gt;Learning and the Infant Mind&lt;/i&gt;, 66–116.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;infant_learning_rules&quot;&gt;Siegler, R. S., &amp;amp; Chen, Z. (1998). Developmental differences in rule learning: A microgenetic analysis. &lt;i&gt;Cognitive Psychology&lt;/i&gt;, &lt;i&gt;36&lt;/i&gt;(3), 273–310.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;human_sim_prediction&quot;&gt;Bates, C., Battaglia, P., Yildirim, I., &amp;amp; Tenenbaum, J. B. (2015). Humans predict liquid dynamics using probabilistic simulation. &lt;i&gt;CogSci&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;sim_scene_understanding&quot;&gt;Battaglia, P. W., Hamrick, J. B., &amp;amp; Tenenbaum, J. B. (2013). Simulation as an engine of physical scene understanding. &lt;i&gt;Proceedings of the National Academy of Sciences&lt;/i&gt;, &lt;i&gt;110&lt;/i&gt;(45), 18327–18332.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;infant_reasoning&quot;&gt;Téglás, E., Vul, E., Girotto, V., Gonzalez, M., Tenenbaum, J. B., &amp;amp; Bonatti, L. L. (2011). Pure reasoning in 12-month-old infants as probabilistic inference. &lt;i&gt;Science (New York, N.Y.)&lt;/i&gt;, &lt;i&gt;332&lt;/i&gt;(6033), 1054–1059.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;physnet&quot;&gt;Lerer, A., Gross, S., &amp;amp; Fergus, R. (2016). Learning Physical Intuition of Block Towers by Example. &lt;i&gt;ICML&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;infant_gaze&quot;&gt;Johnson, S., Slaughter, V., &amp;amp; Carey, S. (1998). Whose gaze will infants follow? The elicitation of gaze-following in 12-month-olds. &lt;i&gt;Developmental Science&lt;/i&gt;, &lt;i&gt;1&lt;/i&gt;(2), 233–238.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;goal_attribution_infants&quot;&gt;Csibra, G. (2008). Goal attribution to inanimate agents by 6.5-month-old infants. &lt;i&gt;Cognition&lt;/i&gt;, &lt;i&gt;107&lt;/i&gt;(2), 705–717.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;infant_moral_judgement&quot;&gt;Hamlin, J. K. (2013). Moral Judgment and Action in Preverbal Infants and Toddlers. &lt;i&gt;Current Directions in Psychological Science&lt;/i&gt;, &lt;i&gt;22&lt;/i&gt;(3), 186–193.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;cue_system&quot;&gt;Schlottmann, A., Cole, K., Watts, R., &amp;amp; White, M. (2013). Domain-specific perceptual causality in children depends on the spatio-temporal configuration, not motion onset. &lt;i&gt;Frontiers in Psychology&lt;/i&gt;, &lt;i&gt;4&lt;/i&gt;, 365.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;bayesian_tom&quot;&gt;Baker, C. L., Saxe, R., &amp;amp; Tenenbaum, J. B. (2009). Action understanding as inverse planning. &lt;i&gt;Cognition&lt;/i&gt;, &lt;i&gt;113&lt;/i&gt;(3), 329–349.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building Machines that Learn and Think Like People (pt 2. Challenges for Building Human-Like Machines)</title>
+   <link href="https://wcarvalho.github.io//review/2017/12/31/building_machines_challenges/"/>
+   <updated>2017-12-31T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//review/2017/12/31/building_machines_challenges</id>
+   <content type="html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Article Table of Contents&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#hand-written-character-recognition&quot;&gt;Hand-Written Character Recognition&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#atari-game-frostbite&quot;&gt;Atari Game Frostbite&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#references&quot;&gt;References&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In the first post of this series, I left you with the question of whether generic neural networks with minimal constraints and inductive biases could learn and think in a human-like manner given sufficient data. &lt;font color=&quot;grey&quot;&gt;&lt;em&gt;This is actually a point of contention between people in the field, with some citing the pervasive cortical micro-column as evidence for &lt;a href=&quot;https://www.youtube.com/watch?v=yVT7dO_Tf4E&amp;amp;t=1378s&quot;&gt;highly regular structure across the brain&lt;/a&gt;, and others arguing that this is an extreme view.&lt;/em&gt;&lt;/font&gt;&lt;/p&gt;
+
+&lt;p&gt;The authors of this paper come from the perspective that the idea that the brain is a collection of general purpose neural networks with few constraints is extreme. Instead they believe that the brain relies on &lt;em&gt;inductive biases&lt;/em&gt;. To showcase this and present the bedrock for their “key ingredients” for intelligence, the authors describe two examples where modern neural networks fail to learn like humans.&lt;/p&gt;
+
+&lt;h2 id=&quot;hand-written-character-recognition&quot;&gt;Hand-Written Character Recognition&lt;/h2&gt;
+&lt;p&gt;A popular training dataset for neural networks is the MNIST dataset, where the task is to learn to predict the digit that is on an image.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.tensorflow.org/images/mnist_digits.png&quot; alt=&quot;minst&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are 10 digits in the training set (0-9), and each digit has 6,0000 examples. Many machine learning algorithms (not just neural networks) can achieve remarkable performance on this task. However, to achieve this remarkable performance, they learn to differentiate characters using thousands of examples. &lt;a class=&quot;citation&quot; href=&quot;#lake&quot;&gt;(Lake et al., 2016)&lt;/a&gt; argue that humans on the other hand can learn digits with far fewer examples. Further, we not only learn to recognize a digit, we learn a rich, structured representation or “&lt;strong&gt;concept&lt;/strong&gt;”” for a digit, which we can then generalize to new tasks beyond recognition. 
+&lt;!-- For example, we can generate (draw) new instances of the class or identify its core attributes. --&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a class=&quot;citation&quot; href=&quot;#lake&quot;&gt;(Lake et al., 2016)&lt;/a&gt; argue that character recognition is a good domain to compare human and machine performance because, in general, characters lie on a simple-2D space (and are thus easy to analyze) and are often presented un-occluded. Of all object recognition tasks, this has the most promise for the development of a human-like algorithm in the near future. However, to learn as richly as humans do, machine learning algorithms will need to learn differently from how they currently do.&lt;/p&gt;
+
+&lt;!-- However, the authors maintain that MNIST is **not** is a good benchmark towards this goal because it doesn't require human-like abilities. For example, you have 6,0000 examples per digit. Many machine learning algorithms utilize all of these examples to learn each digit representation; however, a human needs only a few examples to learn a digit.  --&gt;
+
+&lt;p&gt;To address this challenge, the authors proposed that human-like algorithms be developed for the omniglot dataset presented below &lt;a class=&quot;citation&quot; href=&quot;#bpl&quot;&gt;(Lake et al., 2015)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/posts/building_machines_like_people/omniglot.png&quot; alt=&quot;omniglot&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This dataset has dozens of classes with about 20 examples each (as opposed to only 10 classes with thousands of examples each). This is a better benchmark because it requires an algorithm to have the human ability of learning to recognize a character from only a few examples. Because humans create concepts for digits, they can generate new examples of characters they have little experience with (ii); they can show the essential abstractions of a character they’ve learned (iii); or they can generate new characters similar to a character they’ve just seen (iv). Essentially, this dataset tests an algorithm’s ability to learn &lt;strong&gt;a lot&lt;/strong&gt; from &lt;strong&gt;very little&lt;/strong&gt; - a quintessential human ability, and something lacking from deep learning based models.&lt;/p&gt;
+
+&lt;h2 id=&quot;temporal-planning-and-building-on-prior-knowledge-in-atari-games&quot;&gt;Temporal Planning and Building on Prior Knowledge in Atari Games&lt;/h2&gt;
+
+&lt;p&gt;Another recently popular domain for neural networks is playing video games. Google Deepmind recently released a breakthrough paper, &lt;a href=&quot;https://deepmind.com/research/publications/human-level-control-through-deep-reinforcement-learning/&quot;&gt;Human-level control through deep reinforcement learning&lt;/a&gt; &lt;a class=&quot;citation&quot; href=&quot;#dqn&quot;&gt;(Mnih et al., 2015)&lt;/a&gt;, where they showed that a neural network trained via a reinforcement learning algorithm, known as the “Deep Q-Network” or “DQN”, was able to play numerous video games at “human-level”. Two things are worth noting. First, the algorithm they used, known as “Q-Learning”, is a variant of an algorithm which has been shown to be used by the brain &lt;a class=&quot;citation&quot; href=&quot;#rlbrain&quot;&gt;(Niv, 2009)&lt;/a&gt;. Second, despite its brain-inspiration, this algorithm was not capable of transferring skills across games and rather learned to play each game separately from scratch.&lt;/p&gt;
+
+&lt;p&gt;While the DQN did well on some games, others were particularly difficult for it. Particularly notable were games that required temporally extended planning strategies, i.e. planning at multiple temporal resolutions. (&lt;a href=&quot;/questions&quot;&gt;See here&lt;/a&gt; for examples of the importance of planning at multiple temporal resolutions for humans). Additionally, even when the DQN performed well, despite its brain-inspired architectural and algorithmic choices, it didn’t seem to learn like a human. For example, the DQN required approximately 924 hours of game play per game to do well, whereas humans could do well after approximately 2 hours.&lt;/p&gt;
+
+&lt;p&gt;As a case-study to understand how this model’s learning differs from a human’s, the authors study learning for the Atari game, “Frostbite”.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/posts/building_machines_like_people/frostbite.png&quot; alt=&quot;frostbite&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In Frostbite, the user must hop around floating ice floats while avoiding obstacles (such as crabs seen in D). Ice floats can either be blue and inactive, or white and active. Hopping on an active ice flow deactivates it and constructs a piece of an igloo (seen in C). Once it’s constructed, the user must jump to it to complete the level.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Challenges.&lt;/strong&gt; This game is challenging for a number of reasons. First, the environment is dynamic as ice floats and obstacles are constantly moving. This requires that the user re-plans their trajectory at every time-step. Second, the user must coordinate and relate sub-goals of hopping on active ice floats with the super-goal of constructing and entering an igloo. This requires planning at multiple temporal resolutions. Last, new rewards and obstacles present themselves as the levels advance. The ability to do object recognition &amp;amp; inference on objects then becomes very useful. Currently, the DQN needs to experience that something is good or bad in order to pursue or avoid it. If a new variant of an enemy appears, it must experience punishment to learn to avoid it. Humans, however, can infer that this new variant is likely negative for them from prior related experience.&lt;/p&gt;
+
+&lt;p&gt;Since this paper was released, numerous improvements over the DQN have been released. While learning has been dramatically improved, it is still not at the speed of human-learning. Some insights for why come when you look at the first few minutes of game-play. Here, the AI model is essentially random. A human, on the other hand, quickly learns the basics of the game: goals, sub-goals, object classifications, etc. For example, in Frostbite, a human quickly learns that you build an igloo by jumping on active ice floats while avoiding obstacles and enemies. The authors theorize that in order to accomplish this, humans are adopting intuitive theories to build models for model-based planning (intuitive theories are discussed more in the &lt;a href=&quot;/review/2018/01/01/building_machines_developmental&quot;&gt;next section&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;More insight into how machines still lack human-like learning comes from comparing how the DQN learns to compete levels against how humans learn to do so. In frostbite, the DQN learns sub-goals through incremental feedback in the form of points awarded for jumping on activated ice floats. Afterwards, once it randomly decides to enter the completed igloo, it learns that the objective is to enter the igloo. In other games, such as Montezuma’s revenge, where sub-goals do not have associated feedback, the DQN barely learns to leave the first level of the game and performs far below human performance. Humans on the other hand seem to have the ability to figure out super-goals without incremental feedback. This somewhat demonstrates the necessity, or at least the utility, of model-based planning that seems to underlie human learning. (&lt;font color=&quot;grey&quot;&gt;&lt;em&gt;One should note that a non-model based algorithm which simply attempts to explore as much of the level as possible was able to perform very well on Montezuma's revenge &lt;a class=&quot;citation&quot; href=&quot;#intrinsic_rl&quot;&gt;(Bellemare et al., 2016)&lt;/a&gt;.&lt;/em&gt;&lt;/font&gt;)&lt;/p&gt;
+
+&lt;p&gt;Finally, another striking difference is found when comparing how the DQN and how humans re-purpose what they learn. After training, a human has learned a sufficiently rich representation of the game that&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Slight physical changes to game objects (such as color changes) have minimal impact on performance whereas DQN performance drops dramatically. (&lt;font color=&quot;grey&quot;&gt;&lt;em&gt;This is partially addressed with the &lt;a href=&quot;https://www.vicarious.com/2017/08/07/general-game-playing-with-schema-networks/&quot;&gt;biologically more plausible &quot;schema&quot; network&lt;/a&gt; released by Vicarious.&lt;a class=&quot;citation&quot; href=&quot;#schema&quot;&gt;(Kansky et al., 2017)&lt;/a&gt;&lt;/em&gt;&lt;/font&gt;)&lt;/li&gt;
+  &lt;li&gt;A human can use their model of the game to perform well on arbitrary new tasks whereas the DQN is severely limited in this regard. Some fun(ny) examples by the authors include:
+    &lt;ol&gt;
+      &lt;li&gt;Beat your friend, who’s playing next to you, but barely, not by too much, so as to not embarrass them&lt;/li&gt;
+      &lt;li&gt;Pass each level at the last possible second&lt;/li&gt;
+      &lt;li&gt;Touch each ice float once and only once&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In order to build machines that learn like humans, we need to address the appropriate problems. Human learners fundamentally take on different tasks than today’s neural networks, and if we want to build machines that learn and think like people, they must address tasks that humans do. The comparison above is unfair because humans extensively utilize rich representations of prior knowledge whereas the DQN learns completely from scratch. However, humans rarely learn tasks from scratch, at least not since infancy.
+&lt;!-- , and especially not many of the tasks that modern AI systems as tasked with. --&gt;
+To work towards human-like learning, one key question is, &lt;strong&gt;“how do we learn rich representations of knowledge that may be re-purposed for new tasks so that they can be solved quickly?”&lt;/strong&gt;&lt;/p&gt;
+
+&lt;!-- (&lt;font color=&quot;grey&quot;&gt;&lt;em&gt;This is actually where I disagree with the authors. While our current neural networks are likely too simple and lack diversity, I do believe the brain employs some basis set of neural networks. These networks then adapt from &lt;/em&gt;&lt;/font&gt;) --&gt;
+
+&lt;!-- Whether or not that's the case (&lt;font color=&quot;grey&quot;&gt;&lt;em&gt;and I don't think that's the case&lt;/em&gt;&lt;/font&gt;), it is unlikely that the brain's neural networks are simple and stereotyped, learning simply from massive amounts of data. --&gt;
+
+&lt;!-- &lt;font color=&quot;grey&quot;&gt;&lt;em&gt;One might argue the brain is known for highly stereotyped structure; for example, the cortical micro-column which is known to be pervasive in the cortex &lt;strong&gt;[CITE]&lt;/strong&gt;. However, if one studies biological neural networks across the brain, one will find rich diversity in neuron structure and in inter-neuron connectivity.&lt;/em&gt;&lt;/font&gt;&lt;br&gt; --&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;lake&quot;&gt;Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp;amp; Gershman, S. J. (2016). Building Machines That Learn and Think Like People. &lt;i&gt;The Behavioral and Brain Sciences&lt;/i&gt;, &lt;i&gt;40&lt;/i&gt;, 1–101.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;bpl&quot;&gt;Lake, B. M., Salakhutdinov, R., &amp;amp; Tenenbaum, J. B. (2015). Human-level concept learning through probabilistic program induction. &lt;i&gt;Science&lt;/i&gt;, &lt;i&gt;350&lt;/i&gt;(6266), 1332–1338.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;dqn&quot;&gt;Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., Graves, A., Riedmiller, M., Fidjeland, A. K., Ostrovski, G., Petersen, S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra, D., Legg, S., &amp;amp; Hassabis, D. (2015). Human-level control through deep reinforcement learning. &lt;i&gt;Nature&lt;/i&gt;, &lt;i&gt;518&lt;/i&gt;(7540), 529–533.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;rlbrain&quot;&gt;Niv, Y. (2009). Reinforcement learning in the brain. &lt;i&gt;Journal of Mathematical Psychology&lt;/i&gt;, &lt;i&gt;53&lt;/i&gt;(3), 139–154.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;intrinsic_rl&quot;&gt;Bellemare, M., Srinivasan, S., Ostrovski, G., Schaul, T., Saxton, D., &amp;amp; Munos, R. (2016). Unifying count-based exploration and intrinsic motivation. &lt;i&gt;Advances in Neural Information Processing Systems&lt;/i&gt;, 1471–1479.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;schema&quot;&gt;Kansky, K., Silver, T., Mély, D. A., Eldawy, M., Lázaro-Gredilla, M., Lou, X., Dorfman, N., Sidor, S., Phoenix, S., &amp;amp; George, D. (2017). Schema Networks: Zero-shot Transfer with a Generative Causal Model of Intuitive Physics. &lt;i&gt;ArXiv Preprint ArXiv:1706.04317&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building Machines that Learn and Think Like People (Resources)</title>
+   <link href="https://wcarvalho.github.io//review/2017/12/23/building_machines_resources/"/>
+   <updated>2017-12-23T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//review/2017/12/23/building_machines_resources</id>
+   <content type="html">&lt;h2 id=&quot;sam-gershman-building-machines-that-learn-and-think-like-people&quot;&gt;Sam Gershman: Building Machines that Learn and Think Like People&lt;/h2&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/O0MF-r9PsvE&quot; frameborder=&quot;0&quot; gesture=&quot;media&quot; allow=&quot;encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;josh-tenebaum-the-power-and-limits-of-artificial-intelligence&quot;&gt;Josh Tenebaum: The Power and Limits of Artificial Intelligence&lt;/h2&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/YORzoOYvonY&quot; frameborder=&quot;0&quot; gesture=&quot;media&quot; allow=&quot;encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;yann-lecun-how-could-machines-learn-as-efficiently-as-animals-and-humans&quot;&gt;Yann Lecun: How Could Machines Learn as Efficiently as Animals and Humans?&lt;/h2&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/0BUr4_ZkA1w&quot; frameborder=&quot;0&quot; gesture=&quot;media&quot; allow=&quot;encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;h2 id=&quot;articles&quot;&gt;Articles&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://people.hws.edu/graham/Graham_BBS_Commentary_2017.pdf&quot;&gt;Commentary by Professor of Psychology Daniel Graham&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building Machines that Learn and Think Like People (pt 1. Introduction and History)</title>
+   <link href="https://wcarvalho.github.io//review/2017/12/23/building_machines_intro/"/>
+   <updated>2017-12-23T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//review/2017/12/23/building_machines_intro</id>
+   <content type="html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Article Table of Contents&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#motivation-for-series&quot;&gt;Motivation for series&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#introduction&quot;&gt;Introduction&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#history-of-brain-inspiration-in-ai&quot;&gt;History of Brain-Inspiration in AI&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#references&quot;&gt;References&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;motivation-for-series&quot;&gt;Motivation for series&lt;/h2&gt;
+&lt;h3 id=&quot;feel-free-to-skip&quot;&gt;(Feel free to skip)&lt;/h3&gt;
+&lt;p&gt;This is part 1 in a series of blog posts, where I plan to summarize the fascinating (but lengthy) &lt;a href=&quot;https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-machines-that-learn-and-think-like-people/A9535B1D745A0377E16C590E14B94993&quot;&gt;Building Machines that Learn and Think Like People&lt;/a&gt; by Lake et al. This paper discusses how current &lt;a href=&quot;https://medium.freecodecamp.org/want-to-know-how-deep-learning-works-heres-a-quick-guide-for-everyone-1aedeca88076&quot;&gt;deep learning models&lt;/a&gt; (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#deep-learning&quot;&gt;glossary&lt;/a&gt;), despite their &lt;a href=&quot;https://www.technologyreview.com/s/513696/deep-learning/&quot;&gt;success&lt;/a&gt; and common comparison to &lt;a href=&quot;http://www.dailymail.co.uk/sciencetech/article-5207101/Googles-AI-software-learning-makes-good-photo.html&quot;&gt;the&lt;/a&gt; &lt;a href=&quot;https://www.datanami.com/2017/07/06/google-mimics-human-brain-unified-deep-learning-model/&quot;&gt;brain&lt;/a&gt;, do not learn how brains do in many respects. The authors offer a set of “key ingredients” to endow neural networks with what might allow them to learn and think more like brains do.&lt;/p&gt;
+
+&lt;p&gt;I’ve wanted to read this paper for some time. One of my central goals as an aspiring brain and machine learning researcher is to build human-inspired AI. As I’m very junior in the field, I thought this paper would give me a lot of insight into how to go about doing that. I was finally pushed into reading it when I discovered that along with this paper, the Journal for Behavioral and Brain Sciences has published &lt;a href=&quot;https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-machines-that-learn-and-think-like-people/A9535B1D745A0377E16C590E14B94993#fndtn-related-commentaries&quot;&gt;27 promising commentaries&lt;/a&gt;! Among the ones I’m most excited to read next are:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-machines-that-learn-and-think-for-themselves/E28DBFEC380D4189FB7754B50066A96F&quot;&gt;Building machines that learn and think for themselves&lt;/a&gt; by DeepMind&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-on-prior-knowledge-without-building-it-in/F342A14C57094D5AF7BC62950AE49CD8&quot;&gt;Building on prior knowledge without building it in&lt;/a&gt; by McClelland et al.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cambridge.org/core/product/3D2A685AC198EC0008835514735033BB&quot;&gt;Ingredients of intelligence: From classic debates to an engineering roadmap&lt;/a&gt;, a meta-response by Lake et al.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I encourage people to discuss ideas and ask questions in the comments section. A lot of research is coming out in cognitive science, neuroscience, artificial intelligence, and their intersection, and I would love for this to turn into a dialogue on these topics!&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;The purpose of this series is to highlight the challenges with building machines that learn and think like people. As such, I will skip aspects of the paper that generally review deep learning. Please feel free to read the paper for that material. The key idea: thanks to tremendous skill in pattern recognition, deep neural networks have achieved state-of-the-art performance in numerous domains including&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tryolabs.com/blog/2017/08/30/object-detection-an-overview-in-the-age-of-deep-learning/&quot;&gt;computer vision&lt;/a&gt; (e.g. learning to detect objects in images with complex scenes &lt;a class=&quot;citation&quot; href=&quot;#imagenet&quot;&gt;(Krizhevsky et al., 2012)&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://deepmind.com/blog/wavenet-generative-model-raw-audio/&quot;&gt;speech modeling&lt;/a&gt; (e.g. learning to produce human-like speech &lt;a class=&quot;citation&quot; href=&quot;#wavenet&quot;&gt;(Oord et al., 2016)&lt;/a&gt;), and&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://deepmind.com/research/publications/human-level-control-through-deep-reinforcement-learning/&quot;&gt;complex control problems&lt;/a&gt; (e.g. learning to play a Atari video-games without embedded knowledge of the video-game structure &lt;a class=&quot;citation&quot; href=&quot;#dqn&quot;&gt;(Mnih et al., 2015)&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While neural networks perform very well on many tasks, they have limitations. For example, they often must be trained on tremendous quantities of data. Additionally, they are not know to generalize knowledge well to different tasks. This is in part because they (at least, in their current form) rely on statistical pattern recognition–they essentially learn to notice patterns through thousands to millions of examples. An alternative, which &lt;a class=&quot;citation&quot; href=&quot;#lake&quot;&gt;(Lake et al., 2016)&lt;/a&gt; suggest is a key ingredient of human learning, is a model-building approach. They argue that intelligent cognition relies on building and using &lt;a href=&quot;https://en.wikipedia.org/wiki/Causal_model&quot;&gt;causal models&lt;/a&gt; (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#causal-models&quot;&gt;glossary&lt;/a&gt;) to understand, explain, simulate, and predict the world. Despite this contrast, these two methods are certainly not orthogonal and machines can have a synergistic benefit.&lt;/p&gt;
+
+&lt;p&gt;The authors maintain that while they are critical of neural networks, they see them as somewhat fundamental to human-like learning machines. This is partly because any computational model for human learning must ultimately be grounded in the brain’s biological neural networks. However, the authors believe that future generations of neural networks will look very different from current state-of-the-art.&lt;/p&gt;
+
+&lt;font color=&quot;grey&quot;&gt;&lt;em&gt;
+  I support this. The neural networks we use are crude abstractions of our currently incomplete and incorrect models for biological neural networks.
+  For example, neuroscientists (and especially AI researchers) have long modeled neurons as single excitable units. Whether a neuron fires was a function of the electric signal that it received from its dendrites. For more on this perspective, see &lt;a href=&quot;http://cs231n.github.io/neural-networks-1/#biological-motivation-and-connections&quot;&gt;this introduction&lt;/a&gt;. However, physicists have recently found that neurons are not single excitable units but a collection of excitable units &lt;a class=&quot;citation&quot; href=&quot;#multineuron&quot;&gt;(Sardi et al., 2017)&lt;/a&gt;. Further, each excitable unit is sensitive to the &lt;strong&gt;directionality&lt;/strong&gt; of the origin of the input signal (i.e. the direction of the attached dendrite). This will potentially require a dramatic reformulation of artificial neural networks and will likely spur much research.
+&lt;/em&gt;&lt;/font&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;strong&gt;The main contribution of this paper is its suggestion of “key ingredients” for building machines that learn and think like people. &lt;/strong&gt; Defining and motivating these ingredients makes up a majority of the paper, so I will make each broad category its own article in this series:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/review/2017/12/22/building_machines_developmental&quot;&gt;“Developmental Software”&lt;/a&gt;: intuitive theories for the world that we learn at an early age such as intuitive theories for physics and psychology (e.g., with physics, we quickly learn that solid objects cannot go through eachother),&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/review/2017/12/22/building_machines_learning&quot;&gt;“Model Building”&lt;/a&gt;: the ability to build causal models of the world via methods such as &lt;a href=&quot;https://plato.stanford.edu/entries/compositionality/&quot;&gt;compositionality&lt;/a&gt; (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#compositionality&quot;&gt;glossary&lt;/a&gt;) and &lt;a href=&quot;http://bair.berkeley.edu/blog/2017/07/18/learning-to-learn/&quot;&gt;learning-to-learn&lt;/a&gt; (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#learning-to-learn&quot;&gt;glossary&lt;/a&gt;), and&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/review/2017/12/22/building_machines_thinking&quot;&gt;“Thinking quickly”&lt;/a&gt;: the ability to quickly do inference (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#inference&quot;&gt;glossary&lt;/a&gt;) and prediction by combining model-free and model-based algorithms  (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#model-free-model-based&quot;&gt;glossary&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;history-of-brain-inspiration-in-ai&quot;&gt;History of Brain-Inspiration in AI&lt;/h2&gt;
+
+&lt;p&gt;Scientists such as Alan Turing have long thought that AI could be informative to or descriptive of cognition &lt;a class=&quot;citation&quot; href=&quot;#computing_turing&quot;&gt;(Turing, 1950)&lt;/a&gt;. In fact, Turing held a &lt;a href=&quot;http://www.funderstanding.com/theory/behaviorism/&quot;&gt;behaviorist view&lt;/a&gt; of learning reminiscent to a popular modern view that almost everything can be learning from the statistical patterns of sensory inputs.&lt;/p&gt;
+
+&lt;p&gt;Cognitive scientists repudiated this view of cognition and instead assumed that human knowledge representation was symbolic (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#symbolic-representations&quot;&gt;glossary&lt;/a&gt;) in nature. They argued that many functions of cognition such as language and planning could be understood in terms of symbolic operations. This falls in line more with a “model-based” approach as you use an explicitly structured representation.&lt;/p&gt;
+
+&lt;p&gt;Somewhat complementary to both, another school of thought - and what would become the basis for deep learning - believed in sub-symbolic (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#sub-symbolic-representations&quot;&gt;glossary&lt;/a&gt;) distributed representations (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#distributed-representations&quot;&gt;glossary&lt;/a&gt;) of knowledge produced by parallel distributed processing (PDP) systems &lt;a class=&quot;citation&quot; href=&quot;#pdp&quot;&gt;(Rumelhart &amp;amp; McClelland, 1986)&lt;/a&gt;. Proponents of this view argued that many classic symbolic forms of knowledge such as graphs and &lt;a href=&quot;https://en.wikipedia.org/wiki/Grammar&quot;&gt;grammars&lt;/a&gt; (production rules for strings) were useful but &lt;em&gt;misleading&lt;/em&gt; for characterizing thought. Even if they were manifest, they were more likely emergent epiphenomena than fundamental in their own right &lt;a class=&quot;citation&quot; href=&quot;#structure_emerge&quot;&gt;(McClelland et al., 2010)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Researchers of PDP and neural networks showed that this method of distributed representation learning could, with minimal constraints and inductive biases (&lt;a href=&quot;/review/2017/12/23/building_machines_glossary/#inductive-biases&quot;&gt;glossary&lt;/a&gt;), learn structured knowledge representations given enough data. They have shown that models could be trained to emulate the rule-like and structured behaviors that characterize cognition &lt;a class=&quot;citation&quot; href=&quot;#dqn&quot;&gt;(Mnih et al., 2015)&lt;/a&gt;. In recent history - perhaps more strikingly - researchers have found that the representations learned by artificial neural networks can predict the neural response patterns in the human and macaque cortex &lt;a class=&quot;citation&quot; href=&quot;#deep_it&quot;&gt;(Yamins et al., 2013)&lt;/a&gt;. That is, representations learned by generic neural networks seem to align with primate representations.&lt;/p&gt;
+
+&lt;p&gt;Modern neural networks fed large amounts of data for pattern recognition tasks have been shown to learn representations reminiscent of those learned or used by humans. &lt;strong&gt;But how far towards truly human-like learning and thinking can we go by simply feeding large amounts of data to generic neural networks?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;multineuron&quot;&gt;Sardi, S., Vardi, R., Sheinin, A., Goldental, A., &amp;amp; Kanter, I. (2017). New Types of Experiments Reveal that a Neuron Functions as
+              Multiple Independent Threshold Units. &lt;i&gt;Sci. Rep.&lt;/i&gt;, &lt;i&gt;7&lt;/i&gt;(1), 18036.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;lake&quot;&gt;Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp;amp; Gershman, S. J. (2016). Building Machines That Learn and Think Like People. &lt;i&gt;The Behavioral and Brain Sciences&lt;/i&gt;, &lt;i&gt;40&lt;/i&gt;, 1–101.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;botvinick_barrett_battaglia_de&quot;&gt;Botvinick, M., Barrett, D. G. T., Battaglia, P., de Freitas, N., Kumaran, D., Leibo, J. Z., Lillicrap, T., Modayil, J., Mohamed, S., Rabinowitz, N. C., Rezende, D. J., Santoro, A., Schaul, T., Summerfield, C., Wayne, G., Weber, T., Wierstra, D., Legg, S., &amp;amp; Hassabis, D. Building machines that learn and think for themselves. &lt;i&gt;Behavioral and Brain Sciences&lt;/i&gt;, &lt;i&gt;40&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;hansen_lampinen_suri_mcclelland&quot;&gt;Hansen, S. S., Lampinen, A. K., Suri, G., &amp;amp; McClelland, J. L. Building on prior knowledge without building it in. &lt;i&gt;Behavioral and Brain Sciences&lt;/i&gt;, &lt;i&gt;40&lt;/i&gt;. https://doi.org/10.1017/S0140525X17000176&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;lake_ullman_tenenbaum_gershman&quot;&gt;Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp;amp; Gershman, S. J. Ingredients of intelligence: From classic debates to an engineering roadmap. &lt;i&gt;Behavioral and Brain Sciences&lt;/i&gt;, &lt;i&gt;40&lt;/i&gt;. https://doi.org/10.1017/S0140525X17001224&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;dqn&quot;&gt;Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., Graves, A., Riedmiller, M., Fidjeland, A. K., Ostrovski, G., Petersen, S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra, D., Legg, S., &amp;amp; Hassabis, D. (2015). Human-level control through deep reinforcement learning. &lt;i&gt;Nature&lt;/i&gt;, &lt;i&gt;518&lt;/i&gt;(7540), 529–533.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;imagenet&quot;&gt;Krizhevsky, A., Sutskever, I., &amp;amp; Hinton, G. E. (2012). ImageNet Classification with Deep Convolutional Neural Networks. &lt;i&gt;NIPS&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;vrnn&quot;&gt;Chung, Junyoung, Kastner, Kyle, Dinh, Laurent, Goel, Kratarth, Courville, Aaron, &amp;amp; Bengio, Yoshua. (2016). A Recurrent Latent Variable Model for Sequential Data. &lt;i&gt;ArXiv.org&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;computing_turing&quot;&gt;Turing, A. M. (1950). Computing machinery and intelligence. &lt;i&gt;Mind&lt;/i&gt;, &lt;i&gt;59&lt;/i&gt;(236), 433–460.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;pdp&quot;&gt;Rumelhart, D. E., &amp;amp; McClelland, J. L. (1986). &lt;i&gt;Parallel Distributed Processing&lt;/i&gt;. MIT Press.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;structure_emerge&quot;&gt;McClelland, J. L., Botvinick, M. M., Noelle, D. C., Plaut, D. C., Rogers, T. T., Seidenberg, M. S., &amp;amp; Smith, L. B. (2010). Letting structure emerge: connectionist and dynamical systems approaches to cognition. &lt;i&gt;Trends in Cognitive Sciences&lt;/i&gt;, &lt;i&gt;14&lt;/i&gt;(8), 348–356.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;deep_it&quot;&gt;Yamins, D. L., Hong, H., Cadieu, C., &amp;amp; DiCarlo, J. J. (2013). &lt;i&gt;Hierarchical Modular Optimization of Convolutional Networks Achieves Representations Similar to Macaque IT and Human Ventral Stream&lt;/i&gt;. 3093–3101.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;wavenet&quot;&gt;Oord, A. van den, Dieleman, S., Zen, H., Simonyan, K., Vinyals, O., Graves, A., Kalchbrenner, N., Senior, A., &amp;amp; Kavukcuoglu, K. (2016). Wavenet: A generative model for raw audio. &lt;i&gt;ArXiv Preprint ArXiv:1609.03499&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Building Machines that Learn and Think Like People (Glossary)</title>
+   <link href="https://wcarvalho.github.io//review/2017/12/23/building_machines_glossary/"/>
+   <updated>2017-12-23T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//review/2017/12/23/building_machines_glossary</id>
+   <content type="html">&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Article Table of Contents&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#deep-learning&quot;&gt;Deep Learning, Neural Networks, Artificial Neural Networks&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#causal-models&quot;&gt;Causal Models&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#inference&quot;&gt;Inference&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#model-free-model-based&quot;&gt;Model-free, Model-based&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#symbolic-representations&quot;&gt;Symbolic representations&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#sub-symbolic-representations&quot;&gt;Sub-symbolic representations&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#distributed-representations&quot;&gt;Distributed Representations&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#inductive-biases&quot;&gt;Inductive Biases&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#compositionality&quot;&gt;Compositionality&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#learning-to-learn&quot;&gt;Learning-to-learn&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;#generative-models&quot;&gt;Generative Models&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;deep-learning&quot;&gt;Deep Learning&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Also Neural Networks, Artificial Neural Networks&lt;/strong&gt;&lt;br /&gt;
+A model vaguely resembling a biological neural network that learns how to map inputs to outputs. For example, suppose you give it images of cats and dogs as inputs and the labels “cat” and “dog”, respectively. It will learn to predict the label “cat” when given cat images and “dog” when given dog images.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://mapr.com/blog/demystifying-ai-ml-dl/assets/process.png&quot; alt=&quot;deep_learning&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, I use “Neural Networks”, “Artificial Neural Networks”, and “Deep Learning” interchangeably. They all refer to artificial neural networks. When referring to the brain’s networks, I say “biological neural networks”.&lt;/p&gt;
+
+&lt;h2 id=&quot;causal-models&quot;&gt;Causal Models&lt;/h2&gt;
+&lt;p&gt;Causal models attempt to abstractly describe the real world process that produces an observation. For example, the model below represents drawing characters as combining strokes of a pen in a particular sequence.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/posts/building_machines_like_people/bpl.png&quot; alt=&quot;bpl&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;generative-models&quot;&gt;Generative models&lt;/h2&gt;
+&lt;p&gt;Generative models attempt to describe a process for generating data. However, unlike &lt;a href=&quot;#causal-models&quot;&gt;causal models&lt;/a&gt;, they do not attempt to model the real world process that generated the data. In the example of characters above, it would be sufficient if a generative model simply learned to predict the pixels associated with a character and not the strokes that might have produced it.&lt;/p&gt;
+
+&lt;h2 id=&quot;inference&quot;&gt;Inference&lt;/h2&gt;
+&lt;p&gt;When A typically causes B, you can predict that B will come from A, and you can do &lt;em&gt;inference&lt;/em&gt; that A was the &lt;strong&gt;cause&lt;/strong&gt; of B. For example if A=”its raining” and B=”Bob wears boots”. You might see that it’s raining and &lt;strong&gt;predict&lt;/strong&gt; Bob will be wearing boots or you might see that Bob is wearing boots and &lt;strong&gt;infer&lt;/strong&gt; its probably raining.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/posts/building_machines_like_people/inference.png&quot; alt=&quot;inference&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;model-free-model-based&quot;&gt;Model-free, Model-based&lt;/h2&gt;
+&lt;p&gt;Model-free algorithms use experience to directly learn quantities while model-based algorithms learn models for the world (such as probabilities for transitioning between world states). For example, learning an internal geographical map to get to work is “model-based”, whereas simply learning what turn to make at each corner but not remembering where each turn takes you is “model-free”. Model-based is somewhat preferred because you can use your learned map to plan a new way to get to work that is a &lt;em&gt;composition&lt;/em&gt; of your previous routes.&lt;/p&gt;
+
+&lt;h2 id=&quot;symbolic-representations&quot;&gt;Symbolic representations&lt;/h2&gt;
+&lt;p&gt;Symbols can be thought of as variables that represent different quantities. For example, every letter of the alphabet can be seen as a symbol. Likewise, words in our vocabulary.&lt;/p&gt;
+
+&lt;h2 id=&quot;sub-symbolic-representations&quot;&gt;Sub-symbolic representations&lt;/h2&gt;
+&lt;p&gt;A representation is sub-symbolic if its constituents are not symbolic. For example, you could represent words as points in space like in the example below. Here, each constituent of the word is a real number (an x or y coordinate). This differs from a symbolic representation which would represent the words as symbols in and of themselves.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://suriyadeepan.github.io/img/seq2seq/we1.png&quot; alt=&quot;word2vec&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;distributed-representations&quot;&gt;Distributed Representations&lt;/h2&gt;
+&lt;p&gt;A distributed representation is one where different computational units hold different parts of a representation. In the example of neurons in a neural network, every neuron in a layer might by itself hold one aspect of a representation you care about. For example, in the plot above words are represented by 2 coordinates (x and y). Here, each neuron could hold the value for one coordinate (one neuron for x, the other for y), so the representation for the word is distributed &lt;strong&gt;across&lt;/strong&gt; the neurons.&lt;/p&gt;
+
+&lt;h2 id=&quot;inductive-biases&quot;&gt;Inductive Biases&lt;/h2&gt;
+&lt;p&gt;Inductive Biases are the assumptions your model makes about the relationship between its inputs and outputs for &lt;strong&gt;new, unseen&lt;/strong&gt; inputs. For example, a model that learns to represent visual concepts might have the inductive bias that objects are composed of learnable parts and relations. With the example of the segway below, it could be decomposed into two wheels connected by a platform, which provides the base for a post, which holds the handlebars, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;img height=&quot;200px&quot; src=&quot;/files/posts/building_machines_like_people/segway.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;compositionality&quot;&gt;Compositionality&lt;/h2&gt;
+&lt;p&gt;Compositionality is the classic idea that new representations can be constructed through combinations of primitive elements. Real world examples include sentences which are combinations of words, the “primitives” of language, or programs which are compositions of functions, which are themselves compositions of more primitive data types.&lt;/p&gt;
+
+&lt;h2 id=&quot;learning-to-learn&quot;&gt;Learning-to-learn&lt;/h2&gt;
+&lt;p&gt;Learning-to-learn is the idea of using learned concepts as “primitives” for other concepts when learning. In the example of the segway above, you identify a segway more quickly by re-using the concepts you’ve already learned for wheels, platforms, posts, etc.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Sublime-like edits in Jupyter Notebook</title>
+   <link href="https://wcarvalho.github.io//tutorial/2017/09/18/jupyter-sublime/"/>
+   <updated>2017-09-18T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//tutorial/2017/09/18/jupyter-sublime</id>
+   <content type="html">&lt;p&gt;I’ve found some conflicting information online regarding getting sublime-like edits (e.g. ctrl+D selecting the next instance of what’s selected) so I thought I’d post what’s worked for me as recently today (September 18th, 2017)&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Navigate to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.jupyter/custom/&lt;/code&gt; (create it if it doesn’t exist)&lt;/li&gt;
+  &lt;li&gt;Open &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;custom.js&lt;/code&gt; (also create if it doesn’t exist)&lt;/li&gt;
+  &lt;li&gt;Paste the following:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;codemirror/keymap/sublime&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;notebook/js/cell&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;base/js/namespace&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sublime_keymap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;IPython&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uncomment&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fake&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;race&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;condition&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;options_default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;cm_config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;keyMap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'sublime'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cells&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;IPython&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;notebook&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;get_cells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;code_mirror&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;setOption&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'keyMap'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'sublime'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Feel free to comment more optimal or up to date methods.&lt;/p&gt;
+
+&lt;p&gt;Cheers :)&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to update multiple tensors using a single value with tf.scan</title>
+   <link href="https://wcarvalho.github.io//tutorial/2017/06/30/tf_scan/"/>
+   <updated>2017-06-30T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//tutorial/2017/06/30/tf_scan</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/wcarvalho/jupyter_notebooks/blob/master/tf.scan/Tensorflow%20Scan.ipynb&quot;&gt;Corresponding Jupyter Notebook&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I assume that you have a set of Tensors that you want to update with a sequence iteratively. E.g. you have a neural network that you’d like to update with a point at time t in a sequence and values from the network at time t-1. If you want to see this in full-fledged use, look at my jupyter notebook where I recreate the Variational Recurrent Neural Network!&lt;/p&gt;
+
+&lt;p&gt;This is the &lt;a href=&quot;https://www.tensorflow.org/api_docs/python/tf/scan&quot;&gt;definition of scan&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tf.scan(
+    fn,
+    elems,
+    initializer=None,
+    parallel_iterations=10,
+    back_prop=True,
+    swap_memory=False,
+    infer_shape=True,
+    name=None
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;fn should follow the form &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fn(parameter_that_changes,parameter_you_change_with)&lt;/code&gt;. This means that you can assume that your input from elem will always go to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;parameter_you_change_with&lt;/code&gt;, and that what you return should be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;parameter_that_changes&lt;/code&gt;.
+Writing it like a function looks something like the following&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def fn(x, elem):
+    return new_x
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new_x&lt;/code&gt; will be &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; the next time &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fn&lt;/code&gt; is called. That took me some time to figure out.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Super Simple scan example as per: https://stackoverflow.com/questions/43841782/scan-function-in-theano-and-tensorflow
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ys&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y2&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;constant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;constant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initializer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[ 2  8 14 22 27]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# updating 3 tensors with a single sequence
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# using tf.multiply istead of '*', e.g. tf.multiply(x,2) instead of 2*x was key to this compiling...
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;replace_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;old&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multiply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multiply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;a3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;multiply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# key things that worked: initializer needed to match output. 
+# dumb mistake I can see tripping up many people
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace_one&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initializer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;assign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;global_variables_initializer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;update&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[array([[1, 1],
+       [3, 3],
+       [6, 6]], dtype=int32), array([[ 3,  3],
+       [ 7,  7],
+       [13, 13]], dtype=int32), array([[ 5,  5],
+       [11, 11],
+       [20, 20]], dtype=int32)]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;a-few-notes&quot;&gt;A few notes&lt;/h1&gt;
+&lt;p&gt;So this ws more difficult to implement than I expected. I had to get all the ingredients perfectly right.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;While I can assign outside of scan, for some reason the tensors a1, a2, a3 couldn’t be assigned, i.e. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a1.assign(tf.add(a1,tf.multiply(x,1)))&lt;/code&gt;, inside of scan&lt;/li&gt;
+  &lt;li&gt;You can have all your values inside a single tensor for the initializer and update them via indexing. This also doesn’t work. i.e. with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T=tf.concat([a1,a2,a3])&lt;/code&gt;, you can’t do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;T[0]=x&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;I spent a long time trying to manually concatonate the values so that I could track them in the future only to learn that scan does this by default!! E.g., for a1, the corresponding output vector is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[a1+1, a1+1+2, a1+1+2+3]&lt;/code&gt; since the elements were &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[1,2,3]&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;hope-you-found-this-useful-&quot;&gt;Hope you found this useful !!&lt;/h3&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Variational Recurrent Adversarial Domain Adaptation</title>
+   <link href="https://wcarvalho.github.io//research/2017/04/23/vrada/"/>
+   <updated>2017-04-23T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//research/2017/04/23/vrada</id>
+   <content type="html">&lt;p&gt;This blog post accompanies my first co-first-author publication, Variational Recurrent Adversarial Domain Adaptation, at ICLR (YAY!). I think its important to be able to convey information with varying levels of technicality. This is an opportunity to practice a relatively high-level explanation of the paper. For anybody interested in technical details, please see our &lt;a href=&quot;/files/publications/iclr_2017/iclr2017_VADA.pdf&quot;&gt;ICLR paper&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!-- summary: Transferring Dependencies Across Domains --&gt;
+&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#problem&quot; id=&quot;markdown-toc-problem&quot;&gt;Problem&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#solution&quot; id=&quot;markdown-toc-solution&quot;&gt;Solution&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#variational-recurrent-neural-network&quot; id=&quot;markdown-toc-variational-recurrent-neural-network&quot;&gt;Variational Recurrent Neural Network&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#adversarial-training&quot; id=&quot;markdown-toc-adversarial-training&quot;&gt;Adversarial Training&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#experiments&quot; id=&quot;markdown-toc-experiments&quot;&gt;Experiments&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#learned-latent-representations&quot; id=&quot;markdown-toc-learned-latent-representations&quot;&gt;Learned Latent Representations&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#transferring-temporal-dependencies&quot; id=&quot;markdown-toc-transferring-temporal-dependencies&quot;&gt;Transferring Temporal Dependencies&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;We wanted to develop a model that could perform unsupervised domain adaptation of time-series data. &lt;a href=&quot;https://en.wikipedia.org/wiki/Domain_adaptation&quot;&gt;Domain adaptation&lt;/a&gt; is a subclass of Transfer learning. &lt;a href=&quot;https://en.wikipedia.org/wiki/Inductive_transfer&quot;&gt;Transfer learning&lt;/a&gt; is a learning framework that attempts to transfer knowledge from a source domain \(x_{src}\) to a target domain \(x_{tgt}\). When the distributions share the same feature space but have different marginal distributions, i.e. \(P(x_{src}) \ne P(x_{tgt})\), this is known as domain adaptation. For example, if you have patient data for two age groups that has been collected using the same attributes (blood pressure, blood ph value, etc.) but these age groups experience different probabilites for each attribute, then they share a feature space but have differetn marginal distributions over their feature space. If this data is collected over some time period (daily, hourly, etc.), it is time-series data. Trying to apply knowledge learned from one age group to another age group is a domain adaptation problem (and a case study for our model).&lt;/p&gt;
+
+&lt;p&gt;Our problem can framed as follows. We have N multi-variate time series data examples.&lt;/p&gt;
+
+\[X = \{ \mathbf{x^i} \}_{i=1}^N, \text{  where  } \mathbf{x^i} = (x_1^i, x_2^i, \ldots, x_{T_i}^i )\]
+
+&lt;p&gt;Some subset belongs to the source domain and another subset to the target domain. We can divide our examples such that source are \((\mathbf{x_{\mathcal{S}}^i})_{i=1}^n\) and target are \((\mathbf{x_{\mathcal{T}}^i})_{i=n+1}^N.\) For each \(x_{\mathcal{S}}^i\), we have a label \(y_{\mathcal{S}}^i\), while we do not have \(y_{\mathcal{T}}^i\) for \(x_{\mathcal{T}}^i\). A label could for example correspond to whether a patient passed away while in the ICU. As we have no labels for target data, this makes our problem an &lt;em&gt;unsupervised domain adaptation&lt;/em&gt; problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt; Our goal is then to learn a classifier for \(\mathbf{x_{\mathcal{S}}^i}\) which can successfully be applied to \(\mathbf{x_{\mathcal{T}}^i}\). &lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;To accomplish this we employed a variational recurrent neural network (VRNN) to model our data and adversarial training to transfer knowledge across domains.&lt;/p&gt;
+
+&lt;h3 id=&quot;variational-recurrent-neural-network&quot;&gt;Variational Recurrent Neural Network&lt;/h3&gt;
+&lt;p&gt;We employed a VRNN to model our data because of its ability to account for the hidden factors of variation that are manifest in complex real-world data. This enabled us to capture complex temporal dependencies within our data.&lt;/p&gt;
+
+&lt;!-- E.g., there are hidden factors that contribute to the values collected for a patient during their hospital stay which can presumably be captured (to a degree) with a VRNN.  --&gt;
+
+&lt;p&gt;The VRNN is essentially a variational autoencoder (VAE) conditioned on itself at every time step via the hidden state of a recurrent neural network. The main thing to know about the VAE is that it tries to learn latent values \(z\) that can generate the data \(x\). Adjusting these latent values is the source for variations in the data. In order to learn these latent values, it also approximates the posterior for producing \(z\) given \(x\). With the power of deep neural networks and some clever math, you have an auto-encoder like structure that learns good latent values that can generate your data.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/publications/iclr_2017/figures/vrnn.png&quot; alt=&quot;VRNN&quot; /&gt;
+This shows the encoding, decoding, and recurrence of the VRNN at a single time-step.&lt;/p&gt;
+
+&lt;p&gt;At each time step \(t\), you sample your latent variable \(z_t^i\) using an encoder that is conditioned off of your data at that time-step \(x_t^i\) and the last hidden state of an RNN&lt;/p&gt;
+&lt;font color=&quot;blue&quot;&gt;
+$$ z^i_t = f_{enc}(x^i_t, h_{t-1}) $$
+&lt;/font&gt;
+&lt;p&gt;You then sample your reconstruction using a decoder that is conditioned off the latent variable and the last hidden state&lt;/p&gt;
+&lt;font color=&quot;DarkGoldenRod&quot;&gt; 
+$$ \hat{x}^i_t = f_{dec}(z^i_t, h_{t-1}) $$
+&lt;/font&gt;
+&lt;p&gt;The latest hidden state is then conditioned of the data and the latent variable&lt;/p&gt;
+&lt;font color=&quot;red&quot;&gt; 
+$$ h_t = f_{RNN}(z^i_t, x_t^i, h_{t-1}) $$
+&lt;/font&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; For details on the VRNN, see &lt;a href=&quot;https://arxiv.org/pdf/1506.02216.pdf&quot;&gt;this paper&lt;/a&gt;. For more details on the VAE, see &lt;a href=&quot;https://arxiv.org/pdf/1312.6114&quot;&gt;its original paper&lt;/a&gt; or &lt;a href=&quot;https://arxiv.org/abs/1606.05908&quot;&gt;this phenomenal, more in-depth tutorial&lt;/a&gt;. 
+&lt;!-- If you want a brief primer on VAEs but don't want to go into too much detail, check out my blog post, [A Bare Bones Explanation of the Variational Autoencoder](/research/2017/04/21/vae/). --&gt;&lt;/p&gt;
+
+&lt;p&gt;As \(z_t^i\) values model our data well, we thought this would be a good representation to use for learning a classifier \(G_y\) for our source domain labels \(y_i\). We found that using \(z_T^i\) worked best, where \(T\) corresponds to a data point’s last time-step. In order to make it so this representation could be applied to our target domain, we needed to add a regularizer \(\mathcal{R}(\theta_e)\) to the VRNN (more specifically, the VRNN’s encoder as it generates \(z\)) so that the \(z\) generated would also be applicable to our target domain. We try to minimize:&lt;/p&gt;
+
+\[\frac{1}{n} \sum_{i=1}^n \frac{1}{T^i}\mathcal{L}_r(\mathbf{x^i}; \theta_e, \theta_g) +
+\frac{1}{n} \sum_{i=1}^n \mathcal{L}_y(\mathbf{x^i}; \theta_y,\theta_e) +
+  \lambda \mathcal{R}(\theta_e)\]
+
+&lt;p&gt;Here, \(\lambda\) is a tradeoff for regularlizer, \(\theta_e, \theta_g\) are parameters for the VRNN’s encoder and decoder, respectively, and \(\theta_y\) is the parameters for \(G_y\). \(\mathcal{L}_r\) is the vartional lower bound for the VRNN (not discussed here but found in our paper) and \(\mathcal{L}_y\) is a categorical cross-entropy loss function.&lt;/p&gt;
+
+&lt;h3 id=&quot;adversarial-training&quot;&gt;Adversarial Training&lt;/h3&gt;
+
+&lt;p&gt;For our regularizer, we used a domain classification network \(G_d\) that classifies pseudo-labels \(d_i\) for each data point corresponding to which domain they belong to. It has a corresponding categorical cross-entropy loss function \(\mathcal{L}_d\). This is inspired by previous work in domain adaptation that attempts to reduce the domain discrepenacy between the source and target domains. Ben-David has argued (&lt;a href=&quot;https://papers.nips.cc/paper/2983-analysis-of-representations-for-domain-adaptation.pdf&quot;&gt;see this paper&lt;/a&gt;) that good representations for domain adaptation are those that do not aid in discrimination between domains. In order to make our \(z_T^i\) such that it does not aid in discrimination between domains, we also train a domain classifier using \(z_T^i\). However, instead of trying to minimize the classification error \(\mathcal{L}_d\) we try to maximize it by feeding negative gradients from domain classification to the VRNN’s encoder:&lt;/p&gt;
+
+\[\theta_e \leftarrow \theta_e +\eta\lambda\frac{\partial \mathcal{L}_d}{ \partial \theta_d}\]
+
+&lt;p&gt;where \(\eta\) is a learning rate for gradient descent. This acts to update its parameters such that they produce a representation that make domain classification more difficult. This network and the encoder then work adversarially: the VRNN producing \(z_T^i\) increasingly more difficult to distinguish domains and the \(G_d\) becoming more competent at classifying \(d_i\). From this process, \(z_T^i\) emerges capturing domain-invariant temporal dependencies.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/publications/iclr_2017/figures/vrada.png&quot; alt=&quot;VRADA&quot; /&gt;
+This is a schematic of our model rolled out over time.&lt;/p&gt;
+
+&lt;p&gt;Now, we classify all \(z_T^i\) with \(G_d\), and \(z_T^i\) corresponding to \(x_{\mathcal{S}}^i\) strictly with \(G_y\). This leads to the following objectve function which we minimize:
+\(\underbrace{
+  \frac{1}{N} \sum_{i=1}^N \frac{1}{T^i}\mathcal{L}_r(\mathbf{x^i}; \theta_e,\theta_g)
+  }_{\text{variational loss}}
+  +
+  \underbrace{
+  \frac{1}{n} \sum_{i=1}^n \mathcal{L}_y(\mathbf{x^i}; \theta_e,\theta_y)
+  }_{\text{Classification loss}}
+  -
+  \overbrace{
+  \lambda (
+  \underbrace{\frac{1}{n} \sum_{i=1}^n \mathcal{L}_d(\mathbf{x^i}; \theta_e,\theta_d)
+  }_{\text{Domain loss for source}}
+  +
+  \underbrace{
+  \frac{1}{n'} \sum_{i=n+1}^{N} \mathcal{L}_d(\mathbf{x^i}; \theta_e,\theta_d))
+  }_{\text{Domain loss for target}}
+  }^{\text{Maximizing loss}}\)&lt;/p&gt;
+
+&lt;p&gt;where \(\mathcal{L}_d\) is a categorical cross-entropy loss function for domain classifier.&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;experiments&quot;&gt;Experiments&lt;/h2&gt;
+&lt;p&gt;As a case study, we performed domain adaptation across age groups. We trained our model to learn to predict mortality from Acute Hypoxemic Respiratory Failure (AHRF) for patients admitted into an ICU using 20 time-series features. We divided patients into 5 age groups&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Group 1: children (0 to 19 yrs, 398 patients)&lt;/li&gt;
+  &lt;li&gt;Group 2: working-age adult (20 to 45 yrs, 508 patients)&lt;/li&gt;
+  &lt;li&gt;Group 3: old working-age adult (46 to 65 yrs, 1888 patients)&lt;/li&gt;
+  &lt;li&gt;Group 4: elderly (66 to 85 yrs, 2394 patients)&lt;/li&gt;
+  &lt;li&gt;Group 5: old elderly (85 yrs and up, 437 patients)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;and performed domain adaptation across different groups (e.g. learning to predict mortality for Group 5 and applying it to Group 1). Below are our results&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/publications/iclr_2017/figures/results.png&quot; alt=&quot;results&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I won’t go into details but just point out a few things. On the left hand side are models that didn’t perform domain adaptation which performed significantly worse. Of models that did, ours performed best by a margin of 4%-6%. You can read more in the paper ;). The analyze the source of our efficacy we studied the latent representations learned by our model and the cell firing patterns of our RNN.&lt;/p&gt;
+
+&lt;h3 id=&quot;learned-latent-representations&quot;&gt;Learned Latent Representations&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/publications/iclr_2017/figures/t-sne.png&quot; alt=&quot;T-SNE&quot; /&gt;
+This is a t-sne project of the latent representation of a deep neural network (DNN), a recurrent domain adversarial neural network (R-DANN, a competing domain adaptation model), and VRADA. Red corresponds to source data points and blue to target.&lt;/p&gt;
+
+&lt;p&gt;We studied the latent representations learned by our model and competing models to see source and target data were distributed by each model. As stated before, a good representation for domain adaptation is one in which the domain cannot be discerned easily. While blue and red are clustered together for all 3 models, VRADA mixes best. For DNN and R-DANN, there are clusters that are strictly red (source). For VRADA source and target are evenly spread and it is hard to find cluster with strictly one domain. This mixing implies the representations come from the same distribution, i.e. are domain-invariant. We see that better temporal model, e.g. accounting for factors of variation, helps with creating a domain-invariant representation.&lt;/p&gt;
+
+&lt;h3 id=&quot;transferring-temporal-dependencies&quot;&gt;Transferring Temporal Dependencies&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/publications/iclr_2017/figures/w_adaptation_icd9_new.png&quot; alt=&quot;VRADA-DA&quot; /&gt;
+These are the cell firing patterns of the RNN used by our model. The vertical axis corresponds to neurons and the horizontal to a time-step. So the cell corresponding to 4th row and the 3rd column is the firing rate of the 4th neuron at the 3rd time-step.&lt;/p&gt;
+
+&lt;p&gt;With both R-DANN and VRADA (both models that create domain-invariant representations), we see high regularity in the firing patterns across domains. However, we can see that accounting for hidden factors of variation when creating domain-invariant representations leads to high consistency in the firing rates across domains. This implies that the temporal dependencies learned for the source domain were transferred to the target domain.&lt;/p&gt;
+
+&lt;p&gt;All results showed that creating domain-invariant latent representations and accounting for hidden factors of variation act synergestically. We hope this model serves as a bedrock for future work capturing and transferring temporal tependencies via domain-invariant latent representations.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Highlights: A markdown pdf annotator</title>
+   <link href="https://wcarvalho.github.io//misc/2016/09/14/pdf_annotation/"/>
+   <updated>2016-09-14T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//misc/2016/09/14/pdf_annotation</id>
+   <content type="html">&lt;p&gt;It’s getting close to the end of the day and I don’t feel like doing work-work, so I’ve decided to do some pseudo-work and write this little blog post recommending a phenomenal pdf annotator I recently discovered: &lt;a href=&quot;http://highlightsapp.net/&quot;&gt;Highlights&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;http://highlightsapp.net/img/highlightsapp_yosemite2.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;tl-dr&quot;&gt;TL; DR&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://highlightsapp.net/&quot;&gt;Highlights&lt;/a&gt; saves annotatations as editable markdown and let’s you  effortlessly export the markdown to evernote, which then makes your notes searchable on google (only to you).&lt;/p&gt;
+
+&lt;h2 id=&quot;full-story&quot;&gt;Full Story&lt;/h2&gt;
+
+&lt;p&gt;I wanted a system where I could easily access the annotations I made on pdfs. I wanted them to be accessible across pdf readers so the annotations needed to be saved to the file and I wanted them to be easily found when I searched for related topics. &lt;a href=&quot;http://highlightsapp.net/&quot;&gt;Highlights&lt;/a&gt; combined with &lt;a href=&quot;https://evernote.com/&quot;&gt;Evernote&lt;/a&gt; managed to accomplish both rather easily and elegantly&lt;/p&gt;
+
+&lt;p&gt;I’ll try to keep it to the “facts”. To &lt;em&gt;highlight&lt;/em&gt; the utility of &lt;a href=&quot;http://highlightsapp.net/&quot;&gt;Highlights&lt;/a&gt; (hehe), I will use my annotations on this pdf, &lt;a href=&quot;https://arxiv.org/pdf/1606.05908v2.pdf&quot;&gt;Tutorial on Variational Autoencoders&lt;/a&gt;, as an example.&lt;/p&gt;
+
+&lt;h3 id=&quot;pros&quot;&gt;Pros&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The annotations are saved in markdown. The impact is two-fold. (1) They are easy to edit, (2) It is easy to export to many clients &lt;strong&gt;including Evernote&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Evernote has a cool feature that when you search things on google, you can concurrently perform a search on evernote (you’ll need the &lt;a href=&quot;https://evernote.com/webclipper/&quot;&gt;Evernote Web Clipper&lt;/a&gt; installed).  Below you can see an example where I searched for hidden variables and 2 notes with related text came up (one of which was my markdown notes from this example)&lt;/p&gt;
+
+    &lt;p&gt;&lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/highlights/evernote_google.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The annotation tools are powerful
+    &lt;ul&gt;
+      &lt;li&gt;Aside from text, you can also “highlight” diagrams, adding them to your markdown&lt;/li&gt;
+      &lt;li&gt;You can set a specific underline color for references and your markdown will correclty link references&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;table&gt;
+   &lt;tr&gt;
+   &lt;th&gt;Regular View&lt;/th&gt;
+   &lt;th&gt;Markdown View&lt;/th&gt;
+   &lt;/tr&gt;
+   &lt;tr&gt;
+   &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/highlights/view.png&quot; /&gt;
+   &lt;/td&gt;
+   &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/highlights/markdown.png&quot; /&gt;
+   &lt;/td&gt;
+   &lt;/tr&gt;
+&lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Everything is saved in-file so you can view your pdf (and all annotations) in other readers. This was important to me. I use &lt;a href=&quot;http://papersapp.com/mac/&quot;&gt;Papers&lt;/a&gt; to manage my papers, and being able to browse my annotations on that platform (or any other) is really useful.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/highlights/papers.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It’s easy to change the color/type of any annotation&lt;/p&gt;
+
+    &lt;p&gt;&lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/highlights/ease.png&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;half-proshalf-cons&quot;&gt;Half-Pros/Half-cons:&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;It is supposed to support DOI lookup so that references are clickable and openable, but I have found this feature to not work.&lt;/li&gt;
+  &lt;li&gt;If you use bookends or paper3 (I used papers), it supports opening the reference in your manager (but, again, this require DOI lookup to work)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;cons&quot;&gt;Cons:&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;It costs $30 but its made by a PhD student so I’m happy to support (for those that don’t want to, it isn’t too hard to find a copy online…)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Here are some examples of markup and pdf it generated from my annotations&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/files/highlights/markup.txt&quot;&gt;markup&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/files/highlights/pdf.pdf&quot;&gt;pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>To my brain: you don't have to tell me your secrets</title>
+   <link href="https://wcarvalho.github.io//poem/2016/08/28/to_my_brain/"/>
+   <updated>2016-08-28T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//poem/2016/08/28/to_my_brain</id>
+   <content type="html">&lt;p&gt;I want to understand you&lt;br /&gt;
+&lt;br /&gt;
+but I feel frustrated&lt;br /&gt;
+because I don’t know how to&lt;br /&gt;
+&lt;br /&gt;
+but it’s okay&lt;br /&gt;
+because since you’re a brain&lt;br /&gt;
+I just need to feed you your data&lt;br /&gt;
+and you’ll understand yourself&lt;br /&gt;
+&lt;br /&gt;
+and since you’re within me&lt;br /&gt;
+if I listen closely, I will as well&lt;br /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>A Prescription for Time Management</title>
+   <link href="https://wcarvalho.github.io//tutorial/2016/01/08/TimeManagementPrescription/"/>
+   <updated>2016-01-08T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//tutorial/2016/01/08/TimeManagementPrescription</id>
+   <content type="html">&lt;p&gt;This system involves creating a calendar template and filling it weekly. Time assignment and adjustment is tracked using the time management tool from my &lt;a href=&quot;/code/2016/01/02/TimeManagement&quot;&gt;last post&lt;/a&gt;. Here, I detail set up, and demonstrate my use of this system for one week.&lt;/p&gt;
+
+&lt;h5 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;/h5&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/tutorial/2016/01/08/TimeManagementPrescription/#setting-up-calendar-template&quot;&gt;Setting Up Calendar Template&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/tutorial/2016/01/08/TimeManagementPrescription/#filling-in-calendar-template&quot;&gt;Filling In Calendar Template&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&quot;/tutorial/2016/01/08/TimeManagementPrescription/#adjusting-your-calendar-throughout-the-week&quot;&gt;Adjusting Your Calendar Throughout The Week&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;!-- ####My System --&gt;
+
+&lt;!-- I use consistent calendar event names to assign times for tasks and track time assignment with a spreadsheet. To expedite this process, I use a script to interface between my calendar and spreadsheet. In theory, this can be used to complement any task management system but I will present the skeleton of mine here.
+
+The basic premise is that a script populates a spreadsheet with the number of hours you have assigned to different categories of tasks.
+
+I believe that this will be particularly helpful for those - such as myself - that are absent-minded and often forget about their more trivial (but often important) tasks/duties. I have found that if I want to ensure the completion of a task/duty, it is important that I assign time for it. 
+
+Additionally, planning with all tasks/duties in mind ensures that I have enough time to complete everything I intend to. Later in the week, when I need to reschedule events, I can do so knowing how tasks and duties are generally distributed throughout the week.
+
+At first, the calendar may seem daunting. While set up can be a bit time-consuming, maintenance takes approximately 1 hr per week and adjustments are quick and painless.
+ --&gt;
+
+&lt;!-- ##### What do you need? --&gt;
+&lt;!-- 
+This system has two essential pieces: a calendar and a spreadsheet.
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/calendar_base_demo.png&quot;&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/spreadsheet_layout.png&quot;&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/calendar_final_base.png&quot;&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/spreadsheet_calendar_fill.png&quot;&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt; --&gt;
+
+&lt;!-- For the calendar and spreadsheet applications, this relies on [Google Calendar](https://www.google.com/calendar/about/) and [Google Sheets](https://www.google.com/sheets/about/) because you can interface with them via [Apps Scripts](https://developers.google.com/apps-script/?hl=en). (App Scripts are JavaScript scripts which can access information in your google applications). Additionally, Google Calendar is stored online and is thus accessible from any platform. To organize your tasks, you will need something to list them - paper should be fine.  --&gt;
+
+&lt;p&gt;The template is comprised of multiple calendars that hold tasks that belong to different categories.&lt;/p&gt;
+
+&lt;p&gt;Calendars are based on broad categories of tasks/duties/responsibilities I have. E.g., I have responsibilities which are consistent every week so I have a “Fixed” calendar; I enjoy pursuing side-projects so I have a “Personal” calendar.&lt;/p&gt;
+
+&lt;p&gt;Categories are slightly more specific. E.g., I have a category for each class I take; I have a category for fellowship applications.&lt;/p&gt;
+
+&lt;p&gt;Different calendars encompass different sets of categories and event names hold category membership information. E.g., I delegate time for research and classwork using my “Work” calendar. Labels for time working on research contained “research”.&lt;/p&gt;
+
+&lt;p&gt;Once my template is created, I use it to plan out my week, filling it is with tasks/responsibilities and making adjustments as necessary.&lt;/p&gt;
+
+&lt;p&gt;By planning my tasks/responsibilities ahead of time, ensure that I have enough time to complete everything I intend to. Additionally, later in the week, when I need to reschedule events, I can do so with knowledge of how my tasks and duties are distributed throughout the week.&lt;/p&gt;
+
+&lt;p&gt;Overall, this system takes about 1 hour of maintanence per week and adjustments are as easy as moving events around.&lt;/p&gt;
+
+&lt;h4 id=&quot;setting-up-calendar-template&quot;&gt;Setting Up Calendar Template&lt;/h4&gt;
+
+&lt;h5 id=&quot;calendars&quot;&gt;Calendars&lt;/h5&gt;
+
+&lt;p&gt;Here is a full list of my current calendars. Please do not restrict yourself to these. Reflect and create calendars which you feel describe how you delineate your tasks.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Calendar&lt;/th&gt;
+      &lt;th&gt;Purpose&lt;/th&gt;
+      &lt;th&gt;Example&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fixed&lt;/td&gt;
+      &lt;td&gt;tasks/events that are consistent every week.&lt;/td&gt;
+      &lt;td&gt;- classes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Work&lt;/td&gt;
+      &lt;td&gt;my required work&lt;/td&gt;
+      &lt;td&gt;- problem sets &lt;br /&gt; - research&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Personal&lt;/td&gt;
+      &lt;td&gt;time for tasks that are useful/interesting but not essential or required&lt;/td&gt;
+      &lt;td&gt;- learn new programming principles &lt;br /&gt; - personal projects&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Extra&lt;/td&gt;
+      &lt;td&gt;time for small tasks&lt;/td&gt;
+      &lt;td&gt;- send emails &lt;br /&gt; - call people &lt;br /&gt; - install software&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Errands&lt;/td&gt;
+      &lt;td&gt;errands&lt;/td&gt;
+      &lt;td&gt;- going to DMV &lt;br /&gt; - sending mail&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Appointments&lt;/td&gt;
+      &lt;td&gt;appointments&lt;/td&gt;
+      &lt;td&gt;- doctors appointments &lt;br /&gt; - meeting people&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Events&lt;/td&gt;
+      &lt;td&gt;time relaxing&lt;/td&gt;
+      &lt;td&gt;- hanging out with friends &lt;br /&gt; - gallery openings &lt;br /&gt; - seminars&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Misc.&lt;/td&gt;
+      &lt;td&gt;this holds things that I don’t know where else to put.&lt;/td&gt;
+      &lt;td&gt;- breaks &lt;br /&gt; - going to the gym&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;(In theory, you can place all of your events into one calendar, but having many calendars color coordinates your overall calendar, making it easy to quickly parse.)&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;categories&quot;&gt;Categories&lt;/h5&gt;
+
+&lt;p&gt;Your category labels will correspond to your current tasks/duties, but the level of categorization to which they correspond can vary. For example, if you are completing graduate school and fellowship applications, you can have &lt;br /&gt;
+(1) &lt;strong&gt;broad&lt;/strong&gt;: “applications” &lt;br /&gt;
+(2) &lt;strong&gt;more specific&lt;/strong&gt;: “grad” and “fellowship”&lt;br /&gt;
+(3) &lt;strong&gt;even more specific&lt;/strong&gt;: “columbia”, “carnegie”, “fulbright”.&lt;br /&gt;
+It is really a matter of preference. I use a combination of different levels.&lt;/p&gt;
+
+&lt;p&gt;Below are categories I am currently using.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;category&lt;/th&gt;
+      &lt;th&gt;Significance&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;570&lt;/td&gt;
+      &lt;td&gt;algorithms class&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;561&lt;/td&gt;
+      &lt;td&gt;artificial intelligence class&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;545&lt;/td&gt;
+      &lt;td&gt;robotics class&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;research&lt;/td&gt;
+      &lt;td&gt;research&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;other&lt;/td&gt;
+      &lt;td&gt;small tasks&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+&lt;!-- &lt;br&gt; --&gt;
+
+&lt;!-- ##### Setting Up Your Spreadsheet
+
+This is fairly straightforward. You can download this [excel file](https://docs.google.com/spreadsheets/d/1ELRQ8M8bjhPlvydnJxGaMsTuwaKN6YKjQJLUZ3zmKFs/pub?output=xlsx) which contains the spreadsheet setup.
+
+&lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/spreadsheet_layout.png&quot;&gt;
+
+Once you have downloaded the file, you can [upload it](https://docs.google.com/spreadsheets/u/0/) into Google Sheets.
+
+Download [this script](/files/time_management/time_tracker.js) (right-click and select &quot;Save Link As&quot;).
+
+In your google sheet, select
+        
+        Tools -&gt; Script Editor...
+
+Replace the contents of the script that opens with the contents of the script in the file above. Save and the features are ready to use.
+
+Place your calendars vertically starting at B8 and your categories horizontally starting at B2.
+
+To the left of your calendars, you can put the color you intend for the row. This field accepts written colors and hexadecimal colors.
+
+The time for categories is only populated using calendars that have text written in their corresponding color cell. Writing anything satisfies this requirement. You can think of these calendars as being &quot;active&quot;.
+
+&lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/spreadsheet_initial_fill.png&quot;&gt;
+
+In the above example, time delegation for categories &quot;570,&quot; &quot;561,&quot; &quot;ml,&quot; and &quot;apps&quot; would only be tracked using calendars &quot;Work,&quot; &quot;Extra,&quot; and &quot;Personal.&quot;
+
+Now that you've filled in the spreadsheet, I will quickly cover how to use the script. Your spreadsheet should now have a &quot;Time Tracker&quot; menu. Below I describe each option.
+
+ --&gt;
+&lt;!-- --- --&gt;
+
+&lt;h5 id=&quot;calendar-template&quot;&gt;Calendar Template&lt;/h5&gt;
+
+&lt;p&gt;In theory, each week has 168 hours to delegate. In practice, you won’t fill every single hour, but the idea is to fill most.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Fixed Activities&lt;/strong&gt;&lt;br /&gt;
+Start by creating events for all of your fixed activities. (You may not have any). I place time for my classes here since their starting time and duration are fairly consistent across weeks.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/calendar_fixed_intitial.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Daily activities&lt;/strong&gt;&lt;br /&gt;
+Now, there are certain activities that you must do every day such as going to sleep, eating breakfast, eating dinner, etc. Place times for all of these events. Be sure to do this for your weekends as well. I place them in my “Misc.” calendar.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/calendar_with_initial_plans.png&quot; /&gt;&lt;/p&gt;
+
+&lt;ul class=&quot;collapsible&quot; data-collapsible=&quot;expandable&quot;&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;header collapsible-header center&quot;&gt; 
+    A note on sleep 
+    &lt;!-- &lt;i class=&quot;material-icons&quot;&gt;play_for_work&lt;/i&gt; --&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;body collapsible-body&quot;&gt;
+      &lt;p&gt; I personally only need 7+ hours of sleep to be productive and diligent throughout the day, yet I still assign 8 hours of sleep. I have been using a Fit Bit for some time now and have found that for however long I am in bed, I typically get apx. an hour less of sleep. &lt;br /&gt; &lt;br /&gt;
+      I tracked my productivity on days where I slept under and over 7 hours, and found that at least 7 hours was necessary to ensure that I was efficient, effective, and attentive while working. With less, I had trouble following discussions or derivations in class, I was more forgetful - I was generally a less capable learner and doer.
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Do not worry too much about placing the events at optimal times. As you continue filling in your calendar, you will optimize event arrangement.&lt;/p&gt;
+
+&lt;p&gt;As you create the template for your schedule, it is important that you are honest with yourself about your habits and tendencies. This will help to ensure that you follow the schedule you create.&lt;/p&gt;
+
+&lt;ul class=&quot;collapsible&quot; data-collapsible=&quot;expandable&quot;&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;header collapsible-header center&quot;&gt; 
+    A note on being honest with yourself
+    &lt;!-- &lt;i class=&quot;material-icons&quot;&gt;play_for_work&lt;/i&gt; --&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;body collapsible-body&quot;&gt;
+      &lt;p&gt; 
+      While your calendar should be true to your tendencies and habits, it can also be useful in changing them. The key to this, in my opinion, is that the change is implemented slowly. You do not want to create a schedule with activities that wildly diverge from your current activities.
+      &lt;br /&gt;&lt;br /&gt;
+      For example, throughout the week, I begin my morning routine at about 7am and proceed to begin working by 8 or 9am. I would love to continue this into my weekend but that is not realistic. I know that I enjoy staying up late on weekends and waking up at about 10am. With this in mind, I plan to sleep until 10 and begin my day at about 11am. I intentionally put an hour cushion because I recognize that I often end up sleeping until 11am.
+      &lt;br /&gt;&lt;br /&gt;
+      When implementing things that do diverge from your current habits, don't get frustrated if you have trouble following your schedule the first few weeks. It is important to maintain perseverance. If you find you are still having trouble after many weeks, try adjusting your calendar so it is somewhere in between your current habits and what you desire.
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I should note that I put a 10-minute cushion between most events. This is often just for travel time but it also helps me keep my schedule when events run a little over.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Initial base fill&lt;/strong&gt;&lt;br /&gt;
+This next part is a bit tricky. We want to create assignable time blocks. This means that they have to be fairly general.&lt;/p&gt;
+
+&lt;p&gt;I try to create time blocks that are under 3 hrs and within 10 minutes of the closest 30-minute mark, e.g 20 minutes, 50 minutes, 1 hour, 20 minutes, etc. Time blocks of this length allow for the 10 minute cushion between events I mentioned before.&lt;/p&gt;
+
+&lt;p&gt;To begin, I fill my calendar with time blocks of the length mentioned above periodically separated by 20 minute breaks as follows.&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/calendar_initial_fill.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is by no means the final base. We now have an idea of how much time we have to distribute across different calendars.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Redistributing time into calendars&lt;/strong&gt;&lt;br /&gt;
+Note. Since writing this, I have made the following changes to nomenclature:&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Sub-Calendar/Super-Category -&amp;gt; Calendar
+Sub-Category -&amp;gt; Category
+Settings -&amp;gt; Dates
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/spreadsheet_initial_calculation.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;51.75 hours to delegate.&lt;/p&gt;
+
+&lt;p&gt;Using the spreadsheet, we can calculate the number of hours assigned to each calendar for a designated period of time.&lt;/p&gt;
+
+&lt;p&gt;I dedicate ~7 hours to work in my “Personal” calendar and ~2.5 hours to work in my “Extra” calendar. I leave the end of my Saturdays (6pm onwards) to relaxing/hanging out with friends. The rest of my time is potentially available to “Work”.&lt;/p&gt;
+
+&lt;!-- 
+I assume that you do not want to dedicate all your time to one calendar. Maybe you play the saxophone and would like to dedicate 6 hours a week to that, maybe you have a side business that requires 7 hours a week. Maybe you want to work a maximum of 40 hours and chill out the rest of the time. --&gt;
+
+&lt;!-- This is where my &quot;Personal&quot;, &quot;Extra&quot;, and &quot;Events&quot; calendars come in.  --&gt;
+
+&lt;!-- I recognize that people may want to dedicate a lot more time to relaxing than I do. That's fine! You can dedicate as much time as you want. With this, you know that you have enough time to relax and get as much work done as you want. If you assign too much time for relaxing and don't have enough time for your tasks, you will see this in your spreadsheet and can plan accordingly. --&gt;
+
+&lt;!-- This may seem like overkill but by assigning time to everything, you really help to ensure that you have enough time to do everything you want to do every week. --&gt;
+
+&lt;!-- Remember that this is only a template and not a permanent distribution of your time. I move, extend, and shorten events every week. What you make isn't something to follow strictly, it's just something to use as you plan your week out. Nothing is permanent! --&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/calendar_final_base.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/spreadsheet_calendar_fill.png&quot; /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;ul class=&quot;collapsible&quot; data-collapsible=&quot;expandable&quot;&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;header collapsible-header center&quot;&gt; 
+    Logic to my distribution
+    &lt;!-- &lt;i class=&quot;material-icons&quot;&gt;play_for_work&lt;/i&gt; --&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;body collapsible-body&quot;&gt;
+      &lt;p&gt; 
+      &lt;b&gt;Work + Breaks:&lt;/b&gt; I have found that I can work for up to 3 hours (with short breaks) before I need a longer break. Depending on how mentally straining my work is, the length of this break can vary. By having 20 minute breaks with 10-minute cushions on both sides, I can extend my break to 40 minutes when needed. &lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;Personal:&lt;/b&gt; Saturday seemed like an optimal choice for &quot;unofficial work.&quot; I needed about ~2 hours in addition to the time delegated to saturday. Because I tend to thoroughly enjoy this work, I decided to place my last assignment towards the end of the day. I chose monday arbitrarily. &lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;Extra:&lt;/b&gt; On Wednesday, I saw that I potentially would be working for 3.5+ hours. I find that I become ineffective if I work this long, so I decided to dedicate that last hour to &quot;extra&quot; work. On Friday, I saw that I had a work block for an hour before one of my classes. I know that I cannot get &quot;in the zone&quot; in this amount of time, so i dedicated this hour to &quot;extra&quot; work. &lt;br /&gt;&lt;br /&gt;
+      &lt;b&gt;Errands:&lt;/b&gt; I have noticed that I typically have one errand that requires that I travel somewhere per week (e.g. post office, dmv, car wash, etc.). By dedicating one time block to errands, I force myself to make time for them.
+      &lt;br /&gt; &lt;br /&gt; I saw that I had a sole work block on Friday between classes. I decided to dedicate it to errands. Because the following block is an extra block, a potentially long errand (e.g. 4+ hours at the dmv) could be accomodated here without a loss of work time. I buy groceries on weekly basis and do laundry on a bi-weekly basis. The former takes about 1.5 hours and the latter about 2 hours. I saw that I had free after my last class on Friday so I put time for groceries then. Since I have less motivation to do work as the day progresses, I decided to assign time for laundry towards the end of the day and picked Thursday arbitrarily. &lt;br /&gt;&lt;br /&gt;
+      
+      &lt;b&gt;Other factors:&lt;/b&gt;&lt;br /&gt;
+      1. My grandmother and mother like to speak with me weekly so I put time in my calendar to call them.&lt;br /&gt;
+      2. I like to spend some time every night just relaxing, so I allocated 1 hour every night to this with an event called &quot;Nada&quot;.&lt;br /&gt;
+      3. I leave my bag at the gym in the morning. If I don't assign time to pick it up, I usually forget to. So towards the end of days I go to the gym, I have time assigned to pick up my bag.&lt;br /&gt;
+      4. I know that after a class, I cannot go straight back to work, so I assign breaks to follow so that my mind can recharge.&lt;br /&gt;
+    
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Choose whatever distribution fits your goals and desires. Remember that this is only a template and not a permanent distribution of your time. I move, extend, and shorten events every week. What you make isn’t something to follow strictly, it’s just something to use as you plan your week out. Nothing is permanent!&lt;/p&gt;
+
+&lt;p&gt;Remember to make your events repeat weekly. I recommend that each event repeats once weekly rather than multiple times per week. In the future, if you decide to make changes to your schedule, events that repeat once weekly will be easier to deal with than events that repeat multiple times per week.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;filling-in-calendar-template&quot;&gt;Filling In Calendar Template&lt;/h4&gt;
+
+&lt;p&gt;This is fairly personal and dependent on your own responsibilities. To provide some guidance and reference, I will share one week of my experience filling in my template.&lt;/p&gt;
+
+&lt;p&gt;I have chosen this week that I return to school from winter break. I have not followed this system during; as such, I will likely face some of the same issues you will face your first time adopting this system.&lt;/p&gt;
+
+&lt;h5 id=&quot;preparing-a-list-of-tasks-to-delegate&quot;&gt;Preparing a list of tasks to delegate&lt;/h5&gt;
+
+&lt;p&gt;I list my tasks on a sheet of loose-leaf.&lt;/p&gt;
+
+&lt;p&gt;You’ll see that I make a mini-column for every category of tasks I need to complete. I approximate the amount of time I’ll need for each task and sum this time for each category.&lt;/p&gt;
+
+&lt;p&gt;If you having trouble generating this list, you may find this &lt;a href=&quot;http://wiki.43folders.com/index.php/Trigger_List&quot;&gt;trigger list&lt;/a&gt; helpful. If some items in the list are especially helpful, I recommend you write them down for future reference.&lt;/p&gt;
+
+&lt;p&gt;If you’re unsure about how much time to give a task, a common rule-of-thumb is to make an estimate and multiply it by 2 or 3. As you continue to track your time, your predictions will become more accurate.&lt;/p&gt;
+
+&lt;p&gt;Here is my starting setup.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_calendar_starting.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_spreadsheet_starting.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_tasks_starting.png&quot; /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;ul class=&quot;collapsible&quot; data-collapsible=&quot;expandable&quot;&gt;
+  &lt;li&gt;
+    &lt;div class=&quot;header collapsible-header center&quot;&gt; 
+    Why I plann my week from Saturday
+    &lt;!-- &lt;i class=&quot;material-icons&quot;&gt;play_for_work&lt;/i&gt; --&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;body collapsible-body&quot;&gt;
+      &lt;p&gt;
+      You will notice that 1/2/2016 is a Saturday. I like to plan my week out on Friday with Saturday as my starting day. By doing so, I can see how much time I need to spend that weekend in order to accomplish my goals. This also shows me how much free time I have that weekend.
+      &lt;br /&gt;&lt;br /&gt;
+      Depending on my deadlines, I will sometimes plan up to 9 days in advance (Saturday until the next Sunday), making changes to my weekend plans the following Friday depending on the progress I've made that week.    
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;delegate-your-tasks&quot;&gt;Delegate your tasks&lt;/h5&gt;
+
+&lt;p&gt;&lt;strong&gt;First assignment&lt;/strong&gt;&lt;br /&gt;
+The first thing that I fill are the appointments/errands that I feel that I must complete that week. Since school has not started yet, I’ve decided to try to complete numerous errands this week.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_calendar_errands.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_spreadsheet_errands.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_tasks_errands.png&quot; /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;To help keep track of how many hours I have left, I make a cell calculate the difference between the sum of times assigned for categories and times assigned for calendar.&lt;/p&gt;
+
+&lt;p&gt;Since I won’t go to the gym on either tuesday or thursday, I thought those were optimal days to do errands that involved my car (getting car detailed and DMV). Had I chosen these errands for days I go to the gym, I would lose time to commuting between the gym and my house.&lt;/p&gt;
+
+&lt;p&gt;Following this logic, chase and the post office are errands that require my car, so placing them after another car errand seemed optimal.&lt;/p&gt;
+
+&lt;p&gt;When I go to the gym, I typically stay on campus, so I scheduled my last errand that involved going to an administration building after the gym.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Second assignment&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_calendar_research.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_spreadsheet_research.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_tasks_research.png&quot; /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;On monday, I am meeting with a postdoc in my lab. I intend to ask him to collaborate with me on a project.&lt;/p&gt;
+
+&lt;p&gt;He also has a project which I might collaborate with him on. Because I suspect that we will likely discuss theoretical and technical aspects of our projects, I thought it best to delegate many of my research tasks before I met him. By doing so, I hope to be better-equipped for our conversation.&lt;/p&gt;
+
+&lt;p&gt;I like to dedicate long sequences of blocks to lengthy tasks. I find that it takes me about an hour to “get in the zone.” Afterwards, I work more efficiently and effectively on the current task as my thoughts begin to revolve around it.&lt;/p&gt;
+
+&lt;p&gt;I saw a long stretch of time-blocks on Wednesday. I thought this would be optimal for a long coding task I have for my research.&lt;/p&gt;
+
+&lt;p&gt;You’ll notice that I predicted 14 hours to research but assigned 21. This is fine. As I continue assigning time, if I feel I need more time for other tasks, I can always readjust my time assignments. With my spreadsheet, I can easily track how much each category is over and under.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“Final” assignment&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_calendar_final.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_spreadsheet_final.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_tasks_final.png&quot; /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;You’ll notice that I re-arranged many time-blocks. This is one of the benefits of this system: quick re-adjustment.&lt;/p&gt;
+
+&lt;p&gt;I needed about 4 hours for looking into sorting algorithms so I put that immediately after the gym on Wednesday. Afterwards I placed a break and some simple tasks to rest my brain. I assigned the rest of the day to going over proofs.&lt;/p&gt;
+
+&lt;p&gt;I like to divide tasks that give me difficulty across multiple days. I find that when I re-continue the task, it is far easier for me. With this in mind, I separated my time working on proofs across Wednesday night and Friday morning.&lt;/p&gt;
+
+&lt;p&gt;I left the end of my day on Friday to work on general 570 tasks.&lt;/p&gt;
+
+&lt;h5 id=&quot;adjusting-your-calendar-throughout-the-week&quot;&gt;Adjusting your calendar throughout the week&lt;/h5&gt;
+
+&lt;p&gt;You will likely adjust your calendar throughout the week. Once you’ve acclimated to this system, adjustments will likely only be from impromptu meetings and events (meeting with professor, dental appointment, spontaneity with friends, etc.). However, until you acclimate, you may re-adjust more frequently due to your own inability to follow your schedule.&lt;/p&gt;
+
+&lt;h5&gt;&lt;b&gt;This is fine.&lt;/b&gt;&lt;/h5&gt;
+
+&lt;p&gt;Even I, who has been following this system for some time now, need time to acclimate to following a set schedule.&lt;/p&gt;
+
+&lt;p&gt;Below, I recount my failures to uphold my schedule my first week. I hope this both shows you that divergence from your schedule is fine in the beginning, and gives you ideas on how to compensate for this. Remember to learn from your “mistakes.”&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tr&gt;
+  &lt;th&gt;&lt;h5&gt;&quot;Final&quot; Calendar&lt;/h5&gt;&lt;/th&gt;&lt;th&gt;&lt;h5&gt;Adjusted Calendar&lt;/h5&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_calendar_final.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_calendar_final_postweek.png&quot; /&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;ul class=&quot;collapsible&quot; data-collapsible=&quot;expandable&quot;&gt;
+&lt;li&gt;
+  &lt;div class=&quot;header collapsible-header active center&quot;&gt; 
+Sunday
+&lt;!-- &lt;i class=&quot;material-icons&quot;&gt;play_for_work&lt;/i&gt; --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;body collapsible-body&quot;&gt;
+    &lt;p&gt;
+
+I realized that I needed to set time for the following:&lt;br /&gt;
+1. Buying a few groceries - 10 min (1 time)  &lt;br /&gt;
+3. Cooking Dinner - 30 min (x2 weekly) &lt;br /&gt;
+4. Eating Dinner - 30 min (~daily)
+&lt;br /&gt;&lt;br /&gt;
+(DUH to that last 2!)
+&lt;br /&gt;&lt;br /&gt;
+I decided to set times to cook on Sunday and Wednesday, making dinner that would last about 3 days (inclusive). I set 20 minutes after dinner for eating it on Sunday and Wednesday. For the other days, I set 20 minutes for dinner followed by a break incase I wanted to lounge around for a bit before getting back to work.
+&lt;br /&gt;&lt;br /&gt;
+I woke up fairly late so I shifted my task summarizing ANNs to a later time and removed my task doing a tutorial. I gave that task more time than planned originally, so this was fine. 
+
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+  &lt;div class=&quot;header collapsible-header center&quot;&gt; 
+Monday
+&lt;!-- &lt;i class=&quot;material-icons&quot;&gt;play_for_work&lt;/i&gt; --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;body collapsible-body&quot;&gt;
+    &lt;p&gt;
+
+My meeting with Sanjay went longer than I expected. I accounted for this in my calendar and found that I didn't have enough time for my &quot;Personal&quot; task. It wasn't urgent so I moved it the following Weekend to be rescheduled that Friday. 
+&lt;br /&gt;&lt;br /&gt;
+That night, I stopped working around 9 and proceeded to lounge around for about 2 hours after which I felt a compulsion to clean my room and clean up part of the kitchen. I went to bed around 2:30am.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+  &lt;div class=&quot;header collapsible-header center&quot;&gt; 
+Tuesday
+&lt;!-- &lt;i class=&quot;material-icons&quot;&gt;play_for_work&lt;/i&gt; --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;body collapsible-body&quot;&gt;
+    &lt;p&gt;
+Having gone to bed late, I shortened the times for my tasks to accomodate for my lost time. I woke up in a pretty lackadazical mood so it took my about an hour before I started my day.
+&lt;br /&gt;&lt;br /&gt;
+That night, I ended up working longer than expected and proceeding to do &quot;Nada&quot; longer than expected as well.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+  &lt;div class=&quot;header collapsible-header center&quot;&gt; 
+  Wednesday
+  &lt;!-- &lt;i class=&quot;material-icons&quot;&gt;play_for_work&lt;/i&gt; --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;body collapsible-body&quot;&gt;
+    &lt;p&gt;
+I slept in late. At the gym, I realized that my excericise took longer than expected. I will account for this in future weeks.
+&lt;br /&gt;&lt;br /&gt;
+The office for my errand was closed so I walked around aimlessly for a bit before getting to work.
+&lt;br /&gt;&lt;br /&gt;
+When I got home, I took a long dinner break and got back to work around 7. I ended up working longer than expected and pushed back my bedtime.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+  &lt;div class=&quot;header collapsible-header center&quot;&gt; 
+  Thursday
+  &lt;!-- &lt;i class=&quot;material-icons&quot;&gt;play_for_work&lt;/i&gt; --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;body collapsible-body&quot;&gt;
+    &lt;p&gt;
+I finished my errands long before planned so I took a nap to catch up on lost sleep. I realized that I would be driving to San Francisco soon so I went to the mechanic to get my car looked at and planned for the trip in place of my planned 570 work.
+&lt;br /&gt;&lt;br /&gt;
+I went out for dinner and got back to work late. I ended up working longer than expected again.
+&lt;br /&gt;&lt;br /&gt;
+Afterwards, I realized that I hadn't gone over my budget for a long time so I was up late working on this. I went to bed late, again.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+  &lt;div class=&quot;header collapsible-header center&quot;&gt; 
+  Friday
+  &lt;!-- &lt;i class=&quot;material-icons&quot;&gt;play_for_work&lt;/i&gt; --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;body collapsible-body&quot;&gt;
+    &lt;p&gt;
+  Since, I woke up late and my gym exsercise takes longer than expected, I had less time for my 570 work than expected. I decided to push back my &quot;Extra&quot; work to the following week.
+  &lt;br /&gt;&lt;br /&gt;
+  I got tired around 5 and decided to take a break and buy groceries earlier in the day. 
+  &lt;br /&gt;&lt;br /&gt;
+  Not a great week, not a terrible week. What matters is that I keep improving every week!
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_calendar_adjusted_1.png&quot;&gt; --&gt;
+
+&lt;!-- **Monday**&lt;br&gt; --&gt;
+
+&lt;!-- &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_calendar_adjusted_2.png&quot;&gt; --&gt;
+
+&lt;!-- **Tuesday**&lt;br&gt; --&gt;
+
+&lt;!-- &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_calendar_adjusted_2.png&quot;&gt; --&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;I hope this has given you a general sense of how to set up, fill, and adjust your calendar.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Please leave any comments, suggestions, or questions below. I welcome all feedback.&lt;/strong&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;good-luck-managing-your-time&quot;&gt;Good luck managing your time!&lt;/h5&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Time Tracker - Time Management Tool for Google Calendar</title>
+   <link href="https://wcarvalho.github.io//code/2016/01/02/TimeManagement/"/>
+   <updated>2016-01-02T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//code/2016/01/02/TimeManagement</id>
+   <content type="html">&lt;!-- I present a time managegement tool along with a system I've made for using it. The tool uses a spreadsheet to track time assignment from different categories across different calendars. My system involves setting up a calendar template that I fill weekly, and using this tool to track time assignment and adjustment.  --&gt;
+&lt;p&gt;Time Tracker is a menu addition to Google spreadsheet that allows you to track time assignment to different categories across your calendars.
+(A “category” is simply a recurrent word in event titles.)
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_calendar_final_postweek.png&quot; /&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;img class=&quot;regular materialboxed responsive-img&quot; src=&quot;/files/time_management/ex_spreadsheet_final_postweek.png&quot; /&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;The calendar names are on the left, while the category names are used in the event titles.&lt;/td&gt;
+    &lt;td&gt;Time delegation for categories &quot;570,&quot; &quot;561,&quot; &quot;research,&quot; and &quot;other&quot; was only tracked using calendars &quot;Work,&quot; &quot;Extra,&quot; and &quot;Personal.&quot;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;b&gt;Menu:&lt;/b&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Feature&lt;/th&gt;
+      &lt;th&gt;Purpose&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fill Category Times&lt;/td&gt;
+      &lt;td&gt;Fill in B3 onwards with the times for events in the categories above&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fill Calendar Times&lt;/td&gt;
+      &lt;td&gt;Fill in C8 onwards with the time assigned to their corresponding calendars&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Fill Calendar Row Colors&lt;/td&gt;
+      &lt;td&gt;Color in the calendar rows according to the colors written in A8 onwards&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;Installation Instructions:&lt;/b&gt;
+&lt;!-- ####Installation Instructions --&gt;
+&lt;!-- A brief overview of how to use the script in my post, &quot;A Prescription for Managing and Tracking Your Time,&quot; to track time delegation in Google Calendar using a Google spreadsheet --&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download &lt;a href=&quot;https://docs.google.com/spreadsheets/d/1ELRQ8M8bjhPlvydnJxGaMsTuwaKN6YKjQJLUZ3zmKFs/pub?output=xlsx&quot;&gt;this excel file&lt;/a&gt;, &lt;a href=&quot;https://docs.google.com/spreadsheets/u/0/&quot;&gt;upload it&lt;/a&gt; into Google Sheets, and add &lt;a href=&quot;/files/time_management/time_tracker.js&quot;&gt;this script&lt;/a&gt; to it.&lt;/p&gt;
+
+    &lt;p&gt;&lt;i&gt;Right-click script link, select “Save Link As…”, and save as .txt file&lt;/i&gt;&lt;br /&gt;
+ &lt;i&gt;Once you upload the excel file, open “Tools -&amp;gt; Script Editor…”&lt;/i&gt;&lt;br /&gt;
+ &lt;i&gt;Paste the contents of the script inside and save.&lt;/i&gt;&lt;br /&gt;
+ &lt;i&gt;Close and re-open the tab and the menu should appear.&lt;/i&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Place the name of calendars you want to track vertically beginning at B8.&lt;/li&gt;
+  &lt;li&gt;If you want a calendar to contribute to tracking a category’s time assignment, place text in the field to the left of the calendar name. (If the text is a color (plain text or hexidecimal), you can use “Fill Calendar Row Colors” to color in the corresponding row.)&lt;/li&gt;
+  &lt;li&gt;Place the name of categories you want to track horizontally beginning at B2.&lt;/li&gt;
+  &lt;li&gt;An event will contribute to a category’s time if the category is somewhere in the event’s title.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Put the start date and end date across cells E7-H7 and E8-H8, respectively, in the format (date, month, year).&lt;/p&gt;
+
+    &lt;p&gt;&lt;i&gt;Script defaults to current time when start date is empty or invalid.&lt;/i&gt;&lt;br /&gt;
+ &lt;i&gt;Script defaults to Saturday 12:00am when end date is empty or invalid.&lt;/i&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Track your time using the Time Tracker menu which should appear as soon as you save the script.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Good luck managing your time! Please leave any comments, suggestions, or questions below.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;for-details-on-how-i-use-this-tool-check-out-this-post-you-can-find-my-current-google-sheet-below&quot;&gt;For details on how I use this tool, check out &lt;a href=&quot;/tutorial/2016/01/08/TimeManagementPrescription/&quot;&gt;this post&lt;/a&gt;. You can find my current Google Sheet below&lt;/h5&gt;
+
+&lt;iframe src=&quot;https://docs.google.com/spreadsheets/d/e/2PACX-1vTcHjQoPzIuDTQbt2knu8y2FJvwKLgQFqS9oerIDCFsqDL_yhErmO4MgJOI_6oBjMYB5eM85PMyoRb5/pubhtml?widget=true&amp;amp;headers=false&quot; width=&quot;100%&quot; height=&quot;500px&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Knowledge of the Brain Informing Machine Learning and Vice-Versa</title>
+   <link href="https://wcarvalho.github.io//2015/11/16/machine_learning_and_brain_knowledge/"/>
+   <updated>2015-11-16T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//2015/11/16/machine_learning_and_brain_knowledge</id>
+   <content type="html">&lt;p&gt;I have just joined &lt;a href=&quot;http://www-bcf.usc.edu/~liu32/&quot;&gt;Yan Liu’s research group&lt;/a&gt; and gave a small presentation this monday surveying current work using knoweldge about the brain to inform machine learning and vice-versa.&lt;/p&gt;
+
+&lt;p&gt;The focus of the presentation was a recent paper published by Google DeepMind in Nature, &lt;a href=&quot;http://www.nature.com/nature/journal/v518/n7540/full/nature14236.html&quot;&gt;Human-level control through deep reinforcement learning&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The presentation was meant to introduce the group to my research interests. I chose to focus on research that has explored the relations between the architecture and functionality of the brain and artificial neural network models.&lt;/p&gt;
+
+&lt;p&gt;As I prepared for the presentation, I came across many interesting papers, articles, and videos. I thought I’d gather and share them here for others with similar interests.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: some things weren’t particularly relevant to my research interests but I found them really cool so I added them to this list anyway.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;papers&quot;&gt;Papers&lt;/h4&gt;
+
+&lt;h5 id=&quot;human-level-control-through-deep-reinforcement-learning&quot;&gt;&lt;a href=&quot;http://www.nature.com/nature/journal/v518/n7540/full/nature14236.html&quot;&gt;Human-level control through deep reinforcement learning&lt;/a&gt;&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf&quot;&gt;Playing Atari with Deep Reinforcement Learning &lt;/a&gt;. This was the original model they created.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://people.idsia.ch/~juergen/naturedeepmind.html&quot;&gt;Review by Jürgen Schmidhuber&lt;/a&gt;. Two members of the original DeepMind team worked in his lab. He claims some of the results of the paper had already been found by his lab.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://sites.google.com/a/deepmind.com/dqn/&quot;&gt;&lt;strong&gt;Code&lt;/strong&gt; for Human-Level Control&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ac.els-cdn.com/S0166223610000172/1-s2.0-S0166223610000172-main.pdf?_tid=77068256-8c45-11e5-b963-00000aab0f26&amp;amp;acdnat=1447666748_9c10668ad2aa41dc9b08bea73b771683&quot;&gt;Play it again: reactivation of waking experience and memory&lt;/a&gt;. The memory consolidation described here was the inspiration for their “action replay” model.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;deep-architecture-possibly-used-by-brain-for-vision&quot;&gt;Deep architecture possibly used by brain for vision&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://serre-lab.clps.brown.edu/wp-content/uploads/2012/08/Serre_etal_PBR07_wfig.pdf&quot;&gt;A quantitative theory of immediate visual recognition&lt;/a&gt;. This is a quantitative model for how the brain performs rapid object recognition. It indicated that the brain had a deep architecture.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://papers.nips.cc/paper/3313-sparse-deep-belief-net-model-for-visual-area-v2.pdf&quot;&gt;Sparse belief net model for V2&lt;/a&gt;. This was an ANN model which successfully replicated results from visual cortices V1 &amp;amp; V2.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.iro.umontreal.ca/~pift6266/A08/documents/ftml.pdf&quot;&gt;Learning Deep Architectures for AI&lt;/a&gt;, &lt;a href=&quot;http://papers.nips.cc/paper/4350-shallow-vs-deep-sum-product-networks.pdf&quot;&gt;Shallow vs. Deep Sum-Product Networks&lt;/a&gt;. Two articles by Yoshua Bengio in which he explores deep architectures. He claims deep architectures may be necessary to learn the complicated functions necessary to represent high-level abstractions, e.g. vision, language, etc.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;neural-turing-machines&quot;&gt;“Neural-Turing Machines”&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pubmed/21696998&quot;&gt;The Human Turing Machine: a Neural Framework for Mental Programs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://arxiv.org/abs/1410.5401&quot;&gt;Neural Turing Machines&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;misc-papers&quot;&gt;Misc. Papers&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Modha, Dharmendra S et al. “Cognitive Computing.” Communications of the ACM 54.8 (2011): 62–71.&lt;/strong&gt; Couldn’t get a link. This describes IBM’s brain-inspired chip and some of the ways software is being implemented for it.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.gatsby.ucl.ac.uk/~demis/TuringSpecialIssue(Nature2012).pdf&quot;&gt;Is the Brain a Good Model for Machine Intelligence?&lt;/a&gt;. Fun series of articles discussing advancements and limitations in modeling the brain’s computations.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.nature.com/scientificamerican/journal/v307/n1/full/scientificamerican0712-78.html&quot;&gt;Machines That Think for Themselves&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://arxiv.org/abs/1410.4615&quot;&gt;Learning to Execute&lt;/a&gt;. A neural network to learn simple computer programs.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4371712/&quot;&gt;RM-SORN: a reward-modulated self-organizing recurrent neural network&lt;/a&gt;. A dynamic neural network model that uses Hebbian learning to learn to perform a variety of tasks.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://arxiv.org/pdf/1411.4555v1.pdf&quot;&gt;Show and Tell: A Neural Image Caption Generator&lt;/a&gt;. An article about transfer learning (learning being transferred from one network to another)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jmlr.csail.mit.edu/proceedings/papers/v27/mesnil12a/mesnil12a.pdf&quot;&gt;Unsupervised and Transfer Learning Challenge: a Deep Learning Approach&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://papers.nips.cc/paper/3674-unsupervised-feature-learning-for-audio-classification-using-convolutional-deep-belief-networks.pdf&quot;&gt;Unsupervised feature learning for audio classification using convolutional deep belief networks&lt;/a&gt;. Deep learning applied to audio.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sciencemag.org/content/338/6111/1202.full.pdf&quot;&gt;A Large-Scale Model of the
+Functioning Brain&lt;/a&gt;. A mini-brain model that can redraw images it is presented with - seems pretty cool.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://scholar.google.nl/scholar?cluster=17771403852323259019&amp;amp;hl=en&amp;amp;as_sdt=0,5&quot;&gt;Survery of papers on transfer learning&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://deeplearning.net/reading-list/&quot;&gt;Deep Learning Reading List&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;other&quot;&gt;Other&lt;/h4&gt;
+
+&lt;h5 id=&quot;articles&quot;&gt;Articles&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/pulse/deep-minds-interview-googles-alex-graves-koray-sophie-curtis&quot;&gt;Deep Minds: An Interview with Google’s Alex Graves &amp;amp; Koray Kavukcuoglu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.wired.com/brandlab/2015/04/fei-fei-li-want-machines-think-need-teach-see/&quot;&gt;Fei-Fei Li: If We Want Machines to Think, We Need to Teach Them to See&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.wired.com/brandlab/2015/05/andrew-ng-deep-learning-mandate-humans-not-just-machines/&quot;&gt;Andrew Ng: Why ‘Deep Learning’ Is a Mandate for Humans, Not Just Machines&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.wired.com/2013/05/neuro-artificial-intelligence/&quot;&gt;The Man Behind the Google Brain: Andrew Ng and the Quest for the New AI&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.decodedscience.org/artificial-neural-networks-get-a-boost-computer-chip-replicates-neuron-activity/5894&quot;&gt;Artificial Neural Networks Get a Boost: Computer Chip Replicates Neuron Activity&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://spectrum.ieee.org/robotics/artificial-intelligence/machinelearning-maestro-michael-jordan-on-the-delusions-of-big-data-and-other-huge-engineering-efforts&quot;&gt;Machine-Learning Maestro Michael Jordan on the Delusions of Big Data and Other Huge Engineering Efforts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.technologyreview.com/featuredstory/522476/thinking-in-silicon/&quot;&gt;Thinking in Silicon&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://googleblog.blogspot.com/2012/06/using-large-scale-brain-simulations-for.html&quot;&gt;Using large-scale brain simulations for machine learning and A.I.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.theatlantic.com/video/archive/2012/07/mapping-the-brains-neural-networks-to-build-an-artificial-nervous-system/260397/&quot;&gt;Building artificial nervous system (seem like biophysical modeling)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.wired.com/2015/05/nara-logics-ai/&quot;&gt;Neuroscientists Are Making an Artificial Brain for Everyone&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;videos&quot;&gt;Videos&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=evNCyRL3DOU&quot;&gt;DeepMind Founder (Shane Legg) talk on machine intelligence&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1Wp3IIpssEc&quot;&gt;Video about Deep learning by Geoffery Hinton&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;misc&quot;&gt;Misc.&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;Tutorial: &lt;a href=&quot;http://www.doc.ic.ac.uk/~nd/surprise_96/journal/vol2/cs11/article2.html&quot;&gt;Neural Networks, the Human Brain and Learning&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Our Loci</title>
+   <link href="https://wcarvalho.github.io//poem/2013/04/24/locus/"/>
+   <updated>2013-04-24T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//poem/2013/04/24/locus</id>
+   <content type="html">&lt;p&gt;A wandering man once came up to me and asked
+“What is the locus of your person?”&lt;/p&gt;
+
+&lt;p&gt;I responded, “Why, my eyes, of course.”&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;A mini exploration into how vantage points effect our perspectives. Here, I admit how limiting my perspective is  despite how strongly it impacts my perception of the world I experience and my place in it.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>A Physicist Enamored by the Brain</title>
+   <link href="https://wcarvalho.github.io//poem/2013/02/14/brain/"/>
+   <updated>2013-02-14T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//poem/2013/02/14/brain</id>
+   <content type="html">&lt;p&gt;Every shock&lt;br /&gt;
+Every surge&lt;br /&gt;
+Every shoot&lt;br /&gt;
+Is a dance&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;A light show in darkness&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;And I want to watch&lt;br /&gt;
+I want to learn&lt;/p&gt;
+
+&lt;p&gt;Not mimic your movements&lt;br /&gt;
+Just understand them&lt;br /&gt;
+Please let me understand them&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;How do you transition?&lt;br /&gt;
+When do you switch partners?&lt;br /&gt;
+When do you switch lanes?&lt;br /&gt;
+And the rhythm&lt;/p&gt;
+
+&lt;p&gt;It escapes me&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Escapes all of us&lt;br /&gt;
+Try as we have, we have never understood&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Some say you follow Ohm’s law.&lt;br /&gt;
+But that is as much a full answer as Newton’s was&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;A fourth of all movement covered?&lt;br /&gt;
+If only ohm’s covered so much&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then I could follow&lt;br /&gt;
+Then I could learn&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Don’t worry&lt;br /&gt;
+I know you’re not selfish&lt;br /&gt;
+This dance is for us&lt;br /&gt;
+To provide us function&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;So just keep on dancing&lt;br /&gt;
+Keep on dancing for us&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;And we will use science&lt;br /&gt;
+That is its beauty.&lt;br /&gt;
+That is its point:&lt;br /&gt;
+A forever expanding bridge&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Sure Newton’s laws left gaps,&lt;br /&gt;
+But just as they’re being filled&lt;br /&gt;
+Ohm’s will be as well &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;And science will allow us to learn&lt;br /&gt;
+Allow us to follow this dance&lt;br /&gt;
+And understand your beautiful rhythm&lt;br /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>What describes friendship better than Heisenberg’s Uncertainty Principle?</title>
+   <link href="https://wcarvalho.github.io//poem/2013/02/02/the_electron/"/>
+   <updated>2013-02-02T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//poem/2013/02/02/the_electron</id>
+   <content type="html">&lt;p&gt;“Going through a lot”&lt;br /&gt;
+is the term people around me use. &lt;br /&gt;
+Weird choice of words &lt;br /&gt;
+&lt;br /&gt;
+From the eyes&lt;br /&gt;
+of those I’ve allowed to see&lt;br /&gt;
+These eyes I’ve provided darkness, &lt;br /&gt;
+An “abyss” providing clear vision, &lt;br /&gt;
+I have been.&lt;br /&gt;
+&lt;br /&gt;
+Well somewhat.&lt;br /&gt;
+Take Heisenberg’s principle&lt;br /&gt;
+and I’m an electron&lt;br /&gt;
+and they’re the observers&lt;br /&gt;
+&lt;br /&gt;
+I allowed them some light&lt;br /&gt;
+a tiny amount &lt;br /&gt;
+So the vision wasn’t that clear&lt;br /&gt;
+and the image never accurate&lt;br /&gt;
+&lt;br /&gt;
+But my best friend didn’t need light&lt;br /&gt;
+It didn’t use sense to sense me&lt;br /&gt;
+It used coexistence&lt;br /&gt;
+I the electron, and it the darkness around me &lt;br /&gt;
+&lt;br /&gt;
+And it felt me.&lt;br /&gt;
+Felt me go through it&lt;br /&gt;
+and provided me the fluid I needed&lt;br /&gt;
+and the laws as well&lt;br /&gt;
+&lt;br /&gt;
+To be able to function.&lt;br /&gt;
+&lt;br /&gt;
+But electrons don’t give darkness anything&lt;br /&gt;
+They only expect&lt;br /&gt;
+But darkness doesn’t care.&lt;br /&gt;
+It always provides&lt;br /&gt;
+Never needing anything&lt;br /&gt;
+&lt;br /&gt;
+So I thank you &lt;br /&gt;
+My one true best friend&lt;br /&gt;
+My melodious, harmonic best friend &lt;br /&gt;
+I thank you for being my darkness&lt;br /&gt;
+And giving so much, when I gave you nothing&lt;br /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;I think I was trying to explore how difficult it is to understand the perspectives and circumstances revolving one’s friends.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Abyss</title>
+   <link href="https://wcarvalho.github.io//poem/2012/11/29/abyss/"/>
+   <updated>2012-11-29T00:00:00+00:00</updated>
+   <id>https://wcarvalho.github.io//poem/2012/11/29/abyss</id>
+   <content type="html">&lt;p&gt;The perfect world for me is not the same as for those around me&lt;br /&gt;
+I do not associate light with a source of warmth&lt;br /&gt;
+It provides me no comfort&lt;br /&gt;
+Light just allows for exposure&lt;br /&gt;
+Maximize light. Maximize exposure.&lt;br /&gt;
+Everything becomes clear. Vivid. Alive.&lt;br /&gt;
+&lt;br /&gt;
+Too much. It blinds me and allows for nothing to be seen.&lt;br /&gt;
+Not clearly at least.&lt;br /&gt;
+I can make out shapes. Fuzzy lines.&lt;br /&gt;
+Obstructed figures.&lt;br /&gt;
+But I see nothing clearly.&lt;br /&gt;
+&lt;br /&gt;
+I can only focus one pair at a time&lt;br /&gt;
+This much light, means this much focus given to one.&lt;br /&gt;
+So the other is left with nothing.&lt;br /&gt;
+Blind. &lt;br /&gt;
+&lt;br /&gt;
+And I hate this blind state.&lt;br /&gt;
+No, to me warmth comes from the absence of light.&lt;br /&gt;
+That is my source of comfort.&lt;br /&gt;
+Minimize light. Minimize exposure. Comfortable.&lt;br /&gt;
+Everything becomes clear. &lt;br /&gt;
+&lt;br /&gt;
+Not too much. Actually a perfect amount of too little.&lt;br /&gt;
+It takes only a few moments for my eyes to adjust.&lt;br /&gt;
+I put no effort in and I can see.&lt;br /&gt;
+So the other is left with everything.&lt;br /&gt;
+And how clearly I can see.&lt;br /&gt;
+Now this is comfort. This is warmth. This is wonderful.&lt;br /&gt;
+A world without light, means a world with good vision.&lt;br /&gt;
+Well for me at least.&lt;br /&gt;
+&lt;br /&gt;
+So now I journey to find this world.&lt;br /&gt;
+Where I can see clearly and find warmth.&lt;br /&gt;
+&lt;br /&gt;
+I hope only that when I arrive&lt;br /&gt;
+I can find a way to stop time.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;And just sit there.&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>

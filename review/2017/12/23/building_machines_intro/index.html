@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta property="og:image" content="/img/abstract_head.png">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Building Machines that Learn and Think Like People (pt 1. Introduction and History) &middot; Wilka Carvalho
+    
+  </title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/public/css/projects.css">
+  <link rel="stylesheet" href="/public/css/icons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/public/css/general.css">
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/brain-icon.png">
+  <link rel="shortcut icon" href="/img/brain-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <!-- Math Support -->
+
+  <body class="layout">
+
+      <div class="masthead">
+    
+  <div class="top-left">
+  </div>
+  <div class="bottom-right">
+    <div class="container">
+      <div align="center">
+        <h3 class="masthead-title">
+            <img class="nsf responsive-img" src="/img/headshot.jpg"> <br>
+            <a href="/" title="Home">Wilka Carvalho</a><br>
+            <small>Aspiring Cognitive Scientist</small>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-left">
+    <div class="container">
+      <a href="https://twitter.com/CogSciKid/"><i class="svg-icon twitter"></i></a>
+      <a href="https://github.com/wcarvalho/"><i class="svg-icon github"></i></a>
+      <a href="https://www.linkedin.com/in/wilkacarvalho/"><i class="svg-icon linkedin"></i></a>
+      <a href="mailto:wcarvalho92@gmail.com"><i class="svg-icon email"></i></a>
+    </div>
+  </div>
+</div>
+      <div class="navbar-outter">
+<nav class="navbar sticky-top justify-content-between navbar-expand-sm navbar-nav navbar-dark bg-dark">
+<!-- <div class="navbar-inner"> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a href="/">Home</a> -->
+        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/publications">Publications</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/press">Press</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Side Projects
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Projects
+          </a>
+          <a class="dropdown-item" href="/main-pages/projects/#essays">Essays</a>
+          <a class="dropdown-item" href="/main-pages/projects/#poetry">Poetry</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/files/wilka_carvalho_CV.pdf">CV</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/misc/acknowledgments">Acknowledgements</a>
+      </li>
+    </ul>
+
+
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown navbar-right">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink">
+          Learning Resources
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://wcarvalho.github.io/Phd-Resources/" id="navbarDropdownMenuLink">
+          PhD Resources
+          </a>
+          <a class="dropdown-item" href="https://wcarvalho.github.io/ML-Brain-Resources/">ML/Brain Resources</a>
+          <a class="dropdown-item" href="/misc/books">Useful Books</a>
+        </div>
+      </li>
+
+      <li class="nav-item navbar-nav navbar-right">
+        <a class="nav-link"  href="/main-pages/blog">Blog</a>
+      </li>
+    </ul>
+
+</div>
+<!-- </div> -->
+</nav>
+</div>
+      <div class="container content ">
+        <div class="post">
+  <h2 class="post-title">Building Machines that Learn and Think Like People (pt 1. Introduction and History)</h2>
+  <span class="post-date">
+    23 Dec 2017
+    
+     | <cite> review </cite>
+    
+    
+    <br>
+    <em>
+      tags: cognitive-science, machine-learning, brain, deep-learning
+    </em>
+    
+  </span>
+  
+    Note: Ideas and opinions that are my own and not of the article will be in an <font color="grey"><em>italicized grey</em></font>.<br><br>
+
+<h1>Series Table of Contents</h1>
+
+<a href="/review/2017/12/23/building_machines_intro">Part 1: Introduction and History</a> <br>
+<a href="/review/2017/12/31/building_machines_challenges">Part 2: Challenges for Building Human-Like Machines</a> <br>
+<a href="/review/2018/01/01/building_machines_developmental">Part 3: Developmental Software</a> <br>
+<a href="/review/2018/01/06/building_machines_learning">Part 4: Learning as Rapid Model-Building</a> <br>
+<a href="/review/2018/01/06/building_machines_thinking">Part 5: Thinking Fast</a> <br>
+<a href="/review/2017/12/23/building_machines_resources">Resources</a> <br>
+<a href="/review/2017/12/23/building_machines_glossary">Glossary</a> <br>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Article Table of Contents</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#motivation-for-series">Motivation for series</a></td>
+    </tr>
+    <tr>
+      <td><a href="#introduction">Introduction</a></td>
+    </tr>
+    <tr>
+      <td><a href="#history-of-brain-inspiration-in-ai">History of Brain-Inspiration in AI</a></td>
+    </tr>
+    <tr>
+      <td><a href="#references">References</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="motivation-for-series">Motivation for series</h2>
+<h3 id="feel-free-to-skip">(Feel free to skip)</h3>
+<p>This is part 1 in a series of blog posts, where I plan to summarize the fascinating (but lengthy) <a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-machines-that-learn-and-think-like-people/A9535B1D745A0377E16C590E14B94993">Building Machines that Learn and Think Like People</a> by Lake et al. This paper discusses how current <a href="https://medium.freecodecamp.org/want-to-know-how-deep-learning-works-heres-a-quick-guide-for-everyone-1aedeca88076">deep learning models</a> (<a href="/review/2017/12/23/building_machines_glossary/#deep-learning">glossary</a>), despite their <a href="https://www.technologyreview.com/s/513696/deep-learning/">success</a> and common comparison to <a href="http://www.dailymail.co.uk/sciencetech/article-5207101/Googles-AI-software-learning-makes-good-photo.html">the</a> <a href="https://www.datanami.com/2017/07/06/google-mimics-human-brain-unified-deep-learning-model/">brain</a>, do not learn how brains do in many respects. The authors offer a set of “key ingredients” to endow neural networks with what might allow them to learn and think more like brains do.</p>
+
+<p>I’ve wanted to read this paper for some time. One of my central goals as an aspiring brain and machine learning researcher is to build human-inspired AI. As I’m very junior in the field, I thought this paper would give me a lot of insight into how to go about doing that. I was finally pushed into reading it when I discovered that along with this paper, the Journal for Behavioral and Brain Sciences has published <a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-machines-that-learn-and-think-like-people/A9535B1D745A0377E16C590E14B94993#fndtn-related-commentaries">27 promising commentaries</a>! Among the ones I’m most excited to read next are:</p>
+
+<ol>
+  <li><a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-machines-that-learn-and-think-for-themselves/E28DBFEC380D4189FB7754B50066A96F">Building machines that learn and think for themselves</a> by DeepMind</li>
+  <li><a href="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/building-on-prior-knowledge-without-building-it-in/F342A14C57094D5AF7BC62950AE49CD8">Building on prior knowledge without building it in</a> by McClelland et al.</li>
+  <li><a href="https://www.cambridge.org/core/product/3D2A685AC198EC0008835514735033BB">Ingredients of intelligence: From classic debates to an engineering roadmap</a>, a meta-response by Lake et al.</li>
+</ol>
+
+<p>I encourage people to discuss ideas and ask questions in the comments section. A lot of research is coming out in cognitive science, neuroscience, artificial intelligence, and their intersection, and I would love for this to turn into a dialogue on these topics!</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The purpose of this series is to highlight the challenges with building machines that learn and think like people. As such, I will skip aspects of the paper that generally review deep learning. Please feel free to read the paper for that material. The key idea: thanks to tremendous skill in pattern recognition, deep neural networks have achieved state-of-the-art performance in numerous domains including</p>
+
+<ul>
+  <li><a href="https://tryolabs.com/blog/2017/08/30/object-detection-an-overview-in-the-age-of-deep-learning/">computer vision</a> (e.g. learning to detect objects in images with complex scenes <a class="citation" href="#imagenet">(Krizhevsky et al., 2012)</a>)</li>
+  <li><a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/">speech modeling</a> (e.g. learning to produce human-like speech <a class="citation" href="#wavenet">(Oord et al., 2016)</a>), and</li>
+  <li><a href="https://deepmind.com/research/publications/human-level-control-through-deep-reinforcement-learning/">complex control problems</a> (e.g. learning to play a Atari video-games without embedded knowledge of the video-game structure <a class="citation" href="#dqn">(Mnih et al., 2015)</a>).</li>
+</ul>
+
+<p>While neural networks perform very well on many tasks, they have limitations. For example, they often must be trained on tremendous quantities of data. Additionally, they are not know to generalize knowledge well to different tasks. This is in part because they (at least, in their current form) rely on statistical pattern recognition–they essentially learn to notice patterns through thousands to millions of examples. An alternative, which <a class="citation" href="#lake">(Lake et al., 2016)</a> suggest is a key ingredient of human learning, is a model-building approach. They argue that intelligent cognition relies on building and using <a href="https://en.wikipedia.org/wiki/Causal_model">causal models</a> (<a href="/review/2017/12/23/building_machines_glossary/#causal-models">glossary</a>) to understand, explain, simulate, and predict the world. Despite this contrast, these two methods are certainly not orthogonal and machines can have a synergistic benefit.</p>
+
+<p>The authors maintain that while they are critical of neural networks, they see them as somewhat fundamental to human-like learning machines. This is partly because any computational model for human learning must ultimately be grounded in the brain’s biological neural networks. However, the authors believe that future generations of neural networks will look very different from current state-of-the-art.</p>
+
+<font color="grey"><em>
+  I support this. The neural networks we use are crude abstractions of our currently incomplete and incorrect models for biological neural networks.
+  For example, neuroscientists (and especially AI researchers) have long modeled neurons as single excitable units. Whether a neuron fires was a function of the electric signal that it received from its dendrites. For more on this perspective, see <a href="http://cs231n.github.io/neural-networks-1/#biological-motivation-and-connections">this introduction</a>. However, physicists have recently found that neurons are not single excitable units but a collection of excitable units <a class="citation" href="#multineuron">(Sardi et al., 2017)</a>. Further, each excitable unit is sensitive to the <strong>directionality</strong> of the origin of the input signal (i.e. the direction of the attached dendrite). This will potentially require a dramatic reformulation of artificial neural networks and will likely spur much research.
+</em></font>
+
+<p><br />
+<strong>The main contribution of this paper is its suggestion of “key ingredients” for building machines that learn and think like people. </strong> Defining and motivating these ingredients makes up a majority of the paper, so I will make each broad category its own article in this series:</p>
+
+<ul>
+  <li><a href="/review/2017/12/22/building_machines_developmental">“Developmental Software”</a>: intuitive theories for the world that we learn at an early age such as intuitive theories for physics and psychology (e.g., with physics, we quickly learn that solid objects cannot go through eachother),</li>
+  <li><a href="/review/2017/12/22/building_machines_learning">“Model Building”</a>: the ability to build causal models of the world via methods such as <a href="https://plato.stanford.edu/entries/compositionality/">compositionality</a> (<a href="/review/2017/12/23/building_machines_glossary/#compositionality">glossary</a>) and <a href="http://bair.berkeley.edu/blog/2017/07/18/learning-to-learn/">learning-to-learn</a> (<a href="/review/2017/12/23/building_machines_glossary/#learning-to-learn">glossary</a>), and</li>
+  <li><a href="/review/2017/12/22/building_machines_thinking">“Thinking quickly”</a>: the ability to quickly do inference (<a href="/review/2017/12/23/building_machines_glossary/#inference">glossary</a>) and prediction by combining model-free and model-based algorithms  (<a href="/review/2017/12/23/building_machines_glossary/#model-free-model-based">glossary</a>).</li>
+</ul>
+
+<h2 id="history-of-brain-inspiration-in-ai">History of Brain-Inspiration in AI</h2>
+
+<p>Scientists such as Alan Turing have long thought that AI could be informative to or descriptive of cognition <a class="citation" href="#computing_turing">(Turing, 1950)</a>. In fact, Turing held a <a href="http://www.funderstanding.com/theory/behaviorism/">behaviorist view</a> of learning reminiscent to a popular modern view that almost everything can be learning from the statistical patterns of sensory inputs.</p>
+
+<p>Cognitive scientists repudiated this view of cognition and instead assumed that human knowledge representation was symbolic (<a href="/review/2017/12/23/building_machines_glossary/#symbolic-representations">glossary</a>) in nature. They argued that many functions of cognition such as language and planning could be understood in terms of symbolic operations. This falls in line more with a “model-based” approach as you use an explicitly structured representation.</p>
+
+<p>Somewhat complementary to both, another school of thought - and what would become the basis for deep learning - believed in sub-symbolic (<a href="/review/2017/12/23/building_machines_glossary/#sub-symbolic-representations">glossary</a>) distributed representations (<a href="/review/2017/12/23/building_machines_glossary/#distributed-representations">glossary</a>) of knowledge produced by parallel distributed processing (PDP) systems <a class="citation" href="#pdp">(Rumelhart &amp; McClelland, 1986)</a>. Proponents of this view argued that many classic symbolic forms of knowledge such as graphs and <a href="https://en.wikipedia.org/wiki/Grammar">grammars</a> (production rules for strings) were useful but <em>misleading</em> for characterizing thought. Even if they were manifest, they were more likely emergent epiphenomena than fundamental in their own right <a class="citation" href="#structure_emerge">(McClelland et al., 2010)</a>.</p>
+
+<p>Researchers of PDP and neural networks showed that this method of distributed representation learning could, with minimal constraints and inductive biases (<a href="/review/2017/12/23/building_machines_glossary/#inductive-biases">glossary</a>), learn structured knowledge representations given enough data. They have shown that models could be trained to emulate the rule-like and structured behaviors that characterize cognition <a class="citation" href="#dqn">(Mnih et al., 2015)</a>. In recent history - perhaps more strikingly - researchers have found that the representations learned by artificial neural networks can predict the neural response patterns in the human and macaque cortex <a class="citation" href="#deep_it">(Yamins et al., 2013)</a>. That is, representations learned by generic neural networks seem to align with primate representations.</p>
+
+<p>Modern neural networks fed large amounts of data for pattern recognition tasks have been shown to learn representations reminiscent of those learned or used by humans. <strong>But how far towards truly human-like learning and thinking can we go by simply feeding large amounts of data to generic neural networks?</strong></p>
+
+<p><br /></p>
+<h1 id="references">References</h1>
+<ol class="bibliography"><li><span id="multineuron">Sardi, S., Vardi, R., Sheinin, A., Goldental, A., &amp; Kanter, I. (2017). New Types of Experiments Reveal that a Neuron Functions as
+              Multiple Independent Threshold Units. <i>Sci. Rep.</i>, <i>7</i>(1), 18036.</span></li>
+<li><span id="lake">Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp; Gershman, S. J. (2016). Building Machines That Learn and Think Like People. <i>The Behavioral and Brain Sciences</i>, <i>40</i>, 1–101.</span></li>
+<li><span id="botvinick_barrett_battaglia_de">Botvinick, M., Barrett, D. G. T., Battaglia, P., de Freitas, N., Kumaran, D., Leibo, J. Z., Lillicrap, T., Modayil, J., Mohamed, S., Rabinowitz, N. C., Rezende, D. J., Santoro, A., Schaul, T., Summerfield, C., Wayne, G., Weber, T., Wierstra, D., Legg, S., &amp; Hassabis, D. Building machines that learn and think for themselves. <i>Behavioral and Brain Sciences</i>, <i>40</i>.</span></li>
+<li><span id="hansen_lampinen_suri_mcclelland">Hansen, S. S., Lampinen, A. K., Suri, G., &amp; McClelland, J. L. Building on prior knowledge without building it in. <i>Behavioral and Brain Sciences</i>, <i>40</i>. https://doi.org/10.1017/S0140525X17000176</span></li>
+<li><span id="lake_ullman_tenenbaum_gershman">Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp; Gershman, S. J. Ingredients of intelligence: From classic debates to an engineering roadmap. <i>Behavioral and Brain Sciences</i>, <i>40</i>. https://doi.org/10.1017/S0140525X17001224</span></li>
+<li><span id="dqn">Mnih, V., Kavukcuoglu, K., Silver, D., Rusu, A. A., Veness, J., Bellemare, M. G., Graves, A., Riedmiller, M., Fidjeland, A. K., Ostrovski, G., Petersen, S., Beattie, C., Sadik, A., Antonoglou, I., King, H., Kumaran, D., Wierstra, D., Legg, S., &amp; Hassabis, D. (2015). Human-level control through deep reinforcement learning. <i>Nature</i>, <i>518</i>(7540), 529–533.</span></li>
+<li><span id="imagenet">Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). ImageNet Classification with Deep Convolutional Neural Networks. <i>NIPS</i>.</span></li>
+<li><span id="vrnn">Chung, Junyoung, Kastner, Kyle, Dinh, Laurent, Goel, Kratarth, Courville, Aaron, &amp; Bengio, Yoshua. (2016). A Recurrent Latent Variable Model for Sequential Data. <i>ArXiv.org</i>.</span></li>
+<li><span id="computing_turing">Turing, A. M. (1950). Computing machinery and intelligence. <i>Mind</i>, <i>59</i>(236), 433–460.</span></li>
+<li><span id="pdp">Rumelhart, D. E., &amp; McClelland, J. L. (1986). <i>Parallel Distributed Processing</i>. MIT Press.</span></li>
+<li><span id="structure_emerge">McClelland, J. L., Botvinick, M. M., Noelle, D. C., Plaut, D. C., Rogers, T. T., Seidenberg, M. S., &amp; Smith, L. B. (2010). Letting structure emerge: connectionist and dynamical systems approaches to cognition. <i>Trends in Cognitive Sciences</i>, <i>14</i>(8), 348–356.</span></li>
+<li><span id="deep_it">Yamins, D. L., Hong, H., Cadieu, C., &amp; DiCarlo, J. J. (2013). <i>Hierarchical Modular Optimization of Convolutional Networks Achieves Representations Similar to Macaque IT and Human Ventral Stream</i>. 3093–3101.</span></li>
+<li><span id="wavenet">Oord, A. van den, Dieleman, S., Zen, H., Simonyan, K., Vinyals, O., Graves, A., Kalchbrenner, N., Senior, A., &amp; Kavukcuoglu, K. (2016). Wavenet: A generative model for raw audio. <i>ArXiv Preprint ArXiv:1609.03499</i>.</span></li></ol>
+
+
+<h3>Thank you for reading. Please leave any comments or thoughts below or, alternatively, feel free to email me at <a href="mailto:wcarvalho92@gmail.com">wcarvalho92@gmail.com</a>.</h3>
+
+  
+</div>
+
+<h2>Related Posts</h2>
+
+
+
+
+
+<ol>
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/commentary/2018/01/29/learning_quickly/">The Pitfalls of Learning Quickly</a> - January 29, 2018 |  <span class="label label-default">cognitive-science</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/06/building_machines_thinking/">Building Machines that Learn and Think Like People (pt 5. Thinking Fast)</a> - January 06, 2018 |  <span class="label label-default">cognitive-science</span>  <span class="label label-default">machine-learning</span>  <span class="label label-default">brain</span>  <span class="label label-default">deep-learning</span> </h5>
+        </div>
+        
+        
+    </li>
+    
+
+
+
+    
+    
+
+    
+
+<!--      -->
+
+    
+    <li>
+        <div>
+        <h5><a href="/review/2018/01/06/building_machines_learning/">Building Machines that Learn and Think Like People (pt 4. Learning as Rapid Model-Building)</a> - January 06, 2018 |  <span class="label label-default">cognitive-science</span>  <span class="label label-default">machine-learning</span>  <span class="label label-default">brain</span>  <span class="label label-default">deep-learning</span> </h5>
+        </div>
+        
+        
+            
+</ol>
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname  = 'wilkacarvalho';
+  var disqus_identifier = '/review/2017/12/23/building_machines_intro/';
+
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+      </div>
+
+    <!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!-- popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="/public/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<!--  -->
+
+<!-- Bootstrap core JavaScript -->
+<!-- <script src="/public/vendor/jquery/jquery.min.js"></script> -->
+<!-- <script src="/public/vendor/popper/popper.min.js"></script> -->
+<!-- <script src="/public/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+
+<!-- Plugin JavaScript -->
+<!-- <script src="/public/vendor/jquery-easing/jquery.easing.min.js"></script> -->
+
+<!-- Contact form JavaScript -->
+<!-- <script src="/public/js/jqBootstrapValidation.js"></script> -->
+<!-- <script src="/public/js/contact_me.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<!-- <script src="/public/js/agency.min.js"></script> -->
+
+<!-- Materialize -->
+<!-- <script src="/public/js/materialize.min.js"></script> -->
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72232702-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72232702-1');
+</script>
+
+  </body>
+</html>

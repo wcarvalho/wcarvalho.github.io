@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta property="og:image" content="/img/abstract_head.png">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Blog &middot; Wilka Carvalho
+    
+  </title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/public/css/projects.css">
+  <link rel="stylesheet" href="/public/css/icons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/public/css/general.css">
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/brain-icon.png">
+  <link rel="shortcut icon" href="/img/brain-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <!-- Math Support -->
+
+  <body class="layout">
+
+      <div class="masthead">
+    
+  <div class="top-left">
+  </div>
+  <div class="bottom-right">
+    <div class="container">
+      <div align="center">
+        <h3 class="masthead-title">
+            <img class="nsf responsive-img" src="/img/headshot.jpg"> <br>
+            <a href="/" title="Home">Wilka Carvalho</a><br>
+            <small>Aspiring Cognitive Scientist</small>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-left">
+    <div class="container">
+      <a href="https://twitter.com/CogSciKid/"><i class="svg-icon twitter"></i></a>
+      <a href="https://github.com/wcarvalho/"><i class="svg-icon github"></i></a>
+      <a href="https://www.linkedin.com/in/wilkacarvalho/"><i class="svg-icon linkedin"></i></a>
+      <a href="mailto:wcarvalho92@gmail.com"><i class="svg-icon email"></i></a>
+    </div>
+  </div>
+</div>
+      <div class="navbar-outter">
+<nav class="navbar sticky-top justify-content-between navbar-expand-sm navbar-nav navbar-dark bg-dark">
+<!-- <div class="navbar-inner"> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a href="/">Home</a> -->
+        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/publications">Publications</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/press">Press</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Side Projects
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Projects
+          </a>
+          <a class="dropdown-item" href="/main-pages/projects/#essays">Essays</a>
+          <a class="dropdown-item" href="/main-pages/projects/#poetry">Poetry</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/files/wilka_carvalho_CV.pdf">CV</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/misc/acknowledgments">Acknowledgements</a>
+      </li>
+    </ul>
+
+
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown navbar-right">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink">
+          Learning Resources
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://wcarvalho.github.io/Phd-Resources/" id="navbarDropdownMenuLink">
+          PhD Resources
+          </a>
+          <a class="dropdown-item" href="https://wcarvalho.github.io/ML-Brain-Resources/">ML/Brain Resources</a>
+          <a class="dropdown-item" href="/misc/books">Useful Books</a>
+        </div>
+      </li>
+
+      <li class="nav-item navbar-nav navbar-right">
+        <a class="nav-link"  href="/main-pages/blog">Blog</a>
+      </li>
+    </ul>
+
+</div>
+<!-- </div> -->
+</nav>
+</div>
+      <div class="container content ">
+        <div class="page">
+  
+    <h1 class="page-title">Blog</h1>
+  
+  <!-- This blog serves two purposes:
+
+1. As I continue to explore how the brain functions, it gives me a medium to share what I discover, communicate my progress, and teach others what I learn.
+2. It provides a platform to share my experiences with a variety of topics. E.g. time and task management, navigating the educational landscape, useful software, etc.
+
+For my posts, I upload and reference material I think is useful (articles, code snippets, etc). <a href="/reference_material">This</a> is an aggregate of all of these items.
+<br>
+
+## Posts -->
+
+<p>I also write on <a href="https://medium.com/@wcarvalho92/latest">Medium</a>.</p>
+
+<p><font color="purple"> category </font> | <font color="red"> tags </font></p>
+
+<ol>
+
+
+<li>
+  <a href="/commentary/2018/01/29/learning_quickly/">
+    The Pitfalls of Learning Quickly
+  </a> | 
+  January 29, 2018
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> commentary </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> stereotyping, cognitive-science, social </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/review/2018/01/06/building_machines_thinking/">
+    Building Machines that Learn and Think Like People (pt 5. Thinking Fast)
+  </a> | 
+  January 06, 2018
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> review </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> cognitive-science, machine-learning, brain, deep-learning </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/review/2018/01/06/building_machines_learning/">
+    Building Machines that Learn and Think Like People (pt 4. Learning as Rapid Model-Building)
+  </a> | 
+  January 06, 2018
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> review </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> cognitive-science, machine-learning, brain, deep-learning </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/review/2018/01/01/building_machines_developmental/">
+    Building Machines that Learn and Think Like People (pt 3. Developmental Software)
+  </a> | 
+  January 01, 2018
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> review </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> cognitive-science, machine-learning, brain, deep-learning </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/review/2017/12/31/building_machines_challenges/">
+    Building Machines that Learn and Think Like People (pt 2. Challenges for Building Human-Like Machines)
+  </a> | 
+  December 31, 2017
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> review </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> cognitive-science, machine-learning, brain, deep-learning </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+
+
+<li>
+  <a href="/review/2017/12/23/building_machines_intro/">
+    Building Machines that Learn and Think Like People (pt 1. Introduction and History)
+  </a> | 
+  December 23, 2017
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> review </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> cognitive-science, machine-learning, brain, deep-learning </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+
+
+<li>
+  <a href="/tutorial/2017/09/18/jupyter-sublime/">
+    Sublime-like edits in Jupyter Notebook
+  </a> | 
+  September 18, 2017
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> tutorial </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> software </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/tutorial/2017/06/30/tf_scan/">
+    How to update multiple tensors using a single value with tf.scan
+  </a> | 
+  June 30, 2017
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> tutorial </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> tensorflow </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/research/2017/04/23/vrada/">
+    Variational Recurrent Adversarial Domain Adaptation
+  </a> | 
+  April 23, 2017
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> research </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> machine-learning, transfer-learning </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/misc/2016/09/14/pdf_annotation/">
+    Highlights: A markdown pdf annotator
+  </a> | 
+  September 14, 2016
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> misc </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> software </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/poem/2016/08/28/to_my_brain/">
+    To my brain: you don't have to tell me your secrets
+  </a> | 
+  August 28, 2016
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> poem </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> brain, introspection </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/tutorial/2016/01/08/TimeManagementPrescription/">
+    A Prescription for Time Management
+  </a> | 
+  January 08, 2016
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> tutorial </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> time-management, efficient-working </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/code/2016/01/02/TimeManagement/">
+    Time Tracker - Time Management Tool for Google Calendar
+  </a> | 
+  January 02, 2016
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> code </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> time-management, efficient-working </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/2015/11/16/machine_learning_and_brain_knowledge/">
+    Knowledge of the Brain Informing Machine Learning and Vice-Versa
+  </a> | 
+  November 16, 2015
+  
+  
+  
+  
+  | <em>
+    <font color="red"> machine-learning, brain, research </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/poem/2013/04/24/locus/">
+    Our Loci
+  </a> | 
+  April 24, 2013
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> poem </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> perception </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/poem/2013/02/14/brain/">
+    A Physicist Enamored by the Brain
+  </a> | 
+  February 14, 2013
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> poem </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> physics, brain </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/poem/2013/02/02/the_electron/">
+    What describes friendship better than Heisenberg’s Uncertainty Principle?
+  </a> | 
+  February 02, 2013
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> poem </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> physics, friendship, perception </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+
+<li>
+  <a href="/poem/2012/11/29/abyss/">
+    Abyss
+  </a> | 
+  November 29, 2012
+  
+  
+  <br />
+  <em>
+    <font color="purple"> <cite> poem </cite> </font>
+  </em>
+  
+  
+  
+  
+  | <em>
+    <font color="red"> perception, introspection </font>
+  </em>
+  
+  
+</li>
+<br />
+
+
+</ol>
+
+</div>
+      </div>
+
+    <!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!-- popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="/public/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<!--  -->
+
+<!-- Bootstrap core JavaScript -->
+<!-- <script src="/public/vendor/jquery/jquery.min.js"></script> -->
+<!-- <script src="/public/vendor/popper/popper.min.js"></script> -->
+<!-- <script src="/public/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+
+<!-- Plugin JavaScript -->
+<!-- <script src="/public/vendor/jquery-easing/jquery.easing.min.js"></script> -->
+
+<!-- Contact form JavaScript -->
+<!-- <script src="/public/js/jqBootstrapValidation.js"></script> -->
+<!-- <script src="/public/js/contact_me.js"></script> -->
+
+<!-- Custom scripts for this template -->
+<!-- <script src="/public/js/agency.min.js"></script> -->
+
+<!-- Materialize -->
+<!-- <script src="/public/js/materialize.min.js"></script> -->
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72232702-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72232702-1');
+</script>
+
+  </body>
+</html>
