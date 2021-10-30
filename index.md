@@ -2,6 +2,8 @@
 layout: default
 title: Home
 ---
+
+
 ## Introduction
 
 My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensitive, aspiring cognitive scientist. I am interested in developing computational theories of learning that help us understand how humans infer, reason with, and exploit the rich structure present in their sensory experience to enable rapid adaptation to a broad range of ecological situations. Some long-horizon goal-posts I've set to guide intermediary research and skill acquisition include: 
@@ -18,18 +20,8 @@ My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/) (representat
 Here are my [publications]({{ site.baseurl }}/main-pages/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio). If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/misc/intellectual_autobio)** in spoken word form.
 
 
-
 <br>
 
----
-## Outreach
-
-As a member of groups underrepresented in research and academia, outreach is important to me. I encourage all young scholars (especially those from marginalized backgrounds) to reach out to me with any questions. Relevant topics include (but are not limited to) studying the mind, pursuing undergraduate research, applying for fellowships, and graduate school. Lastly, [increasing minority representation in STEM is important to me](https://medium.com/@wcarvalho92/a-statement-on-the-importance-of-representation-of-minority-groups-be400d98686). Please feel free to reach out if this applies to you or if you are organizing any relevant programs.
-
-
-Feel free to contact me at wcarvalho92[at]gmail.com
-
-<br>
 
 ---
 ## Mentoring
@@ -45,9 +37,32 @@ I especially encourage underrepresented students to contact me. It's challenging
 
 <br>
 
+
+
+---
+## Outreach
+
+As a member of groups underrepresented in research and academia, outreach is important to me. I encourage all young scholars (especially those from marginalized backgrounds) to reach out to me with any questions. Relevant topics include (but are not limited to) studying the mind, pursuing undergraduate research, applying for fellowships, and graduate school. Lastly, [increasing minority representation in STEM is important to me](https://medium.com/@wcarvalho92/a-statement-on-the-importance-of-representation-of-minority-groups-be400d98686). Please feel free to reach out if this applies to you or if you are organizing any relevant programs.
+
+
+Feel free to contact me at wcarvalho92[at]gmail.com
+
+<br>
+
+
 ---
 ## News
+<!-- {% include news_2021.html %} -->
+<!-- {% include news_2020.html %} -->
+<!-- {% include news_2019.html %} -->
 {% include news.html %}
+
+
+
+
+
+
+
 
 <br>
 
