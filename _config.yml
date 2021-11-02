@@ -31,7 +31,7 @@ disqus_shortname: wilkacarvalho
 # Gems
 plugins: 
   - jekyll-sitemap
-  - jekyll/scholar
+  - jekyll-scholar
   # - jekyll-related-posts
 
 exclude:
