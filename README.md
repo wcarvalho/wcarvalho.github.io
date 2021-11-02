@@ -1,10 +1,22 @@
-# Local editting
+# Install
+
+```bash
+bundle install --path vendor/bundle
+
+```
+
+
+
+
+# Running
 
 
 ```bash
-
-bundle install
 bundle exec jekyll serve
 
 ```
 
+
+# Editing
+
+* publications: `main-pages/publications.md`

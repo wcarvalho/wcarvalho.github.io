@@ -11,8 +11,76 @@ title: Publications
 </div>
  -->
 
-<h1> Publications</h1>
+<h1>Publications</h1>
 <div class="publications">
+
+<!-- Perceptual Schemata for Generalization -->
+<div class="row publication">
+<div class="col-sm-2 center">
+<img class="pub-image responsive" src="{{ site.baseurl }}/publications/perceptual_schemata/together-4-big.png">
+</div>
+<div class="col-sm-7 center">
+    <p>
+    <strong>
+        Task-Driven Discovery of Perceptual Schemas for Generalization in Reinforcement Learning
+    </strong>
+    <br> 
+        <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+        <a href="https://lampinen.github.io/">Andrew Lampinen</a>
+        Kyriacos Nikiforou,
+        <a href="https://fh295.github.io/">Felix Hill</a>,
+        <a href="https://www.doc.ic.ac.uk/~mpsha/">Murray Shanahan</a>
+    <br>
+        <em> Under Submission </em> <br>
+        <!-- <em> ICML {Unsupervised RL, Real Life RL} Workshops, </em> 2021 <br> -->
+    </p>
+</div>
+</div>
+
+
+<!-- Successor Landmarks -->
+<div class="row publication">
+<div class="col-sm-2 center">
+<img class="pub-image responsive" src="{{ site.baseurl }}/publications/successor_landmarks/neurips-intro-figure-8.png">
+</div>
+<div class="col-sm-7 center">
+    <p>
+    <strong>
+        Successor Feature Landmarks for Long-Horizon Goal-Conditioned Reinforcement Learning
+    </strong>
+    <br> 
+        <a href="https://www.linkedin.com/in/2016choang/">Christopher Hoang</a>,
+        <a href="https://sites.google.com/view/sungryull">Sungryull Sohn</a>,
+        <a href="https://wook.kr/">Jongwook Choi</a>,
+        <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+        <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>
+    <br>
+        <em> NeurIPS, </em> 2021 <br>
+    </p>
+</div>
+</div>
+
+
+<!-- Compositional Language Generalization -->
+<div class="row publication">
+<div class="col-sm-2 center">
+<img class="pub-image responsive" src="{{ site.baseurl }}/publications/compositional_instructions/no_border.png">
+</div>
+<div class="col-sm-7 center">
+    <p>
+    <strong>
+        Learning Compositional Tasks from Language Instructions
+    </strong>
+    <br> 
+      <a href="https://sites.google.com/umich.edu/llajan/">Lajanugen Logeswaran</a>,
+      <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+      <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>
+    <br>
+        <em> NeurIPS Deep RL Workshop, </em> 2021 <br>
+    </p>
+</div>
+</div>
+
 
 
 <!-- Perceptual Schemata -->
@@ -23,7 +91,7 @@ title: Publications
 <div class="col-sm-7 center">
     <p>
     <strong>
-        <a href="{{ site.baseurl }}/publications/perceptual_schemata/main">Learning to Represent State with Perceptual Schemata</a>
+        Learning to Represent State with Perceptual Schemata
     </strong>
     <br> 
         <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
@@ -34,7 +102,7 @@ title: Publications
 </div>
 </div>
 
-
+<!-- IJCAI -->
 <div class="row publication">
 <div class="col-sm-2 center">
   <img class="pub-image responsive" src="{{ site.baseurl }}/files/publications/roma/toast-bread.png">
