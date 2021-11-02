@@ -42,16 +42,3 @@ exclude:
   - README.md
   - Rakefile
 
-# related:
-#     max_count: 5
-#     min_score: 0.1
-#     accuracy: 0.75
-# pagination:
-#   enabled: true
-#   per_page: 3
-#   limit: 0
-#   sort_field: 'date'
-#   sort_reverse: true
-#   trail: 
-#     before: 2
-#     after: 2
