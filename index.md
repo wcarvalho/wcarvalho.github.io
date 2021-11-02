@@ -13,14 +13,15 @@ My name is Wilka[^1] Torrico De Carvalho and I am an Afro-Latino, socially sensi
 
 <!-- Currently, I'm pursuing a PhD in Machine Learning at the University of Michigan where I study how an agent can learn a state-representation composed of flexible partitions of its sensory stream that facilitate generalizing its behavioral policy to novel situations. More broadly, I intersects **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. I hope these AI models can inform my future cognitive theories :)
  -->
- Towards this end, I am pursuing a PhD in Machine Learning at the University of Michigan where I study how **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. I hope these AI models can inform my future cognitive theories :)
+Towards this end, I am pursuing a PhD in Machine Learning at the University of Michigan where I study how **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. I hope these AI models can inform my future cognitive theories :)
 
 My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/) (representation learning), [Satinder Singh](https://web.eecs.umich.edu/~baveja/) (reinforcement learning), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html) (psychology). 
 
 Here are my [publications]({{ site.baseurl }}/main-pages/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio). If you're curious, here is my **[Intellectual Autobiography]({{ site.baseurl }}/misc/intellectual_autobio)** in spoken word form.
 
 
-<br>
+### News
+{% include news.html %}
 
 
 ---
@@ -49,22 +50,6 @@ Feel free to contact me at wcarvalho92[at]gmail.com
 
 <br>
 
-
----
-## News
-<!-- {% include news_2021.html %} -->
-<!-- {% include news_2020.html %} -->
-<!-- {% include news_2019.html %} -->
-{% include news.html %}
-
-
-
-
-
-
-
-
-<br>
 
 ---
 ## Miscellaneous
