@@ -20,7 +20,7 @@ jobs:
             ${{ runner.os }}-gems-
 
       - name: Build & Deploy to GitHub Pages
-        uses: wcarvalho/wcarvalho@source
+        uses: joshlarsen/jekyll4-deploy-gh-pages@master
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ secrets.GITHUB_REPOSITORY }}
