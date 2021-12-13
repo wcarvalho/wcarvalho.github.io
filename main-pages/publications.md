@@ -17,12 +17,12 @@ title: Publications
 <!-- Perceptual Schemata for Generalization -->
 <div class="row publication">
 <div class="col-sm-2 center">
-<img class="pub-image responsive" src="{{ site.baseurl }}/publications/perceptual_schemata/together-4-big.png">
+<img class="pub-image responsive" src="{{ site.baseurl }}/publications/farm/tasks.png">
 </div>
 <div class="col-sm-7 center">
     <p>
     <strong>
-        Task-Driven Discovery of Perceptual Schemas for Generalization in Reinforcement Learning
+        <a href="{{ site.baseurl }}/publications/farm/paper.pdf">Feature-Attending Recurrent Modules for Generalization in Reinforcement Learning</a>
     </strong>
     <br> 
         <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,

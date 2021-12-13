@@ -1,13 +1,23 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en-us">
 
-<div class="post">
-  <center>
-    <h2 class="post-title">{{ page.title }}</h2>
-  </center>
-  <span class="post-date">
-    {{ page.date | date_to_string }}
-  </span>
-  {{ content }}
-</div>
+  {% include head.html %}
+  <!-- <script type="text/javascript" src="resources/hidebib.js"></script> -->
+
+  <body class="layout">
+
+      {% include top.html %}
+      {% include navbar.html %}
+      <div class="container content ">
+        {{ content }}
+      </div>
+
+    {% include scripts.html %}
+    <!-- <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+ -->
+    <!-- {% include project_scripts.html %} -->
+    {% include mathjax_support.html %}
+    {% include analytics.html %}
+  </body>
+</html>

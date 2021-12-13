@@ -34,6 +34,11 @@ table.intro{
 	outline:none;
 }
 
+#table1 table, tr, td, th {
+     border: 0;
+     background-color: #FFFFFF;
+}
+
 
 /*body {
   margin: 0;
