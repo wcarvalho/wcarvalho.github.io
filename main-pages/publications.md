@@ -22,7 +22,8 @@ title: Publications
 <div class="col-sm-7 center">
     <p>
     <strong>
-        <a href="{{ site.baseurl }}/publications/farm/paper.pdf">Feature-Attending Recurrent Modules for Generalization in Reinforcement Learning</a>
+        <a href="https://arxiv.org/abs/2112.08369">Feature-Attending Recurrent Modules for Generalizing Object-Centric Behavior
+</a>
     </strong>
     <br> 
         <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
