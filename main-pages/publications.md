@@ -35,6 +35,15 @@ title: Publications
         <em> Under Submission </em> <br>
         <!-- <em> ICML {Unsupervised RL, Real Life RL} Workshops, </em> 2021 <br> -->
     </p>
+    <div class="row pub-links">
+    <p>
+      <a href="https://github.com/wcarvalho/farm">
+      <button type = "button" class = "btn btn-primary">
+      Code
+      </button>
+      </a>
+    </p>
+    </div>
 </div>
 </div>
 
