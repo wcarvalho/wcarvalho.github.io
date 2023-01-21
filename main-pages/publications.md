@@ -14,6 +14,78 @@ title: Publications
 <h1>Publications</h1>
 <div class="publications">
 
+
+<!-- IJCAI -->
+<div class="row publication">
+<div class="col-sm-2 center">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/msfa_iclr2023/intro.png">
+</div>
+<div class="col-sm-7 center">
+  <p>
+  <strong>
+    Composing Task Knowledge With Modular Successor Feature Approximators,
+  </strong>
+  <br>
+  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+  <a href="https://oatml.cs.ox.ac.uk/members/angelos_filos/">Angelos Filos</a>,
+  <a href="http://www-personal.umich.edu/~rickl/">Richard L. Lewis</a>,
+  <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>,
+  <a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a>
+  <br>
+  <em> ICLR, </em> 2023 <br>
+  <em> NeurIPS Deep RL Workshop, </em> 2022
+  </p>
+  <div class="row pub-links">
+  <p>
+    <a href="https://modularsf.github.io/modular_sf/">
+    <button type = "button" class = "btn btn-primary">
+    Website
+    </button>
+    </a>
+    <a href="https://github.com/wcarvalho/msfa_iclr2023/tree/main">
+    <button type = "button" class = "btn btn-primary">
+    Code
+    </button>
+    </a>
+    <!-- <a href="https://slideslive.com/38938237/learning-objectinteraction-tasks-with-less-supervision-by-learning-an-attentive-objectmodel">
+    <button type = "button" class = "btn btn-primary">
+    NeurIPS Talk
+    </button>
+    </a>
+    <a href="https://twimlai.com/relational-object-centric-agents-for-completing-simulated-household-tasks-with-wilka-carvalho/">
+    <button type = "button" class = "btn btn-primary">
+    Podcast
+    </button>
+    </a> -->
+  </p>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Compositional Language Generalization -->
+<div class="row publication">
+<div class="col-sm-2 center">
+<img class="pub-image responsive" src="{{ site.baseurl }}/publications/compositional_instructions/no_border.png">
+</div>
+<div class="col-sm-7 center">
+    <p>
+    <strong>
+        Learning Compositional Tasks from Language Instructions
+    </strong>
+    <br>
+      <a href="https://sites.google.com/umich.edu/llajan/">Lajanugen Logeswaran</a>,
+      <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+      <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>
+    <br>
+        <em> AAAI, </em> 2023 <br>
+        <em> NeurIPS Deep RL Workshop, </em> 2021 <br>
+    </p>
+</div>
+</div>
+
+
 <!-- Perceptual Schemata for Generalization -->
 <div class="row publication">
 <div class="col-sm-2 center">
@@ -71,27 +143,6 @@ title: Publications
 </div>
 
 
-<!-- Compositional Language Generalization -->
-<div class="row publication">
-<div class="col-sm-2 center">
-<img class="pub-image responsive" src="{{ site.baseurl }}/publications/compositional_instructions/no_border.png">
-</div>
-<div class="col-sm-7 center">
-    <p>
-    <strong>
-        Learning Compositional Tasks from Language Instructions
-    </strong>
-    <br> 
-      <a href="https://sites.google.com/umich.edu/llajan/">Lajanugen Logeswaran</a>,
-      <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
-      <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>
-    <br>
-        <em> NeurIPS Deep RL Workshop, </em> 2021 <br>
-    </p>
-</div>
-</div>
-
-
 
 <!-- Perceptual Schemata -->
 <div class="row publication">
@@ -111,6 +162,8 @@ title: Publications
     </p>
 </div>
 </div>
+
+
 
 <!-- IJCAI -->
 <div class="row publication">
