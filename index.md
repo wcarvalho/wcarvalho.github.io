@@ -13,7 +13,8 @@ My name is Wilka[^1] Torrico De Carvalho and I am a Black & Hispanic, socially s
 
 <!-- Currently, I'm pursuing a PhD in Machine Learning at the University of Michigan where I study how an agent can learn a state-representation composed of flexible partitions of its sensory stream that facilitate generalizing its behavioral policy to novel situations. More broadly, I intersects **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. I hope these AI models can inform my future cognitive theories :)
  -->
-Towards this end, I am currently pursuing a PhD in Machine Learning at the University of Michigan where I focus on **weak inductive biases for object-centric deep reinforcement learning**.
+<!-- Towards this end, I am currently pursuing a PhD in Machine Learning at the University of Michigan where I focus on **weak inductive biases for object-centric deep reinforcement learning**. -->
+Currently, I'm most excited about exploring whether [successor](https://proceedings.neurips.cc/paper/2017/file/350db081a661525235354dd3e19b8c05-Paper.pdf) [features](https://modularsf.github.io/modular_sf/) can provide a principled framework for understanding how brains learn, compose and transfer predictive knowledge and behavior.
 My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/), [Satinder Singh](https://web.eecs.umich.edu/~baveja/), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html).
 
 Here are my [publications]({{ site.baseurl }}/main-pages/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio).
