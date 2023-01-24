@@ -94,8 +94,7 @@ title: Publications
 <div class="col-sm-7 center">
     <p>
     <strong>
-        <a href="https://arxiv.org/abs/2112.08369">Feature-Attending Recurrent Modules for Generalizing Object-Centric Behavior
-</a>
+        <a href="https://arxiv.org/abs/2112.08369">Feature-Attending Recurrent Modules for Generalizing Object-Centric Behavior</a>
     </strong>
     <br> 
         <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
@@ -109,6 +108,11 @@ title: Publications
     </p>
     <div class="row pub-links">
     <p>
+      <a href="http://cogscikid.com/farm/">
+      <button type = "button" class = "btn btn-primary">
+      Website
+      </button>
+      </a>
       <a href="https://github.com/wcarvalho/farm">
       <button type = "button" class = "btn btn-primary">
       Code
