@@ -15,7 +15,7 @@ title: Publications
 <div class="publications">
 
 
-<!-- IJCAI -->
+<!-- MSFA, ICLR 2023 -->
 <div class="row publication">
 <div class="col-sm-2 center">
   <img class="pub-image responsive" src="{{ site.baseurl }}/publications/msfa_iclr2023/intro.png">
@@ -64,7 +64,7 @@ title: Publications
 
 
 
-<!-- Compositional Language Generalization -->
+<!-- AAAI, 2023. Compositional Language Generalization -->
 <div class="row publication">
 <div class="col-sm-2 center">
 <img class="pub-image responsive" src="{{ site.baseurl }}/publications/compositional_instructions/no_border.png">
@@ -103,8 +103,8 @@ title: Publications
         <a href="https://fh295.github.io/">Felix Hill</a>,
         <a href="https://www.doc.ic.ac.uk/~mpsha/">Murray Shanahan</a>
     <br>
-        <em> Under Submission </em> <br>
-        <!-- <em> ICML {Unsupervised RL, Real Life RL} Workshops, </em> 2021 <br> -->
+        <!-- <em> Under Submission  </em> <br> -->
+        <em> ICML {Unsupervised RL, Real Life RL} Workshops, </em> 2021 <br>
     </p>
     <div class="row pub-links">
     <p>
@@ -148,24 +148,6 @@ title: Publications
 
 
 
-<!-- Perceptual Schemata -->
-<div class="row publication">
-<div class="col-sm-2 center">
-<img class="pub-image responsive" src="{{ site.baseurl }}/publications/perceptual_schemata/architecture.png">
-</div>
-<div class="col-sm-7 center">
-    <p>
-    <strong>
-        Learning to Represent State with Perceptual Schemata
-    </strong>
-    <br> 
-        <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
-        <a href="https://www.doc.ic.ac.uk/~mpsha/">Murray Shanahan</a>
-    <br>
-        <em> ICML {Unsupervised RL, Real Life RL} Workshops, </em> 2021 <br>
-    </p>
-</div>
-</div>
 
 
 
