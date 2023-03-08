@@ -23,7 +23,9 @@ title: Publications
 <div class="col-sm-7 center">
   <p>
   <strong>
-    Composing Task Knowledge With Modular Successor Feature Approximators,
+    <a href="https://arxiv.org/pdf/2301.12305.pdf">
+      Composing Task Knowledge With Modular Successor Feature Approximators
+    </a>,
   </strong>
   <br>
   <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
