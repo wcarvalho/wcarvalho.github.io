@@ -1,22 +1,68 @@
 ---
 title: Press
-<!-- img: /files/writing/abyss.jpg -->
-<!-- width: 75 -->
-<!-- caption: My perfect world. -->
 layout: default_pure
 comments: true
 ---
 
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-lg-12 text-center">
-      <div id="projects"><h1 class="section-heading">Press</h1></div>
-    </div>
-  </div>
-</div>
- -->
+
 <!-- -------------------------- -->
-<!-- --------- 2020  -------- -->
+<!-- --------- 2021 - 2022  -------- -->
+<!-- -------------------------- -->
+<section class="bg-light" id="portfolio">
+<div class="container">
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <div id="projects"><h3 class="section-heading">2021-2022</h3></div>
+  </div>
+
+
+<!-- ICLR Workshop spotlight -->
+<div class="col-md-6 portfolio-item">
+<a class="portfolio-link" data-toggle="modal" href="https://www.rsipvision.com/ComputerVisionNews-2022March/10/">
+<div class="portfolio-hover">
+<div class="portfolio-hover-content">
+  <i class="fa fa-plus fa-3x">Computer Vision News graciously gave a spotlight to our ICLR 2022 workshop on Objects, Structure, and Causality.</i>
+</div>
+</div>
+  <img class="img-fluid" src="{{ site.baseurl }}/main-pages/press-photos/computer_vision_news.png" alt="">
+</a>
+<div class="portfolio-caption">
+  <h4>Computer Vision News: ICLR Workshop Spotlight</h4>
+  <p class="text-muted">March, 2022</p>
+</div>
+</div>
+
+
+<!-- ICLR Workshop spotlight -->
+<div class="col-md-6 portfolio-item">
+<a class="portfolio-link" data-toggle="modal" href="https://ai.engin.umich.edu/stories/student-to-deliver-invited-talk-on-future-directions-in-deep-reinforcement-learning
+">
+<div class="portfolio-hover">
+<div class="portfolio-hover-content">
+  <i class="fa fa-plus fa-3x">I gave an opinion talk about arguing that Deep RL can benefit from learning composable primive representations.</i>
+</div>
+</div>
+  <img class="img-fluid" src="{{ site.baseurl }}/main-pages/press-photos/deep_rl_opinion.png" alt="">
+</a>
+<div class="portfolio-caption">
+  <h4>University of Michigan: feature about Neurips Deep RL opinion talk</h4>
+  <p class="text-muted">December 10, 2021</p>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+</section>
+
+
+
+
+
+<!-- -------------------------- -->
+<!-- --------- 2018 - 2020  -------- -->
 <!-- -------------------------- -->
 <section class="bg-white" id="portfolio">
 <div class="container">
@@ -133,7 +179,7 @@ comments: true
 
 
 <!-- -------------------------- -->
-<!-- --------- 2025  -------- -->
+<!-- --------- 2015  -------- -->
 <!-- -------------------------- -->
 <section class="bg-white" id="portfolio">
 <div class="container">
