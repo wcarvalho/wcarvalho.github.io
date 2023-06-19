@@ -25,7 +25,7 @@ title: Publications
   <strong>
     <a href="https://arxiv.org/pdf/2301.12305.pdf">
       Composing Task Knowledge With Modular Successor Feature Approximators
-    </a>,
+    </a>
   </strong>
   <br>
   <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
@@ -74,7 +74,9 @@ title: Publications
 <div class="col-sm-7 center">
     <p>
     <strong>
-        Learning Compositional Tasks from Language Instructions
+      <a href="{{ site.baseurl }}/publications/compositional_instructions/AAAI_23.png">
+      Learning Compositional Tasks from Language Instructions
+    </a>
     </strong>
     <br>
       <a href="https://sites.google.com/umich.edu/llajan/">Lajanugen Logeswaran</a>,
