@@ -74,7 +74,7 @@ title: Publications
 <div class="col-sm-7 center">
     <p>
     <strong>
-      <a href="{{ site.baseurl }}/publications/compositional_instructions/AAAI_23.png">
+      <a href="{{ site.baseurl }}/publications/compositional_instructions/AAAI_23.pdf">
       Learning Compositional Tasks from Language Instructions
     </a>
     </strong>
