@@ -98,7 +98,7 @@ title: Publications
 <div class="col-sm-7 center">
     <p>
     <strong>
-        <a href="https://arxiv.org/abs/2112.08369">Feature-Attending Recurrent Modules for Generalizing Object-Centric Behavior</a>
+        <a href="https://arxiv.org/abs/2112.08369">Feature-Attending Recurrent Modules for Generalization in Reinforcement Learning</a>
     </strong>
     <br> 
         <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
@@ -107,7 +107,7 @@ title: Publications
         <a href="https://fh295.github.io/">Felix Hill</a>,
         <a href="https://www.doc.ic.ac.uk/~mpsha/">Murray Shanahan</a>
     <br>
-        <!-- <em> Under Submission  </em> <br> -->
+        <em> TMLR, </em> 2023 <br>
         <em> ICML {Unsupervised RL, Real Life RL} Workshops, </em> 2021 <br>
     </p>
     <div class="row pub-links">
