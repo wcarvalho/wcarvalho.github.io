@@ -4,7 +4,6 @@ title: Home
 ---
 
 
-## Introduction
 
 Predictions about future reward drive many (if not all) of our thoughts and behaviors. However, important rewarding events---getting good grades on exams, establishing meaningful relationships, buying your first home---are few and far in between. To work towards these events, we must also predict which behaviors and which intermediary events will bring these rewards into fruition---that studying in a particular manner will provide us with good grades, that some types of social interactions will establish trust and depth of connection, that certain spending habits will facilitate saving for our first home.
 
@@ -15,7 +14,7 @@ Currently, I am a research fellow in Harvard's [Kempner Institute for the Study 
 
 
 
-I earned my PhD at the University of Michigan, where I studied deep reinforcement learning with [Honglak Lee](https://web.eecs.umich.edu/~honglak/), [Satinder Singh](https://web.eecs.umich.edu/~baveja/), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html), and was supported by the NSF GRFP and a Rackham Merit Fellowship. During my PhD, I was fortunate to spend significant time at DeepMind working with [Murray Shanahan](https://www.doc.ic.ac.uk/~mpsha/), [Daniel Zoran](https://people.csail.mit.edu/danielzoran/), and [Danilo Rezende](https://danilorezende.com/about/). Prior to that, I earned an MS in CS at USC working with [Yan Liu](https://viterbi-web.usc.edu/~liu32/) on machine learning for healthcare, and a BS in Physics at Stony Brook University working with [Axel Drees](https://www.stonybrook.edu/commcms/nuclear-experiment/personal/axeldrees.html) on computational nuclear physics.
+I earned my Ph.D. at the University of Michigan, where I studied deep reinforcement learning with [Honglak Lee](https://web.eecs.umich.edu/~honglak/), [Satinder Singh](https://web.eecs.umich.edu/~baveja/), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html), and was supported by the NSF GRFP and a Rackham Merit Fellowship. During my PhD, I was fortunate to spend significant time at DeepMind working with [Murray Shanahan](https://www.doc.ic.ac.uk/~mpsha/), [Daniel Zoran](https://people.csail.mit.edu/danielzoran/), and [Danilo Rezende](https://danilorezende.com/about/). Prior to that, I earned an M.S. in CS at USC working with [Yan Liu](https://viterbi-web.usc.edu/~liu32/) on machine learning for healthcare, and a B.S. in Physics at Stony Brook University working with [Axel Drees](https://www.stonybrook.edu/commcms/nuclear-experiment/personal/axeldrees.html) on computational nuclear physics.
 
 
 <!-- My name is Wilka[^1] Torrico De Carvalho and I am a Black & Hispanic, socially sensitive, aspiring cognitive scientist. My long-term goal is to develop theories for human learning and generalization. In particular, I'm interested in how we discover and exploit richly structured representations to enable sophisticated behavior and rapid adaptation. Some long-horizon goal-posts I've set to guide intermediary research and skill acquisition include: -->
