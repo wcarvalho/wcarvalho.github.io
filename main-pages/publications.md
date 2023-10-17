@@ -15,6 +15,36 @@ title: Publications
 <div class="publications">
 
 
+
+<!-- CSFA, NeurIPS 2023 -->
+<div class="row publication">
+<div class="col-sm-2 center">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/msfa_iclr2023/intro.png">
+</div>
+<div class="col-sm-7 center">
+  <p>
+  <strong>
+    Combining Behaviors With the Successor Features Keyboard
+  </strong>
+  <br>
+  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+  <a href="https://andresnds.wordpress.com/">Andre Saraiva</a>,
+  <a href="https://oatml.cs.ox.ac.uk/members/angelos_filos/">Angelos Filos</a>,
+  <a href="https://lampinen.github.io/">Andrew Lampinen</a>,
+  <a href="https://www.matthey.me/">Loic Matthey</a>,
+  <a href="http://www-personal.umich.edu/~rickl/">Richard L. Lewis</a>,
+  <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>,
+  <a href="https://web.eecs.umich.edu/~baveja/">Satinder Singh</a>
+  <a href="https://danilorezende.com/about/">Danilo J. Rezende</a>
+  <a href="https://people.csail.mit.edu/danielzoran/">Daniel Zoran</a>
+  <br>
+  <em> NeurIPS, </em> 2023 <br>
+  </p>
+</div>
+</div>
+
+
+
 <!-- MSFA, ICLR 2023 -->
 <div class="row publication">
 <div class="col-sm-2 center">
