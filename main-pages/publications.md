@@ -19,12 +19,12 @@ title: Publications
 <!-- CSFA, NeurIPS 2023 -->
 <div class="row publication">
 <div class="col-sm-2 center">
-  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/sf_keyboard/paper.pdf">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/sf_keyboard/figure.png">
 </div>
 <div class="col-sm-7 center">
   <p>
   <strong>
-    <a href="{{ site.baseurl }}/publications/sf_keyboard/fiure.png">
+    <a href="{{ site.baseurl }}/publications/sf_keyboard/paper.pdf">
       Combining Behaviors with the Successor Features Keyboard
     </a>
   </strong>
