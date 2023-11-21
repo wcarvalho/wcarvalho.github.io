@@ -24,7 +24,7 @@ title: Publications
 <div class="col-sm-7 center">
   <p>
   <strong>
-    <a href="{{ site.baseurl }}/publications/sf_keyboard/paper.pdf">
+    <a href="https://arxiv.org/abs/2310.15940">
       Combining Behaviors with the Successor Features Keyboard
     </a>
   </strong>
@@ -55,7 +55,7 @@ title: Publications
 <div class="col-sm-7 center">
   <p>
   <strong>
-    <a href="https://arxiv.org/pdf/2301.12305.pdf">
+    <a href="https://arxiv.org/abs/2310.15940">
       Composing Task Knowledge With Modular Successor Feature Approximators
     </a>
   </strong>
