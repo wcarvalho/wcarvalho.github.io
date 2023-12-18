@@ -3,33 +3,23 @@ layout: default
 title: Home
 ---
 
-
+<!-- My name is Wilka[^1] Torrico De Carvalho and I am interested in understanding people. -->
 
 Predictions about future reward drive many (if not all) of our thoughts and behaviors. However, important rewarding events---getting good grades on exams, establishing meaningful relationships, buying your first home---are few and far in between. To work towards these events, we must also predict which behaviors and which intermediary events will bring these rewards into fruition---that studying in a particular manner will provide us with good grades, that some types of social interactions will establish trust and depth of connection, that certain spending habits will facilitate saving for our first home.
 
 1. How does the brain discover and encode this predictive knowledge using rich sensory observations of a large and continuously evolving world?
 2. How does the brain exploit this predictive knowledge to make effective plans, combine its known behaviors, and coordinate with other social agents?
 
-Currently, I am a research fellow in Harvard's [Kempner Institute for the Study of Natural and Artificial Intelligence](https://www.harvard.edu/kempner-institute/). To think about these questions, I aim to draw from and advance deep learning and reinforcement learning algorithms that describe human learning and generalization. While my training is in machine learning, I hope to collaborate broadly with neuroscientists and cognitive scientists. Please reach out!
+Currently, I am a research fellow in Harvard's [Kempner Institute for the Study of Natural and Artificial Intelligence](https://www.harvard.edu/kempner-institute/). To study these questions, I develop deep reinforcement learning based theories for human learning and generalization. While my training is in machine learning, I hope to collaborate broadly with neuroscientists and cognitive scientists. Please reach out!
 
 
 
 I earned my Ph.D. at the University of Michigan, where I studied deep reinforcement learning with [Satinder Singh](https://web.eecs.umich.edu/~baveja/), [Honglak Lee](https://web.eecs.umich.edu/~honglak/), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html), and was supported by the NSF GRFP and a Rackham Merit Fellowship. During my PhD, I was fortunate to spend significant time at DeepMind working with [Murray Shanahan](https://www.doc.ic.ac.uk/~mpsha/), [Daniel Zoran](https://people.csail.mit.edu/danielzoran/), and [Danilo Rezende](https://danilorezende.com/about/). I got my first stint in ML in a CS M.S. at USC, where I worked with [Yan Liu](https://viterbi-web.usc.edu/~liu32/) on machine learning for healthcare. Before then, I earned a B.S. in Physics at Stony Brook University where I worked with [Axel Drees](https://www.stonybrook.edu/commcms/nuclear-experiment/personal/axeldrees.html) on computational nuclear physics.
 
+#### Collaborations and Mentorship:
+Please feel free to contact me if you'd like to collaborate or be mentored on a research project! I'm actively looking for research assistants on several projects neuroAI intersecting cognitive science and deep reinforcement learning. **I especially encourage students from groups underrepresented in cognitive science, neuroscience, or AI to reach out.**
 
-<!-- My name is Wilka[^1] Torrico De Carvalho and I am a Black & Hispanic, socially sensitive, aspiring cognitive scientist. My long-term goal is to develop theories for human learning and generalization. In particular, I'm interested in how we discover and exploit richly structured representations to enable sophisticated behavior and rapid adaptation. Some long-horizon goal-posts I've set to guide intermediary research and skill acquisition include: -->
-
-<!-- * [how humans set their life goals and work towards them]({{ site.baseurl }}/misc/questions), and  -->
-<!-- * [why our representation learning scheme induces stereotypes and how this relates to our behavioral responses](https://medium.com/@wcarvalho92/success-vs-failure-generalization-vs-stereotyping-40de0713ab5d) (i.e. our [policies](https://stackoverflow.com/questions/46260775/what-is-a-policy-in-reinforcement-learning#:~:text=A%20policy%20defines%20the%20learning,still%20didn't%20fully%20understand.)). -->
-
-<!-- Currently, I'm pursuing a PhD in Machine Learning at the University of Michigan where I study how an agent can learn a state-representation composed of flexible partitions of its sensory stream that facilitate generalizing its behavioral policy to novel situations. More broadly, I intersects **object-centric representation learning and reinforcement learning** can bring us closer to human-level artificial intelligence. I hope these AI models can inform my future cognitive theories :)
- -->
-<!-- Towards this end, I am currently pursuing a PhD in Machine Learning at the University of Michigan where I focus on **weak inductive biases for object-centric deep reinforcement learning**. -->
-<!-- Currently, I'm most excited about exploring whether [successor](https://proceedings.neurips.cc/paper/2017/file/350db081a661525235354dd3e19b8c05-Paper.pdf) [features](https://modularsf.github.io/modular_sf/) can provide a principled framework for understanding how brains learn, compose and transfer predictive knowledge and behavior.
-My advisors are [Honglak Lee](https://web.eecs.umich.edu/~honglak/), [Satinder Singh](https://web.eecs.umich.edu/~baveja/), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html).
-
-Here are my [publications]({{ site.baseurl }}/main-pages/publications) and this is my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en). Here is a [third-person bio]({{ site.baseurl }}/misc/bio).
-If you're curious, here is my [Intellectual Autobiography]({{ site.baseurl }}/misc/intellectual_autobio) in spoken word form. -->
+You can reach me at wcarvalho[at]g.harvard.edu
 
 
 
@@ -38,15 +28,6 @@ If you're curious, here is my [Intellectual Autobiography]({{ site.baseurl }}/mi
 
 
 
----
-
-## Mentoring and outreach
-
-If you're interested in characterizing the brain's learning algorithms with machine learning (in particular, deep reinforcement learning), please reach out.  I am always open to mentoring passionate and motivated students.
-**I especially encourage students from groups underrepresented in cognitive science, neuroscience, or AI to reach out. I would not be where I am without the help of others.**
- <!-- Relevant topics include (but are not limited to) studying the mind, pursuing undergraduate research, applying for fellowships, and graduate school. Lastly, [increasing minority representation in STEM is important to me](https://medium.com/@wcarvalho92/a-statement-on-the-importance-of-representation-of-minority-groups-be400d98686). Please feel free to reach out if this applies to you or if you are organizing any relevant programs. -->
-
-Feel free to contact me at wcarvalho92[at]gmail.com
 
 <br>
 

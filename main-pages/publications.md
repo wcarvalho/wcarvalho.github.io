@@ -55,7 +55,7 @@ title: Publications
 <div class="col-sm-7 center">
   <p>
   <strong>
-    <a href="https://arxiv.org/abs/2310.15940">
+    <a href="https://arxiv.org/abs/2301.12305">
       Composing Task Knowledge With Modular Successor Feature Approximators
     </a>
   </strong>
