@@ -13,3 +13,4 @@ gem 'jekyll-scholar'
 gem 'unicode_utils'
 
 gem "kramdown-parser-gfm"
+gem 'bundler', '~> 2.4.22'

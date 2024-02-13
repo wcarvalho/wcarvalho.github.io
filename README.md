@@ -1,7 +1,7 @@
 # Install
 
 ```bash
-bundle config set --local path vendor/bundle
+bundle install --path vendor/bundle
 
 ```
 
@@ -20,3 +20,4 @@ bundle exec jekyll serve
 # Editing
 
 * publications: `main-pages/publications.md`
+
