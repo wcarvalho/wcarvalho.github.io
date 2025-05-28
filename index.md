@@ -18,8 +18,8 @@ I earned my Ph.D. at the University of Michigan, where I studied deep reinforcem
 
 ### Collaboration and Mentorship
 Please feel free to contact me if you'd like to collaborate or be mentored on a research project! While my training is in machine learning, I hope to collaborate broadly with neuroscientists and cognitive scientists.
-
-I'm **actively looking for research assistants** on several neuro-AI projects intersecting cognitive science and deep reinforcement learning. **I especially encourage students from underrepresented groups to reach out.**
+<!--I'm **actively looking for research assistants** on several neuro-AI projects intersecting cognitive science and deep reinforcement learning. -->
+<!--**I especially encourage students from underrepresented groups to reach out.**-->
 
 You can reach me at wcarvalho[at]g.harvard.edu
 
