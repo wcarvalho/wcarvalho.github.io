@@ -11,14 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Ruby and bundler cache
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true
 
-      - name: Install correct bundler version
-        run: gem install bundler:2.4.22
+      - name: Install correct bundler version and dependencies
+        run: |
+          gem install bundler:2.4.22
+          bundle install
 
       - name: Build & Deploy to GitHub Pages
         uses: joshlarsen/jekyll4-deploy-gh-pages@v1.9
