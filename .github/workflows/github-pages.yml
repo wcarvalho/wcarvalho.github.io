@@ -17,6 +17,9 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
+      - name: Install correct bundler version
+        run: gem install bundler:2.4.22
+
       - name: Build & Deploy to GitHub Pages
         uses: joshlarsen/jekyll4-deploy-gh-pages@v1.9
         env: 
