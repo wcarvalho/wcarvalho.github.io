@@ -5,12 +5,14 @@ title: Home
 
 <!-- My name is Wilka[^1] Torrico De Carvalho and I am fundamentally interested in understanding people, their values, how. -->
 
+
 Predictions about future reward drive many (if not all) of our thoughts and behaviors. However, important rewarding events---getting good grades on exams, establishing meaningful relationships, buying your first home---are few and far in between. To work towards these events, we must also predict which behaviors and which intermediary events will bring these rewards into fruition---that studying in a particular manner will provide us with good grades, that some types of social interactions will establish trust and depth of connection, that certain spending habits will facilitate saving for our first home.
 
 1. How does the brain discover and encode this predictive knowledge using rich sensory observations of a large and continuously evolving world?
 2. How does the brain exploit this predictive knowledge to make effective plans, combine its known behaviors, and coordinate with other social agents?
 
-Currently, I am a research fellow in Harvard's [Kempner Institute for the Study of Natural and Artificial Intelligence](https://www.harvard.edu/kempner-institute/). To study these questions, I develop deep reinforcement learning based theories for human learning and generalization. 
+Currently, I am a research fellow in Harvard's [Kempner Institute for the Study of Natural and Artificial Intelligence](https://www.harvard.edu/kempner-institute/). To study these questions, I develop deep reinforcement learning based theories for human learning and generalization. You can find my recent research on my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en).
+
 
 
 
