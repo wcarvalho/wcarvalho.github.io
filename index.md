@@ -12,7 +12,7 @@ Predictions about future reward drive many (if not all) of our thoughts and beha
 2. How does the brain exploit this predictive knowledge to make effective plans, combine its known behaviors, and coordinate with other social agents?
 3. How can we harness this theoretical understanding to build tools that enhance human agency and help people achieve their goals?
 
-Currently, I am a research fellow in Harvard's [Kempner Institute for the Study of Natural and Artificial Intelligence](https://www.harvard.edu/kempner-institute/). To study these questions, I develop deep reinforcement learning based theories for human learning and generalization. You can find my recent research on my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en).
+Currently, I am a research fellow in Harvard's [Kempner Institute for the Study of Natural and Artificial Intelligence](https://www.harvard.edu/kempner-institute/) where I work closely with [Sam Gershman](https://psychology.fas.harvard.edu/people/samuel-j-gershman). To study these questions, I develop deep reinforcement learning based theories for human learning and generalization. You can find my recent research on my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en).
 
 
 
