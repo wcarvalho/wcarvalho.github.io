@@ -21,6 +21,7 @@ I earned my Ph.D. at the University of Michigan, where I studied deep reinforcem
 
 ### Collaboration and Mentorship
 Please feel free to contact me if you'd like to collaborate or be mentored on a research project! While my training is in machine learning, I hope to collaborate broadly with neuroscientists and cognitive scientists.
+**I am also interested in work that makes contact with helping marginalized and minority groups. If you are doing research in this space or organizing any programs and are interested in collaborating, please reach out!**
 <!--I'm **actively looking for research assistants** on several neuro-AI projects intersecting cognitive science and deep reinforcement learning. -->
 <!--**I especially encourage students from underrepresented groups to reach out.**-->
 
