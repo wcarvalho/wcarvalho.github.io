@@ -16,6 +16,165 @@ title: Publications
 
 
 
+<!-- NiceWebRL, NeurIPS Workshop 2025 -->
+<div class="row publication">
+<div class="col-sm-2 center">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/nicewebrl/figure.gif">
+</div>
+<div class="col-sm-7 center">
+  <p>
+  <strong>
+    <a href="https://arxiv.org/abs/2508.15693">NiceWebRL: a Python library for human subject experiments with reinforcement learning environments</a>
+  </strong>
+  <br>
+  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+  Vikram Goddla,
+  Ishaan Sinha,
+  <a href="https://hoon-shin.com/">Hoon Shin</a>,
+  <a href="https://kjha02.github.io/">Kunal Jha</a>
+  <br>
+  <em> Human-AI Complementarity for Decision Making Workshop, </em> 2025 <span style="color: red">(Oral)</span>
+  </p>
+  <div class="row pub-links">
+  <p>
+    <a href="https://kempnerinstitute.github.io/nicewebrl/">
+    <button type = "button" class = "btn btn-primary">
+    Website
+    </button>
+    </a>
+    <a href="https://github.com/KempnerInstitute/nicewebrl/">
+    <button type = "button" class = "btn btn-primary">
+    Code
+    </button>
+    </a>
+  </p>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Multitask Preplay, under review PNAS 2025 -->
+<div class="row publication">
+<div class="col-sm-2 center">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/preplay/preplay.png">
+</div>
+<div class="col-sm-7 center">
+  <p>
+  <strong>
+    <a href="https://arxiv.org/abs/2507.05561">Preemptive Solving of Future Problems: Multitask Preplay in Humans and Machines</a>
+  </strong>
+  <br>
+  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+  <a href="https://samhall-mcmaster.com/">Sam Hall-McMaster</a>,
+  <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>,
+  <a href="https://gershmanlab.com/">Samuel J. Gershman</a>
+  <br>
+  <em> Under review at PNAS, </em> 2025
+  </p>
+  <div class="row pub-links">
+  <p>
+    <a href="https://cogscikid.com/preplay">
+    <button type = "button" class = "btn btn-primary">
+    Website
+    </button>
+    </a>
+    <a href="https://github.com/wcarvalho/multitask_preplay">
+    <button type = "button" class = "btn btn-primary">
+    Code
+    </button>
+    </a>
+  </p>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Cross-environment Cooperation, ICML 2025 -->
+<div class="row publication">
+<div class="col-sm-2 center">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/cec/cec.png">
+</div>
+<div class="col-sm-7 center">
+  <p>
+  <strong>
+    <a href="https://arxiv.org/abs/2504.12714">Cross-environment Cooperation Enables Zero-shot Multi-agent Coordination</a>
+  </strong>
+  <br>
+  <a href="https://kjha02.github.io/">Kunal Jha</a>,
+  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+  <a href="https://liangyancheng.com/">Yancheng Liang</a>,
+  <a href="https://simonshaoleidu.com/">Simon S. Du</a>,
+  <a href="https://faculty.washington.edu/maxkw/">Max Kleiman-Weiner</a>,
+  <a href="https://natashajaques.ai/">Natasha Jaques</a>
+  <br>
+  <em> ICML, </em> 2025 <span style="color: red">(Oral)</span>
+  </p>
+  <div class="row pub-links">
+  <p>
+    <a href="https://kjha02.github.io/publication/cross-env-coop">
+    <button type = "button" class = "btn btn-primary">
+    Website
+    </button>
+    </a>
+    <a href="https://github.com/KJha02/crossEnvCooperation">
+    <button type = "button" class = "btn btn-primary">
+    Code
+    </button>
+    </a>
+  </p>
+  </div>
+</div>
+</div>
+
+
+
+<!-- Naturalistic Computational Cognitive Science, Preprint 2025 -->
+<div class="row publication">
+<div class="col-sm-2 center">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/naturalistic/figure.png">
+</div>
+<div class="col-sm-7 center">
+  <p>
+  <strong>
+    <a href="https://arxiv.org/abs/2502.20349">Naturalistic Computational Cognitive Science: Towards generalizable models and theories that capture the full range of natural behavior</a>
+  </strong>
+  <br>
+  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+  <a href="https://lampinen.github.io/">Andrew Lampinen</a>
+  <br>
+  <em> Preprint, </em> 2025 <br>
+  </p>
+</div>
+</div>
+
+
+
+<!-- Predictive Representations, Neural Computation 2024 -->
+<div class="row publication">
+<div class="col-sm-2 center">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/predictive_reps/figure.png">
+</div>
+<div class="col-sm-7 center">
+  <p>
+  <strong>
+    <a href="https://arxiv.org/abs/2402.06590">Predictive representations: Building blocks of intelligence</a>
+  </strong>
+  <br>
+  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+  <a href="https://momchiltomov.com/">Momchil S. Tomov</a>,
+  <a href="https://www.ucl.ac.uk/~ucbpwjw/">William de Cothi</a>,
+  <a href="https://barry-lab.com/">Caswell Barry</a>,
+  <a href="https://gershmanlab.com/">Samuel J. Gershman</a>
+  <br>
+  <em> Neural Computation, </em> 2024 <br>
+  </p>
+</div>
+</div>
+
+
+
 <!-- CSFA, NeurIPS 2023 -->
 <div class="row publication">
 <div class="col-sm-2 center">
@@ -248,7 +407,7 @@ title: Publications
     <br>
     <em>
     Artificial Intelligence Safety Workshop @ AAAI,
-    </em> 2019
+    </em> 2019 <span style="color: red">(Best Paper)</span>
     </p>
   </div>
 </div>
@@ -272,7 +431,7 @@ title: Publications
     </em> 2017 <br>
     <em>
       NeurIPS Machine Learning for Healthcare,
-    </em> 2016
+    </em> 2016 <span style="color: red">(Spotlight)</span>
     </p>
     <div class="row pub-links">
       <p>
