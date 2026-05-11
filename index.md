@@ -10,7 +10,7 @@ Predictions of future reward drive many (if not all) of our thoughts and behavio
 
 My research aims to [characterize](https://arxiv.org/pdf/2502.20349v2) the [human reinforcement learning algorithm](https://arxiv.org/pdf/2402.06590) so that we can [build machines](https://cogscikid.com/preplay/) that help us optimize it. Currently, I am a research fellow in Harvard's [Kempner Institute for the Study of Natural and Artificial Intelligence](https://www.harvard.edu/kempner-institute/) where I work closely with [Sam Gershman](https://psychology.fas.harvard.edu/people/samuel-j-gershman). My work spans three themes:
 
-1. **Generalization in [naturalistic environments](https://arxiv.org/pdf/2502.20349)**: building deep RL agents that learn efficiently and transfer across tasks in rich, open-ended settings.
+1. **Generalization in naturalistic environments**: building deep RL agents that learn efficiently and transfer across tasks in rich, open-ended settings.
 2. **Unified models of human and AI learning**: computational models that simultaneously predict real human behavior and advance AI performance in naturalistic domains.
 3. **AI systems for human flourishing**: AI systems that model people---their values, beliefs, goals, and social relationships---to help them live fullfilling lives.
 
