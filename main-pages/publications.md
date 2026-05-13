@@ -47,6 +47,11 @@ title: Publications
     Code
     </button>
     </a>
+    <a href="https://www.youtube.com/watch?si=txZ9C2F3-epJgJc2&v=m7CfxM987dU&feature=youtu.be">
+    <button type = "button" class = "btn btn-primary">
+    CMU Plenary Talk
+    </button>
+    </a>
   </p>
   </div>
 </div>
@@ -170,6 +175,15 @@ title: Publications
   <br>
   <em> Neural Computation, </em> 2024 <br>
   </p>
+  <div class="row pub-links">
+  <p>
+    <a href="https://www.youtube.com/watch?si=pis1VbQ1raCflm7g&v=6yER9nDAhGk&feature=youtu.be">
+    <button type = "button" class = "btn btn-primary">
+    Thinking about Thinking Talk
+    </button>
+    </a>
+  </p>
+  </div>
 </div>
 </div>
 
