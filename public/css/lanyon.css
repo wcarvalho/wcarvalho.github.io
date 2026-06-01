@@ -192,7 +192,48 @@ h1, h2, h3, h4, h5, h6 {
   left: 50%;
   transform: translate(-50%, 0%);
   text-align: center;
+  /* keep all link buttons on one line; left:50% otherwise caps the
+     shrink-to-fit width at ~half the column and forces a wrap */
+  white-space: nowrap;
 }
+
+/* Publication action buttons — category color-coded with context icons.
+   Markup is emitted by _includes/pub-button.html (label -> color + icon). */
+.btn-pub {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 5px 3px 0;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  vertical-align: middle;
+  transition: background-color 0.12s ease;
+}
+.btn-pub svg { flex-shrink: 0; }
+/* the buttons are wrapped in <a>; keep label color white regardless of link styling */
+.pub-links a:hover { text-decoration: none; }
+.btn-pub--website { background-color: #9f30a5; }
+.btn-pub--website:hover { background-color: #8a2890; }
+.btn-pub--code { background-color: #313131; }
+.btn-pub--code:hover { background-color: #1f1f1f; }
+.btn-pub--paper { background-color: #0f8a8a; }
+.btn-pub--paper:hover { background-color: #0c7373; }
+.btn-pub--talk { background-color: #c47a1a; }
+.btn-pub--talk:hover { background-color: #aa6914; }
+.btn-pub--podcast { background-color: #b05c7a; }
+.btn-pub--podcast:hover { background-color: #9b4e6a; }
+.btn-pub--blog { background-color: #4a5f9e; }
+.btn-pub--blog:hover { background-color: #3f5289; }
 
 @media (max-width: 36em) {
   .title-rule {
@@ -228,6 +269,8 @@ h1, h2, h3, h4, h5, h6 {
     /*margin-left: 50%;*/
     margin-left: 0.5rem;
     /*transform: translate(-50%, 0%);*/
+    /* on phones the buttons should wrap rather than overflow the screen */
+    white-space: normal;
   }
 }
 

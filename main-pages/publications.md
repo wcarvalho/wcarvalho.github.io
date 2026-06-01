@@ -16,6 +16,37 @@ title: Publications
 
 
 
+<!-- Banyan, Preprint 2026 -->
+<div class="row publication">
+<div class="col-sm-2 center">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/banyan/figure.gif">
+</div>
+<div class="col-sm-7 center">
+  <p>
+  <strong>
+    <a href="https://wcarvalho.github.io/banyan/static/banyan-paper.pdf">Task diversity produces systematic transfer but inhibits continual reinforcement learning</a>
+  </strong>
+  <br>
+  <a href="https://www.linkedin.com/in/sethpurab/">Purab Seth</a>*,
+  Neil Shah*,
+  <a href="https://kjha02.github.io/">Kunal Jha</a>,
+  <a href="https://gershmanlab.com/">Samuel J. Gershman</a>,
+  <a href="http://faculty.washington.edu/maxkw/">Max Kleiman-Weiner</a>,
+  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>
+  <br>
+  <em> Preprint, </em> 2026
+  </p>
+  <div class="row pub-links">
+  <p>
+    {% include pub-button.html label="Website" url="https://wcarvalho.github.io/banyan/" %}
+    {% include pub-button.html label="Code" url="#" %}<!-- TODO: update with banyan-grid repo URL once public -->
+  </p>
+  </div>
+</div>
+</div>
+
+
+
 <!-- NiceWebRL, NeurIPS Workshop 2025 -->
 <div class="row publication">
 <div class="col-sm-2 center">
@@ -37,21 +68,9 @@ title: Publications
   </p>
   <div class="row pub-links">
   <p>
-    <a href="https://kempnerinstitute.github.io/nicewebrl/">
-    <button type = "button" class = "btn btn-primary">
-    Website
-    </button>
-    </a>
-    <a href="https://github.com/KempnerInstitute/nicewebrl/">
-    <button type = "button" class = "btn btn-primary">
-    Code
-    </button>
-    </a>
-    <a href="https://www.youtube.com/watch?si=txZ9C2F3-epJgJc2&v=m7CfxM987dU&feature=youtu.be">
-    <button type = "button" class = "btn btn-primary">
-    CMU Plenary Talk
-    </button>
-    </a>
+    {% include pub-button.html label="Website" url="https://kempnerinstitute.github.io/nicewebrl/" %}
+    {% include pub-button.html label="Code" url="https://github.com/KempnerInstitute/nicewebrl/" %}
+    {% include pub-button.html label="CMU Plenary Talk" url="https://www.youtube.com/watch?si=txZ9C2F3-epJgJc2&v=m7CfxM987dU&feature=youtu.be" %}
   </p>
   </div>
 </div>
@@ -79,16 +98,8 @@ title: Publications
   </p>
   <div class="row pub-links">
   <p>
-    <a href="https://cogscikid.com/preplay">
-    <button type = "button" class = "btn btn-primary">
-    Website
-    </button>
-    </a>
-    <a href="https://github.com/wcarvalho/multitask_preplay">
-    <button type = "button" class = "btn btn-primary">
-    Code
-    </button>
-    </a>
+    {% include pub-button.html label="Website" url="https://cogscikid.com/preplay" %}
+    {% include pub-button.html label="Code" url="https://github.com/wcarvalho/multitask_preplay" %}
   </p>
   </div>
 </div>
@@ -118,16 +129,8 @@ title: Publications
   </p>
   <div class="row pub-links">
   <p>
-    <a href="https://kjha02.github.io/publication/cross-env-coop">
-    <button type = "button" class = "btn btn-primary">
-    Website
-    </button>
-    </a>
-    <a href="https://github.com/KJha02/crossEnvCooperation">
-    <button type = "button" class = "btn btn-primary">
-    Code
-    </button>
-    </a>
+    {% include pub-button.html label="Website" url="https://kjha02.github.io/publication/cross-env-coop" %}
+    {% include pub-button.html label="Code" url="https://github.com/KJha02/crossEnvCooperation" %}
   </p>
   </div>
 </div>
@@ -177,11 +180,7 @@ title: Publications
   </p>
   <div class="row pub-links">
   <p>
-    <a href="https://www.youtube.com/watch?si=pis1VbQ1raCflm7g&v=6yER9nDAhGk&feature=youtu.be">
-    <button type = "button" class = "btn btn-primary">
-    Thinking about Thinking Talk
-    </button>
-    </a>
+    {% include pub-button.html label="Thinking about Thinking Talk" url="https://www.youtube.com/watch?si=pis1VbQ1raCflm7g&v=6yER9nDAhGk&feature=youtu.be" %}
   </p>
   </div>
 </div>
@@ -244,16 +243,8 @@ title: Publications
   </p>
   <div class="row pub-links">
   <p>
-    <a href="https://modularsf.github.io/modular_sf/">
-    <button type = "button" class = "btn btn-primary">
-    Website
-    </button>
-    </a>
-    <a href="https://github.com/wcarvalho/msfa_iclr2023/tree/main">
-    <button type = "button" class = "btn btn-primary">
-    Code
-    </button>
-    </a>
+    {% include pub-button.html label="Website" url="https://modularsf.github.io/modular_sf/" %}
+    {% include pub-button.html label="Code" url="https://github.com/wcarvalho/msfa_iclr2023/tree/main" %}
     <!-- <a href="https://slideslive.com/38938237/learning-objectinteraction-tasks-with-less-supervision-by-learning-an-attentive-objectmodel">
     <button type = "button" class = "btn btn-primary">
     NeurIPS Talk
@@ -317,16 +308,8 @@ title: Publications
     </p>
     <div class="row pub-links">
     <p>
-      <a href="http://cogscikid.com/farm/">
-      <button type = "button" class = "btn btn-primary">
-      Website
-      </button>
-      </a>
-      <a href="https://github.com/wcarvalho/farm">
-      <button type = "button" class = "btn btn-primary">
-      Code
-      </button>
-      </a>
+      {% include pub-button.html label="Website" url="http://cogscikid.com/farm/" %}
+      {% include pub-button.html label="Code" url="https://github.com/wcarvalho/farm" %}
     </p>
     </div>
 </div>
@@ -386,21 +369,9 @@ title: Publications
   </p>
   <div class="row pub-links">
   <p>
-    <a href="https://arxiv.org/abs/2010.15195">
-    <button type = "button" class = "btn btn-primary">
-    arXiv
-    </button>
-    </a>
-    <a href="https://slideslive.com/38938237/learning-objectinteraction-tasks-with-less-supervision-by-learning-an-attentive-objectmodel">
-    <button type = "button" class = "btn btn-primary">
-    NeurIPS Talk
-    </button>
-    </a>
-    <a href="https://twimlai.com/relational-object-centric-agents-for-completing-simulated-household-tasks-with-wilka-carvalho/">
-    <button type = "button" class = "btn btn-primary">
-    Podcast
-    </button>
-    </a>
+    {% include pub-button.html label="arXiv" url="https://arxiv.org/abs/2010.15195" %}
+    {% include pub-button.html label="NeurIPS Talk" url="https://slideslive.com/38938237/learning-objectinteraction-tasks-with-less-supervision-by-learning-an-attentive-objectmodel" %}
+    {% include pub-button.html label="Podcast" url="https://twimlai.com/relational-object-centric-agents-for-completing-simulated-household-tasks-with-wilka-carvalho/" %}
   </p>
   </div>
 </div>
@@ -449,11 +420,7 @@ title: Publications
     </p>
     <div class="row pub-links">
       <p>
-        <a href="{{ site.baseurl }}/research/2017/04/23/vrada/">
-        <button type = "button" class = "btn btn-primary">
-        Blog Post
-        </button>
-        </a>
+        {% include pub-button.html label="Blog Post" url="/research/2017/04/23/vrada/" %}
       </p>
     </div>
   </div>
@@ -501,16 +468,8 @@ title: Publications
     </p>
     <div class="row pub-links">
       <p>
-        <a href="https://github.com/wcarvalho/dirc-detector">
-          <button type = "button" class = "btn btn-primary">
-          Code
-          </button>
-        </a>
-        <a href="{{ site.baseurl }}/files/dirc/final_thesis.pdf">
-          <button type = "button" class = "btn btn-primary">
-          Senior Thesis
-          </button>
-        </a>
+        {% include pub-button.html label="Code" url="https://github.com/wcarvalho/dirc-detector" %}
+        {% include pub-button.html label="Senior Thesis" url="/files/dirc/final_thesis.pdf" %}
       </p>
     </div>
   </div>
