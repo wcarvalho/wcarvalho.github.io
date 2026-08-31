@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+  <meta property="og:image" content="/files/img/abstract_head.png">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Wilka Carvalho &middot; Reinforcement Learning Researcher & Cognitive Scientist
+    
+  </title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="/public/css/projects.css">
+  <link rel="stylesheet" href="/public/css/icons.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="/public/css/general.css">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/files/img/brain-icon.png">
+  <link rel="shortcut icon" href="/files/img/brain-icon.png">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+  <!-- Math Support -->
+
+  <body class="layout">
+
+      <div class="masthead">
+    
+  <div class="top-left">
+  </div>
+  <div class="bottom-right">
+    <div class="container">
+      <div align="center">
+        <h3 class="masthead-title">
+            <img class="nsf responsive-img" src="/files/img/headshot.jpg"> <br>
+            <a href="/" title="Home">Wilka Carvalho</a><br>
+            <small>Reinforcement Learning Researcher & Cognitive Scientist</small>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-left">
+    <div class="container">
+      <a href="https://twitter.com/CogSciKid/"><i class="svg-icon twitter"></i></a>
+      <a href="https://github.com/wcarvalho/"><i class="svg-icon github"></i></a>
+      <a href="https://www.linkedin.com/in/wilkacarvalho/"><i class="svg-icon linkedin"></i></a>
+      <a href="mailto:wcarvalho92@gmail.com"><i class="svg-icon email"></i></a>
+    </div>
+  </div>
+</div>
+
+      <div class="navbar-outter">
+<nav class="navbar sticky-top justify-content-between navbar-expand-sm navbar-nav navbar-dark bg-dark">
+<!-- <div class="navbar-inner"> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a href="/">Home</a> -->
+        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/publications">Publications</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/main-pages/press">Press</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Side Projects
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/main-pages/projects/" id="navbarDropdownMenuLink">
+          Projects
+          </a>
+          <a class="dropdown-item" href="/main-pages/projects/#essays">Essays</a>
+          <a class="dropdown-item" href="/main-pages/projects/#poetry">Poetry</a>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/files/wilka_carvalho_CV.pdf">CV</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/misc/acknowledgments">Acknowledgements</a>
+      </li>
+    </ul>
+
+
+
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item dropdown navbar-right">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink">
+          Learning Resources
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://wcarvalho.github.io/Phd-Resources/" id="navbarDropdownMenuLink">
+          PhD Resources
+          </a>
+          <a class="dropdown-item" href="https://wcarvalho.github.io/ML-Brain-Resources/">ML/Brain Resources</a>
+          <a class="dropdown-item" href="/misc/books">Useful Books</a>
+        </div>
+      </li>
+
+      <li class="nav-item navbar-nav navbar-right">
+        <a class="nav-link"  href="/main-pages/blog">Blog</a>
+      </li>
+    </ul>
+
+</div>
+<!-- </div> -->
+</nav>
+</div>
+
+      <div class="container content ">
+        <!-- My name is Wilka[^1] Torrico De Carvalho and I am fundamentally interested in understanding people, their values, how. -->
+
+
+Predictions about future reward drive many (if not all) of our thoughts and behaviors. However, important rewarding events---getting good grades on exams, establishing meaningful relationships, buying your first home---are few and far in between. To work towards these events, we must also predict which behaviors and which intermediary events will bring these rewards into fruition---that studying in a particular manner will provide us with good grades, that some types of social interactions will establish trust and depth of connection, that certain spending habits will facilitate saving for our first home. This leads to several important questions:
+
+1. How does the brain discover and encode this predictive knowledge using rich sensory observations of a large and continuously evolving world?
+2. How does the brain exploit this predictive knowledge to make effective plans, combine its known behaviors, and coordinate with other social agents?
+3. How can we harness this theoretical understanding to build tools that enhance human agency and help people achieve their goals?
+
+Currently, I am a research fellow in Harvard's [Kempner Institute for the Study of Natural and Artificial Intelligence](https://www.harvard.edu/kempner-institute/) where I work closely with [Sam Gershman](https://psychology.fas.harvard.edu/people/samuel-j-gershman). To study these questions, I develop deep reinforcement learning based theories for human learning and generalization. You can find my recent research on my [Google Scholar](https://scholar.google.com/citations?user=tvJTXwoAAAAJ&hl=en).
+
+
+
+
+I earned my Ph.D. at the University of Michigan, where I studied deep reinforcement learning with [Satinder Singh](https://web.eecs.umich.edu/~baveja/), [Honglak Lee](https://web.eecs.umich.edu/~honglak/), and [Richard Lewis](https://lsa.umich.edu/psych/people/faculty/rickl.html), and was supported by the NSF GRFP and a Rackham Merit Fellowship. During my PhD, I was fortunate to spend significant time at DeepMind working with [Murray Shanahan](https://www.doc.ic.ac.uk/~mpsha/), [Daniel Zoran](https://people.csail.mit.edu/danielzoran/), and [Danilo Rezende](https://danilorezende.com/about/). I got my first stint in ML in a CS M.S. at USC, where I worked with [Yan Liu](https://viterbi-web.usc.edu/~liu32/) on machine learning for healthcare. Before then, I earned a B.S. in Physics at Stony Brook University where I worked with [Axel Drees](https://www.stonybrook.edu/commcms/nuclear-experiment/personal/axeldrees.html) on computational nuclear physics.
+
+### Collaboration and Mentorship
+Please feel free to contact me if you'd like to collaborate or be mentored on a research project! While my training is in machine learning, I hope to collaborate broadly with neuroscientists and cognitive scientists.
+**I am also interested in work that makes contact with helping marginalized and minority groups. If you are doing research in this space or organizing any programs and are interested in collaborating, please reach out!**
+<!--I'm **actively looking for research assistants** on several neuro-AI projects intersecting cognitive science and deep reinforcement learning. -->
+<!--**I especially encourage students from underrepresented groups to reach out.**-->
+
+You can reach me at wcarvalho[at]g.harvard.edu
+
+
+
+### News
+
+- **September, 2025:** Talk on [NiceWebRL](https://github.com/KempnerInstitute/nicewebrl) at the [Human-AI Complementarity for Decision Making Workshop](https://www.cmu.edu/ai-sdm/research/human-ai-workshop/index.html) at CMU
+- **September, 2025:** Talk on [NiceWebRL](https://github.com/KempnerInstitute/nicewebrl) at the [New York RL Workshop](https://ny-rl.com/)
+- **September, 2025:** Talk to Amy Zhang's group at UT Austin
+- **August, 2025:** [CCN Benchmarks GAC talk](https://sites.google.com/ccneuro.org/gac2020/gacs-by-year/2025-gacs/2025-1) on the utility of benchmarks in cognitive science
+- **August, 2025:** [CCN Naturalistic Games Community Event Talk](https://2025.ccneuro.org/community-event-naturalistic-games/) on why [NiceWebRL](https://github.com/KempnerInstitute/nicewebrl) is useful for computational cognitive science
+- **July, 2025:** new preprint on [how people generalize to new tasks via counterfactual simulation](https://arxiv.org/pdf/2507.05561)
+- **June, 2025:** oral at ICML
+- **May, 2025:** New ICML paper on [building agents that can coordinate with humans without human data](https://arxiv.org/pdf/2504.12714)
+- **April, 2025:** Talk at Harvard Cognition, Brain, & Behavior Seminar
+- **April, 2025:** Talk to Kim Stachenfeld's group at Columbia Neuro
+- **April, 2025:** Talk to Marcelo Mattar's group at NYU Pysch
+- **April, 2025:** Talk to Eugene Vinitsky's group at NYU Tandom
+- **April, 2025:** Talk to Mark Ho's group at NYU Psych
+- **March, 2025:** Talk to RL Seminar at Tübingen
+- **March, 2025:** Talk at Google DeepMind
+- **March, 2025:** Talk at Cognition Seminar at UC Berkeley
+- **March, 2025:** Talk to Bill Thompsons' group at UC Berkeley Pysch
+- **March, 2025:** Talk to Falk Leider's group at UCLA
+- **March, 2025:** Talk at Social and Decision Neuroscience Seminar at Caltech
+- **March, 2025:** Talk at USC Symposium "Frontiers of Machine Learning and AI - Fundamentals and Applications"
+- **March, 2025:** Talk at Harvard Neurolunch Seminar
+- **February, 2025:** Talk at RL Seminar at UMich
+- **February, 2025:** Talk to Talia Konkle and George Alvarez's vision lab at Harvard
+- **February, 2025:** Talk to Bernardo Sabatini's neuroscience group at Harvard
+- **February, 2025:** Talk at Sam Gershman's Computational Cognitive Neuroscience Group at Harvard
+- **February, 2025:** New preprint on [computational cognitive science for naturalistic experimental paradigms](https://arxiv.org/abs/2502.20349)
+
+
+
+
+
+<br>
+
+---
+
+
+## Miscellaneous
+I also maintain a collection of resources for 
+* [pursuing a PhD/Graduate School](https://wcarvalho.github.io/Phd-Resources/) (writing resources, career advice, and funding resources)
+* [learning about/doing research in machine learning, computational cognitive science, and computational neuroscience](https://wcarvalho.github.io/ML-Brain-Resources/) (including online courses in mathematics, AI, neuroscience, and cognitive science)
+
+<!-- Last, [here](https://1drv.ms/u/s!AiwW8O29uDV9gfpaAh0MNGEQTKykGw) are some papers I want to read, am reading, or have read, along with some notes. For whoever might find this useful! -->
+
+---
+
+[^1]: I am named after [Pablo Willka Zarate](https://en.wikipedia.org/wiki/Willka), an indigenous Bolivian revolutionary that led one of the largest indigenous rebellions in Bolivia's history.
+<!-- [2^]: see [here](page-to-be-made) for a longer list. (free-energy principle, artificial neural networks) -->
+
+      </div>
+
+    <!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<!-- popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript" src="/public/js/materialize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    },
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true,
+    }
+  });
+</script>
+<script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-72232702-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-72232702-1');
+</script>
+
+  </body>
+</html>
