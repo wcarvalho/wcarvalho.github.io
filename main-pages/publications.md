@@ -46,6 +46,35 @@ title: Publications
 
 
 
+<!-- Multitask Preplay, PNAS 2026 -->
+<div class="row publication">
+<div class="col-sm-2 center">
+  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/preplay/preplay.png">
+</div>
+<div class="col-sm-7 center">
+  <p>
+  <strong>
+    <a href="https://arxiv.org/abs/2507.05561">Preemptive Solving of Future Problems: Multitask Preplay in Humans and Machines</a>
+  </strong>
+  <br>
+  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
+  <a href="https://samhall-mcmaster.com/">Sam Hall-McMaster</a>,
+  <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>,
+  <a href="https://gershmanlab.com/">Samuel J. Gershman</a>
+  <br>
+  <em> <span style="color: red">PNAS</span>, </em> 2026
+  </p>
+  <div class="row pub-links">
+  <p>
+    {% include pub-button.html label="Website" url="https://cogscikid.com/preplay" %}
+    {% include pub-button.html label="Code" url="https://github.com/wcarvalho/multitask_preplay" %}
+  </p>
+  </div>
+</div>
+</div>
+
+
+
 <!-- NiceWebRL, NeurIPS Workshop 2025 -->
 <div class="row publication">
 <div class="col-sm-2 center">
@@ -70,35 +99,6 @@ title: Publications
     {% include pub-button.html label="Website" url="https://kempnerinstitute.github.io/nicewebrl/" %}
     {% include pub-button.html label="Code" url="https://github.com/KempnerInstitute/nicewebrl/" %}
     {% include pub-button.html label="CMU Plenary Talk" url="https://www.youtube.com/watch?si=txZ9C2F3-epJgJc2&v=m7CfxM987dU&feature=youtu.be" %}
-  </p>
-  </div>
-</div>
-</div>
-
-
-
-<!-- Multitask Preplay, PNAS 2026 -->
-<div class="row publication">
-<div class="col-sm-2 center">
-  <img class="pub-image responsive" src="{{ site.baseurl }}/publications/preplay/preplay.png">
-</div>
-<div class="col-sm-7 center">
-  <p>
-  <strong>
-    <a href="https://arxiv.org/abs/2507.05561">Preemptive Solving of Future Problems: Multitask Preplay in Humans and Machines</a>
-  </strong>
-  <br>
-  <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>,
-  <a href="https://samhall-mcmaster.com/">Sam Hall-McMaster</a>,
-  <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>,
-  <a href="https://gershmanlab.com/">Samuel J. Gershman</a>
-  <br>
-  <em> PNAS, </em> 2026
-  </p>
-  <div class="row pub-links">
-  <p>
-    {% include pub-button.html label="Website" url="https://cogscikid.com/preplay" %}
-    {% include pub-button.html label="Code" url="https://github.com/wcarvalho/multitask_preplay" %}
   </p>
   </div>
 </div>
