@@ -16,7 +16,7 @@ title: Publications
 
 
 
-<!-- Banyan, Preprint 2026 -->
+<!-- Banyan, Reinforcement Learning Continual Learning Workshop 2026 (Oral) -->
 <div class="row publication">
 <div class="col-sm-2 center">
   <img class="pub-image responsive" src="{{ site.baseurl }}/publications/banyan/figure.gif">
@@ -34,7 +34,7 @@ title: Publications
   <a href="http://faculty.washington.edu/maxkw/">Max Kleiman-Weiner</a>,
   <a href="/"><span style="color: #9f30a5">Wilka Carvalho</span></a>
   <br>
-  <em> Preprint, </em> 2026
+  <em> Reinforcement Learning Continual Learning Workshop, </em> 2026 <span style="color: red">(Oral)</span>
   </p>
   <div class="row pub-links">
   <p>
@@ -77,7 +77,7 @@ title: Publications
 
 
 
-<!-- Multitask Preplay, under review PNAS 2025 -->
+<!-- Multitask Preplay, PNAS 2026 -->
 <div class="row publication">
 <div class="col-sm-2 center">
   <img class="pub-image responsive" src="{{ site.baseurl }}/publications/preplay/preplay.png">
@@ -93,7 +93,7 @@ title: Publications
   <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a>,
   <a href="https://gershmanlab.com/">Samuel J. Gershman</a>
   <br>
-  <em> Under review at PNAS, </em> 2025
+  <em> PNAS, </em> 2026
   </p>
   <div class="row pub-links">
   <p>
