@@ -39,6 +39,7 @@ title: Publications
   <div class="row pub-links">
   <p>
     {% include pub-button.html label="Website" url="https://wcarvalho.github.io/banyan/" %}
+    {% include pub-button.html label="Code" url="https://github.com/prbsth/banyan-grid/tree/workshop-release" %}
   </p>
   </div>
 </div>
