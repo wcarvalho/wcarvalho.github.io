@@ -29,6 +29,7 @@ title: Publications
   <br>
   <a href="https://www.linkedin.com/in/sethpurab/">Purab Seth</a>*,
   Neil Shah*,
+  Ishaan Sinha,
   <a href="https://kjha02.github.io/">Kunal Jha</a>,
   <a href="https://gershmanlab.com/">Samuel J. Gershman</a>,
   <a href="http://faculty.washington.edu/maxkw/">Max Kleiman-Weiner</a>,
@@ -39,7 +40,7 @@ title: Publications
   <div class="row pub-links">
   <p>
     {% include pub-button.html label="Website" url="https://wcarvalho.github.io/banyan/" %}
-    {% include pub-button.html label="Code" url="https://github.com/prbsth/banyan-grid/tree/workshop-release" %}
+    {% include pub-button.html label="Code" url="https://github.com/nhshah15/banyan" %}
   </p>
   </div>
 </div>
