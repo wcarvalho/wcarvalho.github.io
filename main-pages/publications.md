@@ -24,7 +24,7 @@ title: Publications
 <div class="col-sm-7 center">
   <p>
   <strong>
-    <a href="https://arxiv.org/pdf/2606.00880">Task diversity produces systematic transfer but inhibits continual reinforcement learning</a>
+    <a href="https://arxiv.org/abs/2606.00880v2">Task diversity produces systematic transfer but inhibits continual reinforcement learning</a>
   </strong>
   <br>
   <a href="https://www.linkedin.com/in/sethpurab/">Purab Seth</a>*,
